@@ -32,9 +32,10 @@ in
     #../../modules/sddm.nix
   ];
 
+  chaotic.scx.enable = true;
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
     #chaotic.scx.enable = true;
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -190,13 +191,18 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-  
+    #wayland.windowManager.hyprland = {
+     #   enable = true;
+     #   plugins = [
+     #           inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+     #   ];
+    #};
   programs = {
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-      #plugins = [
-       #           inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+     # plugins = [
+      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
      #];
      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
      xwayland.enable = true;
@@ -279,7 +285,8 @@ in
       (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
 
       # Hyprland Stuff
-      hyprpanel
+      #matugen
+      #hyprpanel
       ags
       btop
       brightnessctl # for brightness control
@@ -322,6 +329,8 @@ in
       yt-dlp
       nitch
       inputs.wezterm.packages.${pkgs.system}.default
+      #inputs.matugen.packages.${system}.default
+      inputs.zen-browser.packages."${system}".default
       #zen-browser
       hyprgui
       dialog
@@ -367,6 +376,8 @@ in
       nwg-dock-hyprland
       pipx
       waypaper
+      hyprsunset
+      hyprpolkitagent
       #qcomicbook
       #libsForQt5.qt5.qtquickcontrols   
       #libsForQt5.qt5.qtgraphicaleffects
@@ -427,6 +438,8 @@ in
     settings.Theme.CursorTheme = "catppuccin-cursors";
   };
 
+  
+
   # Services to start
   services = {
 
@@ -435,9 +448,11 @@ in
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
-      };
-     
+      };     
   };
+   
+
+
     smartd = {
       enable = false;
       autodetect = true;
@@ -526,7 +541,7 @@ in
     cpuFreqGovernor = "schedutil";
   };
 
-  hardware.opengl.enable = true;
+  #hardware.opengl.enable = true;
   #hardware.sane = {
   #  enable = true;
   #  extraBackends = [ pkgs.sane-airscan ];

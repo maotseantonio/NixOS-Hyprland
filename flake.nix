@@ -2,10 +2,14 @@
   description = "KooL's NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     #catppuccin.url = "github:catppuccin/nix";
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
+    matugen = {
+        url = "github:/InioX/Matugen";
+        #ref = "refs/tags/matugen-v0.10.0"
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -35,7 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
    };
     nixos-boot.url = "github:Melkor333/nixos-boot";
-    #zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    nvix = {
+            url = "github:niksingh710/nvix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 #    nvf = {
 #        url = "github:notashelf/nvf";
 #        inputs.nixpkgs.follows = "nixpkgs";
