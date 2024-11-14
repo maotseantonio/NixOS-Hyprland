@@ -19,17 +19,18 @@
       options = [ "subvol=@" ];
     };
 
-  fileSystems."/bin" =
-    { device = "/usr/bin";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+    #  fileSystems."/bin" =
+    #{ device = "/usr/bin";
+    #  fsType = "none";
+    #  options = [ "bind" ];
+    #};
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/73FE-9361";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/d04b5d13-fb88-45c9-8654-b9eb629f0e61"; }

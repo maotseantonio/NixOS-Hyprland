@@ -54,7 +54,7 @@ in
     ];
 
   # This is for OBS Virtual Cam Support
-  
+
   kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
@@ -135,6 +135,7 @@ in
 
   };
 
+
   #stylix = {
   #  enable = true;
   #   polarity = "dark";
@@ -204,6 +205,9 @@ in
      # plugins = [
       #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
      #];
+            #plugins = [
+            #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars          
+            #];
      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
      xwayland.enable = true;
      #opengl.enable = true;
@@ -216,7 +220,15 @@ in
     git.enable = true;
     nm-applet.indicator = true;
     neovim.enable = true;
-    #stylix.enable = true;
+    nh = {
+        enable = true;
+            #clean.enable = true;
+        clean.extraArgs = "--keep-since 4d --keep 3";
+        flake = "/home/antonio/NixOS-Hyprland";
+    };
+        #neovim.packages = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+        #stylix.enable = true;
+
     #hardware.opengl.enable = true;
     #hardware.opengl.driSupport = true;
     #hardware.opengl.driSupport32Bit = true;
@@ -237,7 +249,7 @@ in
     #  remotePlay.openFirewall = true;
     #  dedicatedServer.openFirewall = true;
     #};
-    
+
 
 
     xwayland.enable = true;
@@ -258,7 +270,7 @@ in
   };
 
   environment.systemPackages =
-    (with pkgs; [ 
+    (with pkgs; [
      # System Packages
       baobab
       btrfs-progs
@@ -330,6 +342,8 @@ in
       nitch
       inputs.wezterm.packages.${pkgs.system}.default
       inputs.nvix.packages.${system}.default
+      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      #inputs.matugen.packages.${system}.default
       inputs.zen-browser.packages."${system}".default
       #zen-browser
       hyprgui
@@ -370,7 +384,7 @@ in
       rustup
       cargo
       gdk-pixbuf
-      cairo  
+      cairo
       dbus-glib
       gtk3
       nwg-dock-hyprland
@@ -378,8 +392,8 @@ in
       waypaper
       hyprsunset
       hyprpolkitagent
-      #qcomicbook
-      #libsForQt5.qt5.qtquickcontrols   
+      qcomicbook
+      #libsForQt5.qt5.qtquickcontrols
       #libsForQt5.qt5.qtgraphicaleffects
       hyprpicker
       #hyprlandPlugins.borders-plus-plus
@@ -413,7 +427,7 @@ in
     terminus_font
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-  
+
   #chaotic.mesa-git.enable = true;
   #catppuccin.enable = true;
   # Extra Portal Configuration
@@ -430,7 +444,7 @@ in
   };
 
   # Enable sddm login manager
-  
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -438,7 +452,7 @@ in
     settings.Theme.CursorTheme = "catppuccin-cursors";
   };
 
-  
+
 
   # Services to start
   services = {
@@ -448,9 +462,9 @@ in
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
-      };     
+      };
   };
-   
+
 
 
     smartd = {
@@ -496,7 +510,7 @@ in
     upower.enable = true;
 
     gnome.gnome-keyring.enable = true;
-    
+
     #printing = {
     #  enable = false;
     #  drivers = [

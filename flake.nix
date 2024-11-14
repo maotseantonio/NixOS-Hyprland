@@ -6,6 +6,7 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     #catppuccin.url = "github:catppuccin/nix";
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     matugen = {
         url = "github:/InioX/Matugen";
         #ref = "refs/tags/matugen-v0.10.0"
