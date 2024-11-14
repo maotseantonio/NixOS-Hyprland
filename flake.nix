@@ -11,6 +11,7 @@
         url = "github:/InioX/Matugen";
         #ref = "refs/tags/matugen-v0.10.0"
     };
+    ags.url = "github:Aylur/ags";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";

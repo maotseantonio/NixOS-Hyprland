@@ -342,6 +342,7 @@ in
       nitch
       inputs.wezterm.packages.${pkgs.system}.default
       inputs.nvix.packages.${system}.default
+            #inputs.ags.${pkgs.system}.ags
       inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
       #inputs.matugen.packages.${system}.default
       inputs.zen-browser.packages."${system}".default
