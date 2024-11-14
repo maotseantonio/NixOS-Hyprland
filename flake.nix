@@ -11,7 +11,14 @@
         url = "github:/InioX/Matugen";
         #ref = "refs/tags/matugen-v0.10.0"
     };
-    ags.url = "github:Aylur/ags";
+    ags = {
+        url = "github:aylur/ags";
+        inputs.nixpkgs.follows = "nixpkgs";
+     };
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -87,7 +94,7 @@
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
             #inputs.zen-browser.packages."${system}".default
-            #inputs.stylix.nixosModules.default
+            inputs.stylix.nixosModules.stylix
             #inputs.catppuccin.homeManagerModules.catppuccin
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
           ];

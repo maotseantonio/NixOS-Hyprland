@@ -31,7 +31,8 @@ in
     #../../modules/stylix.nix
     #../../modules/sddm.nix
   ];
-
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
+    #stylix.enable = true;
   chaotic.scx.enable = true;
   # BOOT related stuff
   boot = {
@@ -290,6 +291,8 @@ in
       pciutils
       vim
       wget
+      oh-my-posh
+      starship
       xdg-user-dirs
       xdg-utils
 
@@ -342,7 +345,8 @@ in
       nitch
       inputs.wezterm.packages.${pkgs.system}.default
       inputs.nvix.packages.${system}.default
-            #inputs.ags.${pkgs.system}.ags
+      inputs.ags.packages.${pkgs.system}.default
+      inputs.astal.packages.${pkgs.system}.default
       inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
       #inputs.matugen.packages.${system}.default
       inputs.zen-browser.packages."${system}".default
@@ -372,7 +376,7 @@ in
       komikku
       mangal
       mangareader
-      oh-my-posh
+            #oh-my-posh
       github-cli
       telegram-desktop
       neofetch
