@@ -31,7 +31,51 @@ in
     #../../modules/stylix.nix
     #../../modules/sddm.nix
   ];
+  
+  
+  nixpkgs.overlays = [
+    (final: prev: {
+      matugen = final.rustPlatform.buildRustPackage rec {
+        pname = "matugen";
+        version = "2.4.0";
+
+        src = final.fetchFromGitHub {
+          owner = "InioX";
+          repo = "matugen";
+          rev = "refs/tags/v${version}";
+          hash = "sha256-l623fIVhVCU/ylbBmohAtQNbK0YrWlEny0sC/vBJ+dU=";
+        };
+
+        cargoHash = "sha256-FwQhhwlldDskDzmIOxhwRuUv8NxXCxd3ZmOwqcuWz64=";
+
+        meta = {
+          description = "Material you color generation tool";
+          homepage = "https://github.com/InioX/matugen";
+          changelog = "https://github.com/InioX/matugen/blob/${src.rev}/CHANGELOG.md";
+          license = final.lib.licenses.gpl2Only;
+          maintainers = with final.lib.maintainers; [ lampros ];
+          mainProgram = "matugen";
+        };
+      };
+    }) ];  
+    
+
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
+  stylix.targets.spicetify.enable = true;
+  stylix.targets.gtk.enable = true;
+  stylix.targets.fish.enable = true;
+  system.autoUpgrade = {
+      enable = true;
+      flake = inputs.self.outPath;
+      flags = [
+            "--update-input"
+            "nixpkgs"
+            "-L"
+        ];
+        dates = "02:00";
+        randomizedDelaySec = "45min";
+    };
+    #catppuccin.enable = true;
     #stylix.enable = true;
   chaotic.scx.enable = true;
   # BOOT related stuff
@@ -97,7 +141,7 @@ in
 
     # Bootloader GRUB theme, configure below
     #stylix.enable = true;
-    #theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
+        #loader.grub.theme = "${pkgs.catppuccin-grub}";
     ## -end of BOOTLOADERS----- ##
 
     # Make /tmp a tmpfs
@@ -149,13 +193,13 @@ in
   #  enable = true;
   #  theme = "nixos";
   #};
-  boot.loader.grub2-theme = {
+    boot.loader.grub2-theme = {
         enable = true;
-        theme = "tela";
+        theme = "vimix";
         footer = true;
         customResolution = "2160x1440";
 
-  };
+    };
 
   # Extra Module Options
   drivers.amdgpu.enable = false;
@@ -203,17 +247,13 @@ in
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-     # plugins = [
-      #     inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-     #];
-            #plugins = [
-            #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars          
-            #];
+            #plugins = inputs.hyprland-plugins.package.${pkgs.system}.borders-plus-plus;
      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
      xwayland.enable = true;
      #opengl.enable = true;
 
     };
+        #catppuccin.enable = true;
     nix-ld.enable = true;
     waybar.enable = true;
     hyprlock.enable = true;
@@ -291,7 +331,6 @@ in
       pciutils
       vim
       wget
-      oh-my-posh
       starship
       xdg-user-dirs
       xdg-utils
@@ -301,7 +340,7 @@ in
 
       # Hyprland Stuff
       #matugen
-      #hyprpanel
+      hyprpanel
       ags
       btop
       brightnessctl # for brightness control
@@ -343,18 +382,20 @@ in
       yad
       yt-dlp
       nitch
+      nix-ld
+      wgpu-utils
       inputs.wezterm.packages.${pkgs.system}.default
-      inputs.nvix.packages.${system}.default
       inputs.ags.packages.${pkgs.system}.default
       inputs.astal.packages.${pkgs.system}.default
       inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+            #inputs.hyprpanel.packages.${pkgs.system}.default
       #inputs.matugen.packages.${system}.default
       inputs.zen-browser.packages."${system}".default
       #zen-browser
       hyprgui
-      dialog
       neovide
       lshw
+      catppuccin
       sddm
       catppuccin-sddm-corners
       sddm-sugar-dark
@@ -376,10 +417,8 @@ in
       komikku
       mangal
       mangareader
-            #oh-my-posh
       github-cli
       telegram-desktop
-      neofetch
       python312Packages.gpustat
       power-profiles-daemon
       ani-cli
@@ -387,7 +426,7 @@ in
       pango
       gtk4
       rustup
-      cargo
+            #cargo
       gdk-pixbuf
       cairo
       dbus-glib
@@ -396,7 +435,6 @@ in
       pipx
       waypaper
       hyprsunset
-      hyprpolkitagent
       qcomicbook
       #libsForQt5.qt5.qtquickcontrols
       #libsForQt5.qt5.qtgraphicaleffects
@@ -413,6 +451,7 @@ in
       #xarchive
       nvidia-vaapi-driver
       libsForQt5.ark
+      greetd.tuigreet
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])

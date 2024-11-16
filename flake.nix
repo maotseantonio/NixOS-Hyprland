@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+        #nix-alien.url = "github:thiagokokada/nix-alien";
     #catppuccin.url = "github:catppuccin/nix";
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -65,6 +66,7 @@
   outputs =
     inputs @ { self
     , nixpkgs
+    , home-manager
     , ...
     }:
     let
