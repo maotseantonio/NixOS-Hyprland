@@ -30,7 +30,7 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
-#    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
      grub2-themes = {
       url = "github:vinceliuice/grub2-themes";

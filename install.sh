@@ -126,7 +126,7 @@ printf "\n%.0s" {1..2}
 
 # Set the Nix configuration for experimental features
 NIX_CONFIG="experimental-features = nix-command flakes"
-sudo nix flake update
+#sudo nix flake update
 sudo nixos-rebuild switch --flake ~/NixOS-Hyprland/#"${hostName}"
 
 echo "-----"
@@ -134,87 +134,87 @@ printf "\n%.0s" {1..2}
 
 # for initial zsh
 # Check if ~/.zshrc and  exists, create a backup, and copy the new configuration
-#if [ -f "$HOME/.zshrc" ]; then
-# 	cp -b "$HOME/.zshrc" "$HOME/.zshrc-backup" || true
-#fi
+if [ -f "$HOME/.zshrc" ]; then
+ 	cp -b "$HOME/.zshrc" "$HOME/.zshrc-backup" || true
+fi
 
 # Copying the preconfigured zsh themes and profile
-#cp -r 'assets/.zshrc' ~/
+cp -r 'assets/.zshrc' ~/
 
 # GTK Themes and Icons installation
-#printf "Installing GTK-Themes and Icons..\n"
+printf "Installing GTK-Themes and Icons..\n"
 
-#if [ -d "GTK-themes-icons" ]; then
-#    echo "$NOTE GTK themes and Icons folder exist..deleting..." 
-#    rm -rf "GTK-themes-icons" 
-#fi
+if [ -d "GTK-themes-icons" ]; then
+    echo "$NOTE GTK themes and Icons folder exist..deleting..." 
+    rm -rf "GTK-themes-icons" 
+fi
 
-#echo "$NOTE Cloning GTK themes and Icons repository..." 
-#if git clone --depth 1 https://github.com/JaKooLit/GTK-themes-icons.git ; then
-#    cd GTK-themes-icons
-#    chmod +x auto-extract.sh
-#    ./auto-extract.sh
-#    cd ..
-#    echo "$OK Extracted GTK Themes & Icons to ~/.icons & ~/.themes folders" 
-#else
-#    echo "$ERROR Download failed for GTK themes and Icons.." 
-#fi
+echo "$NOTE Cloning GTK themes and Icons repository..." 
+if git clone --depth 1 https://github.com/JaKooLit/GTK-themes-icons.git ; then
+    cd GTK-themes-icons
+    chmod +x auto-extract.sh
+    ./auto-extract.sh
+    cd ..
+    echo "$OK Extracted GTK Themes & Icons to ~/.icons & ~/.themes folders" 
+else
+    echo "$ERROR Download failed for GTK themes and Icons.." 
+fi
 
-#echo "$OK Extracted Bibata-Modern-Ice.tar.xz to ~/.icons folder." 
+echo "$OK Extracted Bibata-Modern-Ice.tar.xz to ~/.icons folder." 
 
-#echo "-----"
-#printf "\n%.0s" {1..2}
+echo "-----"
+printf "\n%.0s" {1..2}
 
  # Check for existing configs and copy if does not exist
-##for DIR1 in gtk-3.0 Thunar xfce4; do
- # DIRPATH=~/.config/$DIR1
- # if [ -d "$DIRPATH" ]; then
- #   echo -e "${NOTE} Config for $DIR1 found, no need to copy." 
- # else
- #   echo -e "${NOTE} Config for $DIR1 not found, copying from assets." 
- #   cp -r assets/$DIR1 ~/.config/ && echo "Copy $DIR1 completed!" || echo "Error: Failed to copy $DIR1 config files."
- # fi
-#d#one
+for DIR1 in gtk-3.0 Thunar xfce4; do
+  DIRPATH=~/.config/$DIR1
+  if [ -d "$DIRPATH" ]; then
+    echo -e "${NOTE} Config for $DIR1 found, no need to copy." 
+  else
+    echo -e "${NOTE} Config for $DIR1 not found, copying from assets." 
+    cp -r assets/$DIR1 ~/.config/ && echo "Copy $DIR1 completed!" || echo "Error: Failed to copy $DIR1 config files."
+  fi
+done
 
 echo "-----"
 printf "\n%.0s" {1..3}
 
 # Clean up
 # GTK Themes and Icons
-#if [ -d "GTK-themes-icons" ]; then
-#    echo "$NOTE GTK themes and Icons folder exist..deleting..." 
-#    rm -rf "GTK-themes-icons" 
-#fi
+if [ -d "GTK-themes-icons" ]; then
+    echo "$NOTE GTK themes and Icons folder exist..deleting..." 
+    rm -rf "GTK-themes-icons" 
+fi
 
-#echo "-----"
-#printf "\n%.0s" {1..3}
+echo "-----"
+printf "\n%.0s" {1..3}
 
 
 # Cloning Hyprland-Dots repo to home folder
 # KooL's Dots installation
-#printf "$NOTE Downloading Hyprland-Dots to HOME folder..\n"
-#if [ -d ~/Hyprland-Dots ]; then
-#  cd ~/Hyprland-Dots
-#  git stash
-#  git pull
-#  git stash apply
-#  chmod +x copy.sh
-#  ./copy.sh 
-#else
-#  if git clone --depth 1 https://github.com/JaKooLit/Hyprland-Dots ~/Hyprland-Dots; then
-#    cd ~/Hyprland-Dots || exit 1
-#    chmod +x copy.sh
-#    ./copy.sh 
-#  else
-#    echo -e "$ERROR Can't download Hyprland-Dots"
-#  fi
-#fi
+printf "$NOTE Downloading Hyprland-Dots to HOME folder..\n"
+if [ -d ~/Hyprland-Dots ]; then
+  cd ~/Hyprland-Dots
+  git stash
+  git pull
+  git stash apply
+  chmod +x copy.sh
+  ./copy.sh 
+else
+  if git clone --depth 1 https://github.com/JaKooLit/Hyprland-Dots ~/Hyprland-Dots; then
+    cd ~/Hyprland-Dots || exit 1
+    chmod +x copy.sh
+    ./copy.sh 
+  else
+    echo -e "$ERROR Can't download Hyprland-Dots"
+  fi
+fi
 
 #return to NixOS-Hyprland
-#cd ~/NixOS-Hyprland
+cd ~/NixOS-Hyprland
 
 # copy fastfetch config for NixOS
-#cp -r assets/fastfetch ~/.config/ || true
+cp -r assets/fastfetch ~/.config/ || true
 
 printf "\n%.0s" {1..2}
 if command -v Hyprland &> /dev/null; then

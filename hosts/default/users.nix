@@ -25,22 +25,13 @@ in
       ];
     };
     
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.zsh;
   }; 
   
-  environment.shells = with pkgs; [ fish ];
+  environment.shells = with pkgs; [ zsh ];
   environment.systemPackages = with pkgs; [ fzf ]; 
-   programs.fish.enable = true;
-  programs.fish.interactiveShellInit = ''
-    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-  '';
-   programs = {
-
-    spicetify = {
-        enable = true;
-#        theme = "catppuccin";
-#        colorscheme = "mocha";
-    };
+    
+  programs = {
   # Zsh configuration
 	  zsh = {
     	enable = true;

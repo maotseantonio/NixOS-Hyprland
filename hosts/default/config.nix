@@ -1,23 +1,17 @@
 # Main default config
-{ config
-, pkgs
-, host
-, username
-, options
-, inputs
-, ...
-}:
-let
+
+{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
+  
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
     ps:
       with ps; [
         requests
         pyquery # needed for hyprland-dots Weather script
-      ]
-  );
-in
-{
+        ]
+    );
+  
+  in {
   imports = [
     ./hardware.nix
     ./users.nix
@@ -27,12 +21,10 @@ in
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    #../../modules/core/user.nix
-    #../../modules/stylix.nix
-    #../../modules/sddm.nix
+    ./scripts/scripts.nix
   ];
-  
-  
+
+   
   nixpkgs.overlays = [
     (final: prev: {
       matugen = final.rustPlatform.buildRustPackage rec {
@@ -58,30 +50,12 @@ in
         };
       };
     }) ];  
-    
 
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
-  stylix.targets.spicetify.enable = true;
-  stylix.targets.gtk.enable = true;
-  stylix.targets.fish.enable = true;
-  system.autoUpgrade = {
-      enable = true;
-      flake = inputs.self.outPath;
-      flags = [
-            "--update-input"
-            "nixpkgs"
-            "-L"
-        ];
-        dates = "02:00";
-        randomizedDelaySec = "45min";
-    };
-    #catppuccin.enable = true;
-    #stylix.enable = true;
-  chaotic.scx.enable = true;
+
   # BOOT related stuff
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
-    #chaotic.scx.enable = true;
+
     consoleLogLevel = 0 ;
     kernelParams = [
       "quiet"
@@ -98,58 +72,52 @@ in
       "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
     ];
 
-  # This is for OBS Virtual Cam Support
-
-  kernelModules = [ "v4l2loopback" ];
+    # This is for OBS Virtual Cam Support
+    kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
-
-    initrd = {
-      verbose = false;
+    
+    initrd = { 
+        verbose = false;
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
       kernelModules = [ ];
     };
-
-    #nixos-boot = {
-    #    enable = true;
-    #};
 
     # Needed For Some Steam Games
     #kernel.sysctl = {
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub
+    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
     #loader.systemd-boot.enable = true;
-
+  
     loader.efi = {
-      #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-      canTouchEfiVariables = true;
-    };
+	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
+	    canTouchEfiVariables = true;
+  	  };
 
-    loader.timeout = 1;
-
+    loader.timeout = 1;    
+  			
     # Bootloader GRUB
     loader.grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      memtest86.enable = true;
-      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-      configurationName = "${host}";
-    };
+	    enable = true;
+	      devices = [ "nodev" ];
+	      efiSupport = true;
+	      memtest86.enable = true;
+	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
+	      configurationName = "${host}";
+  	  	 };
 
     # Bootloader GRUB theme, configure below
-    #stylix.enable = true;
-        #loader.grub.theme = "${pkgs.catppuccin-grub}";
-    ## -end of BOOTLOADERS----- ##
 
+    ## -end of BOOTLOADERS----- ##
+  
     # Make /tmp a tmpfs
     tmp = {
       useTmpfs = false;
       tmpfsSize = "30%";
-    };
-
+      };
+    
     # Appimage Support
     binfmt.registrations.appimage = {
       wrapInterpreterInShell = true;
@@ -158,36 +126,15 @@ in
       offset = 0;
       mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
       magicOrExtension = ''\x7fELF....AI\x02'';
-    };
-
-    #stylix.enable = true;
+      };
+    
     plymouth.enable = true;
     plymouth.themePackages = [
         pkgs.catppuccin-plymouth
     ];
     plymouth.theme = "catppuccin-macchiato";
-    #plymouth.theme = "catppuccin";
-    # plymouth = {
-    #  enable = true;
-    #  theme = "connect";
-    #  themePackages = with pkgs; [
-        # By default we would install all themes
-    #    (adi1090x-plymouth-themes.override {
-    #      selected_themes = [ "connect" ];
-    #    })
-    #  ];
-    #};
-
   };
 
-
-  #stylix = {
-  #  enable = true;
-  #   polarity = "dark";
-  #  opacity.terminal = 0.8;
-
-  #};
-  #stylix.enable = true;
   # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
   #distro-grub-themes = {
   #  enable = true;
@@ -236,63 +183,59 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  nixpkgs.config.allowUnfree = true;
-    #wayland.windowManager.hyprland = {
-     #   enable = true;
-     #   plugins = [
-     #           inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-     #   ];
-    #};
-  programs = {
-    hyprland = {
+   chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
+  stylix.targets.spicetify.enable = true;
+  stylix.targets.gtk.enable = true;
+  stylix.targets.fish.enable = true;
+  system.autoUpgrade = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-            #plugins = inputs.hyprland-plugins.package.${pkgs.system}.borders-plus-plus;
-     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-     xwayland.enable = true;
-     #opengl.enable = true;
-
+      flake = inputs.self.outPath;
+      flags = [
+            "--update-input"
+            "nixpkgs"
+            "-L"
+        ];
+        dates = "02:00";
+        randomizedDelaySec = "45min";
     };
-        #catppuccin.enable = true;
-    nix-ld.enable = true;
-    waybar.enable = true;
-    hyprlock.enable = true;
-    firefox.enable = true;
-    git.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+  
+  programs = {
+	  hyprland = {
+          enable = true;
+		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+  	  xwayland.enable = true;
+      };
+
+      nix-ld.enable = true;
+	  waybar.enable = true;
+	  hyprlock.enable = true;
+	  firefox.enable = true;
+	  git.enable = true;
     nm-applet.indicator = true;
     neovim.enable = true;
-    nh = {
-        enable = true;
-            #clean.enable = true;
-        clean.extraArgs = "--keep-since 4d --keep 3";
-        flake = "/home/antonio/NixOS-Hyprland";
-    };
-        #neovim.packages = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-        #stylix.enable = true;
 
-    #hardware.opengl.enable = true;
-    #hardware.opengl.driSupport = true;
-    #hardware.opengl.driSupport32Bit = true;
-    thunar.enable = true;
-    thunar.plugins = with pkgs.xfce; [
-      exo
-      mousepad
-      thunar-archive-plugin
-      thunar-volman
-      tumbler
-    ];
-
+	  thunar.enable = true;
+	  thunar.plugins = with pkgs.xfce; [
+		  exo
+		  mousepad
+		  thunar-archive-plugin
+		  thunar-volman
+		  tumbler
+  	  ];
+	
     virt-manager.enable = false;
-
+    
     #steam = {
     #  enable = true;
     #  gamescopeSession.enable = true;
     #  remotePlay.openFirewall = true;
     #  dedicatedServer.openFirewall = true;
     #};
-
-
-
+    
     xwayland.enable = true;
 
     dconf.enable = true;
@@ -303,143 +246,136 @@ in
       enable = true;
       enableSSHSupport = true;
     };
+	
+  };
+  programs.nh = {
+    enable = true;
+    flake = "/home/antonio/NixOS-Hyprland";
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 1w";
+    };
   };
 
   users = {
     mutableUsers = true;
-    #defaultUserShell = pkgs.fish;
   };
 
-  environment.systemPackages =
-    (with pkgs; [
-     # System Packages
-      baobab
-      btrfs-progs
-      clang
-      curl
-      cpufrequtils
-      duf
-      eza
-      ffmpeg
-      glib #for gsettings to work
-      gsettings-qt
-      git
-      killall
-      libappindicator
-      libnotify
-      openssl #required by Rainbow borders
-      pciutils
-      vim
-      wget
-      starship
-      xdg-user-dirs
-      xdg-utils
+  environment.systemPackages = (with pkgs; [
+  # System Packages
+    baobab
+    btrfs-progs
+    clang
+    curl
+    cpufrequtils
+    duf
+    eza
+    ffmpeg   
+    glib #for gsettings to work
+    gsettings-qt
+    git
+    killall  
+    libappindicator
+    libnotify
+    openssl #required by Rainbow borders
+    pciutils
+    vim
+    wget
+    xdg-user-dirs
+    xdg-utils
 
-      fastfetch
-      (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
-
-      # Hyprland Stuff
-      #matugen
-      hyprpanel
-      ags
-      btop
-      brightnessctl # for brightness control
-      cava
-      cliphist
-      eog
-      gnome-system-monitor
-      file-roller
-      grim
-      gtk-engine-murrine #for gtk themes
-      hyprcursor # requires unstable channel
-      hypridle # requires unstable channel
-      imagemagick
-      inxi
-      jq
-      kitty
-      libsForQt5.qtstyleplugin-kvantum #kvantum
-      networkmanagerapplet
-      nwg-look # requires unstable channel
-      nvtopPackages.full
-      pamixer
-      pavucontrol
-      playerctl
-      polkit_gnome
-      pyprland
-      libsForQt5.qt5ct
-      qt6ct
-      qt6.qtwayland
-      qt6Packages.qtstyleplugin-kvantum #kvantum
-      rofi-wayland
-      slurp
-      swappy
-      swaynotificationcenter
-      swww
-      unzip
-      wallust
-      wl-clipboard
-      wlogout
-      yad
-      yt-dlp
-      nitch
-      nix-ld
-      wgpu-utils
-      inputs.wezterm.packages.${pkgs.system}.default
-      inputs.ags.packages.${pkgs.system}.default
-      inputs.astal.packages.${pkgs.system}.default
-      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-            #inputs.hyprpanel.packages.${pkgs.system}.default
-      #inputs.matugen.packages.${system}.default
-      inputs.zen-browser.packages."${system}".default
-      #zen-browser
-      hyprgui
-      neovide
-      lshw
-      catppuccin
-      sddm
-      catppuccin-sddm-corners
-      sddm-sugar-dark
-      sddm-astronaut
-      where-is-my-sddm-theme
-      bun
-      nodejs
-      dart-sass
-      vesktop
-      yazi
-      fish
-      libgtop
-      mise
-      atuin
-      sass
-      sassc
-      gtop
-      vscodium
-      komikku
-      mangal
-      mangareader
-      github-cli
-      telegram-desktop
-      python312Packages.gpustat
-      power-profiles-daemon
-      ani-cli
-      zathura
-      pango
-      gtk4
-      rustup
-            #cargo
-      gdk-pixbuf
-      cairo
-      dbus-glib
-      gtk3
-      nwg-dock-hyprland
-      pipx
-      waypaper
-      hyprsunset
-      qcomicbook
-      #libsForQt5.qt5.qtquickcontrols
-      #libsForQt5.qt5.qtgraphicaleffects
-      hyprpicker
-      #hyprlandPlugins.borders-plus-plus
+    fastfetch
+    (mpv.override {scripts = [mpvScripts.mpris];}) # with tray
+    #ranger
+      
+    # Hyprland Stuff
+    #(ags.overrideAttrs (oldAttrs: {
+    #    inherit (oldAttrs) pname;
+    #    version = "1.8.2";
+        #buildInputs = old.buildInputs ++ [ pkgs.libdbusmenu-gtk3 ];
+    #  }))
+    #ags    
+    btop
+    brightnessctl # for brightness control
+    cliphist
+    eog
+    gnome-system-monitor
+    file-roller
+    grim
+    gtk-engine-murrine #for gtk themes
+    hyprcursor # requires unstable channel
+    hypridle # requires unstable channel
+    imagemagick 
+    inxi
+    jq
+    kitty
+    libsForQt5.qtstyleplugin-kvantum #kvantum
+    networkmanagerapplet
+    nwg-look # requires unstable channel
+    nwg-dock-hyprland
+    nvtopPackages.full
+    pamixer
+    pavucontrol
+    playerctl
+    polkit_gnome
+    pyprland
+    libsForQt5.qt5ct
+    qt6ct
+    qt6.qtwayland
+    qt6Packages.qtstyleplugin-kvantum #kvantum
+    rofi-wayland
+    slurp
+    swappy
+    swaynotificationcenter
+    swww
+    unzip
+    wallust
+    wl-clipboard
+    wlogout
+    yad
+    yt-dlp
+    #inputs.hyprpanel.packages."${pkgs.system}".default
+    #inputs.wezterm.packages."${pkgs.system}".default
+    nix-ld
+    #hyprpanel
+    komikku
+    mangal
+    mangareader
+    power-profiles-daemon
+    fd
+    home-manager
+    #libnotify
+    bluez-tools
+    wgpu-utils
+    gnome-bluetooth
+    gpu-screen-recorder
+    vscodium
+    libqalculate
+    brave
+    libdbusmenu-gtk3
+    dbus-glib
+    gtkmm3
+    gtkmm4
+    gtkmm2
+    imv
+    inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+    inputs.zen-browser.packages."${system}".default
+    inputs.ags.packages."${pkgs.system}".default
+    inputs.astal.packages."${pkgs.system}".default
+    yazi
+    gtk3
+    gtk4
+    fish
+    atuin
+    fish
+    bun
+    dart-sass 
+    nodejs
+    sassc
+    libgtop
+    starship
+    telegram-desktop
+    vesktop
       egl-wayland
       qv2ray
       v2ray
@@ -447,17 +383,13 @@ in
       papirus-folders
       papirus-icon-theme
       spotify
-      lunarvim
-      #xarchive
-      nvidia-vaapi-driver
-      libsForQt5.ark
-      greetd.tuigreet
-      #waybar  # if wanted experimental next line
-      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
-    ])
-    ++ [
-      python-packages
-    ];
+
+
+    waybar  # if wanted experimental next line
+    (pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+  ]) ++ [
+	  python-packages
+  ];
 
   # FONTS
   fonts.packages = with pkgs; [
@@ -465,15 +397,13 @@ in
     fira-code
     noto-fonts-cjk-sans
     jetbrains-mono
-    font-awesome
     material-icons
-    #material-desing-icons
+    iosevka-bin
+    font-awesome
     terminus_font
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+    (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
+ 	];
 
-  #chaotic.mesa-git.enable = true;
-  #catppuccin.enable = true;
   # Extra Portal Configuration
   xdg.portal = {
     enable = true;
@@ -487,97 +417,94 @@ in
     ];
   };
 
-  # Enable sddm login manager
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-sddm-corners";
-    settings.Theme.CursorTheme = "catppuccin-cursors";
-  };
-
-
-
   # Services to start
   services = {
-
     xserver = {
       enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
-  };
-
-
-
+    };
+    
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          user = "greeter";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' - --user-menu --width '50' --container-padding '5' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=darkgray;input=red' --cmd Hyprland"; # start Hyprland with a TUI login manager
+        };
+      };
+    };
+    
     smartd = {
       enable = false;
       autodetect = true;
     };
+    
+	  gvfs.enable = true;
+	  tumbler.enable = true;
 
-    gvfs.enable = true;
-    tumbler.enable = true;
-
-    pipewire = {
+	  pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      wireplumber.enable = true;
-    };
+	    wireplumber.enable = true;
+  	  };
+	
+	  udev.enable = true;
+	  envfs.enable = true;
+	  dbus.enable = true;
 
-    udev.enable = true;
-    envfs.enable = true;
-    dbus.enable = true;
-
-    fstrim = {
+	  fstrim = {
       enable = true;
       interval = "weekly";
-    };
-
+      };
+  
     libinput.enable = true;
 
     rpcbind.enable = false;
     nfs.server.enable = false;
-
+  
     openssh.enable = true;
     flatpak.enable = true;
+	
+  	blueman.enable = true;
+  	power-profiles-daemon.enable = true;
+  	#hardware.openrgb.enable = true;
+  	#hardware.openrgb.motherboard = "amd";
 
-    blueman.enable = true;
-    power-profiles-daemon.enable = true;
-    #hardware.openrgb.enable = true;
-    #hardware.openrgb.motherboard = "amd";
+	  fwupd.enable = true;
 
-    fwupd.enable = true;
-
-    upower.enable = true;
-
+	  upower.enable = true;
+    
     gnome.gnome-keyring.enable = true;
-
+    
     #printing = {
     #  enable = false;
     #  drivers = [
-    # pkgs.hplipWithPlugin
+        # pkgs.hplipWithPlugin
     #  ];
     #};
-
+    
     #avahi = {
     #  enable = true;
     #  nssmdns4 = true;
     #  openFirewall = true;
     #};
-
+    
     #ipp-usb.enable = true;
-
+    
     #syncthing = {
     #  enable = false;
     #  user = "${username}";
     #  dataDir = "/home/${username}";
     #  configDir = "/home/${username}/.config/syncthing";
     #};
-  };
 
+  };
+  
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];
     script = ''
@@ -587,19 +514,18 @@ in
 
   # zram
   zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
+	  enable = true;
+	  priority = 100;
+	  memoryPercent = 30;
+	  swapDevices = 1;
     algorithm = "zstd";
-  };
+    };
 
   powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "schedutil";
+  	enable = true;
+	  cpuFreqGovernor = "schedutil";
   };
 
-  #hardware.opengl.enable = true;
   #hardware.sane = {
   #  enable = true;
   #  extraBackends = [ pkgs.sane-airscan ];
@@ -612,14 +538,14 @@ in
 
   # Bluetooth
   hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-          Experimental = true;
-        };
+  	bluetooth = {
+	    enable = true;
+	    powerOnBoot = true;
+	    settings = {
+		    General = {
+		      Enable = "Source,Sink,Media,Socket";
+		      Experimental = true;
+		    };
       };
     };
   };
@@ -694,8 +620,7 @@ in
   VISUAL = "vscodium";
   GSK_RENDERER = "gl";
 };
-
-# Open ports in the firewall.
+  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
