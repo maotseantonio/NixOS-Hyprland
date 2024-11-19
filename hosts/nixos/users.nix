@@ -43,10 +43,10 @@ in
     };
   # Zsh configuration
 	  zsh = {
-    	enable = true;
-	  	enableCompletion = true;
+    	enable = false;
+	  	enableCompletion = false;
       ohMyZsh = {
-        enable = true;
+        enable = false;
         plugins = ["git"];
         theme = "xiong-chiamiov-plus"; 
       	};

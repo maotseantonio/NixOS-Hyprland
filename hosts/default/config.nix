@@ -106,7 +106,13 @@
 	      memtest86.enable = true;
 	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
 	      configurationName = "${host}";
-  	  	 };
+        darkmatter-theme = {
+      enable = true;
+      style = "nixos";
+      icon = "color";
+      resolution = "1080p";
+    };     
+  	};
 
     # Bootloader GRUB theme, configure below
 
@@ -136,17 +142,7 @@
   };
 
   # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
-  #distro-grub-themes = {
-  #  enable = true;
-  #  theme = "nixos";
-  #};
-    boot.loader.grub2-theme = {
-        enable = true;
-        theme = "vimix";
-        footer = true;
-        customResolution = "2160x1440";
-
-    };
+  
 
   # Extra Module Options
   drivers.amdgpu.enable = false;
@@ -362,6 +358,7 @@
     inputs.zen-browser.packages."${system}".default
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
+    #inputs.wezterm.packages."${pkgs.system}".default
     yazi
     gtk3
     gtk4
@@ -382,7 +379,7 @@
       v2raya
       papirus-folders
       papirus-icon-theme
-      spotify
+      #spotify
 
 
     waybar  # if wanted experimental next line

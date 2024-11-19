@@ -1,5 +1,5 @@
 {
-  description = "KooL's NixOS-Hyprland";
+  description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -32,9 +32,9 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
-     grub2-themes = {
-      url = "github:vinceliuice/grub2-themes";
-    };
+    #  grub2-themes = {
+    #  url = "github:vinceliuice/grub2-themes";
+    #};
     #hypr-contrib.url = "github:hyprwm/contrib";
     home-manager = {
         url = "github:nix-community/home-manager";
@@ -62,6 +62,11 @@
    #   url = "github:Gerg-L/spicetify-nix";
    #   inputs.nixpkgs.follows = "nixpkgs";
    # };
+    
+    darkmatter-grub-theme = {
+      url = "gitlab:VandalByte/darkmatter-grub-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 };
   outputs =
     inputs @ { self
@@ -92,11 +97,12 @@
             ./hosts/${host}/config.nix
             inputs.nixos-boot.nixosModules.default
  #           inputs.distro-grub-themes.nixosModules.${system}.default
-            inputs.grub2-themes.nixosModules.default
+            #inputs.grub2-themes.nixosModules.default
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
             #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
+            inputs.darkmatter-grub-theme.nixosModule
             #inputs.catppuccin.homeManagerModules.catppuccin
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
           ];

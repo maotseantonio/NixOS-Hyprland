@@ -25,19 +25,28 @@ in
       ];
     };
     
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.fish;
   }; 
   
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [ fish ];
   environment.systemPackages = with pkgs; [ fzf ]; 
-    
-  programs = {
+   programs.fish.enable = true;
+  programs.fish.interactiveShellInit = ''
+    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+  '';
+   programs = {
+
+    spicetify = {
+        enable = true;
+#        theme = "catppuccin";
+#        colorscheme = "mocha";
+    };
   # Zsh configuration
 	  zsh = {
-    	enable = true;
-	  	enableCompletion = true;
+    	enable = false;
+	  	enableCompletion = false;
       ohMyZsh = {
-        enable = true;
+        enable = false;
         plugins = ["git"];
         theme = "xiong-chiamiov-plus"; 
       	};
