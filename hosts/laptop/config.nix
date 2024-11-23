@@ -330,17 +330,13 @@
     wlogout
     yad
     yt-dlp
-    #inputs.hyprpanel.packages."${pkgs.system}".default
-    #inputs.wezterm.packages."${pkgs.system}".default
     nix-ld
-    #hyprpanel
     komikku
     mangal
     mangareader
     power-profiles-daemon
     fd
     home-manager
-    #libnotify
     bluez-tools
     wgpu-utils
     gnome-bluetooth
@@ -358,8 +354,6 @@
     inputs.zen-browser.packages."${system}".default
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
-    #inputs.wezterm.packages."${pkgs.system}".default
-    inputs.hyprpanel.packages."${pkgs.system}".default
     yazi
     gtk3
     gtk4
@@ -396,10 +390,10 @@
     noto-fonts-cjk-sans
     jetbrains-mono
     material-icons
-    iosevka-bin
+    #iosevka-bin
     font-awesome
     terminus_font
-    (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
+    (nerdfonts.override {fonts = ["JetBrainsMono" ];})
  	];
 
   # Extra Portal Configuration

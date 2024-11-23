@@ -54,7 +54,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
+    kernelPackages = pkgs.linuxPackages_zen; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -179,7 +179,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-   chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -359,6 +359,7 @@
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
     #inputs.wezterm.packages."${pkgs.system}".default
+    inputs.hyprpanel.packages."${pkgs.system}".default
     yazi
     gtk3
     gtk4
@@ -382,8 +383,8 @@
       #spotify
 
 
-    waybar  # if wanted experimental next line
-    (pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    #waybar  # if wanted experimental next line
+    #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
   ];
