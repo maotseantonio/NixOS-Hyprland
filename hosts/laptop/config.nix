@@ -369,12 +369,12 @@
     telegram-desktop
     vesktop
       egl-wayland
-      qv2ray
-      v2ray
-      v2raya
+      
       papirus-folders
       papirus-icon-theme
-      #spotify
+      spotify
+      sddm 
+      catppuccin-sddm-corners
 
 
     #waybar  # if wanted experimental next line
@@ -409,25 +409,33 @@
     ];
   };
 
+  services.displayManager.sddm = {
+      enable = true; # Enable SDDM.
+      wayland.enable = true;
+      theme = "catppuccin-sddm-corners";
+    };
+
   # Services to start
   services = {
     xserver = {
       enable = true;
+      excludePackages = [pkgs.xterm];
+      desktopManager.xterm.enable = false;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
     };
     
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' - --user-menu --width '50' --container-padding '5' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=darkgray;input=red' --cmd Hyprland"; # start Hyprland with a TUI login manager
-        };
-      };
-    };
+    #greetd = {
+    #  enable = true;
+    #  settings = {
+    #    default_session = {
+    #      user = "greeter";
+    #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' - --user-menu --width '50' --container-padding '5' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=darkgray;input=red' --cmd Hyprland"; # start Hyprland with a TUI login manager
+    #    };
+    #  };
+    #};
     
     smartd = {
       enable = false;
