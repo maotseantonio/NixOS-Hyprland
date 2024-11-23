@@ -21,7 +21,7 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    ./scripts/scripts.nix
+    #./scripts/scripts.nix
   ];
 
    
@@ -87,9 +87,6 @@
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
-    # Bootloader SystemD
-    #loader.systemd-boot.enable = true;
   
     loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
@@ -207,12 +204,12 @@
       };
 
       nix-ld.enable = true;
-	  waybar.enable = true;
+	  waybar.enable = false;
 	  hyprlock.enable = true;
 	  firefox.enable = true;
 	  git.enable = true;
-    nm-applet.indicator = true;
-    neovim.enable = true;
+      nm-applet.indicator = true;
+      #neovim.enable = true;
 
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
@@ -331,29 +328,11 @@
     yad
     yt-dlp
     nix-ld
-    komikku
-    mangal
-    mangareader
     power-profiles-daemon
     fd
     home-manager
     bluez-tools
-    wgpu-utils
-    gnome-bluetooth
-    gpu-screen-recorder
-    vscodium
-    libqalculate
-    brave
-    libdbusmenu-gtk3
-    dbus-glib
-    gtkmm3
-    gtkmm4
-    gtkmm2
-    imv
-    inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-    inputs.zen-browser.packages."${system}".default
-    inputs.ags.packages."${pkgs.system}".default
-    inputs.astal.packages."${pkgs.system}".default
+    wgpu-utils   
     yazi
     gtk3
     gtk4
@@ -368,13 +347,12 @@
     starship
     telegram-desktop
     vesktop
-      egl-wayland
-      
-      papirus-folders
-      papirus-icon-theme
-      spotify
-      sddm 
-      catppuccin-sddm-corners
+    egl-wayland
+    papirus-folders
+    papirus-icon-theme
+    spotify
+    sddm 
+    catppuccin-sddm-corners
 
 
     #waybar  # if wanted experimental next line

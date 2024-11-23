@@ -4,9 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-        #nix-alien.url = "github:thiagokokada/nix-alien";
-    #catppuccin.url = "github:catppuccin/nix";
-    #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
+    nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     matugen = {
         url = "github:/InioX/Matugen";
@@ -31,17 +29,10 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
-    #  grub2-themes = {
-    #  url = "github:vinceliuice/grub2-themes";
-    #};
-    #hypr-contrib.url = "github:hyprwm/contrib";
     home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
     };
-  #  home-manager.url = "github:nix-community/home-manager/master";
-  #  home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     spicetify-nix = {
@@ -54,15 +45,6 @@
             url = "github:niksingh710/nvix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-#    nvf = {
-#        url = "github:notashelf/nvf";
-#        inputs.nixpkgs.follows = "nixpkgs";
-#    };
-   # spicetify-nix = {
-   #   url = "github:Gerg-L/spicetify-nix";
-   #   inputs.nixpkgs.follows = "nixpkgs";
-   # };
-    
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -96,14 +78,11 @@
           modules = [
             ./hosts/${host}/config.nix
             inputs.nixos-boot.nixosModules.default
- #           inputs.distro-grub-themes.nixosModules.${system}.default
-            #inputs.grub2-themes.nixosModules.default
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
             #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
             inputs.darkmatter-grub-theme.nixosModule
-            #inputs.catppuccin.homeManagerModules.catppuccin
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
           ];
         };
