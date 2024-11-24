@@ -54,7 +54,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -176,7 +176,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
