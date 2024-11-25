@@ -37,8 +37,11 @@
       url = "github:maotseantonio/nvchad_config";
       flake = false;
     };
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+    };
    };
-  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, catppuccin, hyprland, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, catppuccin, hyprland, nixcord, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -58,7 +61,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ 
-        ./home.nix 
+        ./home.nix
+          #nixcord.homeManagerModules.nixcord
         catppuccin.homeManagerModules.catppuccin
         {
           wayland.windowManager.hyprland = {

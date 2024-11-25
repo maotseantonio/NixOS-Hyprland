@@ -6,6 +6,7 @@
     ./scripts/scripts.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
+    inputs.nixcord.homeManagerModules.nixcord
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -20,6 +21,120 @@
     extraConfig = inputs.nvchad-on-steroids; # <- here extraConfig from inputs
     hm-activation = true;
     backup = false;
+  };
+  programs.nixcord = {
+    enable = true;
+    vesktop = {
+      enable = true;
+    };
+    config = {
+      themeLinks = [
+        "https://raw.githubusercontent.com/maotseantonio/home/refs/heads/main/.config/vesktop/themes/midnight-catppuccin-mocha.theme.css"
+      ];
+      frameless = true;
+      plugins = {
+        alwaysTrust.enable = true;
+        alwaysAnimate.enable = true;
+        #BetterAnimations.enable = true;
+        anonymiseFileNames = {
+          enable = true;
+          anonymiseByDefault = true;
+        };
+        banger.enable = true;
+        # betterFolders = {
+        #   enable = true;
+        #   showFolderIcon = "always";
+        # };
+        betterGifAltText.enable = true;
+        betterGifPicker.enable = true;
+        betterNotesBox.enable = true;
+        betterRoleDot.enable = true;
+        betterUploadButton.enable = true;
+        blurNSFW.enable = true;
+        callTimer.enable = true;
+        clearURLs.enable = true;
+        crashHandler.enable = true;
+        dearrow.enable = true;
+        disableCallIdle.enable = true;
+        emoteCloner.enable = true;
+        experiments.enable = true;
+        fakeNitro.enable = true;
+        favoriteEmojiFirst.enable = true;
+        favoriteGifSearch.enable = true;
+        fixSpotifyEmbeds.enable = true;
+        fixYoutubeEmbeds.enable = true;
+        forceOwnerCrown.enable = true;
+        friendInvites.enable = true;
+        friendsSince.enable = true;
+        fullSearchContext.enable = true;
+        fixCodeblockGap.enable = true;
+        gameActivityToggle.enable = true;
+        gifPaste.enable = true;
+        imageZoom.enable = true;
+        loadingQuotes.enable = true;
+        memberCount.enable = true;
+        messageClickActions.enable = true;
+        messageLogger = {
+          enable = true;
+	        deleteStyle = "text";
+	       logDeletes = true;
+	       logEdits = true;
+	       ignoreSelf = true;
+        };
+        messageTags.enable = true;
+        moreCommands.enable = true;
+        moreKaomoji.enable = true;
+        mutualGroupDMs.enable = true;
+        newGuildSettings.enable = true;
+        noBlockedMessages = {
+          enable = true;
+	        ignoreBlockedMessages = true;
+        };
+        noDevtoolsWarning.enable = true;
+        noF1.enable = true;
+        noReplyMention.enable = true;
+        noProfileThemes.enable = true;
+        noUnblockToJump.enable = true;
+        openInApp.enable = true;
+        permissionFreeWill.enable = true;
+        pictureInPicture.enable = true;
+        pinDMs.enable = true;
+        plainFolderIcon.enable = true;
+        platformIndicators.enable = true;
+        previewMessage.enable = true;
+        quickMention.enable = true;
+        quickReply.enable = true;
+        reactErrorDecoder.enable = true;
+        relationshipNotifier.enable = true;
+        replaceGoogleSearch = {
+          enable = true;
+        };
+        secretRingToneEnabler.enable = true;
+        sendTimestamps.enable = true;
+        showHiddenChannels.enable = true;
+        showHiddenThings.enable = true;
+        silentTyping.enable = true;
+        sortFriendRequests.enable = true;
+        spotifyControls.enable = true;
+        spotifyCrack.enable = true;
+        spotifyShareCommands.enable = true;
+        translate.enable = true;
+        typingIndicator.enable = true;
+        typingTweaks.enable = true;
+        unsuppressEmbeds.enable = true;
+        userVoiceShow.enable = true;
+        USRBG.enable = true;
+        vencordToolbox.enable = true;
+        viewIcons.enable = true;
+        voiceChatDoubleClick.enable = true;
+        voiceMessages.enable = true;
+        volumeBooster.enable = true;
+        webKeybinds.enable = true;
+        webRichPresence.enable = true;
+        whoReacted.enable = true;
+        youtubeAdblock.enable = true;
+      };
+    };
   };
   programs.spicetify =
    let
@@ -94,11 +209,32 @@
   };
  
   home.packages = [
+
+     (let base = pkgs.appimageTools.defaultFhsEnvArgs; in
+      pkgs.buildFHSUserEnv (base // {
+      name = "fhs";
+      targetPkgs = pkgs: 
+        # pkgs.buildFHSUserEnv provides only a minimal FHS environment,
+        # lacking many basic packages needed by most software.
+        # Therefore, we need to add them manually.
+        #
+        # pkgs.appimageTools provides basic packages required by most software.
+        (base.targetPkgs pkgs) ++ (with pkgs; [
+          pkg-config
+          ncurses
+          # Feel free to add more packages here if needed.
+        ]
+      );
+      profile = "export FHS=1";
+      runScript = "bash";
+      extraOutputsToInstall = ["dev"];
+    }))
     
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.protonvpn-gui
     pkgs.hyprpanel
     pkgs.nitch
+    pkgs.neofetch
     pkgs.github-cli
     pkgs.neovide
     inputs.wezterm.packages.${pkgs.system}.default
@@ -117,9 +253,11 @@
     pkgs.imv
     pkgs.komikku
     pkgs.mangal
-    pkgs.mangareader
+    pkgs.mangareader 
+    
   ];
 
+  
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

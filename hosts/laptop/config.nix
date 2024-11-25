@@ -54,7 +54,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
+    kernelPackages = pkgs.linuxPackages_zen; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -87,7 +87,7 @@
     #  "vm.max_map_count" = 2147483642;
     #};
 
-  
+        #loader.systemd-boot.enable = true;
     loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
 	    canTouchEfiVariables = true;
@@ -103,9 +103,9 @@
 	      memtest86.enable = true;
 	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
 	      configurationName = "${host}";
-        darkmatter-theme = {
+        dedsec-theme = {
       enable = true;
-      style = "nixos";
+      style = "redskull";
       icon = "color";
       resolution = "1080p";
     };     
@@ -176,7 +176,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+    #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -350,9 +350,11 @@
     egl-wayland
     papirus-folders
     papirus-icon-theme
-    spotify
+        #spotify
     sddm 
     catppuccin-sddm-corners
+    catppuccin-cursors
+    zoxide
 
 
     #waybar  # if wanted experimental next line
@@ -386,11 +388,16 @@
       pkgs.xdg-desktop-portal
     ];
   };
-
+  services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       wayland.enable = true;
       theme = "catppuccin-sddm-corners";
+      settings = {
+        Theme = {
+            CursorTheme = "catppuccin-cursors_cursors";    
+        };
+      };
     };
 
   # Services to start

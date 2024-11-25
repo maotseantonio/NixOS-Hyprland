@@ -45,10 +45,11 @@
             url = "github:niksingh710/nvix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-    darkmatter-grub-theme = {
-      url = "gitlab:VandalByte/darkmatter-grub-theme";
+    dedsec-grub-theme = {
+      url = "gitlab:VandalByte/dedsec-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
 };
   outputs =
     inputs @ { self
@@ -77,12 +78,12 @@
           };
           modules = [
             ./hosts/${host}/config.nix
+            inputs.dedsec-grub-theme.nixosModule
             inputs.nixos-boot.nixosModules.default
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
             #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
-            inputs.darkmatter-grub-theme.nixosModule
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
           ];
         };

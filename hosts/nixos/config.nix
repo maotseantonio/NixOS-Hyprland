@@ -89,18 +89,18 @@
 
     ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    #loader.systemd-boot.enable = true;
+    loader.systemd-boot.enable = true;
   
     loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 1;    
+        #loader.timeout = 1;    
   			
     # Bootloader GRUB
     loader.grub = {
-	    enable = true;
+	    enable = false;
 	      devices = [ "nodev" ];
 	      efiSupport = true;
 	      memtest86.enable = true;
