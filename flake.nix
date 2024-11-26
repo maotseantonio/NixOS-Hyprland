@@ -59,7 +59,7 @@
     }:
     let
       system = "x86_64-linux";
-      host = "laptop";
+      host = "nixy4life";
       username = "antonio";
       #defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
       pkgs = import nixpkgs {

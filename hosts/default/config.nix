@@ -21,7 +21,7 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    ./scripts/scripts.nix
+    #./scripts/scripts.nix
   ];
 
    
@@ -54,7 +54,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -87,10 +87,7 @@
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
-    # Bootloader SystemD
-    #loader.systemd-boot.enable = true;
-  
+        #loader.systemd-boot.enable = true;
     loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
 	    canTouchEfiVariables = true;
@@ -106,9 +103,9 @@
 	      memtest86.enable = true;
 	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
 	      configurationName = "${host}";
-        darkmatter-theme = {
+        dedsec-theme = {
       enable = true;
-      style = "nixos";
+      style = "redskull";
       icon = "color";
       resolution = "1080p";
     };     
@@ -179,7 +176,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -207,12 +204,12 @@
       };
 
       nix-ld.enable = true;
-	  waybar.enable = true;
+	  waybar.enable = false;
 	  hyprlock.enable = true;
 	  firefox.enable = true;
 	  git.enable = true;
-    nm-applet.indicator = true;
-    neovim.enable = true;
+      nm-applet.indicator = true;
+      #neovim.enable = true;
 
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
@@ -330,36 +327,12 @@
     wlogout
     yad
     yt-dlp
-    #inputs.hyprpanel.packages."${pkgs.system}".default
-    #inputs.wezterm.packages."${pkgs.system}".default
     nix-ld
-    #hyprpanel
-    komikku
-    mangal
-    mangareader
     power-profiles-daemon
     fd
     home-manager
-    #libnotify
     bluez-tools
-    wgpu-utils
-    gnome-bluetooth
-    gpu-screen-recorder
-    vscodium
-    libqalculate
-    brave
-    libdbusmenu-gtk3
-    dbus-glib
-    gtkmm3
-    gtkmm4
-    gtkmm2
-    imv
-    inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-    inputs.zen-browser.packages."${system}".default
-    inputs.ags.packages."${pkgs.system}".default
-    inputs.astal.packages."${pkgs.system}".default
-    #inputs.wezterm.packages."${pkgs.system}".default
-    inputs.hyprpanel.packages."${pkgs.system}".default
+    wgpu-utils   
     yazi
     gtk3
     gtk4
@@ -374,13 +347,15 @@
     starship
     telegram-desktop
     vesktop
-      egl-wayland
-      qv2ray
-      v2ray
-      v2raya
-      papirus-folders
-      papirus-icon-theme
-      #spotify
+    egl-wayland
+    papirus-folders
+    papirus-icon-theme
+        #spotify
+    sddm 
+    catppuccin-sddm-corners
+    catppuccin-cursors
+    zoxide
+    rose-pine-cursor
 
 
     #waybar  # if wanted experimental next line
@@ -396,10 +371,10 @@
     noto-fonts-cjk-sans
     jetbrains-mono
     material-icons
-    iosevka-bin
+    #iosevka-bin
     font-awesome
     terminus_font
-    (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
+    (nerdfonts.override {fonts = ["JetBrainsMono" ];})
  	];
 
   # Extra Portal Configuration
@@ -414,26 +389,39 @@
       pkgs.xdg-desktop-portal
     ];
   };
+  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.sddm = {
+      enable = true; # Enable SDDM.
+      wayland.enable = true;
+      theme = "catppuccin-sddm-corners";
+      settings = {
+        Theme = {
+            CursorTheme = "rose-pine-cursor";    
+        };
+      };
+    };
 
   # Services to start
   services = {
     xserver = {
       enable = true;
+      excludePackages = [pkgs.xterm];
+      desktopManager.xterm.enable = false;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
     };
     
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' - --user-menu --width '50' --container-padding '5' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=darkgray;input=red' --cmd Hyprland"; # start Hyprland with a TUI login manager
-        };
-      };
-    };
+    #greetd = {
+    #  enable = true;
+    #  settings = {
+    #    default_session = {
+    #      user = "greeter";
+    #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' - --user-menu --width '50' --container-padding '5' --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=darkgray;input=red' --cmd Hyprland"; # start Hyprland with a TUI login manager
+    #    };
+    #  };
+    #};
     
     smartd = {
       enable = false;

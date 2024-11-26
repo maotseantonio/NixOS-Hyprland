@@ -1,7 +1,12 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "JaKooLit";
-  gitEmail = "ejhay.games@gmail.com";
+
+
+  hostname = "laptop";
+  username = "antonio";
+  configDirectory = "/home/antonio/NixOS-Hyprland/";
+  gitUsername = "maotseantonio";
+  gitEmail = "thetzinantonio@gmail.com";
 
   # Hyprland Settings
   extraMonitorSettings = "";
@@ -13,4 +18,6 @@
   browser = "firefox"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "kitty"; # Set Default System Terminal
   keyboardLayout = "us";
+
+
 }

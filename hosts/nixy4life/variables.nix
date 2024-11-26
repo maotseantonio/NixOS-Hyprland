@@ -1,5 +1,10 @@
 {
   # Git Configuration ( For Pulling Software Repos )
+
+
+  hostname = "nixy4life";
+  username = "antonio";
+  configDirectory = "/home/antonio/NixOS-Hyprland/";
   gitUsername = "maotseantonio";
   gitEmail = "thetzinantonio@gmail.com";
 
@@ -13,4 +18,6 @@
   browser = "firefox"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "kitty"; # Set Default System Terminal
   keyboardLayout = "us";
+
+
 }
