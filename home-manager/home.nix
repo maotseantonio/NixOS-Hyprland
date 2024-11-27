@@ -4,9 +4,11 @@
   imports = [
     #<catppuccin/modules/home-manager>
     ./scripts/scripts.nix
+    ./nixy.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
+    #./sddm-tokyo-night.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -23,15 +25,16 @@
     backup = false;
   };
   programs.nixcord = {
-    enable = true;
-    vesktop = {
-      enable = true;
+    enable = false;
+      vesktop = {
+      enable = false;
     };
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/maotseantonio/home/refs/heads/main/.config/vesktop/themes/midnight-catppuccin-mocha.theme.css"
+        "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.theme.css"
       ];
       frameless = true;
+      #      enabledThemes = "midnight.theme.css";
       plugins = {
         alwaysTrust.enable = true;
         alwaysAnimate.enable = true;
