@@ -8,7 +8,6 @@
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
-    #./sddm-tokyo-night.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -235,6 +234,7 @@
     
      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.protonvpn-gui
+    pkgs.gnome-bluetooth
     pkgs.hyprpanel
     pkgs.nitch
     pkgs.neofetch
@@ -244,7 +244,6 @@
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
-    pkgs.gnome-bluetooth
     pkgs.gpu-screen-recorder
     pkgs.vscodium
     pkgs.libqalculate
@@ -256,7 +255,7 @@
     pkgs.imv
     pkgs.komikku
     pkgs.mangal
-    pkgs.mangareader 
+    pkgs.mangareader
     
   ];
 

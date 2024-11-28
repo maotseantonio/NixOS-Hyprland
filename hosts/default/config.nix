@@ -1,6 +1,6 @@
 # Main default config
 
-{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
+{ config, pkgs, host, options, lib, inputs, system, ...}: let
   
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
@@ -26,7 +26,7 @@
 
    
   nixpkgs.overlays = [
-    (final: prev: {
+    (final: _prev: {
       matugen = final.rustPlatform.buildRustPackage rec {
         pname = "matugen";
         version = "2.4.0";

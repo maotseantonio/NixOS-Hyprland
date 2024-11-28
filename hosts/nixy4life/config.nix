@@ -1,5 +1,4 @@
 # Main default config
-
 { config, pkgs, host, username, options, lib, inputs, system, ...}: let
   
   inherit (import ./variables.nix) keyboardLayout;
@@ -21,10 +20,8 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    #./scripts/scripts.nix
   ];
-
-   
+    
   nixpkgs.overlays = [
     (final: prev: {
       matugen = final.rustPlatform.buildRustPackage rec {
@@ -53,6 +50,7 @@
 
 
   # BOOT related stuff
+  
   boot = {
     kernelPackages = pkgs.linuxPackages_zen; # Kernel
 
@@ -68,7 +66,8 @@
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
       "nowatchdog"
-      "modprobe.blacklist=sp5100_tco" #watchdog for AMD
+      "nvidia-drm.modeset=1"
+      "nvidia-drm.fbdev=1"   
       "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
     ];
 
@@ -177,6 +176,7 @@
   };
 
     #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  chaotic.mesa-git.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -353,10 +353,10 @@
     spotify
     sddm 
     catppuccin-sddm-corners
-    catppuccin-cursors
     zoxide
+    catppuccin-cursors
     bibata-cursors
-
+        #scx_git.full
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -389,6 +389,7 @@
       pkgs.xdg-desktop-portal
     ];
   };
+
   services.displayManager.defaultSession = "hyprland";
     #services.displayManager.sddm.settings = {Font=JetBrainsMono;};
   services.displayManager.sddm = {
