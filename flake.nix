@@ -10,6 +10,10 @@
         url = "github:/InioX/Matugen";
         #ref = "refs/tags/matugen-v0.10.0"
     };
+     sf-mono-liga-src = {
+        url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+        flake = false;
+    };
     ags = {
         url = "github:aylur/ags";
         inputs.nixpkgs.follows = "nixpkgs";

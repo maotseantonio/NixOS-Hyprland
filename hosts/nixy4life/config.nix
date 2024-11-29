@@ -46,13 +46,30 @@
           mainProgram = "matugen";
         };
       };
-    }) ];  
+    })
+    (final: prev: {
+        sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
+        pname = "sf-mono-liga-bin";
+        version = "dev";
+        src = inputs.sf-mono-liga-src;
+        dontConfigure = true;
+        installPhase = ''
+            mkdir -p $out/share/fonts/opentype
+            cp -R $src/*.otf $out/share/fonts/opentype/
+            '';
+        };
+     })
+    
 
+
+    ];  
+
+ 
 
   # BOOT related stuff
   
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos-lto; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -175,7 +192,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-    #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+  chaotic.scx.scheduler = "scx_rusty";
   chaotic.mesa-git.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
@@ -319,7 +337,7 @@
     rofi-wayland
     slurp
     swappy
-    swaynotificationcenter
+        #swaynotificationcenter
     swww
     unzip
     wallust
@@ -371,6 +389,7 @@
     noto-fonts-cjk-sans
     jetbrains-mono
     material-icons
+    sf-mono-liga-bin
     #iosevka-bin
     font-awesome
     terminus_font
