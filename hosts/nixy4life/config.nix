@@ -69,7 +69,7 @@
   # BOOT related stuff
   
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
 
     consoleLogLevel = 0 ;
     kernelParams = [
@@ -410,7 +410,6 @@
   };
 
   services.displayManager.defaultSession = "hyprland";
-    #services.displayManager.sddm.settings = {Font=JetBrainsMono;};
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       wayland.enable = true;
@@ -479,8 +478,7 @@
 	
   	blueman.enable = true;
   	power-profiles-daemon.enable = true;
-  	#hardware.openrgb.enable = true;
-  	#hardware.openrgb.motherboard = "amd";
+  
 
 	  fwupd.enable = true;
 

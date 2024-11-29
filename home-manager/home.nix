@@ -23,6 +23,9 @@
     hm-activation = true;
     backup = false;
   };
+  programs.bat = {
+    enable = true;
+  };
   programs.nixcord = {
     enable = false;
       vesktop = {
@@ -152,6 +155,9 @@
      theme = spicePkgs.themes.catppuccin;
      colorScheme = "mocha";
    };
+  programs.imv = {
+    enable = true;
+  };
   programs.git = {
     enable = true;
     userName = "maotseantonio";
@@ -237,6 +243,7 @@
     pkgs.gnome-bluetooth
     pkgs.hyprpanel
     pkgs.nitch
+    pkgs.ani-cli
     pkgs.neofetch
     pkgs.github-cli
     pkgs.neovide
@@ -252,7 +259,6 @@
     pkgs.gtkmm3
     pkgs.gtkmm4
     pkgs.gtkmm2
-    pkgs.imv
     pkgs.komikku
     pkgs.mangal
     pkgs.mangareader
