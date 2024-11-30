@@ -58,10 +58,7 @@
             cp -R $src/*.otf $out/share/fonts/opentype/
             '';
         };
-     })
-    
-
-
+     }) 
     ];  
 
  
@@ -89,13 +86,13 @@
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = ["v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     
     initrd = { 
         verbose = false;
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ ];
+      kernelModules = [ "i915" ];
     };
 
     # Needed For Some Steam Games
@@ -192,9 +189,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
-  chaotic.scx.scheduler = "scx_rusty";
-  chaotic.mesa-git.enable = true;
+    #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+    #chaotic.scx.scheduler = "scx_rusty";
+    #chaotic.mesa-git.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -374,7 +371,13 @@
     zoxide
     catppuccin-cursors
     bibata-cursors
-        #scx_git.full
+    scx_git.full
+    libva-utils
+    libvdpau-va-gl
+    intel-compute-runtime
+    intel-vaapi-driver
+    vaapiVdpau
+    mesa
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -408,7 +411,8 @@
       pkgs.xdg-desktop-portal
     ];
   };
-
+  services.scx.enable = true;
+  services.scx.scheduler = "scx_lavd";
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
@@ -617,6 +621,9 @@
   console.keyMap = "${keyboardLayout}";
 
   # For Electron apps to use wayland
+        #environment.variables = {
+        #VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+    #};
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
   EDITOR = "nvim";

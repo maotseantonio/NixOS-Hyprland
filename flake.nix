@@ -53,7 +53,7 @@
       url = "gitlab:VandalByte/dedsec-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nyxexprs.url = "github:notashelf/nyxexprs";
 };
   outputs =
     inputs @ { self
