@@ -26,6 +26,9 @@
   programs.bat = {
     enable = true;
   };
+  programs.zathura = {
+    enable = true;
+  };
   programs.nixcord = {
     enable = false;
       vesktop = {
@@ -158,6 +161,9 @@
   programs.imv = {
     enable = true;
   };
+  #programs.ghostty = {
+  # enable = true;
+  #};
   programs.git = {
     enable = true;
     userName = "maotseantonio";
@@ -238,12 +244,11 @@
       extraOutputsToInstall = ["dev"];
     }))
     
-     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.protonvpn-gui
     pkgs.gnome-bluetooth
     pkgs.hyprpanel
     pkgs.nitch
-    pkgs.ani-cli
     pkgs.neofetch
     pkgs.github-cli
     pkgs.neovide
@@ -251,6 +256,8 @@
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
+    inputs.nyxexprs.packages.${pkgs.system}.ani-cli
+    #inputs.ghostty.packages.${pkgs.system}.default
     pkgs.gpu-screen-recorder
     pkgs.vscodium
     pkgs.libqalculate
@@ -262,6 +269,7 @@
     pkgs.komikku
     pkgs.mangal
     pkgs.mangareader
+    pkgs.gowall
     
   ];
 

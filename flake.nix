@@ -54,6 +54,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nyxexprs.url = "github:notashelf/nyxexprs";
+    sddm-sugar-candy-nix = {
+    url = "github:maotseantonio/sddm-sugar-candy-nix";
+    # Optional, by default this flake follows nixpkgs-unstable.
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 };
   outputs =
     inputs @ { self
@@ -86,6 +91,7 @@
             inputs.nixos-boot.nixosModules.default
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
+            inputs.sddm-sugar-candy-nix.nixosModules.default
             #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }

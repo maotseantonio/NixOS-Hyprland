@@ -40,8 +40,10 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
+    nyxexprs.url = "github:notashelf/nyxexprs";
+    ghostty.url = "github:clo4/ghostty-hm-module";
    };
-  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, catppuccin, hyprland, nixcord, ... }:
+  outputs = inputs @ { nixpkgs, ghostty, home-manager, hyprpanel, catppuccin, hyprland, nixcord, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -62,7 +64,8 @@
         # the path to your home.nix.
         modules = [ 
         ./home.nix
-          #nixcord.homeManagerModules.nixcord
+         #nixcord.homeManagerModules.nixcord
+          #ghostty.homeManagerModules.ghostty
         catppuccin.homeManagerModules.catppuccin
         {
           wayland.windowManager.hyprland = {

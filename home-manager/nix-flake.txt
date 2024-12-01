@@ -1,0 +1,87 @@
+[1mResolved URL:[0m  path:/home/antonio/.config/home-manager
+[1mLocked URL:[0m    path:/home/antonio/.config/home-manager?lastModified=1732794737&narHash=sha256-6KGAVD9xsrtQ2eZbncSRYyY%2BQyJmNpsNFGwk9cq%2B0R8%3D
+[1mDescription:[0m   Home Manager configuration of antonio
+[1mPath:[0m          /nix/store/rk03zhll5a54klhpjn52fr5dymwzg8v4-source
+[1mLast modified:[0m 2024-11-28 18:22:17
+[1mInputs:[0m
+├───[1mags[0m: github:aylur/ags/81159966eb8b39b66c3efc133982fd76920c9605?narHash=sha256-ZDsYdZOtg5qkK/wfLLB83B3SI%2BfE32S%2B/6Ey0ggHODM%3D (2024-11-22 20:35:40)
+│   ├───[1mastal[0m: github:aylur/astal/664c7a4ddfcf48c6e8accd3c33bb94424b0e8609?narHash=sha256-Sh1E7sJd8JJM3PCU1ZOei/QWz97OLCENIi2rTRoaniw%3D (2024-11-18 17:56:25)
+│   │   └───[1mnixpkgs[0m follows input 'ags/nixpkgs'
+│   └───[1mnixpkgs[0m follows input 'nixpkgs'
+├───[1mastal[0m: github:aylur/astal/12fa0fbf1c05319a6b7a9a772a7b1f03e7ca4cae?narHash=sha256-1xvpp1sst9MW6I7mMUMWNsIXOWAMAmXtXld6%2BxWHf8g%3D (2024-11-26 08:22:35)
+│   └───[1mnixpkgs[0m follows input 'nixpkgs'
+├───[1mcatppuccin[0m: github:catppuccin/nix/2e2bdecf0bae287d74947cd5cf967c5c499c23c1?narHash=sha256-n8XOmn0WGtQhAMJKTnhL/3ttV2ZahPRf6gtlqZ6R4QE%3D (2024-11-27 10:24:24)
+├───[1mhome-manager[0m: github:nix-community/home-manager/b7219652387ce4331ae49ddac8b0286f50e0ed68?narHash=sha256-CivRzEe35uCZjQB5CQ4s/qEiMHzyJ2JVdFkS7k89Jxc%3D (2024-11-28 11:12:32)
+│   └───[1mnixpkgs[0m follows input 'nixpkgs'
+├───[1mhyprland[0m: github:hyprwm/Hyprland/5329298b522e3cc1201894909443775b00aeb336?narHash=sha256-ORogf5yeqxar%2BfMJek%2BrpUgfnCOYcoeomvczo/tYOcE%3D (2024-11-27 19:59:00)
+│   ├───[1maquamarine[0m: github:hyprwm/aquamarine/b31a6a4da8199ae3489057db7d36069a70749a56?narHash=sha256-1Dxryiw8u2ejntxrrv3sMtIE8WHKxmlN4KeH%2BuMGbmc%3D (2024-11-16 16:34:41)
+│   │   ├───[1mhyprutils[0m follows input 'hyprland/hyprutils'
+│   │   ├───[1mhyprwayland-scanner[0m follows input 'hyprland/hyprwayland-scanner'
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mhyprcursor[0m: github:hyprwm/hyprcursor/0264e698149fcb857a66a53018157b41f8d97bb0?narHash=sha256-EDNAU9AYcx8OupUzbTbWE1d3HYdeG0wO6Msg3iL1muk%3D (2024-10-11 18:02:18)
+│   │   ├───[1mhyprlang[0m follows input 'hyprland/hyprlang'
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mhyprland-protocols[0m: github:hyprwm/hyprland-protocols/a7c183800e74f337753de186522b9017a07a8cee?narHash=sha256-xGbkc7U/Roe0/Cv3iKlzijIaFBNguasI31ynL2IlEoM%3D (2024-10-07 23:50:20)
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mhyprlang[0m: github:hyprwm/hyprlang/f054f2e44d6a0b74607a6bc0f52dba337a3db38e?narHash=sha256-AnB1KfiXINmuiW7BALYrKqcjCnsLZPifhb/7BsfPbns%3D (2024-10-05 22:50:12)
+│   │   ├───[1mhyprutils[0m follows input 'hyprland/hyprutils'
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mhyprutils[0m: github:hyprwm/hyprutils/e911361a687753bbbdfe3b6a9eab755ecaf1d9e1?narHash=sha256-%2BJeO9gevnXannQxMfR5xzZtF4sYmSlWkX/BPmPx0mWk%3D (2024-11-15 20:30:27)
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mhyprwayland-scanner[0m: github:hyprwm/hyprwayland-scanner/500c81a9e1a76760371049a8d99e008ea77aa59e?narHash=sha256-VKR0sf0PSNCB0wPHVKSAn41mCNVCnegWmgkrneKDhHM%3D (2024-09-20 23:27:16)
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1msystems[0m follows input 'hyprland/systems'
+│   ├───[1mnixpkgs[0m: github:NixOS/nixpkgs/5e4fbfb6b3de1aa2872b76d49fafc942626e2add?narHash=sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg%3D (2024-11-15 13:07:34)
+│   ├───[1mpre-commit-hooks[0m: github:cachix/git-hooks.nix/cd1af27aa85026ac759d5d3fccf650abe7e1bbf0?narHash=sha256-vFta1uHnD29VUY4HJOO/D6p6rxyObnf%2BInnSMT4jlMU%3D (2024-11-11 22:19:12)
+│   │   ├───[1mflake-compat[0m: github:edolstra/flake-compat/0f9255e01c2351cc7d116c072cb317785dd33b33?narHash=sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U%3D (2023-10-04 13:37:54)
+│   │   ├───[1mgitignore[0m: github:hercules-ci/gitignore.nix/637db329424fd7e46cf4185293b9cc8c88c95394?narHash=sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs%3D (2024-02-28 02:28:52)
+│   │   │   └───[1mnixpkgs[0m follows input 'hyprland/pre-commit-hooks/nixpkgs'
+│   │   ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│   │   └───[1mnixpkgs-stable[0m: github:NixOS/nixpkgs/d063c1dd113c91ab27959ba540c0d9753409edf3?narHash=sha256-edm8WG19kWozJ/GqyYx2VjW99EdhjKwbY3ZwdlPAAlo%3D (2024-11-04 17:24:30)
+│   ├───[1msystems[0m: github:nix-systems/default-linux/31732fcf5e8fea42e59c2488ad31a0e651500f68?narHash=sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80%3D (2023-07-14 15:19:09)
+│   └───[1mxdph[0m: github:hyprwm/xdg-desktop-portal-hyprland/8070f36deec723de71e7557441acb17e478204d3?narHash=sha256-rheDc/7C%2ByI%2BQspYr9J2z9kQ5P9F4ATapI7qyFAe1XA%3D (2024-11-15 20:43:37)
+│       ├───[1mhyprland-protocols[0m follows input 'hyprland/hyprland-protocols'
+│       ├───[1mhyprlang[0m follows input 'hyprland/hyprlang'
+│       ├───[1mhyprutils[0m follows input 'hyprland/hyprutils'
+│       ├───[1mhyprwayland-scanner[0m follows input 'hyprland/hyprwayland-scanner'
+│       ├───[1mnixpkgs[0m follows input 'hyprland/nixpkgs'
+│       └───[1msystems[0m follows input 'hyprland/systems'
+├───[1mhyprland-plugins[0m: github:hyprwm/hyprland-plugins/0bc619b2c3b4f9c2b65247e81d69f8bbc573d991?narHash=sha256-v9FS0r2XWMf/%2BuwevvzaF/2TimMFeLEQTf4T8cgc6c0%3D (2024-11-19 22:02:59)
+│   ├───[1mhyprland[0m follows input 'hyprland'
+│   ├───[1mnixpkgs[0m follows input 'hyprland-plugins/hyprland/nixpkgs'
+│   └───[1msystems[0m follows input 'hyprland-plugins/hyprland/systems'
+├───[1mhyprpanel[0m: github:Jas-SinghFSU/HyprPanel/56c94166446c2cf8546f1e7f642ea0306c468e3a?narHash=sha256-WuE4suVoWL5asL0HrW%2BvbMbONb1WeCBRZv8SDiTtz/I%3D (2024-11-28 06:47:12)
+│   ├───[1mags[0m: github:Aylur/ags/60180a184cfb32b61a1d871c058b31a3b9b0743d?narHash=sha256-tV1ABHuA1HItMdCTuNdA8fMB%2Bqw7LpjvI945VwMSABI%3D (2024-10-07 18:40:30)
+│   │   ├───[1mnixpkgs[0m: github:NixOS/nixpkgs/574d1eac1c200690e27b8eb4e24887f8df7ac27c?narHash=sha256-v3rIhsJBOMLR8e/RNWxr828tB%2BWywYIoajrZKFM%2B0Gg%3D (2024-09-06 14:57:51)
+│   │   └───[1msystems[0m: github:nix-systems/default-linux/31732fcf5e8fea42e59c2488ad31a0e651500f68?narHash=sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80%3D (2023-07-14 15:19:09)
+│   └───[1mnixpkgs[0m: github:nixos/nixpkgs/5e4fbfb6b3de1aa2872b76d49fafc942626e2add?narHash=sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg%3D (2024-11-15 13:07:34)
+├───[1mnixcord[0m: github:kaylorben/nixcord/79eb5a668a0344ee161eeb3dc979d6721d9be1a7?narHash=sha256-hzV4WCmFsU6Z5Me/lwrPAhjvE81IR4DkdFmk8uX9B00%3D (2024-11-23 17:07:40)
+│   ├───[1mflake-compat[0m: https://api.flakehub.com/f/pinned/edolstra/flake-compat/1.0.1/018afb31-abd1-7bff-a5e4-cff7e18efb7a/source.tar.gz?narHash=sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U%3D (2023-10-04 13:37:54)
+│   ├───[1mnixpkgs[0m: github:NixOS/nixpkgs/0a14706530dcb90acecb81ce0da219d88baaae75?narHash=sha256-55e1JMAuYvHZs9EICprWgJ4RmaWwDuSjzJ5K7S7zb6w%3D (2024-11-17 04:10:55)
+│   ├───[1msystems[0m: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e?narHash=sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768%3D (2023-04-09 08:27:08)
+│   └───[1mtreefmt-nix[0m: github:numtide/treefmt-nix/746901bb8dba96d154b66492a29f5db0693dbfcc?narHash=sha256-vK%2Ba09qq19QNu2MlLcvN4qcRctJbqWkX7ahgPZ/%2BmaI%3D (2024-10-30 20:57:17)
+│       └───[1mnixpkgs[0m: github:nixos/nixpkgs/a1d92660c6b3b7c26fb883500a80ea9d33321be2?narHash=sha256-V5LpfdHyQkUF7RfOaDPrZDP%2Boqz88lTJrMT1%2BstXNwo%3D (2024-09-20 22:35:44)
+├───[1mnixpkgs[0m: github:nixos/nixpkgs/4633a7c72337ea8fd23a4f2ba3972865e3ec685d?narHash=sha256-2ThgXBUXAE1oFsVATK1ZX9IjPcS4nKFOAjhPNKuiMn0%3D (2024-11-25 07:53:41)
+├───[1mnvchad-on-steroids[0m: github:maotseantonio/nvchad_config/a4fa21e382ed02d606bf5f69eb33be043d9fa3cb?narHash=sha256-HxrHPBNc96NgNJVqhXhtRxzPFgWcQE8m/9RE3gRfeoU%3D (2024-11-23 12:23:01)
+├───[1mnvchad4nix[0m: github:MOIS3Y/nvchad4nix/0aa513c1fec993548140f2d0dc9a92b08406e877?narHash=sha256-NvrTwdzaZYlMNuEdAMuoAB/n7RpiC2fX7AVA7P5DzcI%3D (2024-11-26 10:16:42)
+│   └───[1mnixpkgs[0m follows input 'nixpkgs'
+├───[1mspicetify-nix[0m: github:Gerg-L/spicetify-nix/9dc23fcd0775bb6e42ebc6267edb97d349548450?narHash=sha256-O5mz3CbSfITGjMgUw3f0uBYC7q/FuLfLeFhADdpz/Uw%3D (2024-11-28 04:17:27)
+│   ├───[1mflake-compat[0m: github:edolstra/flake-compat/9ed2ac151eada2306ca8c418ebd97807bb08f6ac?narHash=sha256-HRJ/18p%2BWoXpWJkcdsk9St5ZiukCqSDgbOGFa8Okehg%3D (2024-11-27 15:47:01)
+│   └───[1mnixpkgs[0m follows input 'nixpkgs'
+├───[1mwezterm[0m: github:wez/wezterm/4050072da21cc3106d0985281d75978c07e22abc?dir=nix&narHash=sha256-8lv1bc7Lw5S7UFOduShwSHfBzB4Vl0ex22Cb%2Bq/qLi0%3D (2024-11-19 17:14:32)
+│   ├───[1mflake-utils[0m: github:numtide/flake-utils/c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a?narHash=sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ%3D (2024-09-17 08:14:13)
+│   │   └───[1msystems[0m: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e?narHash=sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768%3D (2023-04-09 08:27:08)
+│   ├───[1mfreetype2[0m: github:wez/freetype2/e4586d960f339cf75e2e0b34aee30a0ed8353c0d?narHash=sha256-%2BFh%2B/k%2BNWL5Ow9sDLtp8Cv/8rLNA1oByQQCIQS/bysY%3D (2023-06-24 06:11:05)
+│   ├───[1mharfbuzz[0m: github:harfbuzz/harfbuzz/63973005bc07aba599b47fdd4cf788647b601ccd?narHash=sha256-GdxcAPx5QyniSHPAN1ih28AD9JLUPR0ItqW9JEsl3pU%3D (2024-03-29 14:32:00)
+│   ├───[1mlibpng[0m: github:glennrp/libpng/8439534daa1d3a5705ba92e653eda9251246dd61?narHash=sha256-1%2BcRp0Ungme/OGfc9kGJbklYIWAFxk8Il1M%2BNV4KSgw%3D (2019-02-04 02:00:49)
+│   ├───[1mnixpkgs[0m: github:NixOS/nixpkgs/ccc0c2126893dd20963580b6478d1a10a4512185?narHash=sha256-4HQI%2B6LsO3kpWTYuVGIzhJs1cetFcwT7quWCk/6rqeo%3D (2024-10-18 15:35:18)
+│   ├───[1mrust-overlay[0m: github:oxalica/rust-overlay/ada8266712449c4c0e6ee6fcbc442b3c217c79e1?narHash=sha256-r0VyeJxy4O4CgTB/PNtfQft9fPfN1VuGvnZiCxDArvg%3D (2024-10-21 02:30:59)
+│   │   └───[1mnixpkgs[0m follows input 'wezterm/nixpkgs'
+│   └───[1mzlib[0m: github:madler/zlib/cacf7f1d4e3d44d871b605da3b647f07d718623f?narHash=sha256-j5b6aki1ztrzfCqu8y729sPar8GpyQWIrajdzpJC%2Bww%3D (2017-01-15 17:29:40)
+└───[1mzen-browser[0m: github:MarceColl/zen-browser-flake/e6ab73f405e9a2896cce5956c549a9cc359e5fcc?narHash=sha256-QYlWZwUSwrM7BuO%2BdXclZIwoPvBIuJr6GpFKv9XKFPI%3D (2024-09-30 18:35:29)
+    └───[1mnixpkgs[0m: github:nixos/nixpkgs/1925c603f17fc89f4c8f6bf6f631a802ad85d784?narHash=sha256-J%2BPeFKSDV%2BpHL7ukkfpVzCOO7mBSrrpJ3svwBFABbhI%3D (2024-09-26 11:04:55)

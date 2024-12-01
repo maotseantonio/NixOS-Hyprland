@@ -20,7 +20,9 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
+        #    ../../modules/sddm-sugar.nix
   ];
+
     
   nixpkgs.overlays = [
     (final: prev: {
@@ -396,7 +398,10 @@
     #iosevka-bin
     font-awesome
     terminus_font
-    (nerdfonts.override {fonts = ["JetBrainsMono" ];})
+    nerd-fonts.monaspace
+    nerd-fonts.jetbrains-mono 
+        #nerd-fonts.jetBrains-mono
+        #(nerd-fonts.override {fonts = ["JetBrainsMono" ];})
  	];
 
   # Extra Portal Configuration
@@ -417,6 +422,20 @@
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       wayland.enable = true;
+            #sugarCandyNix = {
+            #enable = true;
+            #settings = {
+            #    Background = ./nixchan.png;
+            #     ScreenWidth = 2160;
+            #     ScreenHeight = 1440;
+            #     FormPosition = "left";
+            #     HaveFormBackground = true;
+            #     PartialBlur = true;
+            #     Font = "JetBrainsMono";
+                #fontSize = "16";
+            #     RoundCorners = 20;
+            #};
+        #};
       theme = "catppuccin-sddm-corners";
       settings = {
         Theme = {
