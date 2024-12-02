@@ -2,7 +2,7 @@
   #wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
   #wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
   
-  #runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
+  runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
   music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
   lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
   
@@ -30,14 +30,14 @@
   
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-  hyprpanel-new = pkgs.writeScriptBin "hyprpanel-new" (builtins.readFile ./scripts/hyprpanel.sh);
+  #hyprpanel-new = pkgs.writeScriptBin "hyprpanel-new" (builtins.readFile ./scripts/hyprpanel.sh);
 statusbar = pkgs.writeScriptBin "statusbar" (builtins.readFile ./scripts/statusbar);
 in {
   home.packages = with pkgs; [
    # wall-change
    # wallpaper-picker
     
-   # runbg
+    runbg
     music
     lofi
   
@@ -65,7 +65,7 @@ in {
 
     rofi-power-menu
     power-menu
-    hyprpanel-new
+   # hyprpanel-new
     statusbar
   ];
 }

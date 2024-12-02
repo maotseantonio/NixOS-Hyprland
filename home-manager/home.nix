@@ -246,7 +246,7 @@
     
     # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.protonvpn-gui
-    pkgs.gnome-bluetooth
+    #pkgs.rustc
     pkgs.hyprpanel
     pkgs.nitch
     pkgs.neofetch
