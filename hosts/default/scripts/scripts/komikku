@@ -1,3 +1,0 @@
-#!/usr/bin/env bash 
-
-GSK_RENDERER=gl nohup nvidia-offload komikku > /dev/null 2>&1

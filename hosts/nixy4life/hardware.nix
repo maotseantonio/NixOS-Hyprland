@@ -8,15 +8,27 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
+  boot.initrd.availableKernelModules = [ "nvme" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6f322332-503b-46f7-8db0-dbbec9fd4d75";
+    { device = "/dev/disk/by-uuid/56ed9a5f-4f9b-46f4-98a6-4fc379b9927c";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=root" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/56ed9a5f-4f9b-46f4-98a6-4fc379b9927c";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/56ed9a5f-4f9b-46f4-98a6-4fc379b9927c";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
     };
 
   fileSystems."/bin" =
@@ -26,13 +38,13 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1D0A-80F3";
+    { device = "/dev/disk/by-uuid/99CF-2A87";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/32615071-3d1c-4717-b708-b9f59670a057"; }
+    [ { device = "/dev/disk/by-uuid/c5b88eb4-f844-479d-9b21-f7b63e86a8fe"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -40,6 +52,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.ipv6leakintrf0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tun0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

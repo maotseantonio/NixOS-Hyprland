@@ -1,6 +1,5 @@
 # Main default config
-
-{ config, pkgs, host, options, lib, inputs, system, ...}: let
+{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
   
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
@@ -21,12 +20,12 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    #./scripts/scripts.nix
+        #    ../../modules/sddm-sugar.nix
   ];
 
-   
+    
   nixpkgs.overlays = [
-    (final: _prev: {
+    (final: prev: {
       matugen = final.rustPlatform.buildRustPackage rec {
         pname = "matugen";
         version = "2.4.0";
@@ -49,10 +48,25 @@
           mainProgram = "matugen";
         };
       };
-    }) ];  
+    })
+    (final: prev: {
+        sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
+        pname = "sf-mono-liga-bin";
+        version = "dev";
+        src = inputs.sf-mono-liga-src;
+        dontConfigure = true;
+        installPhase = ''
+            mkdir -p $out/share/fonts/opentype
+            cp -R $src/*.otf $out/share/fonts/opentype/
+            '';
+        };
+     }) 
+    ];  
 
+ 
 
   # BOOT related stuff
+  
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
 
@@ -68,18 +82,19 @@
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
       "nowatchdog"
-      "modprobe.blacklist=sp5100_tco" #watchdog for AMD
+      "nvidia-drm.modeset=1"
+      "nvidia-drm.fbdev=1"   
       "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = ["v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     
     initrd = { 
         verbose = false;
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ ];
+      kernelModules = [ "i915" ];
     };
 
     # Needed For Some Steam Games
@@ -176,7 +191,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+    #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
+    #chaotic.scx.scheduler = "scx_rusty";
+    #chaotic.mesa-git.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
@@ -319,7 +336,7 @@
     rofi-wayland
     slurp
     swappy
-    swaynotificationcenter
+        #swaynotificationcenter
     swww
     unzip
     wallust
@@ -350,13 +367,19 @@
     egl-wayland
     papirus-folders
     papirus-icon-theme
-        #spotify
+    spotify
     sddm 
     catppuccin-sddm-corners
-    catppuccin-cursors
     zoxide
-    rose-pine-cursor
-
+    catppuccin-cursors
+    bibata-cursors
+    scx_git.full
+    libva-utils
+    libvdpau-va-gl
+    intel-compute-runtime
+    intel-vaapi-driver
+    vaapiVdpau
+    mesa
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -371,10 +394,14 @@
     noto-fonts-cjk-sans
     jetbrains-mono
     material-icons
+    sf-mono-liga-bin
     #iosevka-bin
     font-awesome
     terminus_font
-    (nerdfonts.override {fonts = ["JetBrainsMono" ];})
+    nerd-fonts.monaspace
+    nerd-fonts.jetbrains-mono 
+        #nerd-fonts.jetBrains-mono
+        #(nerd-fonts.override {fonts = ["JetBrainsMono" ];})
  	];
 
   # Extra Portal Configuration
@@ -389,14 +416,30 @@
       pkgs.xdg-desktop-portal
     ];
   };
+  services.scx.enable = true;
+  services.scx.scheduler = "scx_lavd";
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       wayland.enable = true;
+            #sugarCandyNix = {
+            #enable = true;
+            #settings = {
+            #    Background = ./nixchan.png;
+            #     ScreenWidth = 2160;
+            #     ScreenHeight = 1440;
+            #     FormPosition = "left";
+            #     HaveFormBackground = true;
+            #     PartialBlur = true;
+            #     Font = "JetBrainsMono";
+                #fontSize = "16";
+            #     RoundCorners = 20;
+            #};
+        #};
       theme = "catppuccin-sddm-corners";
       settings = {
         Theme = {
-            CursorTheme = "rose-pine-cursor";    
+            CursorTheme = "Bibata-Modern-Ice";    
         };
       };
     };
@@ -458,8 +501,7 @@
 	
   	blueman.enable = true;
   	power-profiles-daemon.enable = true;
-  	#hardware.openrgb.enable = true;
-  	#hardware.openrgb.motherboard = "amd";
+  
 
 	  fwupd.enable = true;
 
@@ -598,6 +640,9 @@
   console.keyMap = "${keyboardLayout}";
 
   # For Electron apps to use wayland
+        #environment.variables = {
+        #VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+    #};
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
   EDITOR = "nvim";
@@ -618,5 +663,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
