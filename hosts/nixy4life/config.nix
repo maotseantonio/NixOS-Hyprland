@@ -14,13 +14,13 @@
   imports = [
     ./hardware.nix
     ./users.nix
-    ../../modules/amd-drivers.nix
     ../../modules/nvidia-drivers.nix
     ../../modules/nvidia-prime-drivers.nix
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-        #    ../../modules/sddm-sugar.nix
+    ../../modules/amd-drivers.nix
+    
   ];
 
     
@@ -371,7 +371,6 @@
     sddm 
     catppuccin-sddm-corners
     zoxide
-    catppuccin-cursors
     bibata-cursors
     scx_git.full
     libva-utils
@@ -580,6 +579,12 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  services.btrfs.autoScrub = {
+  enable = true;
+  interval = "monthly";
+  fileSystems = [ "/" ];
+ 
+ };
 
   # Security / Polkit
   security.rtkit.enable = true;
