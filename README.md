@@ -274,8 +274,10 @@ Lastly, it will build the system, which includes both the flake config and home-
 # 👥 Credits
 
 Other dotfiles that I learned / copy from:
-I really thanksful for frost-phoenix making this template and i credits to this man
- [https://github.com/Frost-Phoenix/nixos-config/tree/catppuccin?tab=readme-ov-file]
+
+
+- I really thanksful for frost-phoenix making this template and i credits to this man
+ - [https://github.com/Frost-Phoenix/nixos-config/tree/catppuccin?tab=readme-ov-file]
 - Nix Flakes
   - [nomadics9/NixOS-Flake](https://github.com/nomadics9/NixOS-Flake): This is where I start my nixos / hyprland journey.
   - [samiulbasirfahim/Flakes](https://github.com/samiulbasirfahim/Flakes): General flake / files structure
