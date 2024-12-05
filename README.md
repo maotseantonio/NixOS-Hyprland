@@ -52,28 +52,28 @@
 ## 📓 Components
 |                             | NixOS + Hyprland                                                                              |
 | --------------------------- | :---------------------------------------------------------------------------------------------:
-| **Window Manager**          | [Hyprland][Hyprland] |
-| **Bar**                     | [HyprPanel][HyprPanel] |
-| **Application Launcher**    | [rofi][rofi] |
-| **Notification Daemon**     | [ags][ags] |
-| **Terminal Emulator**       | [Wezterm][Wezterm] |
-| **Shell**                   | [fish][fish] + [atuin][atuin] + [Starship][Starship] |
-| **Text Editor**             | [VSCodium][VSCodium] + [nix4nvchad][nix4nvchad] |
-| **network management tool** | [NetworkManager][NetworkManager] + [network-manager-applet][network-manager-applet] |
+| **Window Manager**          | [Hyprland] |
+| **Bar**                     | [HyprPanel] |
+| **Application Launcher**    | [ags][rofi] |
+| **Notification Daemon**     | [ags] |
+| **Terminal Emulator**       | [Wezterm][kitty] |
+| **Shell**                   | [fish] + [atuin] + [Starship] |
+| **Text Editor**             | [VSCodium] + [nix4nvchad] |
+| **network management tool** | [NetworkManager] + [network-manager-applet] |
 | **System resource monitor** | [Btop][Bottom] |
-| **File Manager**            | [thunar][thunar] + [yazi][yazi] |
-| **Fonts**                   | [LigaMono Nerd Font][Nerd fonts] + [JetBrainsMono Nerd Font][Nerd fonts] |
+| **File Manager**            | [thunar] + [yazi] |
+| **Fonts**                   | [LigaMono Nerd Font] + [JetBrainsMono Nerd Font]|
 | **Color Scheme**            | [Catppuccin-Mocha][Catppuccin-Dark] |
-| **Cursor**                  | [Chiharu][Chiharu] |
-| **Icons**                   | [Papirus-Dark][Papirus-Dark] |
-| **Lockscreen**              | [Hyprlock][Hyprlock] + [Swaylock-effects][Swaylock-effects] |
-| **Image Viewer**            | [imv][imv] |
-| **Media Player**            | [mpv][mpv] |
-| **Music Player**            | [spotify][spotify] |
-| **Screenshot Software**     | [grimblast][grimblast] |
-| **Screen Recording**        | [wf-recorder][wf-recorder] |
-| **Clipboard**               | [wl-clip-persist][wl-clip-persist] |
-| **Color Picker**            | [hyprpicker][hyprpicker] |
+| **Cursor**                  | [Chiharu] |
+| **Icons**                   | [Papirus-Dark] |
+| **Lockscreen**              | [Hyprlock] |
+| **Image Viewer**            | [imv] |
+| **Media Player**            | [mpv] |
+| **Music Player**            | [spotify] |
+| **Screenshot Software**     | [grimblast] |
+| **Screen Recording**        | [wf-recorder] |
+| **Clipboard**               | [wl-clip-persist] |
+| **Color Picker**            | [hyprpicker] |
 
 
 ## 📝 Shell aliases
