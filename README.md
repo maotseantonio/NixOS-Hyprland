@@ -53,23 +53,23 @@
 |                             | NixOS + Hyprland                                                                              |
 | --------------------------- | :---------------------------------------------------------------------------------------------:
 | **Window Manager**          | [Hyprland] |
-| **Bar**                     | [HyprPanel] |
-| **Application Launcher**    | [ags][rofi] |
-| **Notification Daemon**     | [ags] |
-| **Terminal Emulator**       | [Wezterm][kitty] |
-| **Shell**                   | [fish] + [atuin] + [Starship] |
-| **Text Editor**             | [VSCodium] + [nix4nvchad] |
+| **Bar**                     | HyprPanel |
+| **Application Launcher**    | [rofi] |
+| **Notification Daemon**     | ags|
+| **Terminal Emulator**       | Wezterm + kitty |
+| **Shell**                   | fish + atuin + [Starship] |
+| **Text Editor**             | [VSCodium] + nix4nvchad |
 | **network management tool** | [NetworkManager] + [network-manager-applet] |
-| **System resource monitor** | [Btop][Bottom] |
-| **File Manager**            | [thunar] + [yazi] |
-| **Fonts**                   | [LigaMono Nerd Font] + [JetBrainsMono Nerd Font]|
-| **Color Scheme**            | [Catppuccin-Mocha][Catppuccin-Dark] |
-| **Cursor**                  | [Chiharu] |
+| **System resource monitor** | Btop + Bottom |
+| **File Manager**            | thunar + [yazi] |
+| **Fonts**                   | LigaMono Nerd Font + JetBrainsMono Nerd Font|
+| **Color Scheme**            | Catppuccin-Mocha + Catppuccin-Dark |
+| **Cursor**                  | Chiharu |
 | **Icons**                   | [Papirus-Dark] |
 | **Lockscreen**              | [Hyprlock] |
-| **Image Viewer**            | [imv] |
+| **Image Viewer**            |  imv |
 | **Media Player**            | [mpv] |
-| **Music Player**            | [spotify] |
+| **Music Player**            | spotify |
 | **Screenshot Software**     | [grimblast] |
 | **Screen Recording**        | [wf-recorder] |
 | **Clipboard**               | [wl-clip-persist] |
