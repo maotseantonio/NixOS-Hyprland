@@ -11,7 +11,7 @@
          <a href="https://github.com/Frost-Phoenix/nixos-config/stargazers">
             <img src="https://img.shields.io/github/stars/Frost-Phoenix/nixos-config?color=FABD2F&labelColor=282828&style=for-the-badge&logo=starship&logoColor=FABD2F">
          </a>
-         <a href="https://github.com/Frost-Phoenix/nixos-config/">
+         <a href="https://github.com/maotseantonio/NixOS-Hyprland/">
             <img src="https://img.shields.io/github/repo-size/Frost-Phoenix/nixos-config?color=B16286&labelColor=282828&style=for-the-badge&logo=github&logoColor=B16286">
          </a>
          <a = href="https://nixos.org">
@@ -29,9 +29,11 @@
 ### 🖼️ Gallery
 
 <p align="center">
-   <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/Screenshot_05-Dec_18-06-42_460.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/Screenshot_05-Dec_18-06-50_4721.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/Screenshot_05-Dec_18-07-00_5166.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/Screenshot_05-Dec_18-06-02_12954.png" style="margin-bottom: 10px;"/> <br>
+    <img src="./assets/Screenshot_05-Dec_18-06-18_17940.png" style="margin-bottom: 10px;"/> <br>
    Screenshots last updated <b>2024-08-24</b>
 </p>
 
