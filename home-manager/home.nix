@@ -5,6 +5,7 @@
     #<catppuccin/modules/home-manager>
     ./scripts/scripts.nix
     ./nixy.nix
+    ./nvchad.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
@@ -14,16 +15,10 @@
   nixpkgs.config.allowUnfree = true; 
   home.username = "antonio";
   home.homeDirectory = "/home/antonio";
-  programs.nvchad = {
+  programs.bottom = {
     enable = true;
-    extraPackages = with pkgs; [
-    emmet-language-server
-    nixd ];
-    extraConfig = inputs.nvchad-on-steroids; # <- here extraConfig from inputs
-    hm-activation = true;
-    backup = false;
   };
-  programs.bat = {
+   programs.bat = {
     enable = true;
   };
   programs.zathura = {
@@ -273,9 +268,10 @@
     
     # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.protonvpn-gui
-    #pkgs.rustc
+    pkgs.manga-tui
     pkgs.hyprpanel
     pkgs.nitch
+    pkgs.rustup
     pkgs.hiddify-app
     pkgs.neofetch
     pkgs.github-cli
@@ -285,7 +281,7 @@
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
-    inputs.yazi.packages.${pkgs.system}.default
+    #inputs.yazi.packages.${pkgs.system}.default
     pkgs.gpu-screen-recorder
     pkgs.vscodium
     pkgs.libqalculate
@@ -297,7 +293,7 @@
     pkgs.komikku
     pkgs.mangal
     pkgs.mangareader
-    pkgs.gowall
+    pkgs.gowall 
     
   ];
 

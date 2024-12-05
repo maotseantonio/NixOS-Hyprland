@@ -22,6 +22,8 @@
     ../../modules/amd-drivers.nix
     
   ];
+  
+  
 
     
   nixpkgs.overlays = [
@@ -153,10 +155,7 @@
     plymouth.theme = "catppuccin-macchiato";
   };
 
-  # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
-  
 
-  # Extra Module Options
   drivers.amdgpu.enable = false;
   drivers.intel.enable = true;
   drivers.nvidia.enable = true;
@@ -166,7 +165,7 @@
     nvidiaBusID = "PCI:1:0:0";
   };
   vm.guest-services.enable = false;
-  local.hardware-clock.enable = false;
+  local.hardware-clock.enable = true;
 
   # networking
   networking.networkmanager.enable = true;
@@ -379,7 +378,7 @@
     intel-vaapi-driver
     vaapiVdpau
     mesa
-
+   
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
@@ -436,7 +435,7 @@
             #};
         #};
       theme = "catppuccin-sddm-corners";
-      settings = {
+     settings = {
         Theme = {
             CursorTheme = "Bibata-Modern-Ice";    
         };
@@ -500,14 +499,33 @@
 	
   	blueman.enable = true;
   	power-profiles-daemon.enable = true;
-  
-
-	  fwupd.enable = true;
-
-	  upower.enable = true;
-    
+    fwupd.enable = true;
+    upower.enable = true;
     gnome.gnome-keyring.enable = true;
-    
+    #powerManagement.cpuFreqGovernor = "performance";
+    tlp.settings = {
+      CPU_ENERGY_PERF_POLICY_ON_AC = "power";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 1;
+
+      CPU_HWP_DYN_BOOST_ON_AC = 1;
+      CPU_HWP_DYN_BOOST_ON_BAT = 1;
+
+      PLATFORM_PROFILE_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "performance";
+
+      INTEL_GPU_MIN_FREQ_ON_AC = 500;
+      INTEL_GPU_MIN_FREQ_ON_BAT = 500;
+      # INTEL_GPU_MAX_FREQ_ON_AC=0;
+      # INTEL_GPU_MAX_FREQ_ON_BAT=0;
+      # INTEL_GPU_BOOST_FREQ_ON_AC=0;
+      # INTEL_GPU_BOOST_FREQ_ON_BAT=0;
+
+      # PCIE_ASPM_ON_AC = "default";
+      # PCIE_ASPM_ON_BAT = "powersupersave";
+    }; 
     #printing = {
     #  enable = false;
     #  drivers = [
