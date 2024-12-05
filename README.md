@@ -3,7 +3,7 @@
    <br>
       Nixy4Life  
    <br>
-      <img src="./.github/assets/pallet/pallet-0.png" width="600px" /> <br>
+      <img src="./.github/assets/pallet/pallet-1.png" width="600px" /> <br>
 
    <div align="center">
       <p></p>
