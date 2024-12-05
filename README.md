@@ -286,12 +286,14 @@ Other dotfiles that I learned / copy from:
   - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
   - [tluijken/.dotfiles](https://github.com/tluijken/.dotfiles): base rofi config
   - [mrh/dotfiles](https://codeberg.org/mrh/dotfiles): base waybar config
+  - [JaKooLit/NixOS-Hyprland](https://github.com/JaKooLit/NixOS-Hyprland): my base config
 
 - README
   - [ryan4yin/nix-config](https://github.com/ryan4yin/nix-config)
   - [NotAShelf/nyx](https://github.com/NotAShelf/nyx)
   - [sioodmy/dotfiles](https://github.com/sioodmy/dotfiles)
   - [Ruixi-rebirth/flakes](https://github.com/Ruixi-rebirth/flakes)
+
 
 
 <!-- # ✨ Stars History -->
