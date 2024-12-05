@@ -287,6 +287,7 @@ Other dotfiles that I learned / copy from:
   - [tluijken/.dotfiles](https://github.com/tluijken/.dotfiles): base rofi config
   - [mrh/dotfiles](https://codeberg.org/mrh/dotfiles): base waybar config
   - [JaKooLit/NixOS-Hyprland](https://github.com/JaKooLit/NixOS-Hyprland): my base config
+  - [orangc/dots](https://github.com/orangci/dots.git): shout out to this man. He helps me in my begining of nixos jorney. If i didnt get help from this people i will leave this beautiful world.
 
 - README
   - [ryan4yin/nix-config](https://github.com/ryan4yin/nix-config)
