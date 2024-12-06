@@ -270,11 +270,10 @@ Now you will need to choose the host you want. It depend on whether you are usin
 #### 7. Build the system
 
 Lastly, it will build the system, which includes both the flake config and home-manager config.
-
+```
 # 👥 Credits
 
 Other dotfiles that I learned / copy from:
-```
 
 - I really thanksful for frost-phoenix making this template and i credits to this man
  - [https://github.com/Frost-Phoenix/nixos-config/tree/catppuccin?tab=readme-ov-file]

@@ -643,7 +643,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 3d";
     };
   };
 
@@ -663,9 +663,9 @@
   console.keyMap = "${keyboardLayout}";
 
   # For Electron apps to use wayland
-        #environment.variables = {
-        #VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
-    #};
+    environment.variables = {
+        VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+    };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
   EDITOR = "nvim";
