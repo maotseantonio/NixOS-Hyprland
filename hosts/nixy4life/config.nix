@@ -25,14 +25,12 @@
     ../../modules/wayland.nix
     ../../modules/services.nix
     ../../modules/hardwareconf.nix
-#    ../../modules/pkgs.nix
-    #./variables.nix
+    ../../modules/virtualization.nix
+    ../../modules/network.nix
+    ../../modules/fonts.nix
     
   ];
-  
-  
-
-    
+       
   nixpkgs.overlays = [
     (final: prev: {
       matugen = final.rustPlatform.buildRustPackage rec {
@@ -72,12 +70,6 @@
      }) 
     ];  
 
- 
-
-  # BOOT related stuff
- 
-
-
   drivers.amdgpu.enable = false;
   drivers.intel.enable = true;
   drivers.nvidia.enable = true;
@@ -89,16 +81,7 @@
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
 
-  # networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
-  # Set your time zone.
-
-    #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
-    #chaotic.scx.scheduler = "scx_rusty";
-    #chaotic.mesa-git.enable = true;
    nixpkgs.config.allowUnfree = true;
   
   users = {
@@ -107,47 +90,23 @@
 
   environment.systemPackages = (with pkgs; [
        
+    libva-utils
+    libvdpau-va-gl
+    intel-compute-runtime
+    intel-vaapi-driver
+    vaapiVdpau
+    mesa
+    egl-wayland
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
   ];
-
-  # FONTS
-  fonts.packages = with pkgs; [
-    noto-fonts
-    fira-code
-    noto-fonts-cjk-sans
-    jetbrains-mono
-    material-icons
-    sf-mono-liga-bin
-    #iosevka-bin
-    font-awesome
-    terminus_font
-    nerd-fonts.monaspace
-    nerd-fonts.jetbrains-mono 
-        #nerd-fonts.jetBrains-mono
-        #(nerd-fonts.override {fonts = ["JetBrainsMono" ];})
- 	];
-
-  # Extra Portal Configuration
- 
-  # Cachix, Optimization settings and garbage collection automation
-   # Virtualization / Containers
-  virtualisation.libvirtd.enable = false;
-  virtualisation.podman = {
-    enable = false;
-    dockerCompat = false;
-    defaultNetwork.settings.dns_enabled = false;
-  };
-
   # OpenGL
   hardware.graphics = {
     enable = true;
   };
-
   console.keyMap = "${keyboardLayout}";
-
   # For Electron apps to use wayland
     environment.variables = {
         VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");

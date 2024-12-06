@@ -8,12 +8,12 @@
   	  xwayland.enable = true;
       };
 
-      nix-ld.enable = true;
+        nix-ld.enable = true;
 	    waybar.enable = false;
 	    hyprlock.enable = true;
 	    firefox.enable = true;
 	    git.enable = true;
-      nm-applet.indicator = true;
+        nm-applet.indicator = true;
       #neovim.enable = true;
 
 	    thunar.enable = true;
@@ -107,7 +107,6 @@
     gtk4
     fish
     atuin
-    fish
     bun
     dart-sass 
     nodejs
@@ -116,7 +115,6 @@
     starship
     telegram-desktop
     vesktop
-    egl-wayland
     papirus-folders
     papirus-icon-theme
     spotify
@@ -125,12 +123,6 @@
     zoxide
     bibata-cursors
     scx_git.full
-    libva-utils
-    libvdpau-va-gl
-    intel-compute-runtime
-    intel-vaapi-driver
-    vaapiVdpau
-    mesa
-   
+     
   ];
 }
