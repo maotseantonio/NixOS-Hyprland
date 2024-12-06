@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, host, username, options, lib, inputs, system, ... }:
 {
     boot = {
       kernelPackages = pkgs.linuxPackages_cachyos;
@@ -19,30 +19,30 @@
         "modprobe.blacklist=iTCO_wdt"
       ];
       kernelModules = ["v4l2loopback"];
-      extraModulesPackages = [config.boot.kernelPackages.v4l2loopback];
+      extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
       initrd = {
         verbose = false;
         availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        kernelModules = ["i915"]
+        kernelModules = ["i915"];
       };
       loader.efi = {
         canTouchEfiVariables = true;
       };
       loader.timeout = 3;
       loader.grub = {
-        enable = true;
-        device = ["nodev"];
-        efiSupport = true;
-        memtest86.enable = true;
-        extraGrubInstallArgs = ["--bootloader-id=${host}"];
-        configurationName = "${host}";
+	    enable = true;
+	      devices = [ "nodev" ];
+	      efiSupport = true;
+	      memtest86.enable = true;
+	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
+	      configurationName = "${host}";
         dedsec-theme = {
           enable = true;
-          style = "redskull";
+          style = "reaper";
           icon = "color";
-          resolution = "1080p"
-        };
-      };
+          resolution = "1440p";
+    };     
+  	};
       tmp = {
         useTmpfs = false;
         tmpfsSize = "30%";
@@ -61,4 +61,5 @@
       pkgs.catppuccin-plymouth
     ];
     plymouth.theme = "catppuccin-macchiato";
+    };
 }
