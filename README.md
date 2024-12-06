@@ -29,11 +29,10 @@
 ### 🖼️ Gallery
 
 <p align="center">
-   <img src="./assets/Screenshot_05-Dec_18-06-42_460.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./assets/Screenshot_05-Dec_18-06-50_4721.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./assets/Screenshot_05-Dec_18-07-00_5166.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./assets/Screenshot_05-Dec_18-06-02_12954.png" style="margin-bottom: 10px;"/> <br>
-    <img src="./assets/Screenshot_05-Dec_18-06-18_17940.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/4.png" style="margin-bottom: 10px;"/> <br>
    Screenshots last updated <b>2024-12-05</b>
 </p>
 
@@ -50,7 +49,7 @@
             -   [hardware](hosts/nixy4life/hardware.nix) hardware configuration
             -   [user](hosts/nixy4life/user.nix) user specific packages(shell)
             -   [variables](hosts/nixy4life/variables.nix) user variables git username email
--   [modules](modules) 🍱 modules for gpu 
+-   [modules](modules) 🍱 for more modularize
 
 ## 📓 Components
 |                             | NixOS + Hyprland                                                                              |
