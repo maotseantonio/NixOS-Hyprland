@@ -45,10 +45,10 @@
 -   [hosts](hosts) 🌳 per-host configurations that contain machine specific configurations
     - [default](hosts/default/) 🖥️Default configuration for install script
     - [nixy4life](hosts/nixy4life/) 💻 Laptop specific configuration for my like
-    - [config](hosts/nixy4life/config.nix) kernel packages(cachyos kernel), scx enable(scx_lavd) and system level packages
-    - [hardware](hosts/nixy4life/hardware.nix) hardware configuration
-    - [user](hosts/nixy4life/user.nix) user specific packages(shell)
-    - [variables](hosts/nixy4life/variables.nix) user variables git username email
+        - [config](hosts/nixy4life/config.nix) kernel packages(cachyos kernel), scx enable(scx_lavd) and system level packages
+        - [hardware](hosts/nixy4life/hardware.nix) hardware configuration
+        - [user](hosts/nixy4life/user.nix) user specific packages(shell)
+        - [variables](hosts/nixy4life/variables.nix) user variables git username email
 -   [modules](modules) 🍱 for more modularize
     - [bootloader](modules/bootloader.nix) kernel packages(cachyos kernel) grub2 plymouth theme(catppuccin)
     - [flatpak](modules/flatpak.nix) declarative flatpak
