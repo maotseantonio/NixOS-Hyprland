@@ -50,6 +50,21 @@
     - [user](hosts/nixy4life/user.nix) user specific packages(shell)
     - [variables](hosts/nixy4life/variables.nix) user variables git username email
 -   [modules](modules) 🍱 for more modularize
+    - [bootloader](modules/bootloader.nix) kernel packages(cachyos kernel) grub2 plymouth theme(catppuccin)
+    - [flatpak](modules/flatpak.nix) declarative flatpak
+    - [fonts](modules/fonts.nix) fonts packages
+    - [hardwareconf](modules/hardwareconf.nix) hardware configuration
+    - [intel-driver](modules/intel-driver.nix) intel graphic intel-driver
+    - [nvidia-driver](modules/nvidia-driver) nvidia graphic driver
+    - [local-hardware-clock](modules/local-hardware-clock.nix)hardware clock(i dontknow this will be needed)
+    - [network](modules/network.nix) network configuration 
+    - [nvidia-prime](modules/nvidia-prime-driver) nvidia prime configuration
+    - [nvidia-patch](modules/nvidia-patch) nvidia patch for linux 6.12 kernel
+    - [services](modules/services.nix) services for nix system
+    - [system](modules/system.nix) system specific packages and settings
+    - [virtualization](modules/virtualization.nix) virtualization specific packages
+    - [wayland](modules/wayland.nix) wayland specific packages
+
 
 ## 📓 Components
 |                             | NixOS + Hyprland                                                                              |
