@@ -14,12 +14,23 @@
         };
       };
     };
+  programs.uwsm.enable = true;
+#  programs.uwsm.packages = pkgs.uwsm; 
+  programs.uwsm.waylandCompositors = {
+      hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor manager by UWSM";
+          binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+  };
+  #services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
     services = {
     xserver = {
       enable = true;
       excludePackages = [pkgs.xterm];
       desktopManager.xterm.enable = false;
+      desktopManager.runXdgAutostartIfNone = true;
       xkb = {
         layout = "us";
         variant = "";
