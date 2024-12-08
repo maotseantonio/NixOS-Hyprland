@@ -2,7 +2,7 @@
   # Git Configuration ( For Pulling Software Repos )
 
 
-  hostname = "nixy4life";
+  hostname = "shizuru";
   username = "antonio";
   configDirectory = "/home/antonio/NixOS-Hyprland/";
   gitUsername = "maotseantonio";
