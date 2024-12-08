@@ -15,7 +15,7 @@
       };
     };
   programs.uwsm.enable = true;
-#  programs.uwsm.packages = pkgs.uwsm; 
+  #programs.hyprland.withUWSM  = true; 
   programs.uwsm.waylandCompositors = {
       hyprland = {
           prettyName = "Hyprland";
@@ -23,7 +23,6 @@
           binPath = "/run/current-system/sw/bin/Hyprland";
       };
   };
-  #services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
     services = {
     xserver = {
