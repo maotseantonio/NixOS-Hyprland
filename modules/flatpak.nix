@@ -1,7 +1,9 @@
 { inputs, pkgs, ... }:
 {
  # imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
-
+  services = {
+    flatpak.enable = true;	
+  };
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];
     script = ''

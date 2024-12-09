@@ -28,7 +28,13 @@
     ../../modules/virtualization.nix
     ../../modules/network.nix
     ../../modules/fonts.nix
-    
+    ../../modules/nh.nix
+    ../../modules/audio.nix
+    ../../modules/powermanagement.nix
+    ../../modules/scheduler.nix
+    ../../modules/displaymanager.nix
+    ../../modules/locale.nix
+    ../../modules/stylix.nix
   ];
        
   nixpkgs.overlays = [

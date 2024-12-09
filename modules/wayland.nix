@@ -8,7 +8,7 @@
   	  xwayland.enable = true;
       };
 
-        nix-ld.enable = true;
+      nix-ld.enable = true;
 	    waybar.enable = false;
 	    hyprlock.enable = true;
 	    firefox.enable = true;
@@ -45,14 +45,6 @@
       enableSSHSupport = true;
     };
 	
-  };
-  programs.nh = {
-    enable = true;
-    flake = "/home/antonio/NixOS-Hyprland";
-    clean = {
-      enable = true;
-      extraArgs = "--keep-since 1w";
-    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -122,7 +114,6 @@
     catppuccin-sddm-corners
     zoxide
     bibata-cursors
-    scx_git.full
      
   ];
 }
