@@ -2,7 +2,7 @@
 
 {
   services.scx.enable = true;
-  services.scx.scheduler = "scx_lavd";
+  services.scx.scheduler = "scx_bpfland";
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.
@@ -14,8 +14,7 @@
         };
       };
     };
-  programs.uwsm.enable = true;
-  #programs.hyprland.withUWSM  = true; 
+  programs.uwsm.enable = true; 
   programs.uwsm.waylandCompositors = {
       hyprland = {
           prettyName = "Hyprland";

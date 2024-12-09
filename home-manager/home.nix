@@ -18,6 +18,9 @@
   nixpkgs.config.allowUnfree = true; 
   home.username = "antonio";
   home.homeDirectory = "/home/antonio";
+  programs.cava = {
+      enable = true;
+  };
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
@@ -58,6 +61,8 @@
     userEmail = "thetzinantonio@gmail.com";
   };
   catppuccin.enable = true;
+  #programs.hyprland.withUWSM  = true;
+  #wayland.windowManager.hyprland.systemd.enable = false;
   wayland.windowManager.hyprland.extraConfig = ''
       $configs = $HOME/.config/hypr/configs
       source=$configs/Settings.conf
@@ -95,7 +100,11 @@
       name = "Papirus-Dark";
       packages = pkgs.papirus-icon-theme;
     };
-    theme.packages = pkgs.catppuccin-gtk;
+    theme.packages = pkgs.catppuccin-gtk.override {
+      accents = [ "mauve" ]; # You can specify multiple accents here to output multiple themes 
+      size = "standard";
+      variant = "mocha";
+    };
     theme.name = "catppuccin-Dark";
      gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
@@ -171,6 +180,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+    
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

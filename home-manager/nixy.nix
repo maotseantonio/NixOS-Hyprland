@@ -3,13 +3,13 @@
 #- Nixy is a simple script that I use to manage my NixOS system. It's a simple script that provides a menu to rebuild, upgrade, update, collect garbage, clean boot menu, etc. 
 #-
 #- - `nixy` - UI wizard to manage the system.
-#- - `nixy rebuild` - Rebuild the system.
+#- - `nixy rebuild` - Rebuild the system HAHAHA.
 #- - `nixy ...` - ... see the script for more commands.
 { pkgs, config, inputs, ... }:
 let
 
   configDirectory = "/home/antonio/NixOS-Hyprland/";
-  hostname = "nixy4life";
+  hostname = "shizuru";
 
   nixy = pkgs.writeShellScriptBin "nixy"
     # bash
@@ -59,7 +59,7 @@ let
         sudo /run/current-system/bin/switch-to-configuration boot
       elif [[ $1 == "remote" ]];then
         cd ~/NixOS-Hyprland/ && git add . && git commit -m "update" && git push
-        ssh jack -S -C "cd /home/antonio/NixOS-Hyprland && git pull && sudo -S nixos-rebuild switch --flake ~/NixOS-Hyprland/hosts/.#nixy4life"
+        ssh jack -S -C "cd /home/antonio/NixOS-Hyprland && git pull && sudo -S nixos-rebuild switch --flake ~/NixOS-Hyprland/hosts/.#shizuru"
       elif [[ $1 == "loop" ]];then
         while true; do
           nixy
