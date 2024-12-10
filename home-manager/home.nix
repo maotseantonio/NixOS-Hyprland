@@ -12,8 +12,9 @@
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
+    inputs.hyprland.homeManagerModules.default
   ];
-  # Home Manager needs a bit of information about you and the paths it should
+  # Home Manager fucking needs a bit of information about you and the paths it should
   # manage.
   nixpkgs.config.allowUnfree = true; 
   home.username = "antonio";
@@ -62,7 +63,11 @@
   };
   catppuccin.enable = true;
   #programs.hyprland.withUWSM  = true;
-  #wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  };
+  wayland.windowManager.hyprland.systemd.enable = false;
   wayland.windowManager.hyprland.extraConfig = ''
       $configs = $HOME/.config/hypr/configs
       source=$configs/Settings.conf

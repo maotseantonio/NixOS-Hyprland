@@ -6,58 +6,71 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    catppuccin.url = "github:catppuccin/nix";
     matugen = {
         url = "github:/InioX/Matugen";
-        #ref = "refs/tags/matugen-v0.10.0"
     };
-     sf-mono-liga-src = {
+
+    sf-mono-liga-src = {
         url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
         flake = false;
     };
+
     ags = {
         url = "github:aylur/ags";
         inputs.nixpkgs.follows = "nixpkgs";
      };
+
     astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
+         url = "github:aylur/astal";
+         inputs.nixpkgs.follows = "nixpkgs";
     };
+    
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
+         url = "github:hyprwm/hyprland-plugins";
+         inputs.hyprland.follows = "hyprland";
     };
 
+    hyprpanel = {
+         url = "github:Jas-SinghFSU/HyprPanel";
+         inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixcord = {
+        url = "github:kaylorben/nixcord";
+    };
+    textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+    stylix.url = "github:danth/stylix";
+    wezterm.url = "github:wez/wezterm?dir=nix";
+    nixos-boot.url = "github:Melkor333/nixos-boot";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    nyxexprs.url = "github:notashelf/nyxexprs";
+
+
     home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
-    wezterm.url = "github:wez/wezterm?dir=nix";
+
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+        url = "github:Gerg-L/spicetify-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
    };
-    nixos-boot.url = "github:Melkor333/nixos-boot";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+
     nvix = {
             url = "github:niksingh710/nvix";
             inputs.nixpkgs.follows = "nixpkgs";
-        };
-    dedsec-grub-theme = {
-      url = "gitlab:VandalByte/dedsec-grub-theme";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
-    nyxexprs.url = "github:notashelf/nyxexprs";
+
+    dedsec-grub-theme = {
+            url = "gitlab:VandalByte/dedsec-grub-theme";
+            inputs.nixpkgs.follows = "nixpkgs";
+    };
     sddm-sugar-candy-nix = {
-    url = "github:maotseantonio/sddm-sugar-candy-nix";
-    # Optional, by default this flake follows nixpkgs-unstable.
-    inputs.nixpkgs.follows = "nixpkgs";
+            url = "github:maotseantonio/sddm-sugar-candy-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
   };
 };
   outputs =
@@ -92,11 +105,13 @@
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
             inputs.sddm-sugar-candy-nix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
             #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
             { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
           ];
         };
       };
+
     };
 }

@@ -35,6 +35,7 @@
     ../../modules/displaymanager.nix
     ../../modules/locale.nix
     ../../modules/stylix.nix
+    ../../modules/locale.nix
   ];
        
   nixpkgs.overlays = [
