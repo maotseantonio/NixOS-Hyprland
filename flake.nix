@@ -7,6 +7,7 @@
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
+    yazi.url = "github:sxyazi/yazi";
     matugen = {
         url = "github:/InioX/Matugen";
     };
@@ -48,7 +49,14 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
 
-
+    nvchad4nix = {
+        url = "github:MOIS3Y/nvchad4nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvchad-on-steroids = {  # <- here
+      url = "github:maotseantonio/nvchad_config";
+      flake = false;
+    };
     home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -83,7 +91,6 @@
       system = "x86_64-linux";
       host = "shizuru";
       username = "antonio";
-      #defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -106,9 +113,15 @@
             inputs.chaotic.nixosModules.default
             inputs.sddm-sugar-candy-nix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
-            #inputs.zen-browser.packages."${system}".default
             inputs.stylix.nixosModules.stylix
-            { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
+            inputs.catppuccin.nixosModules.catppuccin
+            { nixpkgs.overlays = [
+            inputs.hyprpanel.overlay
+             (final: prev: {
+            nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                })
+                ];
+            }
           ];
         };
       };

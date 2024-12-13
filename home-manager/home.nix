@@ -14,6 +14,8 @@
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
     inputs.hyprland.homeManagerModules.default
+    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.textfox.homeManagerModules.default
   ];
   # Home Manager fucking needs a bit of information about you and the paths it should
   # manage.
@@ -63,6 +65,9 @@
     enable = true;
     userName = "maotseantonio";
     userEmail = "thetzinantonio@gmail.com";
+  };
+  programs.htop = {
+      enable = true;
   };
   catppuccin.enable = true;
   #programs.hyprland.withUWSM  = true;
