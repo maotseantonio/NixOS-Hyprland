@@ -303,8 +303,10 @@ Other dotfiles that I learned / copy from:
   - [tluijken/.dotfiles](https://github.com/tluijken/.dotfiles): base rofi config
   - [mrh/dotfiles](https://codeberg.org/mrh/dotfiles): base waybar config
   - [JaKooLit/NixOS-Hyprland](https://github.com/JaKooLit/NixOS-Hyprland): my base config
+  - [Matt-FTW/dotfiles](https://github.com/Matt-FTW/dotfiles.git): most of my dotfiles
   - [orangc/dots](https://github.com/orangci/dots.git): shout out to this man. He helps me in my begining of nixos jorney. If i didnt get help from this people i will leave this beautiful world.
-
+  -[hmajid2301/nixicle](https://github.com/hmajid2301/nixicle.git): for some config idea
+  - [nix-community/nix4nvchad](https://github.com/nix-community/nix4nvchad.git)
 - README
   - [ryan4yin/nix-config](https://github.com/ryan4yin/nix-config)
   - [NotAShelf/nyx](https://github.com/NotAShelf/nyx)
@@ -351,7 +353,7 @@ Other dotfiles that I learned / copy from:
 [wl-clip-persist]: https://github.com/Linus789/wl-clip-persist
 [wf-recorder]: https://github.com/ammen99/wf-recorder
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
-[Gruvbox]: https://github.com/morhetz/gruvbox
+[Catppuccin]: https://github.com/catppuccin 
 [Papirus-Dark]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 [Bibata-Modern-Ice]: https://www.gnome-look.org/p/1197198
 [maxfetch]: https://github.com/jobcmax/maxfetch
