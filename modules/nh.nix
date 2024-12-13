@@ -1,4 +1,5 @@
 { pkgs, config, host, username, options, lib, inputs, system, ... }:
+
 {
   programs.nh = {
     enable = true;

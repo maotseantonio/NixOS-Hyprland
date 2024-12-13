@@ -1,5 +1,14 @@
 { pkgs, config, host, username, options, lib, inputs, system, ... }:
+with lib;
+let
+  cfg = config.system.powermanagement;
+in
 {
+  options.system.powermanagement = {
+    enable = mkEnableOption "Enable Powermanagement for Laptop";
+  };
+
+config = mkIf cfg.enable{
     services = {
     power-profiles-daemon.enable = true;
     fwupd.enable = true;
@@ -22,4 +31,5 @@
       INTEL_GPU_MIN_FREQ_ON_BAT = 500;
     };
     };
+ };
 }

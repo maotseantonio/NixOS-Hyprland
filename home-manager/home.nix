@@ -9,6 +9,7 @@
     ./helix.nix
     ./nixcord.nix
     ./textfox.nix
+    ./vscodium.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
@@ -28,6 +29,9 @@
   };
   programs.bottom = {
     enable = true;
+  };
+  programs.lsd = {
+      enable = true;
   };
   programs.btop = {
     enable = true;
@@ -65,6 +69,7 @@
   wayland.windowManager.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
   };
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -89,7 +94,7 @@
   wayland.windowManager.hyprland = {
       plugins = [
             inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
-#            /home/antonio/.nix-profile/lib/libborders-plus-plus.so
+
       ];
   };
   # This value determines the Home Manager release that your configuration is
@@ -212,7 +217,7 @@
   #
   home.sessionVariables = {
      EDITOR="nvim";
-     TERMINAL="kitty";
+     TERMINAL="wezterm";
      VISUAL="codium";
      BROWSER="firefox";
   };

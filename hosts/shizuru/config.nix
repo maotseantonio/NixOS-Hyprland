@@ -88,6 +88,11 @@
   };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
+  system.audio.enable = true;
+  system.bootloader.enable = true;
+  system.displayManager.enable = true;
+  system.powermanagement.enable = true;
+  system.scheduler.enable = true;
 
 
    nixpkgs.config.allowUnfree = true;

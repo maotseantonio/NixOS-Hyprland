@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, system,... }:
+
 {
  # imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
   services = {
@@ -10,6 +11,5 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-
 }
+

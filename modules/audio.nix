@@ -1,5 +1,14 @@
 { pkgs, config, host, username, options, lib, inputs, system, ... }:
+with lib;
+let
+  cfg = config.system.audio;
+in
 {
+  options.system.audio = {
+    enable = mkEnableOption "Enable Audio Config";
+  };
+
+config = mkIf cfg.enable {
   services = {
       pipewire = {
       enable = true;
@@ -9,4 +18,5 @@
 	    wireplumber.enable = true;
   	  };
   };
+ };
 }

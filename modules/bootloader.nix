@@ -1,5 +1,14 @@
 { pkgs, config, host, username, options, lib, inputs, system, ... }:
+with lib;
+let
+  cfg = config.system.bootloader;
+in
 {
+  options.system.bootloader = {
+    enable = mkEnableOption "Enable Bootloader";
+  };
+
+config = mkIf cfg.enable {
     boot = {
       kernelPackages = pkgs.linuxPackages_cachyos;
       consoleLogLevel = 0;
@@ -62,4 +71,6 @@
     ];
     plymouth.theme = "catppuccin-macchiato";
     };
+  };
+
 }
