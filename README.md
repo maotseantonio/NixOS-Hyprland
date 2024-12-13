@@ -305,6 +305,7 @@ Other dotfiles that I learned / copy from:
   - [JaKooLit/NixOS-Hyprland](https://github.com/JaKooLit/NixOS-Hyprland): my base config
   - [Matt-FTW/dotfiles](https://github.com/Matt-FTW/dotfiles.git): most of my dotfiles
   - [orangc/dots](https://github.com/orangci/dots.git): shout out to this man. He helps me in my begining of nixos jorney. If i didnt get help from this people i will leave this beautiful world.
+
   -[hmajid2301/nixicle](https://github.com/hmajid2301/nixicle.git): for some config idea
   - [nix-community/nix4nvchad](https://github.com/nix-community/nix4nvchad.git)
 - README
