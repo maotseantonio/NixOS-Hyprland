@@ -20,6 +20,8 @@
   # Home Manager fucking needs a bit of information about you and the paths it should
   # manage.
   nixpkgs.config.allowUnfree = true; 
+#  home-manager.backupFileExtension = "backup";
+  #home-manager.overridebackupFiles = ;
   home.username = "antonio";
   home.homeDirectory = "/home/antonio";
   programs.cava = {

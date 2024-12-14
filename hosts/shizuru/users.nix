@@ -8,15 +8,16 @@ in
   home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;
+      backupFileExtension = "backup";
       extraSpecialArgs = {
           inherit inputs username host;
       };
        users.${username} = {
       imports =
         if (host == "shizuru") then
-          [ ./../../home-manager/home.nix ]
+          [ ../../modules/home-manager/home.nix ]
         else
-          [ ./../../home-manager/home.nix ];
+          [ ../../modules/home-manager/home.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "25.05";
