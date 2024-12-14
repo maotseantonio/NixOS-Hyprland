@@ -14,16 +14,16 @@
 
         serif = {
           name = "JetBrainsMono Nerd Font";
-          #package = pkgs.nerd-font.jetbrainsmono;
+          package = pkgs.nerd-font.jetbrainsmono;
         };
 
         sansSerif = {
           name = "JetBrainsMono Nerd Font";
-          #package = pkgs.noto-fonts;
+          package = pkgs.nerd-font.jetbrainsmono;
         };
 
         monospace = {
-          #package = pkgs.nixicle.monolisa;
+          package = pkgs.nerd-font.jetbrainsmono;
           name = "JetBrainsMono Nerd Font";
         };
 

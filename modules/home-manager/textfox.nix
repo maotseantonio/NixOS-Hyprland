@@ -5,13 +5,13 @@
     profile = "default";
     config = {
       background = {
-        color = "#1e1e2e";
+        color = "#181825";
       };
        border = {
           color = "#cba6f7";
-          width = "4px";
+          width = "3px";
           transition = "1.0s ease";
-          radius = "3px";
+          radius = "5px";
         };
         displayHorizontalTabs = false;
         displayNavButtons = true;
@@ -23,6 +23,8 @@
         };
          sidebery = {
           margin = "1.0rem";
+          font = "JetBrainsMono Nerd Font";
+          font-size = "1.4rem";
         };
     };
   };

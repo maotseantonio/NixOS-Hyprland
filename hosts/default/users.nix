@@ -1,9 +1,31 @@
-{ pkgs, username, ... }:
+{ pkgs, inputs, username, host, system, lib, ... }:
 
 let
   inherit (import ./variables.nix) gitUsername;
 in
 {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  home-manager = {
+      useUserPackages = true;
+      useGlobalPkgs = true;
+      backupFileExtension = "backup";
+      extraSpecialArgs = {
+          inherit inputs username host;
+      };
+       users.${username} = {
+      imports =
+        if (host == "shizuru") then
+          [ ../../modules/home-manager/home.nix ]
+        else
+          [ ../../modules/home-manager/home.nix ];
+      home.username = "${username}";
+      home.homeDirectory = "/home/${username}";
+      home.stateVersion = "25.05";
+      programs.home-manager.enable = true;
+    };
+
+  };
+   
   users = { 
     users."${username}" = {
       homeMode = "755";
@@ -27,7 +49,7 @@ in
     
     defaultUserShell = pkgs.fish;
   }; 
-  
+  nix.settings.allowed-users = ["${username}"];
   environment.shells = with pkgs; [ fish ];
   environment.systemPackages = with pkgs; [ fzf ]; 
    programs.fish.enable = true;
@@ -36,11 +58,6 @@ in
   '';
    programs = {
 
-    spicetify = {
-        enable = true;
-#        theme = "catppuccin";
-#        colorscheme = "mocha";
-    };
   # Zsh configuration
 	  zsh = {
     	enable = false;
