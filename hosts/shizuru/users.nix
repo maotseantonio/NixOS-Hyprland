@@ -13,7 +13,7 @@ in
       };
        users.${username} = {
       imports =
-        if (host == "default") then
+        if (host == "shizuru") then
           [ ./../../home-manager/home.nix ]
         else
           [ ./../../home-manager/home.nix ];

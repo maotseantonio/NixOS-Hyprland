@@ -32,6 +32,9 @@
   programs.bottom = {
     enable = true;
   };
+  programs.gh = {
+      enable = true;
+  };
   programs.lsd = {
       enable = true;
   };

@@ -5,7 +5,7 @@
     profile = "default";
     config = {
       background = {
-        color = "1e1e2e";
+        color = "#1e1e2e";
       };
        border = {
           color = "#cba6f7";
