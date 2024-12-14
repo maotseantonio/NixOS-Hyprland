@@ -15,29 +15,7 @@
     ./hardware.nix
     ./users.nix
     ../../modules/system
-#    ../../modules/nvidia-drivers.nix
-#    ../../modules/nvidia-prime-drivers.nix
-#    ../../modules/intel-drivers.nix
-#    ../../modules/vm-guest-services.nix
-#    ../../modules/local-hardware-clock.nix
-#    ../../modules/amd-drivers.nix
-#    ../../modules/bootloader.nix
-#    ../../modules/system.nix
-#    ../../modules/wayland.nix
-#    ../../modules/services.nix
-#    ../../modules/hardwareconf.nix
-#     ../../modules/virtualization.nix
-#    ../../modules/network.nix
-#    ../../modules/fonts.nix
-#    ../../modules/nh.nix
-#    ../../modules/audio.nix
-#    ../../modules/powermanagement.nix
-#    ../../modules/scheduler.nix
-#    ../../modules/displaymanager.nix
-#    ../../modules/locale.nix
-#    ../../modules/stylix.nix
-#    ../../modules/locale.nix
-#    ../../modules/flatpak.nix
+
   ];
        
   nixpkgs.overlays = [
