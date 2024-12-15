@@ -16,6 +16,7 @@
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.textfox.homeManagerModules.default
+    
   ];
   # Home Manager fucking needs a bit of information about you and the paths it should
   # manage.
@@ -33,6 +34,9 @@
   };
   programs.bottom = {
     enable = true;
+  };
+  programs.zellij = {
+      enable = true;
   };
   programs.gh = {
       enable = true;
@@ -176,7 +180,8 @@
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
-    inputs.yazi.packages.${pkgs.system}.default
+    pkgs.yazi
+    #inputs.yazi.packages.${pkgs.system}.default
     pkgs.gpu-screen-recorder
     pkgs.vscodium
     pkgs.libqalculate

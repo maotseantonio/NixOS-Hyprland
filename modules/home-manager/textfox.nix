@@ -23,8 +23,6 @@
         };
          sidebery = {
           margin = "1.0rem";
-          font = "JetBrainsMono Nerd Font";
-          font-size = "1.4rem";
         };
     };
   };

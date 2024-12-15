@@ -7,15 +7,12 @@
 		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
   	  xwayland.enable = true;
       };
-
-      nix-ld.enable = true;
+        nix-ld.enable = true;
 	    waybar.enable = false;
 	    hyprlock.enable = true;
 	    firefox.enable = true;
 	    git.enable = true;
         nm-applet.indicator = true;
-      #neovim.enable = true;
-
 	    thunar.enable = true;
 	    thunar.plugins = with pkgs.xfce; [
 		    exo

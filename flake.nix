@@ -51,7 +51,8 @@
         url = "github:kaylorben/nixcord";
     };
     textfox.url = "github:adriankarlen/textfox";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
+    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
+    hyprland.url = "github:hyprwm/hyprland";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
@@ -135,6 +136,5 @@
           ];
         };
       };
-
-    };
+     };
 }
