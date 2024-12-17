@@ -107,8 +107,8 @@
         config.allowUnfree = true;
       };
     in
-    {
-      nixosConfigurations = {
+    { 
+        nixosConfigurations = {
         "${host}" = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
@@ -134,7 +134,8 @@
                 ];
             }
           ];
+       
         };
       };
-     };
+   };
 }

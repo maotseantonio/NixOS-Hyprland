@@ -101,14 +101,14 @@
   };
   console.keyMap = "${keyboardLayout}";
   # For Electron apps to use wayland
-    environment.variables = {
+  environment.variables = {
         VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
     };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
   EDITOR = "nvim";
   BROWSER = "firefox";
-  TERMINAL = "kitty";
+  TERMINAL = "wezterm";
   VISUAL = "vscodium";
   GSK_RENDERER = "gl";
 };
