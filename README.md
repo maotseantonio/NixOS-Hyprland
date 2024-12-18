@@ -33,7 +33,8 @@
    <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/4.png" style="margin-bottom: 10px;"/> <br>
-    <img src="./.github/assets/screenshots/5.png" style="margin-bottom: 10px;"/> <br> 
+   <img src="./.github/assets/screenshots/5.png" style="margin-bottom: 10px;"/> <br> 
+   <img src="./github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;"/> <br>
    Screenshots last updated <b>2024-12-05</b>
 </p>
 
