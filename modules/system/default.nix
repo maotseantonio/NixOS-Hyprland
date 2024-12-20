@@ -24,5 +24,6 @@
         ./nvidia-prime-drivers.nix
         ./vm-guest-services.nix
         ./local-hardware-clock.nix
+        ./cachix.nix
     ];
 }

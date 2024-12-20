@@ -178,7 +178,14 @@
     inputs.ags.packages."${pkgs.system}".default
     inputs.astal.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
+    inputs.ags.packages."${pkgs.system}".hyprland
+    inputs.ags.packages."${pkgs.system}".battery
+    inputs.ags.packages."${pkgs.system}".network
+    inputs.ags.packages."${pkgs.system}".bluetooth
+    inputs.ags.packages."${pkgs.system}".tray
+    inputs.ags.packages."${pkgs.system}".wireplumber
     pkgs.yazi
+    pkgs.microfetch
     #inputs.yazi.packages.${pkgs.system}.default
     pkgs.gpu-screen-recorder
     pkgs.vscodium
