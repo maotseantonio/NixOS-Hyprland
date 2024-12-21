@@ -10,6 +10,10 @@
     ./nixcord.nix
     ./textfox.nix
     ./vscodium.nix
+    ./spicetify.nix
+    ./git.nix
+    ./hyprland.nix
+    ./gtk.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
@@ -52,86 +56,14 @@
   programs.zathura = {
     enable = true;
   };
-  programs.spicetify =
-   let
-     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-   in
-   {
-     enable = true;
-     enabledExtensions = with spicePkgs.extensions; [
-       adblock
-       hidePodcasts
-       shuffle # shuffle+ (special characters are sanitized out of extension names)
-     ];
-     theme = spicePkgs.themes.catppuccin;
-     colorScheme = "mocha";
-   };
   programs.imv = {
     enable = true;
-  };
-  programs.git = {
-    enable = true;
-    userName = "maotseantonio";
-    userEmail = "thetzinantonio@gmail.com";
   };
   programs.htop = {
       enable = true;
   };
   catppuccin.enable = true;
-  wayland.windowManager.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      xwayland.enable = true;
-  };
-  wayland.windowManager.hyprland.systemd.enable = false;
-  wayland.windowManager.hyprland.extraConfig = ''
-      $configs = $HOME/.config/hypr/configs
-      source=$configs/Settings.conf
-      source=$configs/Keybinds.conf
-      $UserConfigs = $HOME/.config/hypr/UserConfigs
-      source= $UserConfigs/Startup_Apps.conf
-      source= $UserConfigs/ENVariables.conf
-      source= $UserConfigs/Monitors.conf
-      source= $UserConfigs/Laptops.conf
-      source= $UserConfigs/LaptopDisplay.conf
-      source= $UserConfigs/WindowRules.conf
-      source= $UserConfigs/UserDecorAnimations.conf
-      source= $UserConfigs/UserKeybinds.conf
-      source= $UserConfigs/UserSettings.conf
-      source= $UserConfigs/WorkspaceRules.conf
-      source= $HOME/.config/hypr/themes/mocha.conf
-  '';
-
-  wayland.windowManager.hyprland = {
-      plugins = [
-            inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
-
-      ];
-  };
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  gtk = {
-    iconTheme = {
-      name = "Papirus-Dark";
-      packages = pkgs.papirus-icon-theme;
-    };
-    theme.packages = pkgs.catppuccin-gtk.override {
-      accents = [ "mauve" ]; # You can specify multiple accents here to output multiple themes 
-      size = "standard";
-      variant = "mocha";
-    };
-    theme.name = "catppuccin-Dark";
-     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-    font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 14;
-    };
-
-  };
  
   home.packages = [
 
