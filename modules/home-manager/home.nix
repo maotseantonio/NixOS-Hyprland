@@ -2,7 +2,6 @@
 
 {
   imports = [
-    #<catppuccin/modules/home-manager>
     ./scripts/scripts.nix
     ./nixy.nix
     ./nvchad.nix
