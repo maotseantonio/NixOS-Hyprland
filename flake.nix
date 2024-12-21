@@ -59,7 +59,7 @@
     nixos-boot.url = "github:Melkor333/nixos-boot";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
-
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
         url = "github:MOIS3Y/nvchad4nix";
         inputs.nixpkgs.follows = "nixpkgs";

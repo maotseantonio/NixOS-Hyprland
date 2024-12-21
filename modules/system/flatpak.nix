@@ -1,9 +1,16 @@
 { inputs, pkgs, lib, system,... }:
 
 {
- # imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
   services = {
-    flatpak.enable = true;	
+    flatpak = {
+        enable = true;
+    packages = [
+      # "io.github.zen_browser.zen"
+      "com.github.tchx84.Flatseal"
+      "io.github.everestapi.Olympus"
+     ];
+    };
   };
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];

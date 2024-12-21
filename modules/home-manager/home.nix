@@ -16,6 +16,7 @@
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.textfox.homeManagerModules.default
+    #inputs.chaotic.homeManagerModules.default
     
   ];
   # Home Manager fucking needs a bit of information about you and the paths it should
@@ -77,11 +78,9 @@
       enable = true;
   };
   catppuccin.enable = true;
-  #programs.hyprland.withUWSM  = true;
   wayland.windowManager.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
   };
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -109,13 +108,6 @@
 
       ];
   };
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
   gtk = {
     iconTheme = {
@@ -147,15 +139,9 @@
       pkgs.buildFHSUserEnv (base // {
       name = "fhs";
       targetPkgs = pkgs: 
-        # pkgs.buildFHSUserEnv provides only a minimal FHS environment,
-        # lacking many basic packages needed by most software.
-        # Therefore, we need to add them manually.
-        #
-        # pkgs.appimageTools provides basic packages required by most software.
-        (base.targetPkgs pkgs) ++ (with pkgs; [
+       (base.targetPkgs pkgs) ++ (with pkgs; [
           pkg-config
           ncurses
-          # Feel free to add more packages here if needed.
         ]
       );
       profile = "export FHS=1";
@@ -184,6 +170,15 @@
     inputs.ags.packages."${pkgs.system}".bluetooth
     inputs.ags.packages."${pkgs.system}".tray
     inputs.ags.packages."${pkgs.system}".wireplumber
+    inputs.ags.packages."${pkgs.system}".cava
+    inputs.ags.packages."${pkgs.system}".greet 
+    inputs.ags.packages."${pkgs.system}".mpris
+    inputs.ags.packages."${pkgs.system}".notifd
+    inputs.ags.packages."${pkgs.system}".powerprofiles
+    inputs.ags.packages."${pkgs.system}".auth
+    inputs.ags.packages."${pkgs.system}".river
+    inputs.ags.packages."${pkgs.system}".apps
+    pkgs.firedragon
     pkgs.yazi
     pkgs.microfetch
     #inputs.yazi.packages.${pkgs.system}.default
@@ -198,7 +193,7 @@
     pkgs.komikku
     pkgs.mangal
     pkgs.mangareader
-    pkgs.gowall 
+    pkgs.lutgen 
     
   ];
 

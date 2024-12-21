@@ -7,11 +7,14 @@
     jetbrains-mono
     material-icons
     sf-mono-liga-bin
-    #iosevka-bin
     font-awesome
     terminus_font
     nerd-fonts.monaspace
-    nerd-fonts.jetbrains-mono 
-    
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.iosevka
+    nerd-fonts.caskaydia-mono
+    nerd-fonts.iosevka-term-slab
+    iosevka-bin
  	];
 }
