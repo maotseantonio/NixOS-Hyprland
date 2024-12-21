@@ -19,14 +19,9 @@
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.textfox.homeManagerModules.default
-    #inputs.chaotic.homeManagerModules.default
     
   ];
-  # Home Manager fucking needs a bit of information about you and the paths it should
-  # manage.
   nixpkgs.config.allowUnfree = true; 
-#  home.username = "antonio";
-#  home.homeDirectory = "/home/antonio";
   programs.cava = {
       enable = true;
   };
