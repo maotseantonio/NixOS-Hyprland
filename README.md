@@ -52,20 +52,30 @@
         - [user](hosts/shizuru/user.nix) user specific packages(shell)
         - [variables](hosts/shizuru/variables.nix) user variables git username email
 -   [modules](modules) 🍱 for more modularize
-    - [bootloader](modules/bootloader.nix) kernel packages(cachyos kernel) grub2 plymouth theme(catppuccin)
-    - [flatpak](modules/flatpak.nix) declarative flatpak
-    - [fonts](modules/fonts.nix) fonts packages
-    - [hardwareconf](modules/hardwareconf.nix) hardware configuration
-    - [intel-driver](modules/intel-driver.nix) intel graphic intel-driver
-    - [nvidia-driver](modules/nvidia-driver) nvidia graphic driver
-    - [local-hardware-clock](modules/local-hardware-clock.nix)hardware clock(i dontknow this will be needed)
-    - [network](modules/network.nix) network configuration 
-    - [nvidia-prime](modules/nvidia-prime-driver) nvidia prime configuration
-    - [nvidia-patch](modules/nvidia-patch) nvidia patch for linux 6.12 kernel
-    - [services](modules/services.nix) services for nix system
-    - [system](modules/system.nix) system specific packages and settings
-    - [virtualization](modules/virtualization.nix) virtualization specific packages
-    - [wayland](modules/wayland.nix) wayland specific packages
+  - [system] for system wide config
+    - [bootloader](modules/system/bootloader.nix) kernel packages(cachyos kernel) grub2 plymouth theme(catppuccin)
+    - [flatpak](modules/system/flatpak.nix) declarative flatpak
+    - [fonts](modules/system/fonts.nix) fonts packages
+    - [hardwareconf](modules/system/hardwareconf.nix) hardware configuration
+    - [intel-driver](modules/system/intel-driver.nix) intel graphic intel-driver
+    - [nvidia-driver](modules/system/nvidia-driver) nvidia graphic driver
+    - [local-hardware-clock](modules/system/local-hardware-clock.nix)hardware clock(i dontknow this will be needed)
+    - [network](modules/system/network.nix) network configuration 
+    - [nvidia-prime](modules/system/nvidia-prime-driver) nvidia prime configuration
+    - [nvidia-patch](modules/system/nvidia-patch) nvidia patch for linux 6.12 kernel
+    - [services](modules/system/services.nix) services for nix system
+    - [system](modules/system/system.nix) system specific packages and settings
+    - [virtualization](modules/system/virtualization.nix) virtualization specific packages
+    - [wayland](modules/system/wayland.nix) wayland specific packages
+    - [packages](modules/system/packages.nix) packages config
+    - [nix](modules/system/nix.nix) nix related settings
+  - [home-manager] home-manager config
+    - [home](modules/home-manager/home.nix) home-manager config 
+    - [vscodium](modules/home-manager/vscodium.nix) vscodium config 
+    - [helix](modules/home-manager/helix.nix) helix config 
+    - [spicetify](modules/home-manager/spicetify.nix) spotify client config
+    - [nvchad](modules/home-manager/nvchad.nix) nvchad config
+    - [textfox](modules/home-manager/textfox.nix)textfox config
 
 
 ## 📓 Components
