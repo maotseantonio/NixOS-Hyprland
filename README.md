@@ -52,7 +52,7 @@
         - [user](hosts/shizuru/user.nix) user specific packages(shell)
         - [variables](hosts/shizuru/variables.nix) user variables git username email
 -   [modules](modules) 🍱 for more modularize
-  - [system] for system wide config
+  - [system](system) for system wide config
     - [bootloader](modules/system/bootloader.nix) kernel packages(cachyos kernel) grub2 plymouth theme(catppuccin)
     - [flatpak](modules/system/flatpak.nix) declarative flatpak
     - [fonts](modules/system/fonts.nix) fonts packages
@@ -69,7 +69,7 @@
     - [wayland](modules/system/wayland.nix) wayland specific packages
     - [packages](modules/system/packages.nix) packages config
     - [nix](modules/system/nix.nix) nix related settings
-  - [home-manager] home-manager config
+  - [home-manager](home-manager) home-manager config
     - [home](modules/home-manager/home.nix) home-manager config 
     - [vscodium](modules/home-manager/vscodium.nix) vscodium config 
     - [helix](modules/home-manager/helix.nix) helix config 
