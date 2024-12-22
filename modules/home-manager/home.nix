@@ -2,18 +2,6 @@
 
 {
   imports = [
-    ./scripts/scripts.nix
-    ./nixy.nix
-    ./nvchad.nix
-    ./helix.nix
-    ./nixcord.nix
-    ./textfox.nix
-    ./vscodium.nix
-    ./spicetify.nix
-    ./git.nix
-    ./hyprland.nix
-    ./gtk.nix
-    ./fhsenv.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nvchad4nix.homeManagerModule
     inputs.nixcord.homeManagerModules.nixcord
@@ -104,7 +92,10 @@
     pkgs.komikku
     pkgs.mangal
     pkgs.mangareader
-    pkgs.lutgen 
+    pkgs.lutgen
+    pkgs.tmux
+    pkgs.tmux-sessionizer
+    pkgs.tmuxPlugins.sidebar
     
   ];
 
