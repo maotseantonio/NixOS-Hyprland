@@ -25,6 +25,7 @@
         ./vm-guest-services.nix
         ./local-hardware-clock.nix
         ./cachix.nix
-        ./packages.nix        
+        ./packages.nix
+        ./nix.nix
     ];
 }
