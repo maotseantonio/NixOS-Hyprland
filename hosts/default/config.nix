@@ -71,11 +71,9 @@
   system.bootloader.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
-  system.scheduler.enable = true;
-
-
-   nixpkgs.config.allowUnfree = true;
-  
+  system.scheduler.enable = true; 
+  nixpkgs.config.allowUnfree = true;
+  #chaotic.pkgsx86_64_v3.enable = true;
   users = {
     mutableUsers = true;
   };
@@ -100,14 +98,14 @@
   };
   console.keyMap = "${keyboardLayout}";
   # For Electron apps to use wayland
-    environment.variables = {
+  environment.variables = {
         VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
     };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
   EDITOR = "nvim";
   BROWSER = "firefox";
-  TERMINAL = "kitty";
+  TERMINAL = "wezterm";
   VISUAL = "vscodium";
   GSK_RENDERER = "gl";
 };
@@ -125,3 +123,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 }
+
