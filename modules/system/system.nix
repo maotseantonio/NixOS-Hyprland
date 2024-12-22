@@ -10,7 +10,6 @@
   ...
 }:
 {
-  # imports = [ inputs.nix-gaming.nixosModules.default ];
    system.autoUpgrade = {
       enable = true;
       flake = inputs.self.outPath;
@@ -19,7 +18,6 @@
             "nixpkgs"
             "-L"
         ];
-        #dates = "02:00";
         randomizedDelaySec = "45min";
     };
     
@@ -67,6 +65,5 @@
     (mpv.override {scripts = [mpvScripts.mpris];})
   ];
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.05";
-
+    system.stateVersion = "25.05";
 }

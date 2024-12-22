@@ -4,8 +4,8 @@
   imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
   services = {
     flatpak = {
-        enable = true;
-    packages = [
+     enable = true;
+     packages = [
       # "io.github.zen_browser.zen"
       "com.github.tchx84.Flatseal"
       "io.github.everestapi.Olympus"
