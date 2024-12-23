@@ -73,7 +73,6 @@
   system.powermanagement.enable = true;
   system.scheduler.enable = true; 
   nixpkgs.config.allowUnfree = true;
-  #chaotic.pkgsx86_64_v3.enable = true;
   users = {
     mutableUsers = true;
   };
