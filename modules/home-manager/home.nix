@@ -60,23 +60,19 @@
     pkgs.neovide
     inputs.wezterm.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
-    inputs.ags.packages."${pkgs.system}".default
-    inputs.astal.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
-    inputs.ags.packages."${pkgs.system}".hyprland
-    inputs.ags.packages."${pkgs.system}".battery
-    inputs.ags.packages."${pkgs.system}".network
-    inputs.ags.packages."${pkgs.system}".bluetooth
-    inputs.ags.packages."${pkgs.system}".tray
-    inputs.ags.packages."${pkgs.system}".wireplumber
-    inputs.ags.packages."${pkgs.system}".cava
-    inputs.ags.packages."${pkgs.system}".greet 
-    inputs.ags.packages."${pkgs.system}".mpris
-    inputs.ags.packages."${pkgs.system}".notifd
-    inputs.ags.packages."${pkgs.system}".powerprofiles
-    inputs.ags.packages."${pkgs.system}".auth
-    inputs.ags.packages."${pkgs.system}".river
-    inputs.ags.packages."${pkgs.system}".apps
+    inputs.ags.packages.${pkgs.system}.agsFull
+    inputs.astal.packages.${pkgs.system}.tray
+    inputs.astal.packages.${pkgs.system}.hyprland
+    inputs.astal.packages.${pkgs.system}.io
+    inputs.astal.packages.${pkgs.system}.apps
+    inputs.astal.packages.${pkgs.system}.battery
+    inputs.astal.packages.${pkgs.system}.bluetooth
+    inputs.astal.packages.${pkgs.system}.mpris
+    inputs.astal.packages.${pkgs.system}.network
+    inputs.astal.packages.${pkgs.system}.notifd
+    inputs.astal.packages.${pkgs.system}.powerprofiles
+    inputs.astal.packages.${pkgs.system}.wireplumber
     pkgs.firedragon
     pkgs.yazi
     pkgs.microfetch
