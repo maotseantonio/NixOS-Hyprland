@@ -46,55 +46,7 @@
       enable = true;
   };
   catppuccin.enable = true;
- 
-  home.packages = [
-    # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
-    pkgs.protonvpn-gui
-    pkgs.manga-tui
-    pkgs.hyprpanel
-    pkgs.nitch
-    pkgs.rustup
-    pkgs.hiddify-app
-    pkgs.neofetch
-    pkgs.github-cli
-    pkgs.neovide
-    inputs.wezterm.packages.${pkgs.system}.default
-    inputs.zen-browser.packages."${pkgs.system}".default
-    inputs.nyxexprs.packages.${pkgs.system}.ani-cli
-    inputs.ags.packages.${pkgs.system}.agsFull
-    inputs.astal.packages.${pkgs.system}.tray
-    inputs.astal.packages.${pkgs.system}.hyprland
-    inputs.astal.packages.${pkgs.system}.io
-    inputs.astal.packages.${pkgs.system}.apps
-    inputs.astal.packages.${pkgs.system}.battery
-    inputs.astal.packages.${pkgs.system}.bluetooth
-    inputs.astal.packages.${pkgs.system}.mpris
-    inputs.astal.packages.${pkgs.system}.network
-    inputs.astal.packages.${pkgs.system}.notifd
-    inputs.astal.packages.${pkgs.system}.powerprofiles
-    inputs.astal.packages.${pkgs.system}.wireplumber
-    pkgs.firedragon
-    pkgs.yazi
-    pkgs.microfetch
-    #inputs.yazi.packages.${pkgs.system}.default
-    pkgs.gpu-screen-recorder
-    pkgs.vscodium
-    pkgs.libqalculate
-    pkgs.libdbusmenu-gtk3
-    pkgs.dbus-glib
-    pkgs.gtkmm3
-    pkgs.gtkmm4
-    pkgs.gtkmm2
-    pkgs.komikku
-    pkgs.mangal
-    pkgs.mangareader
-    pkgs.lutgen
-    pkgs.tmux
-    pkgs.tmux-sessionizer
-    pkgs.tmuxPlugins.sidebar
-    
-  ];
-
+  
   home.file = {
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;

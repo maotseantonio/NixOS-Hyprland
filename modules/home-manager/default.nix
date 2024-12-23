@@ -13,6 +13,7 @@
     ./hyprland.nix
     ./spicetify.nix
     ./vscodium.nix
+    ./home-packages.nix
     ./scripts/scripts.nix
   ];
 }
