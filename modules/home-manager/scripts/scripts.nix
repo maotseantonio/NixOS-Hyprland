@@ -30,7 +30,7 @@
   
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-  #hyprpanelv2 = pkgs.writeScriptBin "hyprpanelv2" (builtins.readFile ./scripts/hyprpanel.sh);
+  hyprpanelv2 = pkgs.writeScriptBin "hyprpanelv2" (builtins.readFile ./scripts/hyprpanel.sh);
   statusbar = pkgs.writeScriptBin "statusbar" (builtins.readFile ./scripts/statusbar);
 in {
   home.packages = with pkgs; [
@@ -65,7 +65,7 @@ in {
 
     rofi-power-menu
     power-menu
-   # hyprpanelv2
+    hyprpanelv2
     statusbar
   ];
 }

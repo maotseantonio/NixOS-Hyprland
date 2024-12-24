@@ -13,7 +13,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 3d";
+      options = "--delete-older-than 7d";
     };
   };
 }

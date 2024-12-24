@@ -7,6 +7,7 @@
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
+    #ags-v1.url = "git+https://github.com/Aylur/ags?ref=refs/tags/v1.8.2";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +40,7 @@
     
     hyprland-plugins = {
          url = "github:hyprwm/hyprland-plugins";
-         inputs.hyprland.follows = "hyprland";
+         inputs.hyprland.follows = "hyprland-stable";
     };
 
     hyprpanel = {
@@ -51,8 +52,8 @@
         url = "github:kaylorben/nixcord";
     };
     textfox.url = "github:adriankarlen/textfox";
-    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
-    hyprland.url = "github:hyprwm/hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-stable.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.46.1&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";

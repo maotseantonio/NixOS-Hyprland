@@ -8,7 +8,6 @@
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.textfox.homeManagerModules.default
-    
   ];
   nixpkgs.config.allowUnfree = true; 
   programs.cava = {

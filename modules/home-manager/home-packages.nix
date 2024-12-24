@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ...}:
+{ config, pkgs, inputs, ...}:
 {
     home.packages = with pkgs; [
     # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })

@@ -3,8 +3,9 @@
   programs = {
 	  hyprland = {
           enable = true;
-		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+		  #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+		  package = inputs.hyprland-stable.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+          portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
   	  xwayland.enable = true;
       };
         nix-ld.enable = true;
