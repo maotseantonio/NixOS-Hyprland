@@ -17,7 +17,11 @@ in
     hardware.graphics = {
       extraPackages = with pkgs; [
         intel-media-driver
-        libva	
+        libva
+        vaapiVdapu
+        intel-compute-runtime
+        libva-utils
+        libvdpau-va-gl
       ];
     };
   };

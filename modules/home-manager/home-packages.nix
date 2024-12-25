@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ...}:
 {
     home.packages = with pkgs; [
-    # (pkgs.nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
     protonvpn-gui
     manga-tui
     hyprpanel
@@ -27,9 +26,9 @@
     inputs.astal.packages.${pkgs.system}.powerprofiles
     inputs.astal.packages.${pkgs.system}.wireplumber
     firedragon
-    yazi
+    #yazi
     microfetch
-    #inputs.yazi.packages.${pkgs.system}.default
+    inputs.yazi.packages.${pkgs.system}.default
     gpu-screen-recorder
     vscodium
     libqalculate
