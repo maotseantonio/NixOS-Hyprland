@@ -76,6 +76,13 @@
     - [spicetify](modules/home-manager/spicetify.nix) spotify client config
     - [nvchad](modules/home-manager/nvchad.nix) nvchad config
     - [textfox](modules/home-manager/textfox.nix)textfox config
+    - [git](modules/home-manager/git)git config 
+    - [gtk.nix](modules/home-manager/gtk.nix) themeing related 
+    - [nixcord](modules/home-manager/nixcord.nix) vencord for nix way 
+    - [HyprPanel](modules/home-manager/hyprpanel.nix) hm module for hyprpanel 
+    - [nixy](modules/home-manager/nixy.nix) system utilities
+    - [hom-packages](modules/home-manager/home-packages.nix) packages for user specific 
+    - [fhsenv](modules/home-manager/fhsenv.nix) fhs enviornment(will remove in 25.11)
 
 
 ## 📓 Components
@@ -100,7 +107,7 @@
 | **Media Player**            | [mpv] |
 | **Music Player**            | spotify |
 | **Screenshot Software**     | [grimblast] |
-| **Screen Recording**        | [wf-recorder] |
+| **kernel**                  | [linux cachyos kernel] |
 | **Clipboard**               | [wl-clip-persist] |
 | **Color Picker**            | [hyprpicker] |
 
