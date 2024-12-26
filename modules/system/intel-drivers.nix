@@ -18,7 +18,7 @@ in
       extraPackages = with pkgs; [
         intel-media-driver
         libva
-        vaapiVdapu
+        vaapiVdpau
         intel-compute-runtime
         libva-utils
         libvdpau-va-gl
