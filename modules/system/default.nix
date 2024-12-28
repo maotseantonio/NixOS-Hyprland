@@ -2,6 +2,8 @@
 {
     imports = [
         ./bootloader.nix
+        ./plymouth.nix
+        ./kernel.nix
         ./nh.nix
         ./audio.nix
         ./fonts.nix

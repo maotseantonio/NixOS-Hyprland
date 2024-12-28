@@ -67,8 +67,10 @@
   };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
-  system.audio.enable = true;
+  system.kernel.enable = true;
   system.bootloader.enable = true;
+  system.plymouth.enable = true;
+  system.audio.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true; 
