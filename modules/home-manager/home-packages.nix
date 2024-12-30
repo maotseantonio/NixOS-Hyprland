@@ -26,9 +26,8 @@
     inputs.astal.packages.${pkgs.system}.powerprofiles
     inputs.astal.packages.${pkgs.system}.wireplumber
     firedragon
-    #yazi
+    yazi
     microfetch
-    inputs.yazi.packages.${pkgs.system}.default
     gpu-screen-recorder
     vscodium
     libqalculate

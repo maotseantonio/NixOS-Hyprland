@@ -7,7 +7,6 @@
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
-    #ags-v1.url = "git+https://github.com/Aylur/ags?ref=refs/tags/v1.8.2";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,7 +60,6 @@
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
-    nixos-boot.url = "github:Melkor333/nixos-boot";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -83,19 +81,10 @@
         inputs.nixpkgs.follows = "nixpkgs";
    };
 
-    nvix = {
-            url = "github:niksingh710/nvix";
-            inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dedsec-grub-theme = {
             url = "gitlab:VandalByte/dedsec-grub-theme";
             inputs.nixpkgs.follows = "nixpkgs";
     };
-    sddm-sugar-candy-nix = {
-            url = "github:maotseantonio/sddm-sugar-candy-nix";
-            inputs.nixpkgs.follows = "nixpkgs";
-  };
 };
   outputs =
     inputs @ { self
@@ -125,10 +114,8 @@
           modules = [
             ./hosts/${host}/config.nix
             inputs.dedsec-grub-theme.nixosModule
-            inputs.nixos-boot.nixosModules.default
             inputs.spicetify-nix.nixosModules.default
             inputs.chaotic.nixosModules.default
-            inputs.sddm-sugar-candy-nix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin

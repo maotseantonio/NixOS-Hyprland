@@ -9,7 +9,7 @@
   	  xwayland.enable = true;
       };
         nix-ld.enable = true;
-	    waybar.enable = true;
+	    waybar.enable = false;
 	    hyprlock.enable = true;
 	    firefox.enable = true;
 	    git.enable = true;

@@ -88,8 +88,8 @@
     vaapiVdpau
     mesa
     egl-wayland
-    #waybar  # if wanted experimental next line
-    (pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    waybar  # if wanted experimental next line
+    #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
   ];
