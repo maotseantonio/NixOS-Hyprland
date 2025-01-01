@@ -35,9 +35,9 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = [ "dashboard" "windowtitle" "systray" ];
+          left = [ "dashboard" "windowtitle" "hypridle" "media" ];
           middle = [ "workspaces" ];
-          right = [ "media" "hypridle" "power" ];
+          right = [ "systray" "cpu" "clock" "power" ];
         };
       };
     };
@@ -60,10 +60,10 @@
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = false;
 
-      theme.bar.transparent = true;
+      theme.bar.transparent = false;
 
       theme.font = {
-        name = "CaskaydiaCove Nerd Font";
+        name = "JetBrainsMono Nerd Font";
         size = "16px";
       };
     };

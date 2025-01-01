@@ -70,6 +70,5 @@
     catppuccin-sddm-corners
     zoxide
     bibata-cursors
-     
   ];
 }

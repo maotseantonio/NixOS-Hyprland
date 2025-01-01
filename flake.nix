@@ -41,6 +41,9 @@
          url = "github:hyprwm/hyprland-plugins";
          inputs.hyprland.follows = "hyprland";
     };
+    hyprsunset = {
+        url = "github:hyprwm/hyprsunset";
+    };
      hy3 = {
       url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";

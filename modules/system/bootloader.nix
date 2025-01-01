@@ -21,12 +21,14 @@ config = mkIf cfg.enable {
 	      memtest86.enable = true;
 	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
 	      configurationName = "${host}";
-        dedsec-theme = {
-          enable = true;
-          style = "reaper";
-          icon = "color";
-          resolution = "1440p";
-    };     
+          gfxmodeEfi = "2560x1440";
+          theme = pkgs.catppuccin-grub;
+      #  dedsec-theme = {
+      #    enable = true;
+      #    style = "reaper";
+      #    icon = "color";
+      #    resolution = "1440p";
+    #};     
   	};
       tmp = {
         useTmpfs = false;

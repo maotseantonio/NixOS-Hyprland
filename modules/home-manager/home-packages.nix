@@ -25,6 +25,7 @@
     inputs.astal.packages.${pkgs.system}.notifd
     inputs.astal.packages.${pkgs.system}.powerprofiles
     inputs.astal.packages.${pkgs.system}.wireplumber
+    inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     firedragon
     yazi
     microfetch

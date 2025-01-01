@@ -26,46 +26,30 @@
   
   record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
 
-  screenshot = pkgs.writeScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh);
+ # screenshot = pkgs.writeScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh);
   
-  rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
-  power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-  hyprpanelv2 = pkgs.writeScriptBin "hyprpanelv2" (builtins.readFile ./scripts/hyprpanel.sh);
+ # rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
+ # power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
+#  hyprpanelv2 = pkgs.writeScriptBin "hyprpanelv2" (builtins.readFile ./scripts/hyprpanel.sh);
   statusbar = pkgs.writeScriptBin "statusbar" (builtins.readFile ./scripts/statusbar);
 in {
   home.packages = with pkgs; [
    # wall-change
    # wallpaper-picker
-    
     runbg
     music
     lofi
-  
     toggle_blur
     toggle_oppacity
     toggle_waybar
     toggle_float
-
     maxfetch
-
     compress
     extract
-
     shutdown-script
-    
-    show-keybinds
-
     vm-start
-
     ascii
-
     record
-
-    screenshot
-
-    rofi-power-menu
-    power-menu
-    hyprpanelv2
     statusbar
   ];
 }
