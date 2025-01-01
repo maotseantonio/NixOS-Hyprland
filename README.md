@@ -40,6 +40,7 @@
 
 
 # 🗃️ Overview
+### My config was different from JaKooLit NixOS-Hyprland. Dont blindly use my install script. plz check the install.sh file.
 
 ## 📚 Layout
 

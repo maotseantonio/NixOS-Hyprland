@@ -20,30 +20,6 @@
        
   nixpkgs.overlays = [
     (final: prev: {
-      matugen = final.rustPlatform.buildRustPackage rec {
-        pname = "matugen";
-        version = "2.4.0";
-
-        src = final.fetchFromGitHub {
-          owner = "InioX";
-          repo = "matugen";
-          rev = "refs/tags/v${version}";
-          hash = "sha256-l623fIVhVCU/ylbBmohAtQNbK0YrWlEny0sC/vBJ+dU=";
-        };
-
-        cargoHash = "sha256-FwQhhwlldDskDzmIOxhwRuUv8NxXCxd3ZmOwqcuWz64=";
-
-        meta = {
-          description = "Material you color generation tool";
-          homepage = "https://github.com/InioX/matugen";
-          changelog = "https://github.com/InioX/matugen/blob/${src.rev}/CHANGELOG.md";
-          license = final.lib.licenses.gpl2Only;
-          maintainers = with final.lib.maintainers; [ lampros ];
-          mainProgram = "matugen";
-        };
-      };
-    })
-    (final: prev: {
         sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
         pname = "sf-mono-liga-bin";
         version = "dev";
@@ -67,13 +43,14 @@
   };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
-  system.audio.enable = true;
+  system.kernel.enable = true;
   system.bootloader.enable = true;
+  system.plymouth.enable = true;
+  system.audio.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true; 
   nixpkgs.config.allowUnfree = true;
-  #chaotic.pkgsx86_64_v3.enable = true;
   users = {
     mutableUsers = true;
   };
@@ -87,7 +64,7 @@
     vaapiVdpau
     mesa
     egl-wayland
-    #waybar  # if wanted experimental next line
+    waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
