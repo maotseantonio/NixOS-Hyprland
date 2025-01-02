@@ -9,4 +9,8 @@
       extraArgs = "--keep-since 1w";
     };
   };
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+    nvd
+  ];
 }

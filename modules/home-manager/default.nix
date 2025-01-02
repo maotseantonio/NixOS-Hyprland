@@ -14,6 +14,7 @@
     ./spicetify.nix
     ./vscodium.nix
     ./home-packages.nix
+    ./ghostty.nix
     ./scripts/scripts.nix
   ];
 }

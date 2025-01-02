@@ -49,6 +49,10 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
     hyprpanel = {
          url = "github:Jas-SinghFSU/HyprPanel";
          inputs.nixpkgs.follows = "nixpkgs";
