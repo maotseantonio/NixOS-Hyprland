@@ -164,13 +164,8 @@ extract.sh
 <summary>
 compress.sh 
 </summary>
-
-**Description:** This script compress a file or a folder into a ```tar.gz``` archives which is created in the current directory with the name of the chosen file or folder. 
-
-**Usage:** ```compress <file>``` or ```compress <folder>```
 </details>
 
-<details>
 <details>
 <summary>
 maxfetch.sh 
