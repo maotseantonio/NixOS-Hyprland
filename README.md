@@ -137,40 +137,13 @@ Utils (EXPAND)
 Nixos (EXPAND)
 </summary>
 
-- ```cdnix```      $\rightarrow$ ```cd ~/NixOS-Hyprland/ && codium ~/NixOS-Hyprland/```
-- ```nix-rebuild```   $\rightarrow$ ```sudo nixos rebuild switch --flake .#nixy4life```
+- ```fuckdit```      $\rightarrow$ ```cd ~/NixOS-Hyprland/ && codium ~/NixOS-Hyprland/```
+- ```fucknix```   $\rightarrow$ ```sudo nixos rebuild switch --flake .#nixy4life```
 </details>
 
 <details>
 <summary>
-Git (EXPAND)
 </summary>
-
-- ```g```     $\rightarrow$ ```lazygit```
-- ```gf```    $\rightarrow$ ```onefetch --number-of-file-churns 0 --no-color-palette```
-- ```ga```    $\rightarrow$ ```git add```
-- ```gaa```   $\rightarrow$ ```git add --all```
-- ```gs```    $\rightarrow$ ```git status```
-- ```gb```    $\rightarrow$ ```git branch```
-- ```gm```    $\rightarrow$ ```git merge```
-- ```gd```    $\rightarrow$ ```git diff```
-- ```gpl```   $\rightarrow$ ```git pull```
-- ```gplo```  $\rightarrow$ ```git pull origin```
-- ```gps```   $\rightarrow$ ```git push```
-- ```gpso```  $\rightarrow$ ```git push origin```
-- ```gpst```  $\rightarrow$ ```git push --follow-tags```
-- ```gcl```   $\rightarrow$ ```git clone```
-- ```gc```    $\rightarrow$ ```git commit```
-- ```gcm```   $\rightarrow$ ```git commit -m```
-- ```gcma```  $\rightarrow$ ```git add --all && git commit -m```
-- ```gtag```  $\rightarrow$ ```git tag -ma```
-- ```gch```   $\rightarrow$ ```git checkout```
-- ```gchb```  $\rightarrow$ ```git checkout -b```
-- ```glog```  $\rightarrow$ ```git log --oneline --decorate --graph```
-- ```glol```  $\rightarrow$ ```git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'```
-- ```glola``` $\rightarrow$ ```git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all```
-- ```glols``` $\rightarrow$ ```git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat```
-  
 </details>
 
 ## 🛠️ Scripts
@@ -198,25 +171,6 @@ compress.sh
 </details>
 
 <details>
-<summary>
-toggle_blur.sh 
-</summary>
-
-**Description:** This script toggles the Hyprland blur effect. If the blur is currently enabled, it will be disabled, and if it's disabled, it will be turned on. 
-
-**Usage:** ```toggle_blur```
-</details>
-
-<details>
-<summary>
-toggle_oppacity.sh 
-</summary>
-
-**Description:** This script toggles the Hyperland oppacity effect. If the oppacity is currently set to 0.90, it will be set to 1, and if it's set to 1, it will be set to 0.90. 
-
-**Usage:** ```toggle_oppacity```
-</details>
-
 <details>
 <summary>
 maxfetch.sh 
