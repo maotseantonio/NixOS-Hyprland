@@ -1,3 +1,4 @@
+#########btrfs-partition
 export DRIVE=nvme0n1
 export BOOT_PARTITION="${DRIVE}p1"
 export ROOT_PARTITION="${DRIVE}p2"

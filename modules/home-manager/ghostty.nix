@@ -7,8 +7,8 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "JetBrainsMono Nerd Font"
-    font-size = 14
+    font-family = "IosevkaTermSlab Nerd Font"
+    font-size = 15
     font-thicken = true
     font-feature = ss01
     font-feature = ss04
@@ -45,7 +45,7 @@ in
 
     auto-update = off
   '';
-  xdg.configFile."ghostty/themes/gruvbox".text = ''
+  xdg.configFile."ghostty/themes/catppuccin-mocha".text = ''
     background = #181825
     foreground = #585b70
 
