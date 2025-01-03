@@ -1,5 +1,7 @@
 { pkgs, config, inputs, lib, options, username, system, host, ...}:
-{
+{ 
+  chaotic.nyx.cache.enable = true;
+  chaotic.nyx.overlay.enable = true;
   nix = {
     settings = {
     substituters = [
