@@ -50,7 +50,7 @@
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.btrfs.autoScrub = {
   enable = true;
   interval = "monthly";

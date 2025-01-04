@@ -9,13 +9,14 @@ in
   };
 
 config = mkIf cfg.enable {
-    boot = {
-          
+    catppuccin.plymouth.enable = true;
+    catppuccin.plymouth.flavor = "mocha";
+    boot = {          
         plymouth.enable = true;
-        plymouth.themePackages = [
-            pkgs.catppuccin-plymouth
-          ];
-        plymouth.theme = "catppuccin-macchiato";
+        #plymouth.themePackages = [
+        #    pkgs.catppuccin-plymouth
+        #  ];
+        #plymouth.theme = "catppuccin-macchiato";
     };
   };
 }

@@ -9,6 +9,7 @@ in
   };
 
 config = mkIf cfg.enable{
+  
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm = {
       enable = true; # Enable SDDM.

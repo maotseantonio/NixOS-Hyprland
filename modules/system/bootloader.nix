@@ -9,6 +9,8 @@ in
   };
 
 config = mkIf cfg.enable {
+    catppuccin.grub.enable = true;
+    catppuccin.grub.flavor = "mocha";
     boot = {
      loader.efi = {
         canTouchEfiVariables = true;
@@ -22,7 +24,7 @@ config = mkIf cfg.enable {
 	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
 	      configurationName = "${host}";
           gfxmodeEfi = "2560x1440";
-          theme = pkgs.catppuccin-grub;
+      #    theme = pkgs.catppuccin-grub;
       #  dedsec-theme = {
       #    enable = true;
       #    style = "reaper";

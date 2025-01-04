@@ -7,7 +7,6 @@
     nitch
     rustup
     hiddify-app
-    neofetch
     github-cli
     neovide
     inputs.wezterm.packages.${pkgs.system}.default

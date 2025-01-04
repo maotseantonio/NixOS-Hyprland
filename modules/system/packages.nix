@@ -7,6 +7,8 @@
         version = "1.8.2";
      }))
     brightnessctl # for brightness control
+    libinput
+    libinput-gestures
     cliphist
     eog
     gnome-system-monitor

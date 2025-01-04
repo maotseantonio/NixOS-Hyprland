@@ -9,7 +9,6 @@
     sf-mono-liga-bin
     font-awesome
     terminus_font
-    terminus-nerdfont
     nerd-fonts.monaspace
     nerd-fonts.jetbrains-mono
     nerd-fonts.caskaydia-cove
