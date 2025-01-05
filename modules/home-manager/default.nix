@@ -15,6 +15,7 @@
     ./vscodium.nix
     ./home-packages.nix
     ./ghostty.nix
+    ./hyprpanel.nix
     ./scripts/scripts.nix
   ];
 }

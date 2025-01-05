@@ -3,7 +3,6 @@
     home.packages = with pkgs; [
     protonvpn-gui
     manga-tui
-    hyprpanel
     nitch
     rustup
     hiddify-app
