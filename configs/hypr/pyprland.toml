@@ -1,0 +1,18 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "magnify",
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "75% 60%"
+
+[scratchpads.spotify]
+animation = "fromTop"
+command = "spotify"
+class = "spotify"
+size = "75% 60%"
+

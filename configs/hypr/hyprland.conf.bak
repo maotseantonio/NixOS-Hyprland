@@ -1,0 +1,19 @@
+#plugin=/nix/store/xwpi5ybf8jix7zmd8bs500d3y8jdr3mi-borders-plus-plus-0.1/lib/libborders-plus-plus.so
+#source=/nix/store/5nqbr4x6yb7bmny12m1fda75brsh8naz-source/themes/mocha.conf
+#source=/nix/store/187xcqss29z20fgn5gzh044qbxnv86dk-hyprland-mauve-accent.conf
+$configs = $HOME/.config/hypr/configs
+source=$configs/Settings.conf
+source=$configs/Keybinds.conf
+$UserConfigs = $HOME/.config/hypr/UserConfigs
+source= $UserConfigs/Startup_Apps.conf
+source= $UserConfigs/ENVariables.conf
+source= $UserConfigs/Monitors.conf
+source= $UserConfigs/Laptops.conf
+source= $UserConfigs/LaptopDisplay.conf
+source= $UserConfigs/WindowRules.conf
+source= $UserConfigs/UserDecorAnimations.conf
+source= $UserConfigs/UserKeybinds.conf
+source= $UserConfigs/UserSettings.conf
+source= $UserConfigs/WorkspaceRules.conf
+source= $HOME/.config/hypr/themes/mocha.conf
+

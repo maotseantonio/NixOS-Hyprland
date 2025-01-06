@@ -25,6 +25,7 @@
       "theme.bar.buttons.workspaces.available" = "#585b70";
       "theme.bar.buttons.workspaces.border" = "#f9e2af";
       "theme.bar.buttons.modules.power.spacing" = "0em";
+      "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";

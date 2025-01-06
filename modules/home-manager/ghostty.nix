@@ -7,8 +7,8 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "IosevkaTermSlab Nerd Font"
-    font-size = 15
+    font-family = "JetBrainsMono Nerd Font"
+    font-size = 14
     font-thicken = true
     font-feature = ss01
     font-feature = ss04
