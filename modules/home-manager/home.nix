@@ -2,12 +2,8 @@
 
 {
   imports = [
-    inputs.spicetify-nix.homeManagerModules.default
-    inputs.nvchad4nix.homeManagerModule
-    inputs.nixcord.homeManagerModules.nixcord
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
-    inputs.textfox.homeManagerModules.default
   ];
   nixpkgs.config.allowUnfree = true; 
   programs.cava = {

@@ -7,11 +7,9 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "JetBrainsMono Nerd Font"
+    font-family = JetBrainsMono Nerd Font
     font-size = 14
     font-thicken = true
-    font-feature = ss01
-    font-feature = ss04
 
     bold-is-bright = false
     adjust-box-thickness = 1
@@ -22,8 +20,9 @@ in
 
     cursor-style = bar
     cursor-style-blink = true
-    adjust-cursor-thickness = 1
-
+    adjust-cursor-thickness = 1   
+    keybind = ctrl+d=new_split:right
+    
     resize-overlay = never
     copy-on-select = false
     confirm-close-surface = false

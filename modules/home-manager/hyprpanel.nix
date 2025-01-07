@@ -1,8 +1,12 @@
 # *.nix
-{ config, pkgs, inputs, ... }:
 {
-  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
-  
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
+
   programs.hyprpanel = {
     enable = true;
     systemd.enable = true;
@@ -12,9 +16,9 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = [ "dashboard" "windowtitle" "systray" "media" ];
-          middle = [ "workspaces" ];
-          right = [ "updates" "clock" "hypridle" "power" ];
+          left = ["dashboard" "windowtitle" "systray" "media"];
+          middle = ["workspaces"];
+          right = ["updates" "clock" "hypridle" "power"];
         };
       };
     };
@@ -30,7 +34,6 @@
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
       "bar.workspaces.spacing" = "1.5";
-
     };
     settings = {
       bar.autoHide = "fullscreen";
@@ -78,14 +81,14 @@
       theme.bar.buttons.workspaces.pill.active_width = "12em";
       menus.dashboard.directories.left.directory1.command = "bash -c \"xdg-open $HOME/Downloads/\"";
       menus.dashboard.directories.left.directory1.label = "󰉍 Downloads";
-      menus.dashboard.directories.left.directory2.command =  "bash -c \"xdg-open $HOME/Videos/\"";
-      menus.dashboard.directories.left.directory2.label =  "󰉏 Videos";
+      menus.dashboard.directories.left.directory2.command = "bash -c \"xdg-open $HOME/Videos/\"";
+      menus.dashboard.directories.left.directory2.label = "󰉏 Videos";
       menus.dashboard.directories.left.directory3.command = "bash -c \"xdg-open $HOME/Projects/\"";
       menus.dashboard.directories.left.directory3.label = "󰚝 Projects";
       menus.dashboard.directories.right.directory1.command = "bash -c \"xdg-open $HOME/Documents/\"";
       menus.dashboard.directories.right.directory1.label = "󱧶 Documents";
-      menus.dashboard.directories.right.directory2.command =  "bash -c \"xdg-open $HOME/Pictures/\"";
-      menus.dashboard.directories.right.directory2.label =  "󰉏 Pictures";
+      menus.dashboard.directories.right.directory2.command = "bash -c \"xdg-open $HOME/Pictures/\"";
+      menus.dashboard.directories.right.directory2.label = "󰉏 Pictures";
       menus.dashboard.directories.right.directory3.command = "bash -c \"xdg-open $HOME/\"";
       menus.dashboard.directories.right.directory3.label = "󱂵 Home";
       bar.customModules.updates.pollingInterval = 1440000;
@@ -129,4 +132,3 @@
     };
   };
 }
-
