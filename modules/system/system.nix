@@ -8,19 +8,17 @@
   inputs,
   system,
   ...
-}:
-{
-   system.autoUpgrade = {
-      enable = true;
-      flake = inputs.self.outPath;
-      flags = [
-            "--update-input"
-            "nixpkgs"
-            "-L"
-        ];
-        randomizedDelaySec = "45min";
-    };
-    
+}: {
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L"
+    ];
+    randomizedDelaySec = "45min";
+  };
 
   environment.systemPackages = with pkgs; [
     wget
@@ -32,11 +30,11 @@
     cpufrequtils
     duf
     eza
-    ffmpeg   
+    ffmpeg
     glib #for gsettings to work
     gsettings-qt
     git
-    killall  
+    killall
     libappindicator
     libnotify
     openssl #required by Rainbow borders

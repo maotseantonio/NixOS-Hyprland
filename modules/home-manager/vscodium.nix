@@ -118,8 +118,13 @@
         "workbench.editor.empty.hint" = "hidden";
         "workbench.sideBar.location" = "left";
         "workbench.startupEditor" = "none";
+        "workbench.editor.showTabs" = "single";
         "workbench.tree.indent" = 16;
         "workbench.statusBar.visible" = false;
+        "workbench.layoutControl.type" = "menu";
+        "editor.scrollbar.vertical" = "hidden";
+        "editor.scrollbar.horizontal" = "hidden";
+        "workbench.layoutControl.enabled" = false;
       };
 
       terminal = {

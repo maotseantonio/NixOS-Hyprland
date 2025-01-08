@@ -1,5 +1,14 @@
-{ pkgs, config, host, username, options, lib, inputs, system, ... }:
 {
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: {
   virtualisation.libvirtd.enable = false;
   virtualisation.podman = {
     enable = false;

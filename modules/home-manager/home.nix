@@ -1,13 +1,16 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
-  nixpkgs.config.allowUnfree = true; 
+  nixpkgs.config.allowUnfree = true;
   programs.cava = {
-      enable = true;
+    enable = true;
   };
   programs.direnv = {
     enable = true;
@@ -17,18 +20,18 @@
     enable = true;
   };
   programs.zellij = {
-      enable = true;
+    enable = true;
   };
   programs.gh = {
-      enable = true;
+    enable = true;
   };
   programs.lsd = {
-      enable = true;
+    enable = true;
   };
   programs.btop = {
     enable = true;
   };
-   programs.bat = {
+  programs.bat = {
     enable = true;
   };
   programs.zathura = {
@@ -38,21 +41,20 @@
     enable = true;
   };
   programs.htop = {
-      enable = true;
+    enable = true;
   };
   catppuccin.enable = true;
-  
+
   home.file = {
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
   };
 
-  
   home.sessionVariables = {
-     EDITOR="nvim";
-     TERMINAL="wezterm";
-     VISUAL="codium";
-     BROWSER="firefox";
+    EDITOR = "nvim";
+    TERMINAL = "wezterm";
+    VISUAL = "codium";
+    BROWSER = "firefox";
   };
 
   # Let Home Manager install and manage itself.

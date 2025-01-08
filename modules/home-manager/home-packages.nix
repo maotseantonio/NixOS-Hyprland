@@ -1,6 +1,10 @@
-{ config, pkgs, inputs, ...}:
 {
-    home.packages = with pkgs; [
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  home.packages = with pkgs; [
     protonvpn-gui
     manga-tui
     nitch
@@ -42,7 +46,6 @@
     tmux
     tmux-sessionizer
     tmuxPlugins.sidebar
-    gtk4    
+    gtk4
   ];
-
 }

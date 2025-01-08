@@ -1,6 +1,15 @@
-{pkgs, config, host, username, options, lib, inputs, system, ...}:
 {
-    xdg.portal = {
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: {
+  xdg.portal = {
     enable = true;
     wlr.enable = false;
     extraPortals = [
@@ -11,18 +20,18 @@
       pkgs.xdg-desktop-portal
     ];
   };
-   # zram
+  # zram
   zramSwap = {
-	  enable = true;
-	  priority = 100;
-	  memoryPercent = 30;
-	  swapDevices = 1;
+    enable = true;
+    priority = 100;
+    memoryPercent = 30;
+    swapDevices = 1;
     algorithm = "zstd";
-    };
+  };
 
   powerManagement = {
-  	enable = true;
-	  cpuFreqGovernor = "schedutil";
+    enable = true;
+    cpuFreqGovernor = "schedutil";
   };
 
   #hardware.sane = {
@@ -37,14 +46,14 @@
 
   # Bluetooth
   hardware = {
-  	bluetooth = {
-	    enable = true;
-	    powerOnBoot = true;
-	    settings = {
-		    General = {
-		      Enable = "Source,Sink,Media,Socket";
-		      Experimental = true;
-		    };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
       };
     };
   };
@@ -52,11 +61,10 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   services.btrfs.autoScrub = {
-  enable = true;
-  interval = "monthly";
-  fileSystems = [ "/" ];
- 
- };
+    enable = true;
+    interval = "monthly";
+    fileSystems = ["/"];
+  };
 
   # Security / Polkit
   security.rtkit.enable = true;
@@ -82,5 +90,4 @@
       auth include login
     '';
   };
-
 }

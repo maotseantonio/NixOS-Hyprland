@@ -1,6 +1,15 @@
-{ pkgs, config, host, username, options, lib, inputs, system, ... }:
 {
-   fonts.packages = with pkgs; [
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: {
+  fonts.packages = with pkgs; [
     noto-fonts
     fira-code
     noto-fonts-cjk-sans
@@ -16,5 +25,5 @@
     nerd-fonts.caskaydia-mono
     nerd-fonts.iosevka-term-slab
     iosevka-bin
- 	];
+  ];
 }

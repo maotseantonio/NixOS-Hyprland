@@ -1,9 +1,11 @@
-{ inputs, pkgs, ... }:
-let
-  ghostty = inputs.ghostty.packages.x86_64-linux.default;
-in
 {
-  home.packages = (with pkgs; [ ghostty ]);
+  inputs,
+  pkgs,
+  ...
+}: let
+  ghostty = inputs.ghostty.packages.x86_64-linux.default;
+in {
+  home.packages = with pkgs; [ghostty];
 
   xdg.configFile."ghostty/config".text = ''
     # Font
@@ -20,9 +22,9 @@ in
 
     cursor-style = bar
     cursor-style-blink = true
-    adjust-cursor-thickness = 1   
+    adjust-cursor-thickness = 1
     keybind = ctrl+d=new_split:right
-    
+    keybind = ctrl+f=new_split:down
     resize-overlay = never
     copy-on-select = false
     confirm-close-surface = false

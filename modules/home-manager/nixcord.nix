@@ -1,11 +1,15 @@
-{config, pkgs, inputs, ...}:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.nixcord.homeManagerModules.nixcord
   ];
-   programs.nixcord = {
+  programs.nixcord = {
     enable = false;
-      vesktop = {
+    vesktop = {
       enable = false;
     };
     config = {
@@ -58,10 +62,10 @@
         messageClickActions.enable = true;
         messageLogger = {
           enable = true;
-	        deleteStyle = "text";
-	       logDeletes = true;
-	       logEdits = true;
-	       ignoreSelf = true;
+          deleteStyle = "text";
+          logDeletes = true;
+          logEdits = true;
+          ignoreSelf = true;
         };
         messageTags.enable = true;
         moreCommands.enable = true;
@@ -70,7 +74,7 @@
         newGuildSettings.enable = true;
         noBlockedMessages = {
           enable = true;
-	        ignoreBlockedMessages = true;
+          ignoreBlockedMessages = true;
         };
         noDevtoolsWarning.enable = true;
         noF1.enable = true;
@@ -118,5 +122,4 @@
       };
     };
   };
- 
 }

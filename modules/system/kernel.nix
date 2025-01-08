@@ -1,14 +1,22 @@
-{ pkgs, config, host, username, options, lib, inputs, system, ... }:
-with lib;
-let
-  cfg = config.system.kernel;
-in
 {
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}:
+with lib; let
+  cfg = config.system.kernel;
+in {
   options.system.kernel = {
     enable = mkEnableOption "Enable kernel";
   };
 
-config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
     boot = {
       kernelPackages = pkgs.linuxPackages_cachyos;
       consoleLogLevel = 0;
@@ -34,8 +42,6 @@ config = mkIf cfg.enable {
         availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
         kernelModules = ["i915"];
       };
-    
     };
   };
-
 }

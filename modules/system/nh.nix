@@ -1,6 +1,14 @@
-{ pkgs, config, host, username, options, lib, inputs, system, ... }:
-
 {
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: {
   programs.nh = {
     enable = true;
     flake = "/home/antonio/NixOS-Hyprland";

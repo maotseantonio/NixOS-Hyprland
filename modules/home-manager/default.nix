@@ -1,10 +1,14 @@
-{ config, pkgs, inputs, ...}:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./home.nix
     ./git.nix
     ./gtk.nix
-    ./nixy.nix 
+    ./nixy.nix
     ./helix.nix
     ./fhsenv.nix
     ./nvchad.nix

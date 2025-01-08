@@ -1,11 +1,15 @@
-{ pkgs, config, inputs, lib, ...}:
-
 {
+  pkgs,
+  config,
+  inputs,
+  lib,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     (ags.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-        version = "1.8.2";
-     }))
+      inherit (oldAttrs) pname;
+      version = "1.8.2";
+    }))
     brightnessctl # for brightness control
     libinput
     libinput-gestures
@@ -17,7 +21,7 @@
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
-    imagemagick 
+    imagemagick
     inxi
     jq
     kitty
@@ -38,7 +42,7 @@
     rofi-wayland
     slurp
     swappy
-        #swaynotificationcenter
+    #swaynotificationcenter
     swww
     unzip
     wallust
@@ -51,14 +55,14 @@
     fd
     home-manager
     bluez-tools
-    wgpu-utils   
+    wgpu-utils
     yazi
     gtk3
     gtk4
     fish
     atuin
     bun
-    dart-sass 
+    dart-sass
     nodejs
     sassc
     libgtop
@@ -68,7 +72,7 @@
     papirus-folders
     papirus-icon-theme
     spotify
-    sddm 
+    sddm
     catppuccin-sddm-corners
     zoxide
     bibata-cursors
