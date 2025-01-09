@@ -66,10 +66,10 @@ in {
     palette = 13=#f5c2e7
     palette = 14=#94e2d5
     palette = 15=#a6adc8
-    background = 181825
-    foreground = cdd6f4
-    cursor-color = f5e0dc
-    selection-background = 353749
-    selection-foreground = cdd6f4
+    background = #181825
+    foreground = #cdd6f4
+    cursor-color = #f38ba8
+    selection-background = #353749
+    selection-foreground = #cdd6f4
   '';
 }

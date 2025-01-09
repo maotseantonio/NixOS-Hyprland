@@ -28,7 +28,7 @@
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    nwg-dock-hyprland
+    #nwg-dock-hyprland
     nvtopPackages.full
     pamixer
     pavucontrol
@@ -56,7 +56,6 @@
     home-manager
     bluez-tools
     wgpu-utils
-    yazi
     gtk3
     gtk4
     fish

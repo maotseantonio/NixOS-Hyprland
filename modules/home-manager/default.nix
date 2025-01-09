@@ -20,6 +20,7 @@
     ./home-packages.nix
     ./ghostty.nix
     ./hyprpanel.nix
+    ./variables.nix
     ./scripts/scripts.nix
   ];
 }
