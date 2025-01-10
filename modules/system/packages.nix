@@ -12,12 +12,13 @@
     }))
     brightnessctl # for brightness control
     libinput
-    libinput-gestures
+    libinput-gestures 
     cliphist
     eog
     gnome-system-monitor
     file-roller
     grim
+    pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel

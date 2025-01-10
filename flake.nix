@@ -94,6 +94,7 @@
     nixpkgs,
     home-manager,
     hy3,
+    chaotic,
     ...
   }: let
     system = "x86_64-linux";
@@ -111,6 +112,7 @@
           inherit inputs;
           inherit username;
           inherit host;
+          inherit chaotic;
         };
         modules = [
           ./hosts/${host}/config.nix
