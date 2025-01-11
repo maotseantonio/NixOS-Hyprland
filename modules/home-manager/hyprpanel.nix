@@ -16,9 +16,9 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = ["dashboard" "windowtitle" "systray" "media"];
+          left = ["dashboard" "windowtitle" "systray" "cava"];
           middle = ["workspaces"];
-          right = ["updates" "clock" "hypridle" "power"];
+          right = ["media" "clock" "hypridle" "power"];
         };
       };
     };
