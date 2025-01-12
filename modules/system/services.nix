@@ -41,7 +41,6 @@
     nfs.server.enable = false;
     openssh.enable = true;
     blueman.enable = true;
-
     #printing = {
     #  enable = false;
     #  drivers = [

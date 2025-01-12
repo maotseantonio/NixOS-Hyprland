@@ -6,8 +6,8 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    #package = inputs.hyprland-stable.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    package = pkgs.hyprland;
+    package = inputs.hyprland-stable.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #package = pkgs.hyprland;
     xwayland.enable = true;
   };
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -31,9 +31,9 @@
 
   wayland.windowManager.hyprland = {
     plugins = [
-      #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
-      pkgs.hyprlandPlugins.borders-plus-plus
-      pkgs.hyprlandPlugins.hyprscroller
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+      #pkgs.hyprlandPlugins.borders-plus-plus
+      #pkgs.hyprlandPlugins.hyprscroller
     ];
   };
 }
