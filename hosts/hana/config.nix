@@ -82,7 +82,7 @@
   environment.sessionVariables = {
   EDITOR = "nvim";
   BROWSER = "firefox";
-  TERMINAL = "wezterm";
+  TERMINAL = "ghostty";
   VISUAL = "vscodium";
   GSK_RENDERER = "gl";
 };

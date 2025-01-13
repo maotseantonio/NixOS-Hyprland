@@ -52,7 +52,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERMINAL = "wezterm";
+    TERMINAL = "ghostty";
     VISUAL = "codium";
     BROWSER = "firefox";
   };

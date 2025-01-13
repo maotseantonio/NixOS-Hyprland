@@ -30,7 +30,7 @@
     networkmanagerapplet
     nwg-look # requires unstable channel
     #nwg-dock-hyprland
-    nvtopPackages.full
+    #nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
@@ -58,10 +58,8 @@
     bluez-tools
     wgpu-utils
     gtk3
-    gtk4
     fish
     atuin
-    bun
     dart-sass
     nodejs
     sassc
