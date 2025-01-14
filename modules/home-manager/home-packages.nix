@@ -16,17 +16,6 @@
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
-    inputs.astal.packages.${pkgs.system}.tray
-    inputs.astal.packages.${pkgs.system}.hyprland
-    inputs.astal.packages.${pkgs.system}.io
-    inputs.astal.packages.${pkgs.system}.apps
-    inputs.astal.packages.${pkgs.system}.battery
-    inputs.astal.packages.${pkgs.system}.bluetooth
-    inputs.astal.packages.${pkgs.system}.mpris
-    inputs.astal.packages.${pkgs.system}.network
-    inputs.astal.packages.${pkgs.system}.notifd
-    inputs.astal.packages.${pkgs.system}.powerprofiles
-    inputs.astal.packages.${pkgs.system}.wireplumber
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     firedragon
     yazi
