@@ -32,7 +32,7 @@
       "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
-      "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
+      "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview";
       "bar.workspaces.spacing" = "1.5";
       "bar.customModules.cava.showIcon"= false;
       "theme.font.name" = "JetBrainsMono Nerd Font";

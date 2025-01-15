@@ -38,5 +38,6 @@
     ./cachix.nix
     ./packages.nix
     ./nix.nix
+    
   ];
 }

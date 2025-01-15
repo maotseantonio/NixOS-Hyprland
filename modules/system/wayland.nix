@@ -16,7 +16,7 @@
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    firefox.enable = true;
+    firefox.enable = false;
     git.enable = true;
     nm-applet.indicator = true;
     thunar.enable = true;

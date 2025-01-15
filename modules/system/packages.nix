@@ -3,6 +3,7 @@
   config,
   inputs,
   lib,
+  chaotic,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -43,7 +44,6 @@
     rofi-wayland
     slurp
     swappy
-    #swaynotificationcenter
     swww
     unzip
     wallust
@@ -76,5 +76,6 @@
     catppuccin-sddm-corners
     zoxide
     bibata-cursors
+    firefox_nightly
   ];
 }
