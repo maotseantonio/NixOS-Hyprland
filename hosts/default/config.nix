@@ -14,7 +14,7 @@
   imports = [
     ./hardware.nix
     ./users.nix
-    ../../modules/system
+    ../../modules/system/desktop.nix
 
   ];
        
@@ -33,22 +33,22 @@
      }) 
     ];  
 
-  drivers.amdgpu.enable = false;
-  drivers.intel.enable = true;
+  drivers.amdgpu.enable = true;
+  drivers.intel.enable = false;
   drivers.nvidia.enable = true;
-  drivers.nvidia-prime = {
-    enable = true;
-    intelBusID = "PCI:0:2:0";
-    nvidiaBusID = "PCI:1:0:0";
-  };
+#  drivers.nvidia-prime = {
+#    enable = true;
+#    intelBusID = "PCI:0:2:0";
+#    nvidiaBusID = "PCI:1:0:0";
+#  };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
   system.bootloader.enable = true;
   system.plymouth.enable = true;
   system.audio.enable = true;
-  system.displayManager.enable = true;
-  system.powermanagement.enable = true;
+  system.greetd.enable = true;
+  system.powermanagement.enable = false;
   system.scheduler.enable = true; 
   nixpkgs.config.allowUnfree = true;
   users = {
@@ -59,8 +59,8 @@
        
     libva-utils
     libvdpau-va-gl
-    intel-compute-runtime
-    intel-vaapi-driver
+    #intel-compute-runtime
+    #intel-vaapi-driver
     vaapiVdpau
     mesa
     egl-wayland

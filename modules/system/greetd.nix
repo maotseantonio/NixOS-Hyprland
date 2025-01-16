@@ -20,16 +20,16 @@ in {
     environment.systemPackages = with pkgs; [
          greetd.tuigreet
     ];
-    services.displayManager.defaultSession = "hyprland";
     services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
-        user = "greeter";
+    enable = true; 
+      vt = 1;
+      settings = {
+        default_session = {
+          user = username;
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -w 60 --window-padding 5 --container-padding 5 --remember --remember-session --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd uwsm start hyprland-uwsm.desktop"; 
+        };
       };
     };
-  };
     programs.uwsm.enable = true;
     programs.uwsm.waylandCompositors = {
       hyprland = {

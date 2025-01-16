@@ -8,7 +8,7 @@ in
   home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;
-      backupFileExtension = "backup";
+      backupFileExtension = "bak";
       extraSpecialArgs = {
           inherit inputs username host;
       };
@@ -17,7 +17,7 @@ in
         if (host == "shizuru") then
           [ ../../modules/home-manager ]
         else
-          [ ../../modules/home-manager/default.nix ];
+          [ ../../modules/home-manager/desktop.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "25.05";

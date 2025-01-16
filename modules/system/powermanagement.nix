@@ -22,6 +22,8 @@ in {
       fwupd.enable = true;
       upower.enable = true;
       gnome.gnome-keyring.enable = true;
+      thermald.enable = true;
+      tlp.enable = false;
       tlp.settings = {
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "power";

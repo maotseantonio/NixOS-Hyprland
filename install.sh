@@ -54,15 +54,15 @@ sleep 1
 
 echo "-----"
 
-read -rp "$CAT Enter Your New Hostname: [ default ] " hostName
+read -rp "$CAT Enter Your New Hostname: [ shizuru ] " hostName
 if [ -z "$hostName" ]; then
-  hostName="default"
+  hostName="shizuru"
 fi
 
 echo "-----"
 
 # Create directory for the new hostname, unless the default is selected
-if [ "$hostName" != "default" ]; then
+if [ "$hostName" != "shizuru" ]; then
   mkdir -p hosts/"$hostName"
   cp hosts/default/*.nix hosts/"$hostName"
   git add .

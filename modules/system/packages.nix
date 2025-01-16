@@ -72,8 +72,6 @@
     papirus-folders
     papirus-icon-theme
     spotify
-    sddm
-    catppuccin-sddm-corners
     zoxide
     bibata-cursors
     firefox_nightly

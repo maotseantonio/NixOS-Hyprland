@@ -21,6 +21,7 @@
     ./ghostty.nix
     ./hyprpanel.nix
     ./variables.nix
+    ./zathura.nix
     ./scripts/scripts.nix
   ];
 }
