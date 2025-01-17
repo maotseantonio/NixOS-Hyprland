@@ -24,7 +24,8 @@ in {
         pkgs.sddm 
         pkgs.catppuccin-sddm-corners
     ];
-    services.displayManager.defaultSession = "hyprland";
+    services.xserver.enable = true;
+    services.displayManager.defaultSession = "hyprland-uwsm";
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       wayland.enable = true;

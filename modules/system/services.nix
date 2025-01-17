@@ -9,6 +9,7 @@
   system,
   ...
 }: {
+  
   services = {
     xserver = {
       enable = true;
@@ -28,7 +29,7 @@
 
     gvfs.enable = true;
     tumbler.enable = true;
-    udev.enable = true;
+    udev.enable = true; 
     envfs.enable = true;
     dbus.enable = true;
     fstrim = {
