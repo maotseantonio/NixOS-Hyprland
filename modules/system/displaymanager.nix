@@ -21,15 +21,24 @@ in {
         pkgs.kdePackages.qtsvg
         pkgs.kdePackages.qtmultimedia
         pkgs.kdePackages.qtvirtualkeyboard
-        pkgs.sddm 
-        pkgs.catppuccin-sddm-corners
+        (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
+            theme = "post-apocalyptic_hacker";
+        })
+            #pkgs.sddm 
+            #pkgs.catppuccin-sddm-corners
     ];
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.
+      package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtmultimedia
+        kdePackages.qtvirtualkeyboard
+      ];
       wayland.enable = true;
-      theme = "catppuccin-sddm-corners";
+      theme = "sddm-astronaut-theme";
       settings = {
         Theme = {
           CursorTheme = "Bibata-Modern-Ice";

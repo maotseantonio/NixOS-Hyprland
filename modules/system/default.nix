@@ -17,7 +17,7 @@
     ./audio.nix
     ./fonts.nix
     ./locale.nix
-    ./hardwareconf.nix
+    ./system-hardware.nix
     ./stylix.nix
     ./system.nix
     ./services.nix
