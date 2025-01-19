@@ -24,8 +24,6 @@ in {
         (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
             theme = "post-apocalyptic_hacker";
         })
-            #pkgs.sddm 
-            #pkgs.catppuccin-sddm-corners
     ];
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";
