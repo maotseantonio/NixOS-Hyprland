@@ -21,6 +21,7 @@
     ./stylix.nix
     ./system.nix
     ./services.nix
+    ./security.nix
     ./flatpak.nix
     ./fonts.nix
     ./displaymanager.nix
