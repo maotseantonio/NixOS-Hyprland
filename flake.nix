@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-    yazi.url = "github:sxyazi/yazi";
+        #yazi.url = "github:sxyazi/yazi";
     matugen = {
       url = "github:/InioX/Matugen";
     };
@@ -65,7 +65,7 @@
     hyprland-stable.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.46.1&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
-    wezterm.url = "github:wez/wezterm?dir=nix";
+        #wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -84,8 +84,8 @@
     };
 
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+        url = "github:Gerg-L/spicetify-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
   };

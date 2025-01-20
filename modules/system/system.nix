@@ -45,8 +45,6 @@
 
     fastfetch
     (mpv.override {scripts = [mpvScripts.mpris];})
-  ];
-
-  nixpkgs.config.allowUnfree = true; 
+  ]; 
   system.stateVersion = "25.05";
 }
