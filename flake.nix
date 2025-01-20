@@ -62,10 +62,10 @@
     };
     textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland-stable.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.46.1&submodules=1";
+        #hyprland-stable.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.46.1&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
-        #wezterm.url = "github:wez/wezterm?dir=nix";
+    #wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
