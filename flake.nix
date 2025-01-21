@@ -5,6 +5,17 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-alien.url = "github:thiagokokada/nix-alien";
+     nix = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nix";
+            # ref = "2cb0ddfe4eb216fab6d826c1056743c152722720";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    lix-module = {
+       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
     disko = {
@@ -16,7 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-    #yazi.url = "github:sxyazi/yazi";
     matugen = {
       url = "github:/InioX/Matugen";
     };
@@ -63,8 +73,7 @@
     textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-    stylix.url = "github:danth/stylix";
-    #wezterm.url = "github:wez/wezterm?dir=nix";
+    stylix.url = "github:danth/stylix"; 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -94,6 +103,7 @@
     home-manager,
     hy3,
     chaotic,
+    lix-module,
     ...
   }: let
     system = "x86_64-linux";
@@ -120,6 +130,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
+          inputs.lix-module.nixosModules.default
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
