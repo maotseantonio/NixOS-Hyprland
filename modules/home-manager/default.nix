@@ -7,7 +7,7 @@
   imports = [
     ./home.nix
     ./git.nix
-    ./gtk.nix
+        # ./gtk.nix
     ./nixy.nix
     ./helix.nix
     ./fhsenv.nix
