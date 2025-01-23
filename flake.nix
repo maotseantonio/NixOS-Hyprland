@@ -46,6 +46,10 @@
       url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprscroller = {
+        url = "github:maotseantonio/hyprscroller-flake";
+        inputs.hyprland.follows = "hyprland";
+    };
 
     ghostty = {
       url = "github:ghostty-org/ghostty";

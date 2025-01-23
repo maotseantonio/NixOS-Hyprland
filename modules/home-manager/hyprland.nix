@@ -6,7 +6,7 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-        #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     package = pkgs.hyprland;
     xwayland.enable = true;
   };
@@ -31,7 +31,8 @@
 
   wayland.windowManager.hyprland = {
     plugins = [
-            #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+      #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+      #inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
       pkgs.hyprlandPlugins.borders-plus-plus
       pkgs.hyprlandPlugins.hyprscroller
     ];
