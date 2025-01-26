@@ -8,11 +8,14 @@ let
     portalFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in
 {
+  imports = [
+    inputs.hyprland.nixosModules.default      
+  ];
   programs = {
     hyprland = {
       enable = true;
-      package = pkgs.hyprland;
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+            #package = pkgs.hyprland;
+      portalPackage = portalFlake;
       xwayland.enable = true;
     };
     nix-ld.enable = true;

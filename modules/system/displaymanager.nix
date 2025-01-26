@@ -23,6 +23,7 @@ in {
         pkgs.kdePackages.qtvirtualkeyboard
         (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
             theme = "post-apocalyptic_hacker";
+
         })
     ];
     services.xserver.enable = true;

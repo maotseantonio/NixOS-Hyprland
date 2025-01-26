@@ -4,7 +4,7 @@
   fetchFromGitHub,
   kdePackages,
   theme ? "astronaut",
-}:
+ }:
 stdenvNoCC.mkDerivation rec {
   pname = "sddm-astronaut-theme";
   version = "1.0";
@@ -47,10 +47,9 @@ stdenvNoCC.mkDerivation rec {
     metaFile="$out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop"
     if [ -f "$metaFile" ]; then
       substituteInPlace "$metaFile" \
-        --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/${theme}.conf"
+        --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/${theme}.conf" 
     fi
-
-    runHook postInstall
+     runHook postInstall
   '';
 
   # Propagate Qt6 libraries to user environment

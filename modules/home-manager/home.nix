@@ -7,10 +7,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
-  ];
-  programs.cava = {
-    enable = true;
-  };
+  ]; 
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
