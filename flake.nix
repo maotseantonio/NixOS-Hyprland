@@ -2,7 +2,11 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";     
+    nix = {
+      url = "github:NixOS/nix/2.26-maintenance";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-alien.url = "github:thiagokokada/nix-alien"; 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
