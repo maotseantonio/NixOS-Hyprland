@@ -13,13 +13,13 @@
     github-cli
     neovide
     wezterm
-        #inputs.wezterm.packages.${pkgs.system}.default
+    #inputs.wezterm.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     firedragon
-    yazi
+    inputs.yazi.packages.${pkgs.system}.default
     microfetch
     gpu-screen-recorder
     vscodium

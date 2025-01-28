@@ -23,7 +23,7 @@
     matugen = {
       url = "github:/InioX/Matugen";
     };
-
+    yazi.url = "github:sxyazi/yazi";
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
