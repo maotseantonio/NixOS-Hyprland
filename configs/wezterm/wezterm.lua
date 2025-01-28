@@ -1,12 +1,14 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 local gpus = wezterm.gui.enumerate_gpus()
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 --local font_family = 'CaskaydiaCove Nerd Font'
 local font_family = 'IosevkaTermSlab Nerd Font'
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 --local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
---bar.apply_to_config(config)
+
 return {
+ -- example enable spotify module
   enable_wayland = true,
   prefer_egl = true,
   font_size = 14,
@@ -23,6 +25,7 @@ return {
   cursor_blink_rate = 600,
   cursor_thickness = '1.2pt',
   enable_tab_bar = false,
+  hide_tab_bar_if_only_one_tab = true,
   --tab_bar_color = "#1e1e2e",
 
   background = {
@@ -36,8 +39,9 @@ return {
     {
       source = {
         File = '/home/antonio/.config/hypr/wallpaper_effects/.wallpaper_current',
+        --File = '/home/antonio/.config/wezterm/nixos.png',
       },
-      opacity = 0.02,
+      opacity = 0.03,
       vertical_align = "Middle",
       horizontal_align = "Center",
       height = "1824",
@@ -163,6 +167,10 @@ return {
       mods = 'CTRL|SHIFT',
       action = act.ShowLauncher
     },
+    { key = 't',
+      mods = 'ALT',
+      action = act.SpawnTab('DefaultDomain')
+    },
     {
       key = ':',
       mods = 'CTRL|SHIFT',
@@ -170,3 +178,4 @@ return {
     },
   },
 }
+

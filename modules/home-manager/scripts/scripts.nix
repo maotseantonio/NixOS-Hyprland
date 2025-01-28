@@ -25,13 +25,9 @@
   ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
   
   record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
-
- # screenshot = pkgs.writeScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh);
-  
- # rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
- # power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-#  hyprpanelv2 = pkgs.writeScriptBin "hyprpanelv2" (builtins.readFile ./scripts/hyprpanel.sh);
   statusbar = pkgs.writeScriptBin "statusbar" (builtins.readFile ./scripts/statusbar);
+  apply-config = pkgs.writeScriptBin "apply-config" (builtins.readFile ./scripts/apply-config.sh);
+  
 in {
   home.packages = with pkgs; [
    # wall-change
@@ -51,5 +47,6 @@ in {
     ascii
     record
     statusbar
+    apply-config
   ];
 }
