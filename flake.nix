@@ -2,13 +2,14 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";     
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix = {
       url = "github:NixOS/nix/2.26-maintenance";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nix-alien.url = "github:thiagokokada/nix-alien"; 
+    anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
     disko = {
@@ -23,6 +24,7 @@
     matugen = {
       url = "github:/InioX/Matugen";
     };
+    nvf.url = "github:notashelf/nvf";
     yazi.url = "github:sxyazi/yazi";
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
@@ -51,8 +53,8 @@
       inputs.hyprland.follows = "hyprland";
     };
     hyprscroller = {
-        url = "github:maotseantonio/hyprscroller-flake";
-        inputs.hyprland.follows = "hyprland";
+      url = "github:maotseantonio/hyprscroller-flake";
+      inputs.hyprland.follows = "hyprland";
     };
 
     ghostty = {
@@ -70,7 +72,7 @@
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-    stylix.url = "github:danth/stylix"; 
+    stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -89,15 +91,19 @@
     };
 
     spicetify-nix = {
-        url = "github:Gerg-L/spicetify-nix";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
     nur.url = "github:nix-community/NUR";
     lix-module = {
-        url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
+
   };
   outputs = inputs @ {
     self,
@@ -106,6 +112,7 @@
     hy3,
     chaotic,
     lix-module,
+    zjstatus,
     ...
   }: let
     system = "x86_64-linux";
@@ -138,6 +145,7 @@
               inputs.hyprpanel.overlay
               (final: prev: {
                 nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
               })
             ];
           }
