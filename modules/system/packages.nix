@@ -74,7 +74,7 @@
     spotify
     zoxide
     bibata-cursors
-    firefox_nightly
+        #    firefox_nightly
     vivid
   ];
 }

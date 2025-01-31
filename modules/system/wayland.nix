@@ -14,7 +14,7 @@ in
   programs = {
     hyprland = {
       enable = true;
-            #package = pkgs.hyprland;
+      #package = pkgs.hyprland;
       portalPackage = portalFlake;
       xwayland.enable = true;
     };

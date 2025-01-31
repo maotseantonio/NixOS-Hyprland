@@ -70,7 +70,7 @@
       url = "github:kaylorben/nixcord";
     };
     textfox.url = "github:maotseantonio/textfox";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
