@@ -32,6 +32,14 @@
   wayland.windowManager.hyprland = {
     plugins = [
         inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+        (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs {
+            src = pkgs.fetchFromGitHub {
+              owner = "dawsers";
+              repo = "hyprscroller";
+              rev = "ce7503685297d88e0bb0961343ed3fbed21c559c";
+              hash = "sha256-3pGIe4H1LUOJw0ULfVwZ7Ph7r/AyEipx7jbWP7zz3MU=";
+            };
+          })
             #inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
             #pkgs.hyprlandPlugins.borders-plus-plus
             #pkgs.hyprlandPlugins.hyprscroller
