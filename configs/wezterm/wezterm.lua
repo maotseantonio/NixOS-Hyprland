@@ -47,7 +47,7 @@ config = {
 		"monospace",
 	}),
 	font_size = 15.0,
-	line_height = 1.0,
+--	line_height = 1.0,
 	use_cap_height_to_scale_fallback_fonts = true,
 	window_background_opacity = 0.75,
 	text_background_opacity = 1.0,
@@ -55,10 +55,10 @@ config = {
   front_end = "WebGpu",
   webgpu_preferred_adapter = gpus[0],
 	window_padding = {
-		left = 0,
-		right = 0,
-		top = 0,
-		bottom = 0,
+		left = 5,
+		right = 5,
+		top = 5,
+		bottom = 1,
 	},
 
  background = {
@@ -87,12 +87,12 @@ config = {
 	-- Tab bar
 	enable_tab_bar = true,
 	hide_tab_bar_if_only_one_tab = true,
-	show_tab_index_in_tab_bar = true,
+	show_tab_index_in_tab_bar = false,
 	show_new_tab_button_in_tab_bar = false,
 	tab_bar_at_bottom = true,
 	window_frame = {
 		font = wezterm.font({
-			family = "RobotoMono Nerd Font",
+			family = "JetBrainsMono Nerd Font",
 			weight = "Bold",
 		}),
 		font_size = 10.0,
