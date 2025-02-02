@@ -3,17 +3,18 @@
   pkgs,
   ...
 }:
-let 
+let
     hyprFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in
 {
   imports = [
-    inputs.hyprland.nixosModules.default      
+    inputs.hyprland.nixosModules.default
   ];
   programs = {
     hyprland = {
       enable = true;
+            #withUWSM  = true;
       #package = pkgs.hyprland;
       portalPackage = portalFlake;
       xwayland.enable = true;

@@ -1139,26 +1139,6 @@
         "type": "github"
       }
     },
-    "hy3": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1738201938,
-        "narHash": "sha256-0RMkjhrY5to5Z0TOUXAyXHVqK3N6Kf6ps0E59CTUTYg=",
-        "owner": "outfoxxed",
-        "repo": "hy3",
-        "rev": "052570265c6c6f5e044bae933790e369741ea489",
-        "type": "github"
-      },
-      "original": {
-        "owner": "outfoxxed",
-        "repo": "hy3",
-        "type": "github"
-      }
-    },
     "hyprcursor": {
       "inputs": {
         "hyprlang": [
@@ -1467,26 +1447,6 @@
       "original": {
         "owner": "Jas-SinghFSU",
         "repo": "HyprPanel",
-        "type": "github"
-      }
-    },
-    "hyprscroller": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1737622452,
-        "narHash": "sha256-yI6w8duBcxU6jGTYLfvY2CMRAj5qzzqXrvPe8+Smqxs=",
-        "owner": "maotseantonio",
-        "repo": "hyprscroller-flake",
-        "rev": "e909163bb3770bd74af8b3254f60c743e220cca0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "maotseantonio",
-        "repo": "hyprscroller-flake",
         "type": "github"
       }
     },
@@ -2505,11 +2465,11 @@
     "nvchad-on-steroids": {
       "flake": false,
       "locked": {
-        "lastModified": 1736747277,
-        "narHash": "sha256-liKMZzLNwSmm6CQAvcjxA6fFsYNyyZCgQeJWbBFKalA=",
+        "lastModified": 1738490913,
+        "narHash": "sha256-MLsJcsiDd3cvL4NYG6cPUD2wx/1vI4nn+MbimI13Rj8=",
         "owner": "maotseantonio",
         "repo": "nvchad_config",
-        "rev": "611cb794c588e7bcdeac9f14c83599813414c05b",
+        "rev": "ea8b69188cef9b635f2cfd4f2d88f95ae9c694bd",
         "type": "github"
       },
       "original": {
@@ -5441,11 +5401,9 @@
         "distro-grub-themes": "distro-grub-themes",
         "ghostty": "ghostty",
         "home-manager": "home-manager_2",
-        "hy3": "hy3",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "hyprpanel": "hyprpanel",
-        "hyprscroller": "hyprscroller",
         "hyprsunset": "hyprsunset",
         "lix-module": "lix-module",
         "matugen": "matugen",
