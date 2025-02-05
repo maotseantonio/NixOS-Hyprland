@@ -21,6 +21,6 @@ in {
       scx_git.full
     ];
     services.scx.enable = true;
-    services.scx.scheduler = "scx_lavd";
+    services.scx.scheduler = "scx_rusty";
   };
 }

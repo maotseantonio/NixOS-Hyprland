@@ -8,18 +8,18 @@
     protonvpn-gui
     manga-tui
     nitch
-    rustup
-    hiddify-app
+    # rustup
     github-cli
     neovide
     wezterm
+    hyprpicker
     #inputs.wezterm.packages.${pkgs.system}.default
-    inputs.zen-browser.packages."${pkgs.system}".default
+    # inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    firedragon
-    inputs.yazi.packages.${pkgs.system}.default
+    yazi
+    # inputs.yazi.packages.${pkgs.system}.default
     microfetch
     gpu-screen-recorder
     vscodium
@@ -34,8 +34,6 @@
     mangareader
     lutgen
     tmux
-    tmux-sessionizer
-    tmuxPlugins.sidebar
     gtk4
   ];
 }

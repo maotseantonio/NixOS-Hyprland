@@ -64,7 +64,7 @@
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
-        #walker.url = "github:abenz1267/walker";
+    #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";
