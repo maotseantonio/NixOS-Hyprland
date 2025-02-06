@@ -1,33 +1,30 @@
-let
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs { };
-  lib = pkgs.lib;
-in
-
+{ config, pkgs, host, username, options, lib, inputs, system, ...}: 
 {
   imports = [ ./hardware-configuration.nix ];
 
   # Make unfree software explicit
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "broadcom-sta"
-      "facetimehd-firmware"
-    ];
+  nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.requestEncryptionCredentials = true;
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "Asia/Yangon";
 
   networking.hostId = "e6ff0de6";
-  networking.hostName = "siraben-nixos";
+  networking.hostName = "shizuru";
   services.zfs.autoSnapshot.enable = true;
   services.zfs.autoScrub.enable = true;
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.0.0.1" "1.1.1.1" ];
+#  networking.nameservers = [ "1.0.0.1" "1.1.1.1" ];
+environment.systemPackages = with pkgs; [ 
+   git
+   vim
+   wget
+   curl
+   pciutils
 
+];
   fonts = {
     fontDir.enable = true;
     enableGhostscriptFonts = true;
@@ -35,14 +32,14 @@ in
     fonts = with pkgs; [
       emojione
       noto-fonts
-      noto-fonts-cjk
-      noto-fonts-extra
-      inconsolata
-      material-icons
-      liberation_ttf
+    #  noto-fonts-cjk
+    #  noto-fonts-extra
+    #  inconsolata
+    #  material-icons
+    #  liberation_ttf
       dejavu_fonts
-      terminus_font
-      siji
+   #   terminus_font
+   #   siji
       unifont
     ];
     fontconfig.defaultFonts = {
@@ -69,10 +66,19 @@ in
   services.printing.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  services = {
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        wireplumber.enable = true;
+      };
+    };
+
 
   nix = {
-    trustedUsers = [ "root" "siraben" ];
+    trustedUsers = [ "root" "antonio" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
