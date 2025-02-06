@@ -4,9 +4,7 @@ export BOOT_PARTITION="${DRIVE}p1"
 export ROOT_PARTITION="${DRIVE}p2"
 export SWAP_PARTITION="${DRIVE}p3"
 
-printf "label: gpt\n,1080M,U\n,,L\n" | sfdisk /dev/$DRIVE
-
-zpool create rpoll -O mountpoint=none -O atime=off -O compress=zstd acltype=posixacl -o ashift=12 -R /mnt raidz1 /dev/nvme0n1
+zpool create -O keylocation=prompt -O compression=on -O mountpoint=none -O xattr=sa -O acltype=posixacl -o ashift=12 zpool /dev/nvme0n1p2
 
 zfs create -p -o mountpoint=legacy rpool/local/root
 zfs create -p -o mountpoint=legacy rpool/local/nix
