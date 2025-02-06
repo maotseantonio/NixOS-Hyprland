@@ -49,7 +49,7 @@
   system.audio.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
-  system.scheduler.enable = true; 
+  system.scheduler.enable = false; 
   nixpkgs.config.allowUnfree = true;
   users = {
     mutableUsers = true;
