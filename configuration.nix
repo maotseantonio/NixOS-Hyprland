@@ -3,28 +3,28 @@
   imports = [ ./hardware-configuration.nix ];
 
   # Make unfree software explicit
-  nixpkgs.config.allowUnfree = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "zfs" ];
-
-  time.timeZone = "Asia/Yangon";
-
+  
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.zfsSupport = true;
   networking.hostId = "e6ff0de6";
   networking.hostName = "shizuru";
+  nixpkgs.config.allowUnfree = true;
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.package = pkgs.zfs_unstable; 
   services.zfs.autoSnapshot.enable = true;
   services.zfs.autoScrub.enable = true;
-
+  time.timeZone = "Asia/Yangon";
   networking.networkmanager.enable = true;
 #  networking.nameservers = [ "1.0.0.1" "1.1.1.1" ];
-environment.systemPackages = with pkgs; [ 
-   git
-   vim
-   wget
-   curl
-   pciutils
+  environment.systemPackages = with pkgs; [ 
+     git
+     vim
+     wget
+     curl
+     pciutils
 
-];
+  ];
   fonts = {
     fontDir.enable = true;
     enableGhostscriptFonts = true;
@@ -95,13 +95,13 @@ environment.systemPackages = with pkgs; [
       shell = pkgs.zsh;
       useDefaultShell = false;
       isNormalUser = true;
-      home = "/home/siraben";
-      description = "Ben Siraphob";
+      home = "/home/antonio";
+      description = "MaotseNyein";
       extraGroups = [ "wheel" "networkmanager" "dialout" ];
     };
   };
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "25.05";
 
 }
 

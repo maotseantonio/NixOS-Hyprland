@@ -21,15 +21,7 @@
     ];
   };
   # zram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
-    algorithm = "zstd";
-  };
-
-  powerManagement = {
+   powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";
   };
@@ -60,9 +52,4 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  services.btrfs.autoScrub = {
-    enable = true;
-    interval = "monthly";
-    fileSystems = ["/"];
-  };
  }

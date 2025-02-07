@@ -15,6 +15,8 @@
   stylix.targets.spicetify.enable = true;
   stylix.targets.gtk.enable = true;
   stylix.targets.fish.enable = true;
+  stylix.polarity = "dark";
+  stylix.targets.nixos-icons.enable = true;
   stylix.image = "/home/antonio/Pictures/wallpapers/luffy1_catppuccin-mocha.png";
   stylix = {
     fonts = {

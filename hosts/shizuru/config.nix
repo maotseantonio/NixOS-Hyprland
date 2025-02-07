@@ -1,38 +1,48 @@
 # Main default config
-{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
-  
+{
+  config,
+  pkgs,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}:
+let
+
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
-    ps:
-      with ps; [
-        requests
-        pyquery # needed for hyprland-dots Weather script
-        ]
-    );
-  
-  in {
+    ps: with ps; [
+      requests
+      pyquery # needed for hyprland-dots Weather script
+    ]
+  );
+
+in
+{
   imports = [
     ./hardware.nix
     ./users.nix
     ../../modules/system
 
   ];
-       
+
   nixpkgs.overlays = [
     (final: prev: {
-        sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
+      sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
         pname = "sf-mono-liga-bin";
         version = "dev";
         src = inputs.sf-mono-liga-src;
         dontConfigure = true;
         installPhase = ''
-            mkdir -p $out/share/fonts/opentype
-            cp -R $src/*.otf $out/share/fonts/opentype/
-            '';
-        };
-     }) 
-    ];  
-
+          mkdir -p $out/share/fonts/opentype
+          cp -R $src/*.otf $out/share/fonts/opentype/
+        '';
+      };
+    })
+  ];
   drivers.amdgpu.enable = false;
   drivers.intel.enable = true;
   drivers.nvidia.enable = true;
@@ -49,26 +59,31 @@
   system.audio.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
-  system.scheduler.enable = false; 
+  system.scheduler.enable = true;
+  system.btrfs.enable = true;
+  system.zfs.enable = false;
+  system.zram.enable = true;
   nixpkgs.config.allowUnfree = true;
   users = {
     mutableUsers = true;
   };
 
-  environment.systemPackages = (with pkgs; [
-       
-    libva-utils
-    libvdpau-va-gl
-    intel-compute-runtime
-    intel-vaapi-driver
-    vaapiVdpau
-    mesa
-    egl-wayland
-    waybar  # if wanted experimental next line
-    #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
-  ]) ++ [
-	  python-packages
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+
+      libva-utils
+      libvdpau-va-gl
+      intel-compute-runtime
+      intel-vaapi-driver
+      vaapiVdpau
+      mesa
+      egl-wayland
+      waybar # if wanted experimental next line
+      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    ])
+    ++ [
+      python-packages
+    ];
   # OpenGL
   hardware.graphics = {
     enable = true;
@@ -76,16 +91,15 @@
   console.keyMap = "${keyboardLayout}";
   # For Electron apps to use wayland
   environment.variables = {
-        VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
-    };
+    VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {
-  EDITOR = "nvim";
-  BROWSER = "firefox";
-  TERMINAL = "wezterm";
-  VISUAL = "vscodium";
-  GSK_RENDERER = "gl";
-};
-system.stateVersion = "25.05"; # Did you read the comment?
+    EDITOR = "nvim";
+    BROWSER = "firefox";
+    TERMINAL = "wezterm";
+    VISUAL = "vscodium";
+    GSK_RENDERER = "gl";
+  };
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
-

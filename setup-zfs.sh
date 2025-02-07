@@ -24,6 +24,12 @@ mount -t zfs rpool/safe/persist /mnt/persist
 mkdir /mnt/boot
 mount /dev/$BOOT_PARTITION /mnt/boot
 swapon /dev/$SWAP_PARTITION
-echo "head -c 8 /etc/machine-id"
 
 nixos-generate-config --root /mnt
+echo "umount -Rl /mnt"
+echo "zpool export -a"
+echo "head -c 8 /etc/machine-id"
+
+
+
+

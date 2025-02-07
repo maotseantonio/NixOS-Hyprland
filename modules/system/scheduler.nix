@@ -18,7 +18,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      scx-full_git
+      scx_git.full
     ];
     services.scx.enable = true;
     services.scx.scheduler = "scx_rusty";

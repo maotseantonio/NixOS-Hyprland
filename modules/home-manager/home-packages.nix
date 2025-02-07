@@ -19,11 +19,11 @@
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     yazi
-    inputs.khanelivim.packages.${pkgs.system}.default
+    #inputs.Neve.packages.${pkgs.system}.default
     #inputs.yazi.packages.${pkgs.system}.default
     microfetch
     gpu-screen-recorder
-     libqalculate
+    libqalculate
     dbus-glib
     gtkmm4
     komikku
@@ -31,5 +31,6 @@
     mangareader
     tmux
     gtk4
+    lunarvim
   ];
 }

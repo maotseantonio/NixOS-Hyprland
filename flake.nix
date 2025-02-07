@@ -48,7 +48,7 @@
     hyprsunset = {
       url = "github:hyprwm/hyprsunset";
     };
-     ghostty = {
+    ghostty = {
       url = "github:ghostty-org/ghostty";
     };
     hyprpanel = {
@@ -60,12 +60,11 @@
     };
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
-    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
+#    Neve.url = "github:maotseantonio/Neve";
     #walker.url = "github:abenz1267/walker";
-    khanelivim.url = "github:khaneliman/khanelivim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";
@@ -96,52 +95,54 @@
     };
 
   };
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    chaotic,
-    lix-module,
-    zjstatus,
-    khanelivim,
-    ...
-  }: let
-    system = "x86_64-linux";
-    host = "shizuru";
-    username = "antonio";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    nixosConfigurations = {
-      "${host}" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit host;
-          inherit chaotic;
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      chaotic,
+      lix-module,
+      zjstatus,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+      host = "shizuru";
+      username = "antonio";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      nixosConfigurations = {
+        "${host}" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+            inherit chaotic;
+          };
+          modules = [
+            ./hosts/${host}/config.nix
+            inputs.spicetify-nix.nixosModules.default
+            inputs.chaotic.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
+            lix-module.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                inputs.hyprpanel.overlay
+                (final: prev: {
+                  nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                  zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
+                })
+              ];
+            }
+          ];
         };
-        modules = [
-          ./hosts/${host}/config.nix
-          inputs.spicetify-nix.nixosModules.default
-          inputs.chaotic.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.catppuccin.nixosModules.catppuccin
-          lix-module.nixosModules.default
-          {
-            nixpkgs.overlays = [
-              inputs.hyprpanel.overlay
-              (final: prev: {
-                nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
-                zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
-              })
-            ];
-          }
-        ];
       };
     };
-  };
 }
