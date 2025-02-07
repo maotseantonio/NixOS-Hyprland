@@ -18,7 +18,7 @@ umount /mnt
 
 
 mount -o compress=zstd,subvol=root /dev/$ROOT_PARTITION /mnt
-mkdir /mnt/{home,nix}
+mkdir /mnt/{home,nix,persist}
 mount -o compress=zstd,subvol=home /dev/$ROOT_PARTITION /mnt/home
 mount -o compress=zstd,noatime,subvol=nix /dev/$ROOT_PARTITION /mnt/nix
 mount -o compress=zstd,noatime,subvol=persist /dev/$ROOT_PARTITION /mnt/persist

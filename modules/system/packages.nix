@@ -70,11 +70,11 @@
     starship
     telegram-desktop
     vesktop
-#    papirus-folders
-#    papirus-icon-theme
+    papirus-folders
+    papirus-icon-theme
     spotify
     zoxide
-    bibata-cursors
+   # bibata-cursors
      vivid
   ];
 }

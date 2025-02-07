@@ -32,14 +32,7 @@ in {
         extraGrubInstallArgs = ["--bootloader-id=${host}"];
         configurationName = "${host}";
         gfxmodeEfi = "2560x1440";
-        #    theme = pkgs.catppuccin-grub;
-        #  dedsec-theme = {
-        #    enable = true;
-        #    style = "reaper";
-        #    icon = "color";
-        #    resolution = "1440p";
-        #};
-      };
+       };
       tmp = {
         useTmpfs = false;
         tmpfsSize = "30%";

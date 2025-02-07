@@ -65,6 +65,7 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     #walker.url = "github:abenz1267/walker";
+    khanelivim.url = "github:khaneliman/khanelivim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";
@@ -102,6 +103,7 @@
     chaotic,
     lix-module,
     zjstatus,
+    khanelivim,
     ...
   }: let
     system = "x86_64-linux";
