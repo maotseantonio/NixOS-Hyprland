@@ -8,11 +8,12 @@
     protonvpn-gui
     manga-tui
     nitch
-    # rustup
+    rustup
     github-cli
     neovide
     wezterm
-    hyprpicker
+    hyprpicker 
+    hiddify-app
     #inputs.wezterm.packages.${pkgs.system}.default
     #inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli

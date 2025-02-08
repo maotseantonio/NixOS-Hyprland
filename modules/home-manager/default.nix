@@ -9,7 +9,7 @@
     ./git.nix
     ./cava.nix
     ./nixy.nix
-#    ./helix.nix
+    #./helix.nix
     ./fhsenv.nix
     ./nvchad.nix
     ./textfox.nix
@@ -22,7 +22,7 @@
     ./hyprpanel.nix
     ./variables.nix
     ./zathura.nix
-  #  ./anyrun/anyrun.nix
+    #  ./anyrun/anyrun.nix
     ./zellij/default.nix
     ./scripts/scripts.nix
   ];

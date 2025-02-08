@@ -79,7 +79,7 @@
 
   nix = {
     trustedUsers = [ "root" "antonio" ];
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.git;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

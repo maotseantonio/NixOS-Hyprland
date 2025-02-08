@@ -20,7 +20,7 @@ mkdir /mnt/{home,nix,persist}
 mount -t zfs rpool/local/nix /mnt/nix 
 mount -t zfs rpool/safe/home /mnt/home
 mount -t zfs rpool/safe/persist /mnt/persist
-
+zfs snapshot rpool/local/root@start
 mkdir /mnt/boot
 mount /dev/$BOOT_PARTITION /mnt/boot
 swapon /dev/$SWAP_PARTITION
