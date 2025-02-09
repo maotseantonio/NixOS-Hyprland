@@ -49,7 +49,10 @@
   system.audio.enable = true;
   system.greetd.enable = true;
   system.powermanagement.enable = false;
-  system.scheduler.enable = true; 
+  system.scheduler.enable = false;
+  system.btrfs.enable = true;
+  system.zfs.enable = true;
+  system.zram.enable = true;
   nixpkgs.config.allowUnfree = true;
   users = {
     mutableUsers = true;

@@ -22,6 +22,7 @@
     ./hyprpanel.nix
     ./variables.nix
     ./zathura.nix
+    ./hypridle.nix
     #  ./anyrun/anyrun.nix
     ./zellij/default.nix
     ./scripts/scripts.nix

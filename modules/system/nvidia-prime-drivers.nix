@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  chaotic,
   ...
 }:
 with lib; let
@@ -21,9 +22,9 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-        vulkan-loader
-        vulkan-validation-layers
-        vulkan-tools
+        vulkanPackages_latest.vulkan-loader
+        vulkanPackages_latest.vulkan-validation-layers
+        vulkanPackages_latest.vulkan-tools
         libva-utils
     ];
     hardware.nvidia = {

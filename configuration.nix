@@ -91,7 +91,7 @@
   environment.shells = with pkgs; [ bashInteractive zsh ];
 
   users = {
-    users.siraben = {
+    users.antonio = {
       shell = pkgs.zsh;
       useDefaultShell = false;
       isNormalUser = true;

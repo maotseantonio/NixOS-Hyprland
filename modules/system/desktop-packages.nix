@@ -53,10 +53,10 @@
     fd
     home-manager
     bluez-tools
-    gtk3
-    gtk4
-    gtkmm4
-    gtkmm3
+        #gtk3
+        #gtk4
+    #gtkmm4
+    #gtkmm3
     fish
     atuin
     dart-sass
@@ -64,12 +64,12 @@
     sassc
     libgtop
     starship
-    telegram-desktop
-    vesktop
-    papirus-folders
-    papirus-icon-theme
+        #telegram-desktop
+        #vesktop
+        #papirus-folders
+        #papirus-icon-theme
     zoxide
-    bibata-cursors
-    spotify
+        #bibata-cursors
+        #spotify
   ];
 }

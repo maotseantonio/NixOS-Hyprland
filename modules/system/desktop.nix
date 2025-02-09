@@ -36,7 +36,10 @@
     ./vm-guest-services.nix
     ./local-hardware-clock.nix
     ./cachix.nix
-    ./packages.nix
+    ./desktop-packages.nix
     ./nix.nix
+    ./btrfs.nix
+    ./zfs.nix
+    ./zram.nix
   ];
 }
