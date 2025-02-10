@@ -14,31 +14,33 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b3dcbc4f-29d4-4603-8293-5b91fe5b9017";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
+    { device = "rpool/local/root";
+      fsType = "zfs";
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/b3dcbc4f-29d4-4603-8293-5b91fe5b9017";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/b3dcbc4f-29d4-4603-8293-5b91fe5b9017";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
+    { device = "rpool/local/nix";
+      fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3D63-EF5A";
+    { device = "/dev/disk/by-uuid/27ED-9D96";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/home" =
+    { device = "rpool/safe/home";
+      fsType = "zfs";
+    };
+
+  fileSystems."/persist" =
+    { device = "rpool/safe/persist";
+      fsType = "zfs";
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/86d880bd-dc79-4761-bff0-638e50ef0567"; }
+    [ { device = "/dev/disk/by-uuid/6f214b06-9610-4d4e-84f7-a95b28fde9f7"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -62,7 +62,7 @@
     gtk4
     fish
     atuin
-  #  bun
+    bun
     dart-sass
     nodejs
     sassc

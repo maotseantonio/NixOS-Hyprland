@@ -60,10 +60,11 @@ in
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true;
-  system.btrfs.enable = true;
-  system.zfs.enable = false;
+  system.btrfs.enable = false;
+  system.zfs.enable = true;
   system.zram.enable = true;
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
   users = {
     mutableUsers = true;
   };
