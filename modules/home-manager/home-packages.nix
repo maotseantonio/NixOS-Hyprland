@@ -12,14 +12,16 @@
     wezterm
     hyprpicker 
     protonvpn-gui
+    hiddify-app
+    #cargo
     #inputs.wezterm.packages.${pkgs.system}.default
     #inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    yazi
+    #yazi
     #inputs.Neve.packages.${pkgs.system}.default
-    #inputs.yazi.packages.${pkgs.system}.default
+    inputs.yazi.packages.${pkgs.system}.default
     microfetch
     gpu-screen-recorder
     libqalculate

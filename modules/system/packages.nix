@@ -74,7 +74,8 @@
     papirus-icon-theme
     spotify
     zoxide
-    #bibata-cursors
+    bibata-cursors
     vivid
+    spotube
   ];
 }

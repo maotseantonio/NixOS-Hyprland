@@ -16,10 +16,13 @@ in
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
     };
+    appimage = {
+        enable = true;
+        binfmt = true;
+    };
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    #hyprpicker.enable = true;
     firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
