@@ -57,7 +57,7 @@
     fd
     home-manager
     bluez-tools
-#    wgpu-utils
+    #wgpu-utils
     gtk3
     gtk4
     fish
@@ -74,7 +74,7 @@
     papirus-icon-theme
     spotify
     zoxide
-   # bibata-cursors
-     vivid
+    #bibata-cursors
+    vivid
   ];
 }

@@ -24,9 +24,9 @@ mount /dev/$BOOT_PARTITION /mnt/boot
 swapon /dev/$SWAP_PARTITION
 
 nixos-generate-config --root /mnt
-echo "umount -Rl /mnt"
-echo "zpool export -a"
-echo "head -c 8 /etc/machine-id"
+#echo "umount -Rl /mnt"
+#echo "zpool export -a"
+#echo "head -c 8 /etc/machine-id"
 
 
 

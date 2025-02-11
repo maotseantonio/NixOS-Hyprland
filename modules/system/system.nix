@@ -42,7 +42,7 @@
     vim
     xdg-user-dirs
     xdg-utils
-
+    hyprpicker
     fastfetch
     (mpv.override {scripts = [mpvScripts.mpris];})
   ]; 

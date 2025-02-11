@@ -6,16 +6,17 @@
 }: {
   home.packages = with pkgs; [
     nitch
-   #rustup
+    rustup
     github-cli
     neovide
     wezterm
     hyprpicker 
+    protonvpn-gui
     #inputs.wezterm.packages.${pkgs.system}.default
     #inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
-   # inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
+    inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     yazi
     #inputs.Neve.packages.${pkgs.system}.default
     #inputs.yazi.packages.${pkgs.system}.default
@@ -29,6 +30,6 @@
     mangareader
     tmux
     gtk4
-   # lunarvim
+    #lunarvim
   ];
 }

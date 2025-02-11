@@ -19,6 +19,7 @@ in
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
+    #hyprpicker.enable = true;
     firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
