@@ -16,7 +16,7 @@
     gnome-system-monitor
     file-roller
     grim
-    pwvucontrol_git
+    #pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -52,11 +52,11 @@
     nix-ld
     fd
     home-manager
-    bluez-tools
-        #gtk3
-        #gtk4
-    #gtkmm4
-    #gtkmm3
+    #bluez-tools
+    gtk3
+    gtk4
+    gtkmm4
+    gtkmm3
     fish
     atuin
     dart-sass
@@ -64,12 +64,12 @@
     sassc
     libgtop
     starship
-        #telegram-desktop
-        #vesktop
-        #papirus-folders
-        #papirus-icon-theme
+    telegram-desktop
+    vesktop
+    papirus-folders
+    papirus-icon-theme
     zoxide
-        #bibata-cursors
-        #spotify
+    bibata-cursors
+    #spotify
   ];
 }

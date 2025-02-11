@@ -5,13 +5,13 @@
   ...
 }: {
   home.packages = with pkgs; [
-        #protonvpn-gui
-        #manga-tui
+    #protonvpn-gui
+    #manga-tui
     nitch
-        #    rustup
+    #rustup
     github-cli
     neovide
-        #inputs.wezterm.packages.${pkgs.system}.default
+    #inputs.wezterm.packages.${pkgs.system}.default
     #inputs.zen-browser.packages."${pkgs.system}".default
     #inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
@@ -19,17 +19,18 @@
     wezterm
     microfetch
     gpu-screen-recorder
-    vscodium
+   # vscodium
     libqalculate
-        #libdbusmenu-gtk3
-        #dbus-glib
-        #mangal
-        #mangareader
-        #lutgen
+    libdbusmenu-gtk3
+    dbus-glib
+    mangal
+    mangareader
+    #lutgen
     tmux
-        #tmux-sessionizer
-        #tmuxPlugins.sidebar
-        #gtk4
-        #mangayomi
+    #tmux-sessionizer
+    #tmuxPlugins.sidebar
+    gtk4
+    #mangayomi
+    komikku
   ];
 }

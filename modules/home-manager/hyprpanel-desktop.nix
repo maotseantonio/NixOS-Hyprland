@@ -12,7 +12,7 @@
     systemd.enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
-    theme = "catppuccin_mocha";
+    theme = "catppuccin_mocha_split";
     layout = {
       "bar.layouts" = {
         "0" = {
@@ -28,7 +28,7 @@
       "theme.bar.buttons.workspaces.occupied" = "#89dceb";
       "theme.bar.buttons.workspaces.available" = "#585b70";
       "theme.bar.buttons.workspaces.border" = "#f9e2af";
-      "theme.bar.buttons.modules.power.spacing" = "0em";
+      "theme.bar.buttons.modules.power.spacing" = "0.4em";
       "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
@@ -44,7 +44,7 @@
       theme.bar.buttons.workspaces.spacing = "0.5";
       theme.bar.buttons.background_hover_opacity = 80;
       theme.bar.buttons.innerRadiusMultiplier = "0.4";
-      theme.bar.buttons.radius = "1.0em";
+      theme.bar.buttons.radius = "0.5em";
       theme.bar.buttons.y_margins = "0.5em";
       theme.bar.buttons.padding_y = "0.1rem";
       theme.bar.buttons.padding_x = "0.7rem";

@@ -49,7 +49,7 @@
   system.audio.enable = true;
   system.greetd.enable = true;
   system.powermanagement.enable = false;
-  system.scheduler.enable = false;
+  system.scheduler.enable = true;
   system.btrfs.enable = true;
   system.zfs.enable = false;
   system.zram.enable = true;

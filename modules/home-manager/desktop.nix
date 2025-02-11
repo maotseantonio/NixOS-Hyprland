@@ -7,19 +7,20 @@
   imports = [
     ./home.nix
     ./git.nix
-        #   ./gtk.nix
-        #./nixy.nix
+   #./gtk.nix
+   #./nixy.nix
     ./fhsenv.nix
     ./nvchad.nix
     ./textfox.nix
-        #./nixcord.nix
+   #./nixcord.nix
     ./hyprland-desktop.nix
-        # ./spicetify.nix
-        #./vscodium.nix
+   #./spicetify.nix
+    ./vscodium.nix
     ./desktop-packages.nix
-        # ./ghostty.nix
+    ./ghostty.nix
     ./hyprpanel-desktop.nix
     ./variables.nix
+    ./zellij/default.nix
     ./scripts/scripts.nix
   ];
 }

@@ -17,9 +17,10 @@
     ./audio.nix
     ./fonts.nix
     ./locale.nix
-    ./hardwareconf.nix
+    ./system-hardware.nix
     ./stylix.nix
     ./system.nix
+    ./security.nix
     ./services.nix
     ./flatpak.nix
     ./fonts.nix
