@@ -14,7 +14,7 @@ in  {
   };
 
   config = mkIf cfg.enable {
-   # Useful ZFS maintenance
+   ### Useful ZFS maintenance ###
    networking.hostId = "09050b1e";
    boot.supportedFilesystems = [ "zfs" ];
    boot.zfs.package = pkgs.zfs_cachyos;
