@@ -11,6 +11,7 @@
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     disko = {
       url = "github:nix-community/disko";
@@ -59,11 +60,11 @@
       url = "github:kaylorben/nixcord";
     };
     textfox.url = "github:maotseantonio/textfox";
-    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
-#    Neve.url = "github:maotseantonio/Neve";
+    #Neve.url = "github:maotseantonio/Neve";
     #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
@@ -103,6 +104,7 @@
       chaotic,
       lix-module,
       zjstatus,
+      nvf,
       ...
     }:
     let
@@ -131,6 +133,7 @@
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
+            inputs.nixos-hardware.nixosModules.huawei-machc-wa
             lix-module.nixosModules.default
             {
               nixpkgs.overlays = [

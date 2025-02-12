@@ -28,6 +28,7 @@ in {
         enable = true;
         devices = ["nodev"];
         efiSupport = true;
+        zfsSupport = true;   # Enable ZFS support in GRUB
         memtest86.enable = true;
         extraGrubInstallArgs = ["--bootloader-id=${host}"];
         configurationName = "${host}";

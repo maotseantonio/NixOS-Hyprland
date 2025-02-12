@@ -16,7 +16,6 @@ btrfs subvolume create /mnt/nix
 btrfs subvolume create /mnt/persist
 umount /mnt
 
-
 mount -o compress=zstd,subvol=root /dev/$ROOT_PARTITION /mnt
 mkdir /mnt/{home,nix,persist}
 mount -o compress=zstd,subvol=home /dev/$ROOT_PARTITION /mnt/home
