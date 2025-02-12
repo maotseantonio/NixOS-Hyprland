@@ -20,7 +20,6 @@
       pkgs.xdg-desktop-portal
     ];
   };
-  # zram
    powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";

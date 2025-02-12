@@ -28,13 +28,13 @@
       "theme.bar.buttons.workspaces.occupied" = "#89dceb";
       "theme.bar.buttons.workspaces.available" = "#585b70";
       "theme.bar.buttons.workspaces.border" = "#f9e2af";
-      "theme.bar.buttons.modules.power.spacing" = "0.4em";
+      "theme.bar.buttons.modules.power.spacing" = "0.45em";
       "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
       "bar.workspaces.spacing" = "1.5";
-      "bar.customModules.cava.showIcon"= false;
+      "bar.customModules.cava.showIcon"= true;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
     settings = {
@@ -130,7 +130,7 @@
       };
       menus.dashboard.directories.enabled = true;
       menus.dashboard.stats.enable_gpu = false;
-      theme.bar.transparent = false;
+      theme.bar.transparent = true;
     };
   };
 }

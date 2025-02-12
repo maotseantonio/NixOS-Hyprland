@@ -14,11 +14,12 @@
     ./textfox.nix
    #./nixcord.nix
     ./hyprland-desktop.nix
-   #./spicetify.nix
+   ./spicetify.nix
     ./vscodium.nix
     ./desktop-packages.nix
     ./ghostty.nix
     ./hyprpanel-desktop.nix
+    ./hypridle.nix
     ./variables.nix
     ./zellij/default.nix
     ./scripts/scripts.nix

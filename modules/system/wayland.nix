@@ -11,7 +11,6 @@ in
   programs = {
     hyprland = {
       enable = true;
-      #withUWSM  = true;
       package = pkgs.hyprland;
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
@@ -19,7 +18,6 @@ in
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    #hyprpicker.enable = true;
     firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
@@ -34,12 +32,12 @@ in
 
     virt-manager.enable = false;
 
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
 
     xwayland.enable = true;
 

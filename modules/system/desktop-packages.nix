@@ -27,7 +27,7 @@
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    #nwg-dock-hyprland
+    nwg-dock-hyprland
     #nvtopPackages.full
     pamixer
     pavucontrol
@@ -70,6 +70,6 @@
     papirus-icon-theme
     zoxide
     bibata-cursors
-    #spotify
+    spotify
   ];
 }
