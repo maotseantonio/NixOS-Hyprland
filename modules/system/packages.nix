@@ -77,6 +77,5 @@
     zoxide
     bibata-cursors
     vivid
-    discord
   ];
 }
