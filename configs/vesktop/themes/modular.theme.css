@@ -1,0 +1,66 @@
+/**
+ * @name Modular
+ * @author SEELE1306
+ * @authorLink https://github.com/SEELE1306
+ * @description A highly customizable theme for Vesktop.
+ * @license MIT
+ * @version 2.1.2
+ * @authorId 518795791318384647
+ * @discord seele1306
+ **/
+
+/* --- IMPORT MAIN FILE --- */
+
+@import url(https://raw.githubusercontent.com/SEELE1306/Modular/release/src/main.css);
+
+/* --- CUSTOMIZABLE --- */
+
+:root {
+  /* [[ DISCORD COLORS ]] */
+  --modular-red: #bf616a;
+  --modular-yellow: #ebcb8b;
+  --modular-green: #a3be8c;
+  --modular-orange: #d08770;
+  --modular-teal: #b48ead;
+  --modular-blue: #88c0d0;
+
+  /* [[ BASE COLORS ]] */
+  --modular-bg0: #262626; /* Primary background color */
+  --modular-bg1: #202020; /* Secondary background color */
+  --modular-bg2: #151515; /* Tertiary background color */
+  --modular-bg3: #323232; /* Quarterary background color */
+  --modular-bg4: #393939; /* Modifier/hover/select background color */
+
+  --modular-text0: #d8c8c4; /* Normal text color */
+  --modular-text1: #f6f1ef; /* Brighter text color */
+  --modular-text2: #cab5b1; /* Darker text color */
+
+  /* [[ BRAND COLORS ]] */
+  --modular-accent: #a57562; /* Accent color */
+  --modular-flavor: "Rosebox"; /* Flavor name */
+
+  /* [[ CHAT BUBBLES ]] */
+  --modular-cb-width: max-content; /* 100% for chat bubbles spanning the entire screen / max-content for dynamic width, Default is max-content */
+
+  /* [[ FONT CHANGE ]] */
+  --font-main: "Inter";
+  --font-code: "Roboto Mono";
+
+  /* [[ CLIENT LAYOUT ]] */
+  --client-border-color: var(--brand-500);
+  --modular-sidebar-orientation: column;
+  /* column-reverse for user panel on top */
+  --modular-guild-orientation: row;
+  /* row-reverse for guild bar on the right */
+  --modular-memberlist-orientation: row;
+  /* row-reverse for member list on the left */
+  --modular-friendlist-orientation: row;
+  /* row-reverse for now playing tab on the left */
+
+  /* [[ SPOTIFY TRACK BACKGROUND ]] */
+  --modular-spotify-bg-blur: 2px; /* higher px = stronger blur, 0 = no blur */
+  --modular-spotify-darken: 0.5; /* 0 = album cover is not darkened, 1 = album cover is darkened fully (black) */
+}
+
+/* --- THIRD PARTY IMPORTS --- */
+/* Should you want to use snippets, place them here */

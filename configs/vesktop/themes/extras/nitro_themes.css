@@ -1,0 +1,131 @@
+:root {
+  /* Reformatted, original credits to DaBluLite */
+  /* [[ NITRO THEMES ]] */
+  --aurora: linear-gradient(
+    239.16deg,
+    hsl(220 calc(var(--saturation-factor, 1) * 86.5%) 17.5%/1) 10.39%,
+    hsl(238 calc(var(--saturation-factor, 1) * 76.4%) 41.6%/1) 26.87%,
+    hsl(184 calc(var(--saturation-factor, 1) * 78%) 33.9%/1) 48.31%,
+    hsl(169 calc(var(--saturation-factor, 1) * 60.2%) 32.5%/1) 64.98%,
+    hsl(230 calc(var(--saturation-factor, 1) * 92.5%) 26.3%/1) 92.5%
+  );
+  --forest: linear-gradient(
+    162.27deg,
+    hsl(124 calc(var(--saturation-factor, 1) * 25.9%) 10.6%/1) 11.2%,
+    hsl(143 calc(var(--saturation-factor, 1) * 26.2%) 23.9%/1) 29.93%,
+    hsl(76 calc(var(--saturation-factor, 1) * 20.6%) 24.7%/1) 48.64%,
+    hsl(117 calc(var(--saturation-factor, 1) * 17%) 41.6%/1) 67.85%,
+    hsl(43 calc(var(--saturation-factor, 1) * 38.5%) 47.8%/1) 83.54%
+  );
+  --hanami: linear-gradient(
+    38.08deg,
+    hsl(352 calc(var(--saturation-factor, 1) * 68.3%) 80.2%/1) 3.56%,
+    hsl(43 calc(var(--saturation-factor, 1) * 73.6%) 76.3%) 35.49%,
+    hsl(116 calc(var(--saturation-factor, 1) * 43.1%) 74.5%/1) 68.78%
+  );
+  --lofi: linear-gradient(
+    179.52deg,
+    hsl(220 calc(var(--saturation-factor, 1) * 83.8%) 80.6%/1) 7.08%,
+    hsl(184 calc(var(--saturation-factor, 1) * 57.8%) 78.6%/1) 34.94%,
+    hsl(130 calc(var(--saturation-factor, 1) * 46.3%) 78.8%/1) 65.12%,
+    hsl(76 calc(var(--saturation-factor, 1) * 48.8%) 75.5%/1) 96.23%
+  );
+  --mint-apple: linear-gradient(
+    180deg,
+    hsl(166 calc(var(--saturation-factor, 1) * 39.7%) 52.5%/1) 6.15%,
+    hsl(119 calc(var(--saturation-factor, 1) * 40.4%) 55.9%/1) 48.7%,
+    hsl(87 calc(var(--saturation-factor, 1) * 48.3%) 59.8%/1) 93.07%
+  );
+  --mars: linear-gradient(
+    170.82deg,
+    hsl(15 calc(var(--saturation-factor, 1) * 36.3%) 39.4%/1) 14.61%,
+    hsl(0 calc(var(--saturation-factor, 1) * 36.2%) 41.2%/1) 74.62%
+  );
+  --neon-nights: linear-gradient(
+    180deg,
+    hsl(176 calc(var(--saturation-factor, 1) * 98.8%) 33.1%/1) 0%,
+    hsl(259 calc(var(--saturation-factor, 1) * 39.5%) 55.3%) 50%,
+    hsl(314 calc(var(--saturation-factor, 1) * 52.5%) 46.3%/1) 100%
+  );
+  --retro-raincloud: linear-gradient(
+    148.71deg,
+    hsl(202 calc(var(--saturation-factor, 1) * 47%) 42.9%/1) 5.64%,
+    hsl(241 calc(var(--saturation-factor, 1) * 29.6%) 61%/1) 26.38%,
+    hsl(241 calc(var(--saturation-factor, 1) * 29.6%) 61%/1) 49.92%,
+    hsl(202 calc(var(--saturation-factor, 1) * 47%) 42.9%/1) 73.12%
+  );
+  --strawberry-lemonade: linear-gradient(
+    161.03deg,
+    hsl(327 calc(var(--saturation-factor, 1) * 74.1%) 39.4%/1) 18.79%,
+    hsl(28 calc(var(--saturation-factor, 1) * 71.7%) 44.3%/1) 49.76%,
+    hsl(40 calc(var(--saturation-factor, 1) * 80.2%) 52.5%/1) 80.72%
+  );
+  --sepia: linear-gradient(
+    69.98deg,
+    hsl(33 calc(var(--saturation-factor, 1) * 14.2%) 45.7%/1) 14.14%,
+    hsl(36 calc(var(--saturation-factor, 1) * 46.8%) 24.3%/1) 60.35%
+  );
+  --midnight-blurple: linear-gradient(
+    48.17deg,
+    hsl(245 calc(var(--saturation-factor, 1) * 55.1%) 53.7%/1) 11.21%,
+    hsl(259 calc(var(--saturation-factor, 1) * 74.5%) 10.8%/1) 61.92%
+  );
+  --chroma-glow: linear-gradient(
+    128.92deg,
+    hsl(183 calc(var(--saturation-factor, 1) * 86.3%) 40.2%/1) 3.94%,
+    hsl(258 calc(var(--saturation-factor, 1) * 89.8%) 46.3%/1) 26.1%,
+    hsl(298 calc(var(--saturation-factor, 1) * 90.9%) 34.3%/1) 39.82%,
+    hsl(265 var(--modular-saturation) 66.3%/1) 56.89%,
+    hsl(207 calc(var(--saturation-factor, 1) * 75.5%) 50.4%/1) 76.45%
+  );
+  --citrus-sherbert: linear-gradient(
+    180deg,
+    hsl(40 calc(var(--saturation-factor, 1) * 88.7%) 58.2%/1) 31.1%,
+    hsl(18 calc(var(--saturation-factor, 1) * 81.5%) 63.9%/1) 67.09%
+  );
+  --cotton-candy: linear-gradient(
+    180.14deg,
+    hsl(349 calc(var(--saturation-factor, 1) * 76.8%) 81.4%/1) 8.5%,
+    hsl(226 calc(var(--saturation-factor, 1) * 92.6%) 84.1%/1) 94.28%
+  );
+  --crimson-moon: linear-gradient(
+    64.92deg,
+    hsl(0 calc(var(--saturation-factor, 1) * 88.6%) 31%/1) 16.17%,
+    hsl(0 calc(var(--saturation-factor, 1) * 0%) 0%/1) 72%
+  );
+  --desert-khaki: linear-gradient(
+    38.99deg,
+    hsl(29 calc(var(--saturation-factor, 1) * 32.4%) 86.1%/1) 12.92%,
+    hsl(40 calc(var(--saturation-factor, 1) * 41.3%) 78.6%/1) 32.92%,
+    hsl(50 calc(var(--saturation-factor, 1) * 49.6%) 75.9%/1) 52.11%
+  );
+  --dusk: linear-gradient(
+    180deg,
+    hsl(293 calc(var(--saturation-factor, 1) * 13.5%) 36.3%/1) 12.84%,
+    hsl(223 calc(var(--saturation-factor, 1) * 41%) 69.4%/1) 85.99%
+  );
+  --retro-storm: linear-gradient(
+    148.71deg,
+    hsl(202 calc(var(--saturation-factor, 1) * 47%) 42.9%/1) 5.64%,
+    hsl(241 calc(var(--saturation-factor, 1) * 27.8%) 47.3%/1) 26.38%,
+    hsl(241 calc(var(--saturation-factor, 1) * 27.8%) 47.3%/1) 49.92%,
+    hsl(202 calc(var(--saturation-factor, 1) * 47%) 42.9%/1) 73.12%
+  );
+  --sunrise: linear-gradient(
+    154.19deg,
+    hsl(327 calc(var(--saturation-factor, 1) * 42%) 43.9%/1) 8.62%,
+    hsl(27 calc(var(--saturation-factor, 1) * 44.9%) 58%/1) 48.07%,
+    hsl(50 calc(var(--saturation-factor, 1) * 46.3%) 44.5%/1) 76.04%
+  );
+  --sunset: linear-gradient(
+    141.68deg,
+    hsl(259 calc(var(--saturation-factor, 1) * 55.6%) 35.3%/1) 27.57%,
+    hsl(22 calc(var(--saturation-factor, 1) * 66.7%) 57.6%/1) 71.25%
+  );
+  --under-the-sea: linear-gradient(
+    179.14deg,
+    hsl(115 calc(var(--saturation-factor, 1) * 10.5%) 42.9%/1) 1.91%,
+    hsl(159 calc(var(--saturation-factor, 1) * 20.4%) 43.3%/1) 48.99%,
+    hsl(175 calc(var(--saturation-factor, 1) * 10.9%) 46.7%/1) 96.35%
+  );
+}

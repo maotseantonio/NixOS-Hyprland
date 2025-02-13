@@ -1,0 +1,105 @@
+/* [[ REMADE DISCORD VARIABLES ]] */
+
+:root,
+.theme-dark,
+.theme-light {
+  /* Primary variables */
+  --primary-100-hsl: var(--modular-hue) var(--modular-saturation) 97.6%;
+  --primary-130-hsl: var(--modular-hue) var(--modular-saturation) 95.5%;
+  --primary-160-hsl: var(--modular-hue) var(--modular-saturation) 92.9%;
+  --primary-200-hsl: var(--modular-hue) var(--modular-saturation) 90%;
+  --primary-230-hsl: var(--modular-hue) var(--modular-saturation) 87.1%;
+  --primary-260-hsl: var(--modular-hue) var(--modular-saturation) 83.7%;
+  --primary-300-hsl: var(--modular-hue) var(--modular-saturation) 78.8%;
+  --primary-330-hsl: var(--modular-hue) var(--modular-saturation) 73.3%;
+  --primary-345-hsl: var(--modular-hue) var(--modular-saturation) 67.5%;
+  --primary-360-hsl: var(--modular-hue) var(--modular-saturation) 61.2%;
+  --primary-400-hsl: var(--modular-hue) var(--modular-saturation) 52.9%;
+  --primary-430-hsl: var(--modular-hue) var(--modular-saturation) 44.9%;
+  --primary-460-hsl: var(--modular-hue) var(--modular-saturation) 38%;
+  --primary-500-hsl: var(--modular-hue) var(--modular-saturation) 32.5%;
+  --primary-530-hsl: var(--modular-hue) var(--modular-saturation) 27.3%;
+  --primary-560-hsl: var(--modular-hue) var(--modular-saturation) 23.5%;
+  --primary-600-hsl: var(--modular-hue) var(--modular-saturation) 20.6%;
+  --primary-630-hsl: var(--modular-hue) var(--modular-saturation) 18%;
+  --primary-645-hsl: var(--modular-hue) var(--modular-saturation) 16.9%;
+  --primary-660-hsl: var(--modular-hue) var(--modular-saturation) 14.7%;
+  --primary-700-hsl: var(--modular-hue) var(--modular-saturation) 12.5%;
+  --primary-730-hsl: var(--modular-hue) var(--modular-saturation) 11%;
+  --primary-760-hsl: var(--modular-hue) var(--modular-saturation) 9.2%;
+  --primary-800-hsl: var(--modular-hue) var(--modular-saturation) 7.3%;
+  --primary-830-hsl: var(--modular-hue) var(--modular-saturation) 4.9%;
+  --primary-860-hsl: var(--modular-hue) var(--modular-saturation) 2.5%;
+  --primary-900-hsl: var(--modular-hue) var(--modular-saturation) 0.8%;
+
+  /* New brand variables */
+  --brand-100: color-mix(in srgb, #fff calc(97.6% - 32.5%), var(--brand-500));
+  --brand-130: color-mix(in srgb, #fff calc(95.5% - 32.5%), var(--brand-500));
+  --brand-160: color-mix(in srgb, #fff calc(92.9% - 32.5%), var(--brand-500));
+  --brand-200: color-mix(in srgb, #fff calc(90% - 32.5%), var(--brand-500));
+  --brand-230: color-mix(in srgb, #fff calc(87.1% - 32.5%), var(--brand-500));
+  --brand-260: color-mix(in srgb, #fff calc(83.7% - 32.5%), var(--brand-500));
+  --brand-300: color-mix(in srgb, #fff calc(78.8% - 32.5%), var(--brand-500));
+  --brand-330: color-mix(in srgb, #fff calc(73.3% - 32.5%), var(--brand-500));
+  --brand-345: color-mix(in srgb, #fff calc(67.5% - 32.5%), var(--brand-500));
+  --brand-360: color-mix(in srgb, #fff calc(61.2% - 32.5%), var(--brand-500));
+  --brand-400: color-mix(in srgb, #fff calc(52.9% - 32.5%), var(--brand-500));
+  --brand-430: color-mix(in srgb, #fff calc(44.9% - 32.5%), var(--brand-500));
+  --brand-460: color-mix(in srgb, #fff calc(38% - 32.5%), var(--brand-500));
+  --brand-530: color-mix(in srgb, #000 calc(38% - 32.5%), var(--brand-500));
+  --brand-560: color-mix(in srgb, #000 calc(44.9% - 32.5%), var(--brand-500));
+  --brand-600: color-mix(in srgb, #000 calc(52.9% - 32.5%), var(--brand-500));
+  --brand-630: color-mix(in srgb, #000 calc(61.2% - 32.5%), var(--brand-500));
+  --brand-645: color-mix(in srgb, #000 calc(67.5% - 32.5%), var(--brand-500));
+  --brand-660: color-mix(in srgb, #000 calc(73.3% - 32.5%), var(--brand-500));
+  --brand-700: color-mix(in srgb, #000 calc(78.8% - 32.5%), var(--brand-500));
+  --brand-730: color-mix(in srgb, #000 calc(83.7% - 32.5%), var(--brand-500));
+  --brand-760: color-mix(in srgb, #000 calc(87.1% - 32.5%), var(--brand-500));
+  --brand-800: color-mix(in srgb, #000 calc(90% - 32.5%), var(--brand-500));
+  --brand-830: color-mix(in srgb, #000 calc(92.9% - 32.5%), var(--brand-500));
+  --brand-860: color-mix(in srgb, #000 calc(95.5% - 32.5%), var(--brand-500));
+  --brand-900: color-mix(in srgb, #000 calc(97.6% - 32.5%), var(--brand-500));
+}
+
+/* [[ CUSTOM THEME VARIABLES ]] */
+
+:root,
+.theme-dark,
+.theme-light {
+  --status-danger: var(--brand-500);
+  --button-outline-danger-border: var(--brand-500);
+  --text-brand: var(--brand-500);
+  --background-primary-alt: color-mix(
+    in srgb,
+    var(--background-primary) var(--modular-transparency),
+    transparent
+  ) !important;
+  --mention-background: color-mix(in srgb, var(--brand-500) 25%, transparent);
+}
+:root,
+.theme-dark,
+.theme-light {
+  /* Chat bubbles requirements */
+  --background-message-hover: none;
+  --background-mentioned: none;
+  --background-mentioned-hover: none;
+  --background-message-highlight: none;
+  --background-message-automod: none;
+  --background-message-automod-hover: none;
+  --info-warning-foreground: none;
+  /* Scrollbars */
+  --scrollbar-auto-thumb: var(--brand-500);
+  --scrollbar-auto-track: color-mix(in srgb, var(--brand-500) 25%, transparent);
+  --scrollbar-thin-thumb: var(--brand-500);
+  --scrollbar-thin-track: transparent;
+
+  --profile-role-pill-background: none;
+  --font-primary: var(--font-main), var(--font-fallback);
+  --font-display: var(--font-main), var(--font-fallback);
+  --font-code: var(--font-code), var(--font-code-fallback);
+  --font-fallback: "gg sans";
+  --font-code-fallback: "monospace";
+  --text-link: var(--text-normal);
+  /* Update versioning scheme */
+  --modular-version: "v2.0.10";
+}

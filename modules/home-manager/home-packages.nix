@@ -11,8 +11,8 @@
     neovide
     wezterm
     hyprpicker 
-    protonvpn-gui
-    hiddify-app
+    #protonvpn-gui
+    #hiddify-app
     #inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull

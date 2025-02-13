@@ -19,7 +19,8 @@
     gnome-system-monitor
     file-roller
     grim
-  #  pwvucontrol_git
+    protonvpn-gui
+    hiddify-app
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -76,6 +77,6 @@
     zoxide
     bibata-cursors
     vivid
-    spotube
+    discord
   ];
 }

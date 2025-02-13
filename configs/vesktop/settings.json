@@ -1,0 +1,10 @@
+{
+    "discordBranch": "canary",
+    "minimizeToTray": true,
+    "arRPC": false,
+    "splashColor": "oklab(0.89908 -0.00192907 -0.0048306)",
+    "splashBackground": "oklab(0.242856 0.00730695 -0.0294512)",
+    "splashTheming": true,
+    "clickTrayToShowHide": true,
+    "disableSmoothScroll": false
+}

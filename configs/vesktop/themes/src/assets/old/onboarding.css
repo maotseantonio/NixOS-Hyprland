@@ -1,0 +1,110 @@
+/* [[ ONBOARDING SECTION ]] */
+.theme-dark .container_c2efea {
+  background: unset;
+}
+
+.categoryText_f04d06 {
+  font-size: 16px;
+}
+
+.pill_c993da.small_c993da {
+  background: var(--background-tertiary-alt);
+}
+
+.container_c15230 {
+  background: var(--background-tertiary);
+
+  &:hover {
+    background: var(--background-modifier-hover);
+  }
+}
+
+.channelRow_f04d06 {
+  background: var(--background-modifier-accent);
+  margin: 8px 0;
+  border-radius: var(--radius-sm);
+
+  &:hover {
+    background: var(--background-modifier-hover);
+  }
+}
+
+.newMosaicStyle_d8e2d0 .textContainer_d8e2d0 {
+  border-radius: var(--radius-sm) 8px 0 0;
+}
+
+/* Bring back buttons */
+.tabBarItem_f1fd9c.item_a0 {
+  border: none;
+  background: var(--background-modifier-accent);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+
+  &.selected_a0 {
+    background: var(--background-modifier-selected);
+  }
+
+  &:hover {
+    background: var(--background-modifier-hover);
+  }
+}
+
+:is(.pageBody_c6b11b > :not(.prompt_c6b11b), .profile_c6b11b)
+  .text-xs-normal_ccc5fb {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.checkIcon_bd5e1f {
+  top: 8px;
+  right: 8px;
+}
+
+.bio_c6b11b,
+.username_c6b11b,
+.title_c6b11b,
+.profile_c6b11b > .text-xs-normal__46d75,
+.heading-md-semibold__76ba1 {
+  text-align: center;
+}
+
+.profileCard_c6b11b .blockquoteContainer_f8f345 {
+  justify-content: center;
+}
+
+/* Center help text */
+.prompt_c6b11b > .helpText_c6b11b {
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Center the top tab bar */
+.tabBar_f1fd9c {
+  border: none;
+  justify-content: center;
+}
+
+/* Styling for survey headers */
+.pageBody_c6b11b > div:first-child {
+  background: var(--background-primary);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+
+.profile_c6b11b {
+  & > :not(.profileCard_c6b11b) {
+    background: var(--background-primary);
+  }
+
+  & > .heading-md-semibold__76ba1 {
+    border-radius: var(--radius-sm) 8px 0 0;
+    padding: 4px 4px 0;
+  }
+
+  & > .text-xs-normal__46d75 {
+    border-radius: 0 0 8px 8px;
+    padding: 0 4px 4px;
+  }
+}

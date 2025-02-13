@@ -1,0 +1,77 @@
+.message_d5deea > .contents_f9f2ca,
+.container_b558d0 > :not(.reactions_ec6b19, .searchResultsWrap_c2b47d *) {
+  margin-top: -4px;
+  padding: 8px;
+  background: color-mix(in srgb, var(--chat-bubble-default) 25%, transparent);
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: calc(1px * var(--modular-enable-border)) solid
+    var(--chat-bubble-default);
+
+  &:hover {
+    background: color-mix(in srgb, var(--chat-bubble-default) 50%, transparent);
+  }
+}
+
+/* First message in a group by a user */
+.message_d5deea.groupStart_d5deea > .contents_f9f2ca {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Last message in a group by a user */
+.messageListItem_d5deea:not(:has(> .groupStart_d5deea)):has(
+    + .messageListItem_d5deea > .groupStart_d5deea
+  )
+  .contents_f9f2ca {
+  border-radius: 0 0 8px 8px;
+}
+
+/* Single message by a user */
+.messageListItem_d5deea:has(> .groupStart_d5deea):has(
+    + .messageListItem_d5deea > .groupStart_d5deea
+  )
+  .contents_f9f2ca {
+  border-radius: 8px;
+}
+
+/* Replying state */
+.message_d5deea.replying_d5deea > .contents_f9f2ca {
+  background: color-mix(in srgb, var(--chat-bubble-replying) 25%, transparent);
+  border: calc(1px * var(--modular-enable-border)) solid
+    var(--chat-bubble-replying);
+
+  &:hover {
+    background: color-mix(
+      in srgb,
+      var(--chat-bubble-replying) 50%,
+      transparent
+    );
+  }
+}
+
+/* Mentioned state */
+.message_d5deea.mentioned_d5deea > .contents_f9f2ca {
+  background: color-mix(in srgb, var(--chat-bubble-mentioned) 25%, transparent);
+  border: calc(1px * var(--modular-enable-border)) solid
+    var(--chat-bubble-mentioned);
+
+  &:hover {
+    background: color-mix(
+      in srgb,
+      var(--chat-bubble-mentioned) 50%,
+      transparent
+    );
+  }
+}
+
+/* Automod state */
+.message_d5deea.automodMessage_d5deea > .contents_f9f2ca {
+  background: color-mix(in srgb, var(--chat-bubble-automod) 25%, transparent);
+  border: calc(1px * var(--modular-enable-border)) solid
+    var(--chat-bubble-automod);
+
+  &:hover {
+    background: color-mix(in srgb, var(--chat-bubble-automod) 50%, transparent);
+  }
+}
