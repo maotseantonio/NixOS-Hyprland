@@ -27,13 +27,12 @@
       "theme.bar.buttons.workspaces.active" = "#f5c2e7";
       "theme.bar.buttons.workspaces.occupied" = "#89dceb";
       "theme.bar.buttons.workspaces.available" = "#585b70";
-      "theme.bar.buttons.workspaces.border" = "#f9e2af";
+      "theme.bar.buttons.workspaces.border" = "#cba6f7";
       "theme.bar.buttons.modules.power.spacing" = "0em";
-      "theme.bar.border.color" = "#f9e2af";
+      "theme.bar.border.color" = "#cba6f7";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
-      "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview";
-      "bar.workspaces.spacing" = "1.5";
+      "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview"; 
       "bar.customModules.cava.showIcon"= false;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
@@ -105,7 +104,7 @@
       bar.battery.hideLabelWhenFull = true;
       menus.dashboard.controls.enabled = true;
       menus.dashboard.shortcuts.enabled = true;
-      menus.dashboard.shortcuts.right.shortcut1.command = "gcolor3";
+      menus.dashboard.shortcuts.right.shortcut1.command = "sleep 0.5 && hyprpicker -a";
       menus.media.displayTime = true;
       menus.power.lowBatteryNotification = true;
       bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
@@ -113,10 +112,12 @@
       bar.customModules.updates.icon.pending = "󰋼";
       bar.volume.rightClick = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
       bar.volume.middleClick = "pavucontrol";
+      #hyprpanel.restartCommand = "${package}/bin/hyprpanel q; ${package}/bin/hyprpanel";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
+      bar.workspaces.spacing = 1.5;
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
       bar.workspaces.monitorSpecific = false;

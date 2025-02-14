@@ -7,10 +7,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    #(ags.overrideAttrs (oldAttrs: {
-    #  inherit (oldAttrs) pname;
-    #  version = "1.8.2";
-    #}))
     ags_1
     brightnessctl # for brightness control
     libinput

@@ -14,8 +14,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "zfs" ];
+  boot.initrd.supportedFilesystems = [ "zfs" ];
+  boot.zfs.devNodes = "/dev/disk/by-partuuid";
   networking.hostName = "nixos"; # Define your hostname.
-  networking.hostId = "1b13541f";  
+  networking.hostId = "$(head -c 8 /etc/machine-id)";  
 # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -137,4 +139,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
