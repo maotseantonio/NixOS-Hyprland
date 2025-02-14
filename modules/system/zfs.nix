@@ -15,8 +15,10 @@ in  {
 
   config = mkIf cfg.enable {
    ### Useful ZFS maintenance ###
-   networking.hostId = "09050b1e";
+   networking.hostId = "1681f325";
    boot.supportedFilesystems = [ "zfs" ];
+   boot.initrd.supportedFilesystems = [ "zfs" ];
+   boot.zfs.devNodes = "/dev/disk/by-partuuid";
    boot.zfs.package = pkgs.zfs_cachyos;
    services.zfs = {
       autoScrub = {

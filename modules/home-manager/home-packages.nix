@@ -6,7 +6,7 @@
 }: {
   home.packages = with pkgs; [
     nitch
-    rustup
+    #rustup
     github-cli
     neovide
     wezterm
@@ -17,8 +17,9 @@
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    inputs.yazi.packages.${pkgs.system}.default
+    #inputs.yazi.packages.${pkgs.system}.default
     microfetch
+    yazi
     gpu-screen-recorder
     libqalculate
     dbus-glib

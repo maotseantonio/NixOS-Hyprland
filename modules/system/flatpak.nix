@@ -12,7 +12,7 @@
       packages = [
         "com.github.tchx84.Flatseal"
         #"com.calibre_ebook.calibre"
-        "org.getoutline.OutlineClient"
+        #"org.getoutline.OutlineClient"
       ];
     };
   };  
