@@ -45,6 +45,7 @@ fetch() {
     echo "  │  ${blue} ${normal} uptime  │ ${blue}${up}${normal} "
     echo "  │  ${magenta} ${normal} shell   │ ${magenta}$(echo ${SHELL##*/})${normal} "
     echo "  │  ${red}󰏖 ${normal} pkgs    │ ${red}${pkgs}${normal} "
+    echo "  │  ${yellow} ${normal} term    │${yellow}$(ps -o comm= -p "$(($(ps -o ppid= -p "$(($(ps -o sid= -p "$$")))")))")${normal} " 
     echo "  ├─────────────┤ "
     echo "  │  ${_white}  ${normal}colors  │${_white}$unicode${normal}${red}$unicode${normal}${yellow}$unicode${normal}${green}$unicode${normal}${cyan}$unicode${normal}${blue}$unicode${normal}${magenta}$unicode${normal}${_black}$unicode${normal}"
     echo "  ╰─────────────╯ "

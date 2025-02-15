@@ -9,6 +9,10 @@
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -64,8 +68,6 @@
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
-    #Neve.url = "github:maotseantonio/Neve";
-    #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";
@@ -94,58 +96,57 @@
     zjstatus = {
       url = "github:dj95/zjstatus";
     };
-
   };
-  outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      home-manager,
-      chaotic,
-      lix-module,
-      zjstatus,
-      nvf,
-      ...
-    }:
-    let
-      system = "x86_64-linux";
-      host = "shizuru";
-      username = "antonio";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
-    {
-      nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit inputs;
-            inherit username;
-            inherit host;
-            inherit chaotic;
-          };
-          modules = [
-            ./hosts/${host}/config.nix
-            inputs.spicetify-nix.nixosModules.default
-            inputs.chaotic.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.nixos-hardware.nixosModules.huawei-machc-wa
-            lix-module.nixosModules.default
-            {
-              nixpkgs.overlays = [
-                inputs.hyprpanel.overlay
-                (final: prev: {
-                  nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
-                  zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
-                })
-              ];
-            }
-          ];
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    chaotic,
+    lix-module,
+    zjstatus,
+    nvf,
+    nixvim,
+    ...
+  }: let
+    system = "x86_64-linux";
+    host = "shizuru";
+    username = "antonio";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
+    nixosConfigurations = {
+      "${host}" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system;
+          inherit inputs;
+          inherit username;
+          inherit host;
+          inherit chaotic;
         };
+        modules = [
+          ./hosts/${host}/config.nix
+          inputs.spicetify-nix.nixosModules.default
+          inputs.chaotic.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          inputs.catppuccin.nixosModules.catppuccin
+          inputs.nixos-hardware.nixosModules.huawei-machc-wa
+          lix-module.nixosModules.default
+          nixvim.nixosModules.default
+          inputs.nvf.nixosModules.default
+          {
+            nixpkgs.overlays = [
+              inputs.hyprpanel.overlay
+              (final: prev: {
+                nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
+              })
+            ];
+          }
+        ];
       };
     };
+  };
 }

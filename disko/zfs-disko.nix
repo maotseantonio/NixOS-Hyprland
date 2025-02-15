@@ -23,6 +23,13 @@
                 pool = "zroot";
               };
             };
+            swap = {
+              size = "16G";
+              content = {
+              type = "swap";
+              resumeDevice = true;
+            };
+           };
           };
         };
       };

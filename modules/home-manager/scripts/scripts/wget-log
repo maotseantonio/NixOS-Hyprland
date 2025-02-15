@@ -1,0 +1,23 @@
+--2025-02-15 13:32:37--  https://github.com/unxsh/nitch/releases/download/0.1.6/nitchNoNerd
+Resolving github.com (github.com)... 140.82.116.3
+Connecting to github.com (github.com)|140.82.116.3|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://github.com/ssleert/nitch/releases/download/0.1.6/nitchNoNerd [following]
+--2025-02-15 13:32:38--  https://github.com/ssleert/nitch/releases/download/0.1.6/nitchNoNerd
+Reusing existing connection to github.com:443.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/511540716/844f6062-f0db-437a-81b2-33e74a41f0a8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250215T070238Z&X-Amz-Expires=300&X-Amz-Signature=b3b3bd5f26ddaf120ae6432ae8c44461f624dbcdfec5e656c974909d7e1b9fb0&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DnitchNoNerd&response-content-type=application%2Foctet-stream [following]
+--2025-02-15 13:32:38--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/511540716/844f6062-f0db-437a-81b2-33e74a41f0a8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250215T070238Z&X-Amz-Expires=300&X-Amz-Signature=b3b3bd5f26ddaf120ae6432ae8c44461f624dbcdfec5e656c974909d7e1b9fb0&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DnitchNoNerd&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... failed: Connection timed out.
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 146664 (143K) [application/octet-stream]
+Saving to: ‘nitchNoNerd’
+
+     0K .......... .......... .......... .......... .......... 34%  165K 1s
+    50K .......... .......... .......... .......... .......... 69%  185K 0s
+   100K .......... .......... .......... .......... ...       100%  397K=0.7s
+
+2025-02-15 13:34:53 (210 KB/s) - ‘nitchNoNerd’ saved [146664/146664]
+

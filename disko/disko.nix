@@ -1,5 +1,5 @@
 {
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
+  device ? throw "/dev/nvme0n1",
   hostname,
   ...
 }:
@@ -22,7 +22,7 @@
                   };
                   esp = {
                     name = "ESP";
-                    size = "500M";
+                    size = "1024M";
                     type = "EF00";
                     content = {
                       type = "filesystem";
@@ -54,7 +54,7 @@
                   };
                   esp = {
                     name = "ESP";
-                    size = "500M";
+                    size = "1024M";
                     type = "EF00";
                     content = {
                       type = "filesystem";
