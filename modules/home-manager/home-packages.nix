@@ -5,7 +5,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    nitch
     #rustup
     github-cli
     neovide
@@ -13,11 +12,10 @@
     hyprpicker 
     #protonvpn-gui
     #hiddify-app
-    #inputs.zen-browser.packages."${pkgs.system}".default
+    #inputs.zen-browser.packages."${system}".twilight 
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    #inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     #neovim
     microfetch
     yazi

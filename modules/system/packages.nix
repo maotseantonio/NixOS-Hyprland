@@ -74,5 +74,7 @@
     zoxide
     bibata-cursors
     vivid
+    (pkgs.callPackage ../../pkgs/nitch.nix {})
+    nurl
   ];
 }

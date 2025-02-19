@@ -63,10 +63,14 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
+    custom-nixpkgs = {
+      url = "github:maotseantonio/custom-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix.url = "github:danth/stylix";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
@@ -106,6 +110,7 @@
     zjstatus,
     nvf,
     nixvim,
+    custom-nixpkgs,
     ...
   }: let
     system = "x86_64-linux";
@@ -139,6 +144,7 @@
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
+              custom-nixpkgs.overlays.default
               (final: prev: {
                 nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
                 zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;

@@ -16,7 +16,7 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.initrd.supportedFilesystems = [ "zfs" ];
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "shizuru"; # Define your hostname.
   networking.hostId = "$(head -c 8 /etc/machine-id)";  
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
@@ -57,7 +57,14 @@
      curl
      pciutils
    ];
-
+    
+    zramSwap = {
+        enable = true;
+        priority = 100;
+        memoryPercent = 200;
+        swapDevices = 1;
+        algorithm = "zstd";
+    };
     programs.gnupg.agent = {
      enable = true;
      enableSSHSupport = true;
@@ -77,7 +84,7 @@
     };
   };
 
-   # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # networking.firewall.enable = false;
 
