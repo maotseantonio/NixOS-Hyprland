@@ -17,7 +17,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin.tty.enable = true;
+    #catppuccin.tty.enable = true;
     catppuccin.plymouth.enable = true;
     catppuccin.plymouth.flavor = "mocha";
     boot = {

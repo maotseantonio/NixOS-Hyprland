@@ -11,6 +11,7 @@
     enable = true;
     systemd.enable = true;
     hyprland.enable = true;
+    overlay.enable = true;
     overwrite.enable = true;
     theme = "catppuccin_mocha";
     layout = {
@@ -35,12 +36,50 @@
       "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview"; 
       "bar.customModules.cava.showIcon"= false;
       "theme.font.name" = "JetBrainsMono Nerd Font";
-    };
+      "bar.workspaces.workspaceIconMap" = {
+        "1" = {
+            "icon" = "";
+            "color" = "#f38ba8";
+         };
+        "2" = {
+            "icon" = "";
+            "color" = "#74c7ec";
+         };
+        "3" = {
+         "icon"= "";
+         "color"= "#a6e3a1";
+         };
+        "4" = {
+            "icon"= "";
+            "color"= "#f2cdcd";
+         };
+        "5" = {
+            "icon"= "";
+            "color"= "rgb(250, 179, 135)";
+         };
+        "6" = {
+            "icon"= "";
+            "color"= "#cba6f7";
+         };
+        "7" = {
+            "icon"= "";
+            "color"= "#b4befe";
+         };
+        "8" = {
+            "icon"= "";
+            "color"= "#94e2d5";
+         };
+  };
+};
+    
     settings = {
       bar.autoHide = "fullscreen";
       notifications.position = "top";
-      #bar.windowtitle.leftClick = "'pkill rofi||/nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview'";
-      theme.bar.buttons.workspaces.spacing = "0.5";
+      theme.bar.buttons.workspaces.numbered_active_highlight_padding = "0.4em";
+      bar.workspaces.numbered_active_indicator = "highlight";
+      theme.bar.buttons.workspaces.spacing = "0.5em";
+      theme.bar.buttons.clock.enableBorder = true;
+      theme.bar.buttons.systray.enableBorder = true;
       theme.bar.buttons.background_hover_opacity = 80;
       theme.bar.buttons.innerRadiusMultiplier = "0.4";
       theme.bar.buttons.radius = "0.5em";
@@ -76,10 +115,10 @@
       theme.bar.menus.menu.volume.scaling = 80;
       theme.bar.menus.popover.scaling = 80;
       theme.bar.location = "top";
-      theme.bar.buttons.workspaces.pill.radius = "0.3rem * 0.2";
+      theme.bar.buttons.workspaces.pill.radius = "0.9rem * 0.2";
       theme.bar.buttons.workspaces.pill.height = "4em";
-      theme.bar.buttons.workspaces.pill.width = "5em";
-      theme.bar.buttons.workspaces.pill.active_width = "12em";
+      theme.bar.buttons.workspaces.pill.width = "6em";
+      theme.bar.buttons.workspaces.pill.active_width = "14em";
       menus.dashboard.directories.left.directory1.command = "bash -c \"xdg-open $HOME/Downloads/\"";
       menus.dashboard.directories.left.directory1.label = "󰉍 Downloads";
       menus.dashboard.directories.left.directory2.command = "bash -c \"xdg-open $HOME/Videos/\"";
@@ -114,14 +153,20 @@
       bar.volume.middleClick = "pavucontrol";
       #hyprpanel.restartCommand = "${package}/bin/hyprpanel q; ${package}/bin/hyprpanel";
       bar.media.format = "{title}";
-      bar.launcher.autoDetectIcon = true;
+      bar.launcher.autoDetectIcon = false;
       bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
-      bar.workspaces.spacing = 1.5;
+      bar.workspaces.spacing = 1.2;
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
       bar.workspaces.monitorSpecific = false;
       bar.workspaces.workspaces = 5;
+      bar.workspaces.applicationIconEmptyWorkspace = "";
+      bar.workspaces.applicationIconFallback = "";
+      bar.workspaces.showApplicationIcons = false;
+      #bar.workspaces.showWsIcons = false;
+      #bar.workspaces.show_icons = true;
+      bar.workspaces.workspaceMask = true;
       tear = true;
       menus.clock = {
         time = {

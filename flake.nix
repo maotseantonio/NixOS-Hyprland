@@ -69,7 +69,11 @@
     };
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
-    stylix.url = "github:danth/stylix";
+    stylix = {
+        url =  "github:danth/stylix";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.home-manager.follows = "home-manager";
+     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -78,15 +82,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad-on-steroids = {
-      # <- here
       url = "github:maotseantonio/nvchad_config";
       flake = false;
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
+     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -118,7 +120,7 @@
     username = "antonio";
     pkgs = import nixpkgs {
       inherit system;
-      config.allowUnfree = true;
+      #config.allowUnfree = true;
     };
   in {
     nixosConfigurations = {

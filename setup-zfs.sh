@@ -11,7 +11,7 @@ zfs create -p -o mountpoint=legacy rpool/local/nix
 zfs create -p -o mountpoint=legacy rpool/safe/home
 zfs create -p -o mountpoint=legacy rpool/safe/persist
 
-mkfs.fat -F 32 -n boot /dev/nvme0n1p1
+mkfs.fat -F 32 -n BOOT /dev/nvme0n1p1
 mkswap -L swap /dev/nvme0n1p3
 mount -t zfs rpool/local/root /mnt
 mkdir /mnt/{home,nix,persist}

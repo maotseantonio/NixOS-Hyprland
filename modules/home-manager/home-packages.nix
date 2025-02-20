@@ -9,16 +9,12 @@
     github-cli
     neovide
     wezterm
-    hyprpicker 
-    #protonvpn-gui
-    #hiddify-app
-    #inputs.zen-browser.packages."${system}".twilight 
+    hyprpicker  
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    #neovim
     microfetch
-    yazi
+    inputs.yazi.packages.${pkgs.system}.yazi
     gpu-screen-recorder
     libqalculate
     dbus-glib

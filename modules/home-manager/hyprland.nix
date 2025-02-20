@@ -37,10 +37,10 @@
             src = pkgs.fetchFromGitHub {
               owner = "dawsers";
               repo = "hyprscroller";
-              rev = "ce7503685297d88e0bb0961343ed3fbed21c559c";
+              rev = "686bf83316be96cbaed980b63ad43514cf0dce3c";
               hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
-            };
-          })
+              };
+            })
             pkgs.hyprlandPlugins.borders-plus-plus
             #pkgs.hyprlandPlugins.hyprscroller
     ];

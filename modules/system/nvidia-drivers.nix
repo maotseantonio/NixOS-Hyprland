@@ -11,9 +11,7 @@ in {
     enable = mkEnableOption "Enable Nvidia Drivers";
   };
 
-  config = mkIf cfg.enable {
-    services.xserver.videoDrivers = ["nvidia"];
-
+  config = mkIf cfg.enable { 
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
@@ -31,7 +29,7 @@ in {
     hardware.nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
-      powerManagement.finegrained = true;
+      powerManagement.finegrained = false;
       nvidiaPersistenced = false;
       open = false;
       nvidiaSettings = true;
