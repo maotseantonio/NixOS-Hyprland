@@ -13,7 +13,7 @@
     hyprland.enable = true;
     overlay.enable = true;
     overwrite.enable = true;
-    theme = "catppuccin_mocha";
+    theme = "catppuccin_mocha_split";
     layout = {
       "bar.layouts" = {
         "0" = {
@@ -29,47 +29,30 @@
       "theme.bar.buttons.workspaces.occupied" = "#89dceb";
       "theme.bar.buttons.workspaces.available" = "#585b70";
       "theme.bar.buttons.workspaces.border" = "#cba6f7";
-      "theme.bar.buttons.modules.power.spacing" = "0em";
       "theme.bar.border.color" = "#cba6f7";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview"; 
       "bar.customModules.cava.showIcon"= false;
+      "theme.bar.menus.menu.power.radius" = "0.4em";
+      "theme.bar.buttons.modules.power.spacing" = "0.45em";
       "theme.font.name" = "JetBrainsMono Nerd Font";
-      "bar.workspaces.workspaceIconMap" = {
-        "1" = {
-            "icon" = "";
-            "color" = "#f38ba8";
-         };
-        "2" = {
-            "icon" = "";
-            "color" = "#74c7ec";
-         };
-        "3" = {
-         "icon"= "";
-         "color"= "#a6e3a1";
-         };
-        "4" = {
-            "icon"= "";
-            "color"= "#f2cdcd";
-         };
-        "5" = {
-            "icon"= "";
-            "color"= "rgb(250, 179, 135)";
-         };
-        "6" = {
-            "icon"= "";
-            "color"= "#cba6f7";
-         };
-        "7" = {
-            "icon"= "";
-            "color"= "#b4befe";
-         };
-        "8" = {
-            "icon"= "";
-            "color"= "#94e2d5";
-         };
-  };
+      "bar.workspaces.workspaceIconMap.1.color" = "#f38ba8";
+      "bar.workspaces.workspaceIconMap.1.icon" = "";
+      "bar.workspaces.workspaceIconMap.2.color" = "#74c7ec";
+      "bar.workspaces.workspaceIconMap.2.icon" = "";
+      "bar.workspaces.workspaceIconMap.3.color" = "#a6e3a1";
+      "bar.workspaces.workspaceIconMap.3.icon" = "";
+      "bar.workspaces.workspaceIconMap.4.color" = "#f2cdcd";
+      "bar.workspaces.workspaceIconMap.4.icon" = "";
+      "bar.workspaces.workspaceIconMap.5.color" = "rgb(250, 179, 135)";
+      "bar.workspaces.workspaceIconMap.5.icon" = "";
+      "bar.workspaces.workspaceIconMap.6.color" = "#cba6f7";
+      "bar.workspaces.workspaceIconMap.6.icon" = "";
+      "bar.workspaces.workspaceIconMap.7.color" = "#b4befe";
+      "bar.workspaces.workspaceIconMap.7.icon" = "";
+      "bar.workspaces.workspaceIconMap.8.color" = "#94e2d5";
+      "bar.workspaces.workspaceIconMap.8.icon" = ""; 
 };
     
     settings = {
@@ -153,7 +136,7 @@
       bar.volume.middleClick = "pavucontrol";
       #hyprpanel.restartCommand = "${package}/bin/hyprpanel q; ${package}/bin/hyprpanel";
       bar.media.format = "{title}";
-      bar.launcher.autoDetectIcon = false;
+      bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
       bar.workspaces.spacing = 1.2;
@@ -164,8 +147,7 @@
       bar.workspaces.applicationIconEmptyWorkspace = "";
       bar.workspaces.applicationIconFallback = "";
       bar.workspaces.showApplicationIcons = false;
-      #bar.workspaces.showWsIcons = false;
-      #bar.workspaces.show_icons = true;
+      bar.workspaces.showWsIcons = true;
       bar.workspaces.workspaceMask = true;
       tear = true;
       menus.clock = {

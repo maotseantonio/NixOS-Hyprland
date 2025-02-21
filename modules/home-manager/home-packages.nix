@@ -10,6 +10,7 @@
     neovide
     wezterm
     hyprpicker  
+    hyprpanel
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
