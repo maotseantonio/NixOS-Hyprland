@@ -11,7 +11,7 @@
     ./nixy.nix
     ./fhsenv.nix
     ./nvchad.nix
-    ./textfox.nix
+     #./textfox.nix
     ./nixcord.nix
     ./hyprland.nix
     ./spicetify.nix

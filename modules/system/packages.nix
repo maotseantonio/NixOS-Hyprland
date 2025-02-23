@@ -30,7 +30,7 @@
     nwg-look # requires unstable channel
     nwg-dock-hyprland
     # nvtopPackages.full
-    #pamixer
+    pamixer
     pavucontrol
     playerctl
     polkit_gnome
@@ -76,5 +76,6 @@
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
     nurl
+    firefox_nightly
   ];
 }
