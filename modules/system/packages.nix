@@ -30,7 +30,7 @@
     nwg-look # requires unstable channel
     nwg-dock-hyprland
     # nvtopPackages.full
-    pamixer
+    inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pavucontrol
     playerctl
     polkit_gnome

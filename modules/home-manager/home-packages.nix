@@ -14,7 +14,7 @@
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    #inputs.zen-browser.packages."${system}".twilight 
+    inputs.zen-browser.packages."${pkgs.system}".default 
     microfetch
     inputs.yazi.packages.${pkgs.system}.yazi
     gpu-screen-recorder
