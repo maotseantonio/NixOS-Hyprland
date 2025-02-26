@@ -6,11 +6,8 @@
   chaotic,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    (ags.overrideAttrs (oldAttrs: {
-      inherit (oldAttrs) pname;
-      version = "1.8.2";
-    }))
+  environment.systemPackages = with pkgs; [ 
+    ags_1
     brightnessctl # for brightness control
     libinput
     libinput-gestures 
@@ -76,5 +73,6 @@
     zoxide
     #bibata-cursors
     vivid
+    hiddify-app
   ];
 }

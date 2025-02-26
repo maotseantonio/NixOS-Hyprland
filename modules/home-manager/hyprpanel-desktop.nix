@@ -32,8 +32,7 @@
       "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
-      "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
-      "bar.workspaces.spacing" = "1.5";
+      "bar.windowtitle.leftClick" = "pkill rofi || ~/.local/bin/agsv1 -t overview";
       "bar.customModules.cava.showIcon"= true;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
@@ -117,6 +116,7 @@
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
+      bar.workspaces.spacing = 1.5;
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
       bar.workspaces.monitorSpecific = false;
@@ -130,7 +130,7 @@
       };
       menus.dashboard.directories.enabled = true;
       menus.dashboard.stats.enable_gpu = false;
-      theme.bar.transparent = true;
+      theme.bar.transparent = false;
     };
   };
 }

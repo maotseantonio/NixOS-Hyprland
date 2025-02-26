@@ -29,7 +29,7 @@
       naumovs.color-highlight
       oderwat.indent-rainbow
       redhat.vscode-yaml
-      rust-lang.rust-analyzer
+      #rust-lang.rust-analyzer
       svelte.svelte-vscode
       tamasfe.even-better-toml
       usernamehw.errorlens

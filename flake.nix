@@ -41,10 +41,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+     hyprland-plugins = {
+       url = "github:hyprwm/hyprland-plugins";
+       inputs.hyprland.follows = "hyprland";
+     };
     hyprsunset = {
       url = "github:hyprwm/hyprsunset";
     };
@@ -61,10 +61,9 @@
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
     stylix.url = "github:danth/stylix";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     nyxexprs.url = "github:notashelf/nyxexprs";
-#    Neve.url = "github:maotseantonio/Neve";
-    #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";

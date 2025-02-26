@@ -8,7 +8,7 @@
     ./home.nix
     ./git.nix
    #./gtk.nix
-   #./nixy.nix
+   ./nixy.nix
     ./fhsenv.nix
     ./nvchad.nix
     ./textfox.nix
@@ -18,7 +18,7 @@
     ./vscodium.nix
     ./desktop-packages.nix
     ./ghostty.nix
-    ./hyprpanel-desktop.nix
+    #./hyprpanel-desktop.nix
     ./hypridle.nix
     ./variables.nix
     ./zellij/default.nix
