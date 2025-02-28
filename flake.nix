@@ -18,6 +18,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
+    walker.url = "github:abenz1267/walker";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +69,7 @@
       url = "github:maotseantonio/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    textfox.url = "github:maotseantonio/textfox";
+    textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix = {
         url =  "github:danth/stylix";

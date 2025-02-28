@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "zfs" ];
   boot.initrd.supportedFilesystems = [ "zfs" ];
-  boot.zfs.devNodes = "/dev/disk/by-partuuid";
+  boot.zfs.devNodes = "{$DISK_PATH}";
   networking.hostName = "shizuru"; # Define your hostname.
   networking.hostId = "$(head -c 8 /etc/machine-id)";  
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.

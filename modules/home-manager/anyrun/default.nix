@@ -17,6 +17,9 @@
         rink
         shell
         symbols
+        translate
+        websearch
+        dictionary
       ];
 
       width.fraction = 0.25;
