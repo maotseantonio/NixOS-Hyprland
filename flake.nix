@@ -127,8 +127,13 @@
     username = "antonio";
     pkgs = import nixpkgs {
       inherit system;
-      #config.allowUnfree = true;
+      config.allowUnfree = true;
     };
+    pkgs-master = import nixpkgs-master {
+        inherit system;
+        config.allowUnfree = true;
+    };
+
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
