@@ -19,7 +19,6 @@ in {
   config = mkIf cfg.enable {
     boot = {
       kernelPackages = pkgs.linuxPackages_cachyos;
-      #kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"
@@ -35,6 +34,7 @@ in {
         "nvidia-drm.modeset=1"
         "nvidia-drm.fbdev=1"
         "modprobe.blacklist=iTCO_wdt"
+        "nohibernate"
       ];
       kernelModules = ["v4l2loopback"];
       extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
