@@ -98,7 +98,7 @@
 | --------------------------- | :---------------------------------------------------------------------------------------------:
 | **Window Manager**          | [Hyprland] |
 | **Bar**                     | HyprPanel |
-| **Application Launcher**    | [rofi] |
+| **Application Launcher**    | [walker] |
 | **Notification Daemon**     | ags|
 | **Terminal Emulator**       | Wezterm + kitty |
 | **Shell**                   | fish + atuin + [Starship] |
@@ -309,7 +309,7 @@ Other dotfiles that I learned / copy from:
 [Wezterm]: https://wezfurlong.org/wezterm/index.html
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar
-[rofi]: https://github.com/lbonn/rofi
+[rofi]: https://github.com/abenz1267/walker
 [Btop]: https://github.com/aristocratos/btop
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi
