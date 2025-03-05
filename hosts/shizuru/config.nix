@@ -7,6 +7,7 @@
   options,
   lib,
   inputs,
+  outputs,
   system,
   ...
 }:
@@ -41,6 +42,11 @@ in
           cp -R $src/*.otf $out/share/fonts/opentype/
         '';
       };
+      pkgs-master = import inputs.nixpkgs-master {
+         system = final.system;
+         config.allowUnfree = true;
+      };
+
     })
   ];
   drivers.amdgpu.enable = false;
@@ -85,7 +91,7 @@ in
       vaapiVdpau
       mesa
       egl-wayland
-      waybar # if wanted experimental next line
+      pkgs-master.waybar # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
     ++ [

@@ -133,7 +133,7 @@
         inherit system;
         config.allowUnfree = true;
     };
-
+   overlays = import ./overlays { inherit inputs; };
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {

@@ -16,6 +16,7 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.initrd.supportedFilesystems = [ "zfs" ];
   boot.zfs.devNodes = "{$DISK_PATH}";
+  #boot.zfs.devNodes = "/dev/disk/by-partuuid";
   networking.hostName = "shizuru"; # Define your hostname.
   networking.hostId = "$(head -c 8 /etc/machine-id)";  
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.

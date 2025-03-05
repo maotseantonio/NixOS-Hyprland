@@ -38,6 +38,7 @@
     # nvtopPackages.full
     #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pkgs-master.pamixer
+    pkgs-master.gitui
     inputs.walker.packages.${pkgs.system}.default
     pavucontrol
     playerctl
