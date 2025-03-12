@@ -735,7 +735,7 @@
   "theme.bar.menus.menu.notifications.switch.puck": "#454759",
   "theme.bar.menus.menu.notifications.switch_divider": "#45475a",
   "theme.bar.menus.menu.power.background.color": "#11111b",
-  "theme.bar.menus.menu.power.border.color": "#313244",
+  "theme.bar.menus.menu.power.border.color": "#94e2d5",
   "theme.bar.menus.menu.power.buttons.logout.background": "#1e1e2e",
   "theme.bar.menus.menu.power.buttons.logout.icon": "#181824",
   "theme.bar.menus.menu.power.buttons.logout.icon_background": "#a6e3a1",
@@ -850,7 +850,7 @@
   "theme.osd.scaling": 80,
   "theme.tooltip.scaling": 80,
   "wallpaper.enable": true,
-  "wallpaper.image": "",
+  "wallpaper.image": "/home/antonio/Pictures/wallpapers/black-hole.png",
   "wallpaper.pywal": false,
   "bar.workspaces.workspaceIconMap": {
     "1": {
@@ -887,7 +887,7 @@
     }
   },
   "theme.bar.buttons.modules.cava.enableBorder": false,
-  "theme.bar.shadow": "1px 1px 12px 1px #000000",
+  "theme.bar.shadow": "2px 3px 5px 3px #11111b",
   "theme.bar.buttons.modules.cava.spacing": "0.4em",
   "bar.workspaces.applicationIconMap": {
     "[vV]esktop": "",
@@ -902,6 +902,6 @@
   "theme.notification.enableShadow": true,
   "notifications.autoDismiss": true,
   "theme.notification.shadow": "5px 1px 2px 1px #16161e",
-  "theme.bar.shadowMargins": "0px 1px 12px 1px",
+  "theme.bar.shadowMargins": "2px 3px 10px 3px",
   "theme.bar.enableShadow": true
 }

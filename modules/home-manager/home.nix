@@ -1,7 +1,11 @@
 {
   config,
   pkgs,
+  pkgs-master,
   inputs,
+  options,
+  lib,
+  system,
   ...
 }: {
   imports = [
@@ -20,6 +24,7 @@
   };
   programs.gh = {
     enable = true;
+    package = pkgs.gh;
   };
   programs.lsd = {
     enable = true;

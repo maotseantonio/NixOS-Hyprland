@@ -10,7 +10,7 @@
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
-      astro-build.astro-vscode
+      #astro-build.astro-vscode
       bradlc.vscode-tailwindcss
       christian-kohler.npm-intellisense
       christian-kohler.path-intellisense

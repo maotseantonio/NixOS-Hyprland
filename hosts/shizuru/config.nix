@@ -73,8 +73,6 @@ in
   #boot.loader.efi.canTouchEfiVariables = true;
   catppuccin.tty.enable = true;
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
-    #boot.supportedFilesystems = [ "zfs" ];
-    #boot.initrd.supportedFilesystems = [ "zfs" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
   users = {

@@ -10,7 +10,7 @@
   
   home.packages = with pkgs; [
     #rustup
-    pkgs-master.github-cli
+    github-cli
     neovide
     wezterm
     hyprpicker  
