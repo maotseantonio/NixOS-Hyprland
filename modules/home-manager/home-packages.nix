@@ -19,7 +19,7 @@
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     inputs.zen-browser.packages."${pkgs.system}".default 
-    microfetch
+    pkgs-master.microfetch
     inputs.yazi.packages.${pkgs.system}.yazi
     gpu-screen-recorder
     libqalculate

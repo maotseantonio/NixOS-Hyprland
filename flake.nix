@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nix = {
       url = "github:NixOS/nix/2.26-maintenance";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -119,6 +120,7 @@
     self,
     nixpkgs,
     nixpkgs-master,
+    nixpkgs-stable,
     home-manager,
     chaotic,
     lix-module,
@@ -167,6 +169,10 @@
               inputs.hyprpanel.overlay
               custom-nixpkgs.overlays.default
               (final: prev: {
+                 stable = import nixpkgs-stable {
+                 config.allowUnfree = true;
+                 config.nvidia.acceptLicense = true;
+                 };
                 nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
                 zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
               })

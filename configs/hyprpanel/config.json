@@ -348,8 +348,8 @@
   "terminal": "$TERM",
   "theme.bar.background": "#11111b",
   "theme.bar.border.color": "#313244",
-  "theme.bar.border.location": "none",
-  "theme.bar.border.width": "0.1em",
+  "theme.bar.border.location": "full",
+  "theme.bar.border.width": "0.2em",
   "theme.bar.border_radius": "0.6em",
   "theme.bar.buttons.background": "#242438",
   "theme.bar.buttons.background_hover_opacity": 80,
@@ -544,9 +544,9 @@
   "theme.bar.layer": "overlay",
   "theme.bar.location": "top",
   "theme.bar.margin_bottom": "0em",
-  "theme.bar.margin_sides": "14.5em",
-  "theme.bar.margin_top": "0.5em",
-  "theme.bar.menus.background": "#11111b",
+  "theme.bar.margin_sides": "0em",
+  "theme.bar.margin_top": "0em",
+  "theme.bar.menus.background": "#181825",
   "theme.bar.menus.border.color": "#313244",
   "theme.bar.menus.border.radius": "0.7em",
   "theme.bar.menus.border.size": "0.13em",
@@ -850,7 +850,7 @@
   "theme.osd.scaling": 80,
   "theme.tooltip.scaling": 80,
   "wallpaper.enable": true,
-  "wallpaper.image": "/home/antonio/Pictures/wallpapers/black-hole.png",
+  "wallpaper.image": "/home/antonio/Pictures/wallpapers/mocha-spy-x-family-loid-3840x2160-11141.png",
   "wallpaper.pywal": false,
   "bar.workspaces.workspaceIconMap": {
     "1": {
@@ -887,7 +887,7 @@
     }
   },
   "theme.bar.buttons.modules.cava.enableBorder": false,
-  "theme.bar.shadow": "2px 3px 5px 3px #11111b",
+  "theme.bar.shadow": "0px 3px 5px 3px #11111b",
   "theme.bar.buttons.modules.cava.spacing": "0.4em",
   "bar.workspaces.applicationIconMap": {
     "[vV]esktop": "",

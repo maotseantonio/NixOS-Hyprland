@@ -20,7 +20,10 @@ in {
     environment.systemPackages = with pkgs; [
       scx_git.full
     ];
-    services.scx.enable = true;
-    services.scx.scheduler = "scx_lavd";
+    services.scx = {
+        enable = true;
+        scheduler = "scx_lavd";
+        extraArgs = [ "--autopower" ];
+     };
   };
 }
