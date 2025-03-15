@@ -33,16 +33,16 @@
     plugins = [
             #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
             #inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
-            (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs {
-            src = pkgs.fetchFromGitHub {
-              owner = "dawsers";
-              repo = "hyprscroller";
-              rev = "686bf83316be96cbaed980b63ad43514cf0dce3c";
-              hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
-              };
-            })
+            # (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs {
+            # src = pkgs.fetchFromGitHub {
+            #   owner = "dawsers";
+            #   repo = "hyprscroller";
+            #   rev = "686bf83316be96cbaed980b63ad43514cf0dce3c";
+            #   hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
+            #   };
+            # })
             pkgs.hyprlandPlugins.borders-plus-plus
-            #pkgs.hyprlandPlugins.hyprscroller
+            pkgs.hyprlandPlugins.hyprscroller
     ];
   };
 }
