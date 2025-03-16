@@ -111,6 +111,7 @@ in
     TERMINAL = "wezterm";
     VISUAL = "vscodium";
     GSK_RENDERER = "gl";
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
   system.stateVersion = "25.05"; # Did you read the comment?
 }

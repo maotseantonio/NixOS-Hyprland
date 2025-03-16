@@ -15,7 +15,7 @@ mkfs.fat -F 32 -n BOOT /dev/nvme0n1p1
 mkswap -L swap /dev/nvme0n1p3
 mount -t zfs rpool/local/root /mnt
 mkdir /mnt/{home,nix,persist}
-mount -t zfs rpool/local/nix /mnt/nix 
+mount -t zfs rpool/local/nix /mnt/nix
 mount -t zfs rpool/safe/home /mnt/home
 mount -t zfs rpool/safe/persist /mnt/persist
 zfs snapshot rpool/local/root@start
