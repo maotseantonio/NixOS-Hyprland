@@ -11,7 +11,8 @@
   home.packages = with pkgs; [
     #rustup
     github-cli
-    neovide
+    neovide 
+    #inputs.wezterm.packages.${pkgs.system}.default
     wezterm
     hyprpicker  
     hyprpanel

@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-alien.url = "github:thiagokokada/nix-alien";
+    wezterm.url = "github:wezterm/wezterm?dir=nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
