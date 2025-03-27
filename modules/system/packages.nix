@@ -36,7 +36,9 @@
     pkgs-master.networkmanagerapplet
     nwg-look # requires unstable channel
     nwg-dock-hyprland
-    # nvtopPackages.full
+    qv2ray
+    v2ray
+    #nvtopPackages.full
     #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pkgs-master.pamixer
     pkgs-master.gitui

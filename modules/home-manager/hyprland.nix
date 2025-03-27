@@ -6,8 +6,8 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    package = pkgs.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #package = pkgs.pkgs-master.hyprland;
     xwayland.enable = true;
   };
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -31,18 +31,18 @@
 
   wayland.windowManager.hyprland = {
     plugins = [
-            #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
-            #inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
-            # (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs {
-            # src = pkgs.fetchFromGitHub {
-            #   owner = "dawsers";
-            #   repo = "hyprscroller";
-            #   rev = "686bf83316be96cbaed980b63ad43514cf0dce3c";
-            #   hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
-            #   };
-            # })
-            pkgs.hyprlandPlugins.borders-plus-plus
-            pkgs.hyprlandPlugins.hyprscroller
+            inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+            inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
+             # (pkgs.pkgs-master.hyprlandPlugins.hyprscroller.overrideAttrs {
+             #   src = pkgs.fetchFromGitHub {
+             #     owner = "dawsers";
+             #     repo = "hyprscroller";
+             #     rev = "3f86916f3e9a583154b1be0af4e8a1ef1f7435b2";
+             #     hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
+             #     };
+             #  })
+            #pkgs.pkgs-master.hyprlandPlugins.borders-plus-plus
+            #pkgs.pkgs-master.hyprlandPlugins.hyprscroller
     ];
   };
 }

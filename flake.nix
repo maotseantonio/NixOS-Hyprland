@@ -72,10 +72,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     textfox.url = "github:adriankarlen/textfox";
-    #hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
+    #hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.48.0&submodules=1";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprscroller = {
-        url = "github:mattkang/hyprscroller-flake";
+        url = "github:maotseantonio/hyprscroller-flake";
         inputs.hyprland.follows = "hyprland";
     };
     stylix = {

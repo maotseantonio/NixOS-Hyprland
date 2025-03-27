@@ -42,6 +42,10 @@
     nfs.server.enable = false;
     openssh.enable = true;
     blueman.enable = true;
+    #v2ray.package = pkgs.pkgs-master.v2ray;
+    #v2ray.enable = true;
+    v2raya.package = pkgs.pkgs-master.v2raya;
+    v2raya.enable = true;
     #printing = {
     #  enable = false;
     #  drivers = [

@@ -11,6 +11,7 @@
     extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
       #astro-build.astro-vscode
+      leonardssh.vscord
       bradlc.vscode-tailwindcss
       christian-kohler.npm-intellisense
       christian-kohler.path-intellisense
@@ -33,7 +34,7 @@
       tamasfe.even-better-toml
       usernamehw.errorlens
       yzhang.markdown-all-in-one
-      catppuccin.catppuccin-vsc
+            #catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
       ms-vscode.live-server
       visualstudioexptteam.vscodeintellicode
@@ -136,7 +137,7 @@
       theme = {
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.iconTheme" = "catppuccin-mocha";
-        "catppuccin.accentColor" = "blue";
+                #"catppuccin.accentColor" = "blue";
         "catppuccin.bracketMode" = "rainbow";
         "catppuccin.workbenchMode" = "default";
         "catppuccin.boldKeywords" = true;
