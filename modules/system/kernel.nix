@@ -19,6 +19,7 @@ in {
   config = mkIf cfg.enable {
     boot = {
       kernelPackages = pkgs.linuxPackages_cachyos;
+      #kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"

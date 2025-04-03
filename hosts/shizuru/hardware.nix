@@ -8,58 +8,43 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "zroot/ROOT/empty";
+    { device = "zroot/root";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+  fileSystems."/home" =
+    { device = "zroot/home";
       fsType = "zfs";
       neededForBoot = true;
     };
 
   fileSystems."/nix" =
-    { device = "zroot/ROOT/nix";
+    { device = "zroot/nix";
       fsType = "zfs";
       neededForBoot = true;
     };
 
-  fileSystems."/var/persistent" =
-    { device = "zroot/data/persistent";
+  fileSystems."/var" =
+    { device = "zroot/var";
       fsType = "zfs";
       neededForBoot = true;
-    };
-
-  fileSystems."/var/residues" =
-    { device = "zroot/ROOT/residues";
-      fsType = "zfs";
-      neededForBoot = true;
-    };
-
-  fileSystems."/home/melinapn" =
-    { device = "zroot/data/melina";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home/pedrohlc/Torrents" =
-    { device = "zroot/data/btdownloads";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home/pedrohlc/Games" =
-    { device = "zroot/games/home";
-      fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8347-8B53";
+    { device = "/dev/disk/by-uuid/12CE-A600";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/607f8d8e-a17c-4eec-8a03-e51dd8a64539"; }
+    [ { device = "/dev/disk/by-uuid/d550c008-b87b-4762-badc-55b0f95c2a7d"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

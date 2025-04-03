@@ -17,27 +17,27 @@
     ags_1
     brightnessctl # for brightness control
     libinput
-    libinput-gestures 
+    #libinput-gestures 
     cliphist
     eog
     gnome-system-monitor
     file-roller
     grim
-    protonvpn-gui
+    #protonvpn-gui
     hiddify-app
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
-    imagemagick
+    #imagemagick
     inxi
     jq
     kitty
     libsForQt5.qtstyleplugin-kvantum #kvantum
     pkgs-master.networkmanagerapplet
     nwg-look # requires unstable channel
-    nwg-dock-hyprland
-    qv2ray
-    v2ray
+    #nwg-dock-hyprland
+    #qv2ray
+    #v2ray
     #nvtopPackages.full
     #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pkgs-master.pamixer
@@ -65,16 +65,16 @@
     nix-ld
     power-profiles-daemon
     fd
-    home-manager
+    pkgs-master.home-manager
     bluez-tools
     #wgpu-utils
     gtk3
     gtk4
     fish
     atuin
-    bun
+    #bun
     dart-sass
-    nodejs
+    #nodejs
     sassc
     libgtop
     starship
@@ -87,7 +87,7 @@
     bibata-cursors
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
-    nurl
+    #nurl
     firefox_nightly
   ];
 }

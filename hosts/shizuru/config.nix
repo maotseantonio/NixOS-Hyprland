@@ -49,7 +49,7 @@ in
 
     })
   ];
-  drivers.amdgpu.enable = false;
+  #drivers.amdgpu.enable = false;
   drivers.intel.enable = true;
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
@@ -66,7 +66,7 @@ in
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true;
-  system.btrfs.enable = false;
+  #system.btrfs.enable = false;
   system.zfs.enable = true;
   system.zram.enable = true;
   #boot.loader.systemd-boot.enable = true;

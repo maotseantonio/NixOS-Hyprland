@@ -12,10 +12,8 @@ in
     hyprland = {
       enable = true;
       #withUWSM  = true;
-      #package = pkgs.pkgs-master.hyprland;
       package = hyprFlake;
-      portalPackage = portalFlake;
-      #portalPackage = pkgs.pkgs-master.xdg-desktop-portal-hyprland;
+      portalPackage = portalFlake; 
       xwayland.enable = true;
     };
     appimage = {

@@ -15,7 +15,7 @@
         color = "#181825";
       };
       border = {
-        color = "#cba6f7";
+        color = "#a6e3a1";
         width = "3px";
         transition = "1.0s ease";
         radius = "5px";
@@ -26,10 +26,7 @@
       font = {
         family = "JetBrainsMono Nerd Font";
         size = "15px";
-        accent = "#c6a0f6";
-      };
-      sidebery = {
-        margin = "1.0rem";
+        accent = "#a6e3a1";
       };
     };
   };

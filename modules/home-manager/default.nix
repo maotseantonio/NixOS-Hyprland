@@ -9,9 +9,9 @@
     ./git.nix
     ./cava.nix
     ./nixy.nix
-    ./fhsenv.nix
+    #./fhsenv.nix
     ./nvchad.nix
-    ./textfox.nix
+    #./textfox.nix
     ./nixcord.nix
     ./hyprland.nix
     ./spicetify.nix
@@ -23,7 +23,7 @@
     ./zathura.nix
     ./hypridle.nix
     #./anyrun
-    ./zellij/default.nix
+    #./zellij/default.nix
     ./scripts/scripts.nix
   ];
 }

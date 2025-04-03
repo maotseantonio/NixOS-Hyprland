@@ -20,7 +20,7 @@ in {
     services = {
       power-profiles-daemon.enable = true;
       fwupd.enable = true;
-      upower.enable = true;
+      #upower.enable = true;
       gnome.gnome-keyring.enable = true;
       thermald.enable = true;
       tlp.enable = false;
