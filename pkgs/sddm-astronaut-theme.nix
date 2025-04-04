@@ -2,6 +2,7 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
+  formats,
   kdePackages,
   theme ? "astronaut",
  }:
@@ -49,7 +50,8 @@ stdenvNoCC.mkDerivation rec {
       substituteInPlace "$metaFile" \
         --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/${theme}.conf" 
     fi
-     runHook postInstall
+    
+    runHook postInstall
   '';
 
   # Propagate Qt6 libraries to user environment

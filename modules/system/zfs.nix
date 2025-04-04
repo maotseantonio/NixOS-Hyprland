@@ -15,7 +15,7 @@ in  {
 
   config = mkIf cfg.enable {
    ### Useful ZFS maintenance ###
-   networking.hostId = "1681f325";
+   networking.hostId = "6f6be4ee";
    boot.supportedFilesystems = [ "zfs" ];
    boot.initrd.supportedFilesystems = [ "zfs" ];
    boot.zfs.devNodes = "/dev/disk/by-partuuid";

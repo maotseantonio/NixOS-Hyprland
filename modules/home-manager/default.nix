@@ -9,7 +9,7 @@
     ./git.nix
     ./cava.nix
     ./nixy.nix
-    #./fhsenv.nix
+    ./fhsenv.nix
     ./nvchad.nix
     #./textfox.nix
     ./nixcord.nix
@@ -22,8 +22,7 @@
     ./variables.nix
     ./zathura.nix
     ./hypridle.nix
-    #./anyrun
-    #./zellij/default.nix
+    ./zellij/default.nix
     ./scripts/scripts.nix
   ];
 }

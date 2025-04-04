@@ -10,7 +10,7 @@
 }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ]; 
   programs.direnv = {
     enable = true;

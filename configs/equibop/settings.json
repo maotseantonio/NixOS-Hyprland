@@ -1,0 +1,16 @@
+{
+    "discordBranch": "canary",
+    "tray": true,
+    "minimizeToTray": true,
+    "arRPC": true,
+    "trayColor": "2eec93",
+    "trayMainOverride": false,
+    "splashColor": "rgb(219, 222, 225)",
+    "splashBackground": "rgb(49, 51, 56)",
+    "trayColorType": "custom",
+    "trayAutoFill": "auto",
+    "clickTrayToShowHide": true,
+    "splashAnimationPath": "/home/antonio/Downloads/nso-needy-streamer.gif",
+    "enableSplashScreen": true,
+    "splashTheming": true
+}

@@ -23,7 +23,7 @@
     };
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/main/theme/flavors/midnight-catppuccin-mocha.theme.css"
+         "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
       ];
       frameless = true;
       enabledThemes = ["midnight-catppuccin-mocha.theme.css"];

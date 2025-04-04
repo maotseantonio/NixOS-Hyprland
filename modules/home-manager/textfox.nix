@@ -28,6 +28,9 @@
         size = "15px";
         accent = "#a6e3a1";
       };
+       sidebery = {
+          margin = "1.0rem";
+       };
     };
   };
 }
