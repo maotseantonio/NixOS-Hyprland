@@ -42,7 +42,7 @@
     enable = true;
   };
   catppuccin.enable = true;
-
+  services.arrpc.enable = true;
   home.file = {
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;

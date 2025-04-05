@@ -7,7 +7,7 @@
 }:
 {
     home.packages = with pkgs; [pkgs-master.equibop];
-
+    
     xdg.configFile."equibop/settings.json".text = ''
     {
         "MINIMIZE_TO_TRAY": true,

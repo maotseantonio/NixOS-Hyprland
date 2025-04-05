@@ -27,7 +27,10 @@
     source= $UserConfigs/WorkspaceRules.conf
     source= $HOME/.config/hypr/themes/mocha.conf
   '';
-
+  wayland.windowManager.hyprland.settings.exec-once = [
+        "uwsm finalize"
+        "${pkgs.hyprpanel}/bin/hyprpanel"
+  ];
   wayland.windowManager.hyprland = {
     plugins = [
             inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
