@@ -1,12 +1,12 @@
 {
-  pkgs,
-  config,
-  host,
-  username,
-  options,
-  lib,
-  inputs,
-  system,
+ pkgs,
+ config,
+ host,
+ username,
+ options,
+ lib,
+ inputs,
+ system,
   ...
 }:
 with lib; let
@@ -17,23 +17,28 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin.grub.enable = true;
-    catppuccin.grub.flavor = "mocha";
+    # catppuccin.grub.enable = true;
+    # catppuccin.grub.flavor = "mocha";
     boot = {
       loader.efi = {
         canTouchEfiVariables = true;
       };
       loader.timeout = 3;
-      loader.grub = {
+      loader.systemd-boot = {
         enable = true;
-        devices = ["nodev"];
-        efiSupport = true;
-        zfsSupport = true;   # Enable ZFS support in GRUB
-        memtest86.enable = true;
-        extraGrubInstallArgs = ["--bootloader-id=${host}"];
-        configurationName = "${host}";
-        gfxmodeEfi = "2560x1440";
-       };
+        consoleMode = "auto";
+        configurationLimit = 8;
+      };
+      # loader.grub = {
+      #   enable = true;
+      #   devices = ["nodev"];
+      #   efiSupport = true;
+      #   zfsSupport = true;   # Enable ZFS support in GRUB
+      #   memtest86.enable = true;
+      #   extraGrubInstallArgs = ["--bootloader-id=${host}"];
+      #   configurationName = "${host}";
+      #   gfxmodeEfi = "2560x1440";
+      #  };
       tmp = {
         useTmpfs = false;
         tmpfsSize = "30%";

@@ -28,7 +28,7 @@
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
-    #imagemagick
+    imagemagick
     inxi
     jq
     kitty
@@ -67,14 +67,14 @@
     fd
     pkgs-master.home-manager
     bluez-tools
-    #wgpu-utils
+    wgpu-utils
     gtk3
     gtk4
     fish
     atuin
     #bun
     dart-sass
-    #nodejs
+    nodejs
     sassc
     libgtop
     starship
@@ -87,7 +87,7 @@
     bibata-cursors
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
-    #nurl
+    nurl
     firefox_nightly
   ];
 }
