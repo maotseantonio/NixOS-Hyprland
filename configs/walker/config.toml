@@ -1,7 +1,7 @@
 app_launch_prefix = ""
 terminal_title_flag = ""
 locale = ""
-close_when_open = false
+close_when_open = true
 theme = "catppuccin"
 monitor = ""
 hotreload_theme = true
@@ -13,7 +13,7 @@ force_keyboard_focus = false
 [keys]
 accept_typeahead = ["tab"]
 trigger_labels = "lalt"
-next = ["down"]
+next = ["down tab"]
 prev = ["up"]
 close = ["esc"]
 remove_from_history = ["shift backspace"]
