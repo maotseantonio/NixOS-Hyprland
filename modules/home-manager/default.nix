@@ -18,7 +18,7 @@
     ./vscodium.nix
     ./home-packages.nix
     ./ghostty.nix
-    #./hyprpanel.nix
+    ./equibop.nix
     ./variables.nix
     ./zathura.nix
     ./hypridle.nix
