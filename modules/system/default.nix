@@ -11,6 +11,7 @@
 }: {
   imports = [
     ./bootloader.nix
+    ./grub.nix
     ./plymouth.nix
     ./kernel.nix
     ./nh.nix

@@ -35,7 +35,8 @@
     libsForQt5.qtstyleplugin-kvantum #kvantum
     pkgs-master.networkmanagerapplet
     nwg-look # requires unstable channel
-    #nwg-dock-hyprland
+    nwg-dock-hyprland
+    inputs.hyprswitch.packages.${pkgs.system}.default
     #qv2ray
     #v2ray
     #nvtopPackages.full

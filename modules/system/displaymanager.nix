@@ -18,12 +18,10 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-        pkgs.kdePackages.qtsvg
-        pkgs.kdePackages.qtmultimedia
-        pkgs.kdePackages.qtvirtualkeyboard
-        (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
-            theme = "post-apocalyptic_hacker"; 
-        })
+      #  (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
+      #      theme = "cybermonk"; 
+      #  })
+      inputs.hyprddm.packages.${pkgs.system}.default
     ];
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";

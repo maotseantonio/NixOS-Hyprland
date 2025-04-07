@@ -4,19 +4,23 @@
   fetchFromGitHub,
   formats,
   kdePackages,
-  theme ? "astronaut",
+  theme ? "astronaut",  
+  themeConfig ? null,
+
  }:
+let
+  overwriteConfig = (formats.ini {}).generate "${theme}.conf.user" themeConfig;
+in
 stdenvNoCC.mkDerivation rec {
   pname = "sddm-astronaut-theme";
   version = "1.0";
 
   src = fetchFromGitHub {
-    owner = "Keyitdev";
-    repo = "sddm-astronaut-theme";
-    rev = "11c0bf6147bbea466ce2e2b0559e9a9abdbcc7c3";
-    hash = "sha256-gBSz+k/qgEaIWh1Txdgwlou/Lfrfv3ABzyxYwlrLjDk=";
-  };
-
+        owner = "nomadxxxx";
+        repo = "hyprddm";
+        rev = "2247798303892852279a3dc2ff1203e4393dcec9";
+        hash = "sha256-4eKfWpkP0B7JFAzqJw+aNu0P3xuqQmDLT6lIOmkUXRw=";
+  }; 
   # Avoid wrapping Qt binaries
   dontWrapQtApps = true;
 
@@ -51,6 +55,11 @@ stdenvNoCC.mkDerivation rec {
         --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/${theme}.conf" 
     fi
     
+     ${lib.optionalString (lib.isAttrs themeConfig) ''
+        install -dm755 "$themeDir/Themes"
+        cp ${overwriteConfig} $themeDir/Themes/${theme}.conf.user
+      ''}
+
     runHook postInstall
   '';
 
