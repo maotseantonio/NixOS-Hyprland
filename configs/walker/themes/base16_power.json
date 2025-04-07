@@ -1,0 +1,93 @@
+{
+  "ui": {
+    "anchors": {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true
+    },
+    "window": {
+      "box": {
+        "bar": {
+          "entry": {
+            "h_align": "fill",
+            "h_expand": true,
+            "icon": {
+              "h_align": "center",
+              "h_expand": true,
+              "pixel_size": 16,
+              "theme": ""
+            }
+          },
+          "orientation": "horizontal",
+          "position": "end"
+        },
+        "h_align": "end",
+        "v_align": "end",
+        "margins": {
+          "bottom": 48,
+          "right": 50
+        },
+        "scroll": {
+          "list": {
+            "item": {
+              "activation_label": {
+                "hide": true,
+                "enabled": false,
+                "h_align": "fill",
+                "v_align": "fill",
+                "width": 0,
+                "x_align": 0.5,
+                "y_align": 0.5
+              },
+              "icon": {
+                "pixel_size": 18,
+                "theme": ""
+              },
+              "height": 20
+            },
+            "margins": {
+              "top": 4
+            },
+            "max_height": 300,
+            "max_width": 0,
+            "min_width": 0,
+            "width": 0,
+            "marker_color": "#89B4FA"
+          }
+        },
+        "search": {
+          "hide": true,
+          "v_align": "end",
+          "clear": {
+            "h_align": "center",
+            "icon": "edit-clear",
+            "name": "clear",
+            "pixel_size": 18,
+            "theme": "",
+            "v_align": "center"
+          },
+          "input": {
+            "h_align": "fill",
+            "h_expand": true,
+            "icons": true
+          },
+          "prompt": {
+            "h_align": "center",
+            "icon": "edit-find",
+            "name": "prompt",
+            "pixel_size": 18,
+            "theme": "",
+            "v_align": "center"
+          },
+          "spinner": {
+            "hide": true
+          }
+        },
+        "width": 250
+      },
+      "h_align": "fill",
+      "v_align": "fill"
+    }
+  }
+}

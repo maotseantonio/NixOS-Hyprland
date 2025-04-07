@@ -1,0 +1,92 @@
+
+[ui.anchors]
+bottom = true
+left = true
+right = true
+top = true
+
+[ui.window]
+h_align = "fill"
+v_align = "fill"
+
+  [ui.window.box]
+  h_align = "center"
+  v_align = "center"
+  width = 450
+
+    [ui.window.box.bar]
+    orientation = "horizontal"
+    position = "end"
+
+      [ui.window.box.bar.entry]
+      h_align = "fill"
+      h_expand = true
+
+        [ui.window.box.bar.entry.icon]
+        h_align = "center"
+        h_expand = true
+        pixel_size = 24
+        theme = ""
+
+    [ui.window.box.margins]
+    top = 8
+
+[ui.window.box.scroll.list]
+grid = true
+max_height = 550
+max_width = 1_000
+min_width = 1_000
+width = 150
+
+  [ui.window.box.scroll.list.item]
+  height = 100
+  max_height = 100
+  orientation = "vertical"
+
+    [ui.window.box.scroll.list.item.margins]
+    top = 0
+    bottom = 0
+    left = 0
+    right = 0
+
+    [ui.window.box.scroll.list.item.activation_label]
+    hide = true
+
+    [ui.window.box.scroll.list.item.icon]
+    pixel_size = 250
+    theme = ""
+
+    [ui.window.box.scroll.list.item.label]
+    h_align = "center"
+    hide = true
+
+  [ui.window.box.scroll.list.margins]
+  top = 0
+  bottom = 0
+  left = 0
+  right = 0
+
+[ui.window.box.search.clear]
+h_align = "center"
+icon = "edit-clear"
+name = "clear"
+pixel_size = 18
+theme = ""
+v_align = "center"
+
+[ui.window.box.search.input]
+h_align = "fill"
+h_expand = true
+icons = true
+icon = ""
+
+[ui.window.box.search.prompt]
+h_align = "center"
+icon = "edit-find"
+name = "prompt"
+pixel_size = 18
+theme = ""
+v_align = "center"
+
+[ui.window.box.search.spinner]
+hide = true

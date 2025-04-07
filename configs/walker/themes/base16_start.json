@@ -1,0 +1,116 @@
+{
+  "ui": {
+    "anchors": {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true
+    },
+    "window": {
+      "box": {
+        "ai_scroll": {
+          "h_align": "fill",
+          "height": 300,
+          "list": {
+            "item": {
+              "h_align": "fill",
+              "name": "aiItem",
+              "v_align": "fill",
+              "wrap": true,
+              "x_align": 0,
+              "y_align": 0
+            },
+            "name": "aiList",
+            "orientation": "vertical",
+            "spacing": 10,
+            "width": 400
+          },
+          "margins": {
+            "top": 8
+          },
+          "max_height": 150,
+          "min_width": 400,
+          "name": "aiScroll",
+          "v_align": "fill",
+          "width": 400
+        },
+        "bar": {
+          "entry": {
+            "h_align": "fill",
+            "h_expand": true,
+            "icon": {
+              "h_align": "center",
+              "h_expand": true,
+              "pixel_size": 24,
+              "theme": ""
+            }
+          },
+          "orientation": "horizontal",
+          "position": "end"
+        },
+        "h_align": "start",
+        "v_align": "start",
+        "margins": {
+          "top": 48,
+          "left": 18
+        },
+        "scroll": {
+          "list": {
+            "item": {
+              "activation_label": {
+                "hide": true,
+                "enabled": false,
+                "h_align": "fill",
+                "v_align": "fill",
+                "width": 20,
+                "x_align": 0.5,
+                "y_align": 0.5
+              },
+              "icon": {
+                "pixel_size": 28,
+                "theme": ""
+              }
+            },
+            "margins": {
+              "top": 8
+            },
+            "max_height": 470,
+            "max_width": 300,
+            "min_width": 300,
+            "width": 300,
+            "marker_color": "#89B4FA"
+          }
+        },
+        "search": {
+          "clear": {
+            "h_align": "center",
+            "icon": "edit-clear",
+            "name": "clear",
+            "pixel_size": 18,
+            "theme": "",
+            "v_align": "center"
+          },
+          "input": {
+            "h_align": "fill",
+            "h_expand": true,
+            "icons": true
+          },
+          "prompt": {
+            "h_align": "center",
+            "icon": "edit-find",
+            "name": "prompt",
+            "pixel_size": 18,
+            "theme": "",
+            "v_align": "center"
+          },
+          "spinner": {
+            "hide": true
+          }
+        },
+        "width": 350
+      },
+      "h_align": "fill",
+      "v_align": "fill"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+/* start flavours */
+@define-color base00 #191724;
+@define-color base01 #1f1d2e;
+@define-color base02 #26233a;
+@define-color base03 #6e6a86;
+@define-color base04 #908caa;
+@define-color base05 #e0def4;
+@define-color base06 #e0def4;
+@define-color base07 #524f67;
+@define-color base08 #eb6f92;
+@define-color base09 #f6c177;
+@define-color base0A #ebbcba;
+@define-color base0B #31748f;
+@define-color base0C #9ccfd8;
+@define-color base0D #c4a7e7;
+@define-color base0E #f6c177;
+@define-color base0F #524f67;
+/* end flavours */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+    all: unset;
+}
+
+#window {
+    color: @base05;
+}
+
+#box {
+    margin-left: 4px;
+    border-radius: 6px;
+    background: @base00;
+    padding: 8px;
+    border: 2px solid @base02;
+    box-shadow:
+        0px 1px 1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#search {
+    background: @base02;
+    border: 2px solid @base02;
+    border-radius: 6px;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+#prompt {
+    margin-left: 4px;
+    margin-right: 12px;
+    color: @base05;
+    opacity: 0.2;
+}
+
+#clear {
+    color: @base05;
+    opacity: 0.8;
+}
+
+#password,
+#input,
+#typeahead {
+    border-radius: 2px;
+}
+
+#input {
+    background: none;
+    font-weight: 600;
+}
+
+#spinner {
+    padding: 8px;
+}
+
+#typeahead {
+    color: @base05;
+    opacity: 0.8;
+}
+
+#input placeholder {
+    opacity: 0.5;
+    color: @base05;
+}
+
+#list {
+}
+
+child {
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 4px;
+}
+
+child:selected,
+child:hover {
+    background: @base0D;
+    color: @base00;
+}
+
+#icon {
+    margin-right: 12px;
+    margin-left: 6px;
+}
+
+#label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#sub {
+    font-size: 0;
+}
+
+.activation #activationlabel {
+    color: @base0D;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+    opacity: 0.5;
+}

@@ -1,0 +1,170 @@
+/* start flavours */
+@define-color base00 #191724;
+@define-color base01 #1f1d2e;
+@define-color base02 #26233a;
+@define-color base03 #6e6a86;
+@define-color base04 #908caa;
+@define-color base05 #e0def4;
+@define-color base06 #e0def4;
+@define-color base07 #524f67;
+@define-color base08 #eb6f92;
+@define-color base09 #f6c177;
+@define-color base0A #ebbcba;
+@define-color base0B #31748f;
+@define-color base0C #9ccfd8;
+@define-color base0D #c4a7e7;
+@define-color base0E #f6c177;
+@define-color base0F #524f67;
+/* end flavours */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+    all: unset;
+}
+
+#window {
+    color: @base05;
+}
+
+#box {
+    border-radius: 6px;
+    background: @base00;
+    padding: 32px;
+    border: 2px solid @base02;
+    box-shadow:
+        0px 1px 1px rgba(0, 0, 0, 0.82),
+        0px 1px 1px rgba(0, 0, 0, 0.82);
+}
+
+#search {
+    background: @base02;
+    border: 2px solid @base02;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#prompt {
+    margin-left: 4px;
+    margin-right: 12px;
+    color: @base05;
+    opacity: 0.2;
+}
+
+#clear {
+    color: @base05;
+    opacity: 0.8;
+}
+
+#password,
+#input,
+#typeahead {
+    border-radius: 2px;
+}
+
+#input {
+    background: none;
+    font-weight: 600;
+}
+
+#password {
+}
+
+#spinner {
+    padding: 8px;
+}
+
+#typeahead {
+    color: @base05;
+    opacity: 0.8;
+}
+
+#input placeholder {
+    opacity: 0.5;
+    color: @base05;
+}
+
+#list {
+}
+
+child {
+    padding: 12px;
+    border-radius: 2px;
+}
+
+child:selected,
+child:hover {
+    background: @base01;
+}
+
+#item {
+}
+
+#icon {
+}
+
+#text {
+}
+
+#label {
+    font-size: 0px;
+}
+
+#sub {
+    font-size: 0.8em;
+}
+#sub:hover {
+}
+
+#activationlabel {
+}
+
+#bar {
+}
+
+.barentry {
+}
+
+.activation #activationlabel {
+    color: @base0D;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+    opacity: 0.5;
+}
+
+.aiItem {
+    padding: 10px;
+    border-radius: 2px;
+    color: @base05;
+    background: @base00;
+}
+
+.aiItem.user {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.aiItem.assistant {
+    background: @base01;
+}

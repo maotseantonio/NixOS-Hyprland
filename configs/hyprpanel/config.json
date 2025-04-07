@@ -176,7 +176,8 @@
         "dashboard",
         "windowtitle",
         "systray",
-        "cava"
+        "cava",
+        "volume"
       ],
       "middle": [
         "workspaces"
@@ -288,7 +289,7 @@
   "menus.dashboard.directories.right.directory2.label": "󰉏 Pictures",
   "menus.dashboard.directories.right.directory3.command": "bash -c \"xdg-open $HOME/\"",
   "menus.dashboard.directories.right.directory3.label": "󱂵 Home",
-  "menus.dashboard.powermenu.avatar.image": "/home/antonio/.face.icon",
+  "menus.dashboard.powermenu.avatar.image": "/home/antonio/Pictures/wallpapers/mocha-asta--liebe-black-clover-5k-wallpaper-6000x5000-15905.jpg",
   "menus.dashboard.powermenu.avatar.name": "shizuru",
   "menus.dashboard.powermenu.confirmation": true,
   "menus.dashboard.powermenu.logout": "hyprctl dispatch exit",
@@ -675,8 +676,8 @@
   "theme.bar.menus.menu.dashboard.powermenu.shutdown": "#f38ba8",
   "theme.bar.menus.menu.dashboard.powermenu.sleep": "#89dceb",
   "theme.bar.menus.menu.dashboard.profile.name": "#f5c2e7",
-  "theme.bar.menus.menu.dashboard.profile.radius": "0.4em",
-  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "theme.bar.menus.menu.dashboard.profile.radius": "1.4em",
+  "theme.bar.menus.menu.dashboard.profile.size": "10.5em",
   "theme.bar.menus.menu.dashboard.scaling": 70,
   "theme.bar.menus.menu.dashboard.shortcuts.background": "#b4befe",
   "theme.bar.menus.menu.dashboard.shortcuts.recording": "#a6e3a1",
