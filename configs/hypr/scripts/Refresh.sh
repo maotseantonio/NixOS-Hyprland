@@ -22,31 +22,18 @@ for _prs in "${_ps[@]}"; do
     fi
 done
 
-# quit ags
-ags -q
+killall -SIGUSR2 waybar 
+# quit agsiif [[ i ]]; then
+pkill ags &
+
+hyprpanel q 
 
 sleep 0.3
 
-hyprpanel q
+hyprpanel &
 
 sleep 0.3
 #Restart waybar
-#statusbar &
-
-# relaunch swaync
-#sleep 0.5
-#swaync > /dev/null 2>&1 &
-
-# relaunch ags
-ags &
-hyprpanel &
-
-
-# Relaunching rainbow borders if the script exists
-#sleep 1
-#if file_exists "${UserScripts}/RainbowBorders.sh"; then
-#    ${UserScripts}/RainbowBorders.sh &
-#fi
-
+waybar 
 
 exit 0

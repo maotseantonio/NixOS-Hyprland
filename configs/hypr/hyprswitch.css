@@ -1,0 +1,9 @@
+:root {
+    --border-color: rgba(244, 219, 214, 0.4);
+    --border-color-active: rgb(166, 227, 161);
+    --bg-color: rgba(30, 30, 46, 1.0);
+    --bg-color-hover: rgba(30, 30, 46, 0.5);
+    --index-border-color: rgba(145, 215, 227, 0.7);
+    --border-radius: 12px;
+    --border-size: 3px;
+}
