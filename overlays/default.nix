@@ -13,6 +13,13 @@ let
       config.allowUnfree = true;
     };
   };
+  pkgs-stable = final: _prev: {
+    pkgs-stable = import inputs.nixpkgs-stable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
+
 in
 {
   # Overlays are very useful to overwrite a package globally which then gets used transitively.
@@ -22,4 +29,5 @@ in
   # [Read more here](docs/pass-inputs-to-modules.md) and
   # [here](https://nix-community.github.io/home-manager/options.xhtml#opt-nixpkgs.overlays).
   inherit pkgs-master;
+  inherit pkgs-stable;
 }

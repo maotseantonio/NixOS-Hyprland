@@ -74,6 +74,7 @@
     textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "github:hyprwm/Hyprland?submodules=1";
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
+    #fabric.url = "github:Fabric-Development/fabric";
     hyprscroller = {
         url = "github:maotseantonio/hyprscroller-flake";
         inputs.hyprland.follows = "hyprland";
