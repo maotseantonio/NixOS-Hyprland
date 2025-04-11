@@ -39,7 +39,14 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-
+     niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+     };
+    astal-bar = {
+        url = "github.com:linuxmobile/astal-bar";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
     ags = {
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -109,7 +116,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
-    nur.url = "github:nix-community/NUR";
+    nur = {
+        url = "github:nix-community/NUR";
+        inputs.nixpkgs.follows = "nixpkgs";
+     };
     zjstatus = {
       url = "github:dj95/zjstatus";
     };
@@ -121,6 +131,7 @@
     nixpkgs-stable,
     home-manager,
     chaotic,
+    nur,
     zjstatus,
     nvf,
     nixvim,
@@ -138,7 +149,10 @@
         inherit system;
         config.allowUnfree = true;
     };
-   overlays = import ./overlays { inherit inputs; };
+    #overlays = [
+    #  nur.overlays.default
+    #];
+   #overlays = import ./overlays { inherit inputs; };
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
@@ -162,6 +176,7 @@
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
+              nur.overlays.default
               custom-nixpkgs.overlays.default
               (final: prev: {
                  stable = import nixpkgs-stable {
