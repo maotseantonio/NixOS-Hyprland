@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
 let
   ax-shell = pkgs.fetchFromGitHub {
-  owner = "Axenide";
-  repo = "Ax-Shell";
-  rev = "9ea8b98f57fe373d5a8ec3f2ff1e367d8c5758de";
-  hash = "sha256-G54G/awdl1VJ1N+kLRkUuP0UqD3x23QAjp7tvRFrT0M=";
-}; 
+        owner = "maotseantonio";
+        repo = "Ax-Shell";
+        rev = "1ef9400248bd6733f77a78395712c643deb40387";
+        hash = "sha256-qw4cbX3e25rneswVcjRwhFb1bcBz0YQe45Lz/y1BWR4=";
+    };
+ fabric-bar = pkgs.writeScriptBin "fabric-bar" (builtins.readFile ./fabric.sh);
+
 in
 {
   home.file."${config.xdg.configHome}/Ax-Shell" = {
@@ -19,10 +21,11 @@ in
   home.file."${config.xdg.configHome}/matugen/config.toml" = {
     source = ./matugen.toml;
   };
-
+   
   home.packages = with pkgs; [
     matugen
     cava
+    fabric-bar
     #hyprsunset
     wlinhibit
     tesseract
