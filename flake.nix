@@ -44,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
      };
     astal-bar = {
-        url = "github.com:linuxmobile/astal-bar";
+        url = "github:linuxmobile/astal-bar";
         inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
@@ -176,6 +176,7 @@
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
+              inputs.niri.overlays.niri
               nur.overlays.default
               custom-nixpkgs.overlays.default
               (final: prev: {

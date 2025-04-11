@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 let
   ax-shell = pkgs.fetchFromGitHub {
-    owner = "HeyImKyu";
-    repo = "ax-shell";
-    rev = "310a2210f2cc639dec6962c63ec4024f7f288f26";
-    hash = "sha256-Mbaw+vNk9sDOWPNCbK9PdTe8mzl3ijXIvOI5EUwfxBI=";
-  };
+  owner = "Axenide";
+  repo = "Ax-Shell";
+  rev = "9ea8b98f57fe373d5a8ec3f2ff1e367d8c5758de";
+  hash = "sha256-G54G/awdl1VJ1N+kLRkUuP0UqD3x23QAjp7tvRFrT0M=";
+}; 
 in
 {
   home.file."${config.xdg.configHome}/Ax-Shell" = {

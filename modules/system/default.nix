@@ -39,6 +39,7 @@
     ./cachix.nix
     ./packages.nix
     ./nix.nix
+    ./niri.nix
     #./btrfs.nix
     ./zfs.nix
     ./zram.nix

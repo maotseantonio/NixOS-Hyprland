@@ -89,5 +89,8 @@
     nurl
     firefox_nightly
     socat
-  ];
+  ] ++ (with pkgs.lua52Packages; [
+          cjson
+          luautf8
+ ]);
 }
