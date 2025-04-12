@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   ax-shell = pkgs.fetchFromGitHub {
         owner = "maotseantonio";
         repo = "Ax-Shell";
-        rev = "1ef9400248bd6733f77a78395712c643deb40387";
-        hash = "sha256-qw4cbX3e25rneswVcjRwhFb1bcBz0YQe45Lz/y1BWR4=";
+        rev = "753055b105c95402fbc2ed508ae7d5fbefac8eb7";
+        hash = "sha256-tLSpbx7Kzd5bwElDNT9KcglWcWsIHXHToxJ8r3dM6Ik=";
     };
- fabric-bar = pkgs.writeScriptBin "fabric-bar" (builtins.readFile ./fabric.sh);
+   fabric-bar = pkgs.writeScriptBin "fabric-bar" (builtins.readFile ./fabric.sh);
 
 in
 {

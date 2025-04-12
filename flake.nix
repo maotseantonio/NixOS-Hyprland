@@ -97,6 +97,7 @@
         inputs.nixpkgs.follows = "nixpkgs";
      
      };
+     ax-shell.url = "github:maotseantonio/AX-Shell";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
