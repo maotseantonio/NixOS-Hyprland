@@ -12,13 +12,13 @@
     #rustup
     #github-cli
     neovide 
-    #inputs.wezterm.packages.${pkgs.system}.default
-    wezterm
+    inputs.wezterm.packages.${pkgs.system}.default
+    #wezterm
     hyprpicker  
     hyprpanel
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.astal-bar.packages.${pkgs.system}.default
-    #inputs.ags.packages.${pkgs.system}.agsFull
+    inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     #inputs.zen-browser.packages."${pkgs.system}".default 
     pkgs-master.microfetch

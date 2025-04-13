@@ -21,6 +21,7 @@ in {
       #  (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
       #      theme = "cybermonk"; 
       #  })
+      lyra-cursors
       inputs.hyprddm.packages.${pkgs.system}.default
     ];
     services.xserver.enable = true;
@@ -32,12 +33,13 @@ in {
         kdePackages.qtsvg
         kdePackages.qtmultimedia
         kdePackages.qtvirtualkeyboard
+
       ];
       wayland.enable = true;
       theme = "sddm-astronaut-theme";
       settings = {
         Theme = {
-          CursorTheme = "Bibata-Modern-Ice";
+          CursorTheme = "LyraS-cursors";
         };
       };
     };
@@ -47,6 +49,11 @@ in {
         prettyName = "Hyprland";
         comment = "Hyprland compositor manager by UWSM";
         binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+      niri = {
+          prettyName = "Niri The Goat";
+          comment = "Niri";
+          binPath = "/run/current-system/sw/bin/niri-session";
       };
     };
   };

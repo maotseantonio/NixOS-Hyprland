@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, lib, config, ...}: {
    security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
       if (
@@ -29,4 +29,5 @@
       TimeoutStopSec = 10;
     }; 
   };
+  systemd.user.services.niri-flake-polkit.enable = false;
 }

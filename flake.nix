@@ -39,10 +39,10 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-     niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-     };
+    niri = {
+     url = "github:sodiboo/niri-flake";
+     inputs.nixpkgs.follows = "nixpkgs";
+    };
     astal-bar = {
         url = "github:linuxmobile/astal-bar";
         inputs.nixpkgs.follows = "nixpkgs";

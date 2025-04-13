@@ -3,28 +3,28 @@
   pkgs,
   ...
 }: let
-  #pointer = config.home.pointerCursor;
+  pointer = config.home.pointerCursor;
   makeCommand = command: {
     command = [command];
   };
 in {
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-    settings = {
-      environment = {
-        CLUTTER_BACKEND = "wayland";
-        DISPLAY = null;
-        GDK_BACKEND = "wayland,x11";
-        MOZ_ENABLE_WAYLAND = "1";
-        NIXOS_OZONE_WL = "1";
-        QT_QPA_PLATFORM = "wayland;xcb";
-        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        SDL_VIDEODRIVER = "wayland";
+    programs.niri = {
+        enable = true;
+       package = pkgs.niri-unstable;
+        settings = {
+            environment = {
+                CLUTTER_BACKEND = "wayland";
+                DISPLAY = null;
+                GDK_BACKEND = "wayland,x11";
+                MOZ_ENABLE_WAYLAND = "1";
+                NIXOS_OZONE_WL = "1";
+                QT_QPA_PLATFORM = "wayland;xcb";
+                QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+                SDL_VIDEODRIVER = "wayland";
       };
       spawn-at-startup = [
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
-        (makeCommand "hyprlock")
+        (makeCommand "xwayland-satalite")
         (makeCommand "swww-daemon")
         (makeCommand "wl-paste --type image --watch cliphist store")
         (makeCommand "wl-paste --type text --watch cliphist store")
@@ -35,13 +35,13 @@ in {
           click-method = "button-areas";
           dwt = true;
           dwtp = true;
-          natural-scroll = true;
+          natural-scroll = false;
           scroll-method = "two-finger";
           tap = true;
           tap-button-map = "left-right-middle";
           middle-emulation = true;
           accel-profile = "adaptive";
-          # scroll-factor = 0.2;
+          #scroll-factor = 0.1;
         };
         focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
@@ -70,8 +70,8 @@ in {
         };
       };
       cursor = {
-        size = 20;
-        theme = "catppuccin-mocha-green";
+        size = 32;
+        theme = "${pointer.name}";
       };
       layout = {
         focus-ring.enable = false;
@@ -104,7 +104,7 @@ in {
           hide-when-single-tab = true;
           place-within-column = true;
           position = "left";
-          corner-radius = 20.0;
+          corner-radius = 10.0;
           gap = -12.0;
           gaps-between-tabs = 10.0;
           width = 4.0;

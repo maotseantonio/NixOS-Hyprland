@@ -2,9 +2,9 @@
   inputs,
   pkgs,
   ...
-}: #let
-#ghostty = inputs.ghostty.packages.x86_64-linux.default;
-#in
+}: let
+        ghostty = inputs.ghostty.packages.x86_64-linux.default;
+   in
 {
   home.packages = with pkgs; [ghostty];
 
@@ -19,7 +19,7 @@
 
     # Theme
     theme = "catppuccin-mocha"
-    background-opacity = 0.9
+    background-opacity = 0.85
 
     cursor-style = bar
     cursor-style-blink = true

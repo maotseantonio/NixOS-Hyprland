@@ -9,6 +9,11 @@
     packages = with pkgs; [
       seatd
       jaq
+      brillo
+      xwayland-satellite
+      wl-clipboard
+      gnome-control-center
+      catppuccin-cursors.mochaGreen
     ];
   };
 }

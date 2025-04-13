@@ -4,6 +4,11 @@
   inputs,
   ...
 }: {
+  
+  home.sessionVariables = {
+      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_CURRENT_DESKTOP = "Hyprland";
+   };
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -27,6 +32,9 @@
     source= $UserConfigs/WorkspaceRules.conf
     source= $HOME/.config/hypr/themes/mocha.conf
   '';
+  wayland.windowManager.hyprland.settings.bind = [
+        "$mainMod, D, exec, ${pkgs.ags_v1}/bin/ags -t 'overview' "
+  ];
   wayland.windowManager.hyprland.settings.exec-once = [
         "uwsm finalize"
         "${pkgs.hyprpanel}/bin/hyprpanel"
