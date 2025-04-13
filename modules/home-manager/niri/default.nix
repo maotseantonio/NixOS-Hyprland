@@ -10,6 +10,8 @@
       seatd
       jaq
       brillo
+      wl-clip-persist
+      cliphist
       xwayland-satellite
       wl-clipboard
       gnome-control-center

@@ -3,7 +3,12 @@
   pkgs,
   inputs,
   ...
-}: {
+}: 
+
+ let
+    pointer = config.home.pointerCursor;
+ in
+{
   
   home.sessionVariables = {
       XDG_SESSION_DESKTOP = "Hyprland";
@@ -31,13 +36,15 @@
     source= $UserConfigs/UserSettings.conf
     source= $UserConfigs/WorkspaceRules.conf
     source= $HOME/.config/hypr/themes/mocha.conf
+    $mainMod = SUPER
   '';
   wayland.windowManager.hyprland.settings.bind = [
-        "$mainMod, D, exec, ${pkgs.ags_v1}/bin/ags -t 'overview' "
+        "SUPER, D, exec, ${pkgs.ags_1}/bin/ags -t 'overview' "
   ];
   wayland.windowManager.hyprland.settings.exec-once = [
         "uwsm finalize"
         "${pkgs.hyprpanel}/bin/hyprpanel"
+        "hyprctl setcursor ${pointer.name} 32"
   ];
   wayland.windowManager.hyprland = {
     plugins = [

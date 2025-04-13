@@ -21,7 +21,7 @@ in {
       #  (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
       #      theme = "cybermonk"; 
       #  })
-      lyra-cursors
+      pkgs.lyra-cursors
       inputs.hyprddm.packages.${pkgs.system}.default
     ];
     services.xserver.enable = true;

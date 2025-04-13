@@ -21,13 +21,20 @@ in {
                 QT_QPA_PLATFORM = "wayland;xcb";
                 QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
                 SDL_VIDEODRIVER = "wayland";
+                QT_QPA_PLATFORMTHEME = "qt5ct";
+                #QT_QPA_PLATFORMTHEME = "qt6ct";
+                #WAYLAND_DISPLAY = "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY";
       };
       spawn-at-startup = [
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
         (makeCommand "xwayland-satalite")
+        #(makeCommand "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal")
+        #(makeCommand "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk")
         (makeCommand "swww-daemon")
         (makeCommand "wl-paste --type image --watch cliphist store")
         (makeCommand "wl-paste --type text --watch cliphist store")
+        (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
+
       ];
       input = {
         keyboard.xkb.layout = "us";
@@ -41,7 +48,7 @@ in {
           tap-button-map = "left-right-middle";
           middle-emulation = true;
           accel-profile = "adaptive";
-          #scroll-factor = 0.1;
+          scroll-factor = 0.2;
         };
         focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
@@ -77,7 +84,7 @@ in {
         focus-ring.enable = false;
         border = {
           enable = true;
-          width = 1;
+          width = 2;
           active.color = "#8a9e6b";
           inactive.color = "#2a2e2a";
         };
@@ -91,7 +98,7 @@ in {
           {proportion = 1.0;}
         ];
         default-column-width = {proportion = 0.5;};
-
+        always-center-single-column = true;
         gaps = 6;
         struts = {
           left = 0;

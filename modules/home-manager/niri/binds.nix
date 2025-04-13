@@ -41,7 +41,7 @@
     "Mod+Shift+F".action = expand-column-to-available-width;
     "Mod+Space".action = toggle-window-floating;
     "Mod+W".action = toggle-column-tabbed-display;
-    "Mod+V".action = spawn "uwsm -- app ~/.config/hypr/scripts/ClipManager.sh";
+    "Mod+E".action = spawn "cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy";
     "Mod+Comma".action = consume-window-into-column;
     "Mod+Period".action = expel-window-from-column;
     "Mod+C".action = center-window;
