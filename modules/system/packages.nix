@@ -37,8 +37,6 @@
     nwg-look # requires unstable channel
     nwg-dock-hyprland
     inputs.hyprswitch.packages.${pkgs.system}.default
-    #inputs.fabric.packages.${pkgs.system}.default
-    #inputs.fabric.packages.${pkgs.system}.run-widget
     pkgs-master.pamixer
     pkgs-master.gitui
     inputs.walker.packages.${pkgs.system}.default
