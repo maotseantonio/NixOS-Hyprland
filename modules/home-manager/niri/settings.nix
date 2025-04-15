@@ -1,6 +1,7 @@
-{
+{ 
   config,
   pkgs,
+  inputs,
   ...
 }: let
   pointer = config.home.pointerCursor;
@@ -8,9 +9,11 @@
     command = [command];
   };
 in {
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
+    home.packages = [ pkgs.wl-clipboard inputs.astal.packages.${pkgs.system}.default];
     programs.niri = {
         enable = true;
-       package = pkgs.niri-unstable;
+        package = pkgs.niri-unstable;
         settings = {
             environment = {
                 CLUTTER_BACKEND = "wayland";
@@ -27,12 +30,10 @@ in {
       };
       spawn-at-startup = [
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
-        (makeCommand "xwayland-satalite")
-        #(makeCommand "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal")
-        #(makeCommand "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk")
-        (makeCommand "swww-daemon")
         (makeCommand "wl-paste --type image --watch cliphist store")
         (makeCommand "wl-paste --type text --watch cliphist store")
+        (makeCommand "xwayland-satalite")
+        (makeCommand "swww-daemon")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
 
       ];

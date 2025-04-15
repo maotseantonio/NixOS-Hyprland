@@ -8,6 +8,9 @@
     set-volume = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@";
     brillo = spawn "${pkgs.brillo}/bin/brillo" "-q" "-u" "300000";
     playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
+    control-center = spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center";
+    clipboard = spawn "sh" "-c" "~/.config/hypr/scripts/ClipManager.sh";
+    walker-clip = spawn "walker" "-m" "clipboard";
   in {
     "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
     "XF86AudioMicMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
@@ -31,9 +34,9 @@
       inputs.ghostty.packages.${pkgs.system}.default
     }/bin/ghostty";
     "Ctrl+Alt+L".action = spawn "hyprlock";
-
-    "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
-
+    "Mod+T".action = spawn "thunar";
+    "Mod+U".action = control-center;
+    "Mod+Backspace".action = spawn "wlogout";
     "Mod+Q".action = close-window;
     "Mod+S".action = switch-preset-column-width;
     "Mod+F".action = maximize-column;
@@ -41,7 +44,7 @@
     "Mod+Shift+F".action = expand-column-to-available-width;
     "Mod+Space".action = toggle-window-floating;
     "Mod+W".action = toggle-column-tabbed-display;
-    "Mod+E".action = spawn "cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy";
+    "Mod+V".action = spawn "walker" "-m" "clipboard";
     "Mod+Comma".action = consume-window-into-column;
     "Mod+Period".action = expel-window-from-column;
     "Mod+C".action = center-window;

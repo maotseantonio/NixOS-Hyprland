@@ -27,18 +27,18 @@
       };
 
       serif = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "CaskaydiaCove Nerd Font";
+        package = pkgs.nerd-fonts.caskaydia-cove;
       };
 
       sansSerif = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "CaskaydiaCove Nerd Font";
+        package = pkgs. nerd-fonts.caskaydia-cove;
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs. nerd-fonts.caskaydia-cove;
+        name = "CaskaydiaCove Nerd Font";
       };
 
       emoji = {

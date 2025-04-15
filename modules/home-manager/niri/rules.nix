@@ -28,6 +28,8 @@
     "^(download)"
     "^(error)"
     "^(notification)"
+    "^(thunar)"
+    "^(discord)"
   ];
 
   floatingRules = builtins.map (appId:
