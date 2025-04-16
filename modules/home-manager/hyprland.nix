@@ -10,7 +10,6 @@ in {
     XDG_SESSION_DESKTOP = "Hyprland";
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
-
   home.packages = [ pkgs.wl-clipboard ];
   wayland.windowManager.hyprland = {
     enable = true;

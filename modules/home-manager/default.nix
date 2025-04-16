@@ -8,6 +8,7 @@
     ./home.nix
     ./git.nix
     ./cava.nix
+    ./cliphist.nix
     ./nixy.nix
     ./fhsenv.nix
     ./nvchad.nix

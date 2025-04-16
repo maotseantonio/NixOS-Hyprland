@@ -39,7 +39,7 @@ in {
       theme = "sddm-astronaut-theme";
       settings = {
         Theme = {
-          CursorTheme = "LyraS-cursors";
+          CursorTheme = "LyraR-cursors";
         };
       };
     };

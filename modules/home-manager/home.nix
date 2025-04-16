@@ -31,8 +31,8 @@
     enable = true;
   };
   home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.mochaGreen;
-    name = "catppuccin-mocha-green-cursors";
+    package = pkgs.lyra-cursors;
+    name = "LyraR-cursors";
     size = 32;
     gtk.enable = true;
     x11.enable = true;
