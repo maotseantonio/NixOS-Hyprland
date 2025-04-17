@@ -36,7 +36,7 @@
     "Ctrl+Alt+L".action = spawn "hyprlock";
     "Mod+T".action = spawn "thunar";
     "Mod+U".action = control-center;
-    "Mod+Backspace".action = spawn "wlogout";
+    "Mod+Backspace".action = spawn "wlogout-new";
     "Mod+Q".action = close-window;
     "Mod+S".action = switch-preset-column-width;
     "Mod+F".action = maximize-column;
