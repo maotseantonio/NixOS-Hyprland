@@ -44,7 +44,8 @@
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
-  system.bootloader.enable = true;
+  system.bootloader-systemd.enable = true;
+  system.bootloader-grub.enable = false;
   system.plymouth.enable = true;
   system.audio.enable = true;
   system.greetd.enable = true;

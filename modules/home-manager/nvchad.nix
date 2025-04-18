@@ -9,6 +9,7 @@
   ];
   programs.nvchad = {
     enable = true;
+    neovim = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     extraPackages = with pkgs; [
       emmet-language-server
       nixd

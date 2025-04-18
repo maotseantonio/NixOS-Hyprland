@@ -18,9 +18,10 @@
     ./vscodium.nix
     ./desktop-packages.nix
     ./ghostty.nix
-    #./hyprpanel-desktop.nix
+    #./walker.nix
     ./hypridle.nix
     ./variables.nix
+    ./niri/default.nix
     ./zellij/default.nix
     ./scripts/scripts.nix
   ];

@@ -8,16 +8,25 @@
     inputs.nixcord.homeManagerModules.nixcord
   ];
   programs.nixcord = {
-    enable = false;
+    enable = true;
     vesktop = {
-      enable = false;
+      enable = true;
+      settings = {
+	discordBranch = "canary";
+        staticTitle = false;
+        splashTheming = true;
+        splashColor = "rgb(186, 194, 222)";
+        splashBackground = "rgb(30, 30, 46)";
+        arRPC = false;
+        minimizeToTray = true;	
+     };
     };
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/theme/flavors/catppuccin-mocha.theme.css"
+         "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
       ];
       frameless = true;
-      #      enabledThemes = "midnight.theme.css";
+      enabledThemes = ["midnight-catppuccin-mocha.theme.css"];
       plugins = {
         alwaysTrust.enable = true;
         alwaysAnimate.enable = true;
@@ -121,5 +130,5 @@
         youtubeAdblock.enable = true;
       };
     };
-  };
+ };
 }

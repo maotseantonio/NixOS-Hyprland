@@ -18,6 +18,13 @@
   programs.zellij = {
     enable = true;
   };
+  home.pointerCursor = {
+    package = pkgs.lyra-cursors;
+    name = "LyraR-cursors";
+    size = 32;
+    gtk.enable = true;
+    x11.enable = true;
+  };
   programs.gh = {
     enable = true;
   };

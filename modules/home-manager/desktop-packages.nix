@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    nitch
+    #nitch
     #rustup
     github-cli
     neovide

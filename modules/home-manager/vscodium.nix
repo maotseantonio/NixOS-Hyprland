@@ -10,7 +10,8 @@
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
-      astro-build.astro-vscode
+      #astro-build.astro-vscode
+      leonardssh.vscord
       bradlc.vscode-tailwindcss
       christian-kohler.npm-intellisense
       christian-kohler.path-intellisense
@@ -29,12 +30,11 @@
       naumovs.color-highlight
       oderwat.indent-rainbow
       redhat.vscode-yaml
-      #rust-lang.rust-analyzer
       svelte.svelte-vscode
       tamasfe.even-better-toml
       usernamehw.errorlens
       yzhang.markdown-all-in-one
-      catppuccin.catppuccin-vsc
+            #catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
       ms-vscode.live-server
       visualstudioexptteam.vscodeintellicode
@@ -137,7 +137,7 @@
       theme = {
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.iconTheme" = "catppuccin-mocha";
-        "catppuccin.accentColor" = "blue";
+                #"catppuccin.accentColor" = "blue";
         "catppuccin.bracketMode" = "rainbow";
         "catppuccin.workbenchMode" = "default";
         "catppuccin.boldKeywords" = true;

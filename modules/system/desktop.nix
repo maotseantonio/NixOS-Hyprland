@@ -11,6 +11,7 @@
 }: {
   imports = [
     ./bootloader.nix
+    ./grub.nix
     ./plymouth.nix
     ./kernel.nix
     ./nh.nix
@@ -20,6 +21,7 @@
     ./system-hardware.nix
     ./stylix.nix
     ./system.nix
+    ./niri.nix
     ./security.nix
     ./services.nix
     ./flatpak.nix

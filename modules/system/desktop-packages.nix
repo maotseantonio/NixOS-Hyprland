@@ -1,10 +1,18 @@
 {
   pkgs,
+  pkgs-master,
+  pkgs-unstable,
   config,
   inputs,
   lib,
   ...
 }: {
+
+    _module.args.pkgs-master = import inputs.nixpkgs-master {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+  
   environment.systemPackages = with pkgs; [
     ags_1 
     brightnessctl # for brightness control 
@@ -22,6 +30,7 @@
     jq
     kitty
     libsForQt5.qtstyleplugin-kvantum #kvantum
+    inputs.walker.packages."${pkgs.system}".default
     networkmanagerapplet
     nwg-look # requires unstable channel
     nwg-dock-hyprland
@@ -68,6 +77,8 @@
     zoxide
     bibata-cursors
     spotify
+    nurl
     hiddify-app
+    (pkgs.callPackage ../../pkgs/nitch.nix {})
   ];
 }
