@@ -1,354 +1,280 @@
+------------------------------------------------------
+--               Wezterm configuration
+------------------------------------------------------
 
--- Pull in the wezterm API
-local wezterm = require("wezterm")
-local act = wezterm.action
+local term = require("wezterm")
+local act = term.action
+local gui = term.gui
+local mux = term.mux
 
---local act = wezterm.action
-local gpus = wezterm.gui.enumerate_gpus()
--- This table will hold the ration.
+local resurrect = term.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+local windows = require("windows") -- file located at ~/.config/wezterm/windows.lua
+local linux = require("linux") -- file located at ~/.config/wezterm/linux.lua
+local terminal = require("terminal")
+local keymaps = require("keymaps")
+
 local config = {}
 
-function get_appearance()
-	if wezterm.gui then
-		return wezterm.gui.get_appearance()
+-- For windows host custom configuration
+if term.target_triple == "x86_64-pc-windows-msvc" then
+	windows.options(config)
+end
+
+-- For linux host custom configuration
+if term.target_triple == "x86_64-unknown-linux-gnu" then
+	linux.options(config)
+end
+
+--Startup settings
+--term.on("gui-startup", resurrect.resurrect_on_gui_startup)
+
+terminal.options(config)
+keymaps.options(config)
+
+--------------------------------------
+-- Local Functions
+--------------------------------------
+local function getDirectoryName(path)
+	if not path then
+		return "Unknown"
 	end
-	return "Dark"
+	-- Remove any trailing slashes from the path
+	path = path:gsub("/+$", "")
+	-- Extract the last part of the path (the directory name)
+	local directoryName = path:match("([^/]+)$")
+	return directoryName or "Unknown"
 end
 
-function scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
-	else
-		return "Catppuccin Latte"
-	end
-end
-
-if wezterm.builder then
-	config = wezterm.builder()
-end
-
--- This is where you actually apply your choices
-config = {
-	-- For example, changing the color scheme:
-	color_scheme = scheme_for_appearance(get_appearance()),
-	-- color_scheme = "Catppuccin Macchiato",
-	font = wezterm.font_with_fallback({
-		{
-			family = "JetBrainsMono Nerd Font",
-			weight = "Regular",
-		},
-		{
-			family = "JetBrainsMono Nerd Font",
-			weight = "Regular",
-			scale = 0.9,
-		},
-		{ family = "JetBrainsMono Nerd Font", weight = "Medium" },
-		-- { family = "HarmonyOS Sans SC", scale = 0.9 },
-		"monospace",
-	}),
-	font_size = 15.0,
---	line_height = 1.0,
-	use_cap_height_to_scale_fallback_fonts = true,
-	window_background_opacity = 0.75,
-	text_background_opacity = 1.0,
-	bold_brightens_ansi_colors = false,
-  front_end = "WebGpu",
-  webgpu_preferred_adapter = gpus[0],
-	window_padding = {
-		left = 5,
-		right = 5,
-		top = 5,
-		bottom = 1,
-	},
-
- background = {
-    {
-      source = {
-        Color="#181825"
-      },
-      height = "100%",
-      width = "100%",
-    },
-    {
-      source = {
-        File = '/home/antonio/.config/hypr/wallpaper_effects/.wallpaper_current',
-        --File = '/home/antonio/.config/wezterm/nixos.png',
-      },
-      opacity = 0.05,
-      vertical_align = "Middle",
-      horizontal_align = "Center",
-      height = "1824",
-      width = "2724",
-      repeat_y = "NoRepeat",
-      repeat_x = "NoRepeat",
-    },
-  },
-
-	-- Tab bar
-	enable_tab_bar = true,
-	hide_tab_bar_if_only_one_tab = true,
-	show_tab_index_in_tab_bar = false,
-	show_new_tab_button_in_tab_bar = false,
-	tab_bar_at_bottom = true,
-	window_frame = {
-		font = wezterm.font({
-			family = "JetBrainsMono Nerd Font",
-			weight = "Bold",
-		}),
-		font_size = 10.0,
-		active_titlebar_bg = "#24273a",
-		inactive_titlebar_bg = "#24273a",
-	},
-	colors = {
-		tab_bar = {
-			inactive_tab_edge = "#1e1e2e",
-			background = "transparent",
-			-- The active tab is the one that has focus in the window
-			active_tab = {
-				-- The color of the background area for the tab
-				bg_color = "#c6a0f6",
-				-- The color of the text for the tab
-				fg_color = "#1e2030",
-
-				-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
-				-- label shown for this tab.
-				-- The default is "Normal"
-				intensity = "Normal",
-
-				-- Specify whether you want "None", "Single" or "Double" underline for
-				-- label shown for this tab.
-				-- The default is "None"
-				underline = "None",
-
-				-- Specify whether you want the text to be italic (true) or not (false)
-				-- for this tab.  The default is false.
-				italic = false,
-
-				-- Specify whether you want the text to be rendered with strikethrough (true)
-				-- or not for this tab.  The default is false.
-				strikethrough = false,
-			},
-
-			-- Inactive tabs are the tabs that do not have focus
-			inactive_tab = {
-				bg_color = "transparent", -- "#363a4f",
-				fg_color = "#a5adcb",
-			},
-
-			-- You can configure some alternate styling when the mouse pointer
-			-- moves over inactive tabs
-			inactive_tab_hover = {
-				bg_color = "#b7bdf8",
-				fg_color = "#1e2030",
-				italic = true,
-			},
-
-			-- The new tab button that let you create new tabs
-			new_tab = {
-				bg_color = "#8aadf4",
-				fg_color = "#808080",
-			},
-
-			-- You can configure some alternate styling when the mouse pointer
-			-- moves over the new tab button
-			new_tab_hover = {
-				bg_color = "#f0c6c6",
-				fg_color = "#363a4f",
-				italic = true,
-			},
-		},
-		compose_cursor = "#ee99a0",
-	},
-
-	scrollback_lines = 5000,
-
-	-- curse
-	cursor_blink_ease_in = "Linear",
-	cursor_blink_ease_out = "Linear",
-	cursor_blink_rate = 1000,
-	default_cursor_style = "BlinkingBar",
-
-	enable_wayland = true,
-	check_for_updates = false,
-	default_prog = { "fish" },
-	automatically_reload_config = true,
-	window_close_confirmation = "NeverPrompt",
-
-	-- The Launcher Menu
-	launch_menu = {
-		{
-			label = "Btotom",
-			args = { "btm" },
-		},
-		{
-			label = "Files",
-			args = { "yazi" },
-		},
-		{
-			label = "Lazygit",
-			args = { "lazygit" },
-		},
-		{
-			label = "Lazysql",
-			args = { "lazysql" },
-		},
-		{
-			label = "Music",
-			args = { "ncmpcpp" },
-		},
-	},
-
-	-- Command palette
-	-- Ctrl + Shift + p
-	command_palette_rows = 16,
-	command_palette_font_size = 16.0,
-	command_palette_bg_color = "#363a4f",
-	command_palette_fg_color = "rgba(202, 211, 245, 0.8)",
-
-	-- Keybinds
-	disable_default_key_bindings = false,
-	disable_default_mouse_bindings = false,
-	mouse_bindings = {
-		-- Bind 'Up' event of CTRL-Click to open hyperlinks
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = act.OpenLinkAtMouseCursor,
-		},
-		-- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
-		{
-			event = { Down = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = act.Nop,
-		},
-	},
-
-	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
-
-	keys = {
-		{ key = "=", mods = "CTRL", action = act.IncreaseFontSize },
-		{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
-		{ key = "l", mods = "ALT", action = act.ShowLauncher },
-		{
-			key = [[\]],
-			mods = "CTRL|ALT",
-			action = act({
-				SplitHorizontal = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = [[\]],
-			mods = "CTRL",
-			action = act({
-				SplitVertical = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = "z",
-			mods = "ALT",
-			action = act.TogglePaneZoomState,
-		},
-		{
-			key = "q",
-			mods = "ALT",
-			action = act({ CloseCurrentPane = { confirm = false } }),
-		},
-		{
-			key = "h",
-			mods = "CTRL",
-			action = act({ ActivatePaneDirection = "Left" }),
-		},
-		{
-			key = "l",
-			mods = "CTRL",
-			action = act({ ActivatePaneDirection = "Right" }),
-		},
-		{
-			key = "k",
-			mods = "CTRL",
-			action = act({ ActivatePaneDirection = "Up" }),
-		},
-		{
-			key = "j",
-			mods = "CTRL",
-			action = act({ ActivatePaneDirection = "Down" }),
-		},
-		{
-			key = "h",
-			mods = "CTRL|ALT",
-			action = act({ AdjustPaneSize = { "Left", 1 } }),
-		},
-		{
-			key = "l",
-			mods = "CTRL|ALT",
-			action = act({ AdjustPaneSize = { "Right", 1 } }),
-		},
-		{
-			key = "k",
-			mods = "CTRL|ALT",
-			action = act({ AdjustPaneSize = { "Up", 1 } }),
-		},
-		{
-			key = "j",
-			mods = "CTRL|ALT",
-			action = act({ AdjustPaneSize = { "Down", 1 } }),
-		},
-		{
-			-- browser-like bindings for tabbing
-			key = "t",
-			mods = "CTRL|SHIFT",
-			action = act({ SpawnTab = "DefaultDomain" }),
-		},
-		{
-			key = "w",
-			mods = "ALT",
-			action = act.CloseCurrentTab({ confirm = false }),
-		},
-		{ key = "LeftArrow", mods = "ALT", action = act.ActivateTabRelative(-1) },
-		{ key = "RightArrow", mods = "ALT", action = act.ActivateTabRelative(1) },
-		{
-			key = ",",
-			mods = "CTRL",
-			action = act.SpawnCommandInNewTab({
-				cwd = wezterm.home_dir,
-				args = { "nvim", wezterm.config_file },
-			}),
-		},
-
-		-- standard copy/paste bindings
-		{
-			key = "v",
-			mods = "CTRL|SHIFT",
-			action = act({ PasteFrom = "Clipboard" }),
-		},
-		{
-			key = "c",
-			mods = "CTRL|SHIFT",
-			action = act({ CopyTo = "ClipboardAndPrimarySelection" }),
-		},
-	},
+local process_icons = { -- for get_process function
+	["docker"] = term.nerdfonts.linux_docker,
+	["docker-compose"] = term.nerdfonts.linux_docker,
+	["psql"] = term.nerdfonts.dev_postgresql,
+	["kuberlr"] = term.nerdfonts.linux_docker,
+	["kubectl"] = term.nerdfonts.linux_docker,
+	["stern"] = term.nerdfonts.linux_docker,
+	["make"] = term.nerdfonts.seti_makefile,
+	-- ["nvim"] = term.nerdfonts.custom_vim,
+	-- ["vim"] = term.nerdfonts.dev_vim,
+	["vim"] = "",
+	["nvim"] = "",
+	["go"] = term.nerdfonts.seti_go,
+	["zsh"] = term.nerdfonts.dev_terminal,
+	["bash"] = term.nerdfonts.cod_terminal_bash,
+	["btm"] = term.nerdfonts.mdi_chart_donut_variant,
+	["htop"] = term.nerdfonts.mdi_chart_donut_variant,
+	["cargo"] = term.nerdfonts.dev_rust,
+	["sudo"] = term.nerdfonts.fa_hashtag,
+	["lazydocker"] = term.nerdfonts.linux_docker,
+	["git"] = term.nerdfonts.dev_git,
+	["lazygit"] = term.nerdfonts.dev_git,
+	["lua"] = term.nerdfonts.seti_lua,
+	["wget"] = term.nerdfonts.mdi_arrow_down_box,
+	["curl"] = term.nerdfonts.mdi_flattr,
+	["gh"] = term.nerdfonts.dev_github_badge,
+	["ruby"] = term.nerdfonts.cod_ruby,
+	["pwsh"] = term.nerdfonts.seti_powershell,
+	["node"] = term.nerdfonts.dev_nodejs_small,
+	["dotnet"] = term.nerdfonts.md_language_csharp,
 }
-for i = 1, 8 do
-	-- ALT + number to move to that position
-	table.insert(config.keys, {
-		key = tostring(i),
-		mods = "ALT",
-		action = act.ActivateTab(i - 1),
-	})
+
+local function get_process(process_name)
+	-- local icon = process_icons[process_name] or string.format('[%s]', process_name)
+	local icon = process_icons[process_name] or term.nerdfonts.seti_checkbox_unchecked
+
+	return icon
 end
 
--- Plugin
-local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
-bar.apply_to_config(config, {
-	modules = {
-		spotify = {
-			enabled = false,
-		},
-		clock = {
-			enabled = false,
-		},
-	},
-})
+term.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local pane = tab.active_pane
+	local cwd_uri = pane.current_working_dir
+	local directoryName = "Unknown"
+	local process_name = tab.active_pane.foreground_process_name:match("([^/\\]+)%.exe$")
+		or tab.active_pane.foreground_process_name:match("([^/\\]+)$")
 
--- and finally, return the ration to wezterm
+	local process_icon = get_process(process_name) or tab.active_pane.foreground_process_name:match("([^/\\]+)$")
+
+	local current_number = tab.tab_index + 1
+
+	local numbers = {
+		term.nerdfonts.md_numeric_1,
+		term.nerdfonts.md_numeric_2,
+		term.nerdfonts.md_numeric_3,
+		term.nerdfonts.md_numeric_4,
+		term.nerdfonts.md_numeric_5,
+		term.nerdfonts.md_numeric_6,
+		term.nerdfonts.md_numeric_7,
+		term.nerdfonts.md_numeric_8,
+		term.nerdfonts.md_numeric_9,
+		term.nerdfonts.md_numeric_10,
+	}
+
+	if cwd_uri then
+		-- Convert the URI to a string, remove the hostname, and decode %20s:
+		local cwd_path = cwd_uri.file_path
+		-- cwd_path = cwd_path:gsub("^file://[^/]+", "") -- not needed
+		-- cwd_path = decodeURI(cwd_path) -- not needed
+
+		-- Extract the directory name from the decoded path:
+		directoryName = getDirectoryName(cwd_path)
+	end
+
+	-- local title = string.format(" %s %s %s ", (tab.tab_index + 1), process_icon, process_name)
+	local title = string.format(" %s %s %s ", numbers[current_number], process_icon, process_name)
+
+	return {
+		{ Text = title },
+	}
+end)
+
+local function recompute_padding(window)
+	local window_dims = window:get_dimensions()
+	local overrides = window:get_config_overrides() or {}
+
+	if not window_dims.is_full_screen then
+		if not overrides.window_padding then
+			-- not changing anything
+			return
+		end
+		overrides.window_padding = nil
+	else
+		-- Use only the middle 33%
+		local third = math.floor(window_dims.pixel_width / 3)
+		local new_padding = {
+			left = 0,
+			right = 0,
+			top = 0,
+			bottom = 0,
+		}
+		if overrides.window_padding and new_padding.left == overrides.window_padding.left then
+			-- padding is same, avoid triggering further changes
+			return
+		end
+		overrides.window_padding = new_padding
+	end
+	window:set_config_overrides(overrides)
+end
+
+term.on("window-resized", function(window, pane)
+	recompute_padding(window)
+end)
+term.on("window-config-reloaded", function(window)
+	recompute_padding(window)
+end)
+
+term.on("update-right-status", function(window, pane)
+	local cells = {}
+	local key_mode = window:active_key_table()
+
+	-- Mode Section
+	local mode = {
+		["search_mode"] = "󰜏",
+		["copy_mode"] = "",
+	}
+	if not key_mode then
+		table.insert(cells, "")
+	else
+		table.insert(cells, mode[key_mode])
+	end
+
+	-- Workspace Section
+	local workspace = window:active_workspace()
+
+	if workspace == "default" then
+		workspace = ""
+	end
+
+	table.insert(cells, workspace)
+
+	-- Time Section
+	local current_time = tonumber(term.strftime("%H"))
+	-- stylua: ignore
+	local time = {
+		[00] = "",
+		[01] = "",
+		[02] = "",
+		[03] = "",
+		[04] = "",
+		[05] = "",
+		[06] = "",
+		[07] = "",
+		[08] = "",
+		[09] = "",
+		[10] = "󰗲",
+		[11] = "",
+		[12] = "",
+		[13] = "",
+		[14] = "",
+		[15] = "",
+		[16] = "",
+		[17] = "",
+		[18] = "",
+		[19] = "󰗲",
+		[20] = "",
+		[21] = "",
+		[22] = "",
+		[23] = "",
+	}
+	local date = term.strftime("%H:%M:%S %a %b %d ")
+	local date_time = time[current_time] .. " " .. date
+	table.insert(cells, date_time)
+
+	local text_fg = terminal.colors.transparent
+	-- local SEPERATOR = " █"
+	local SEPERATOR = "  "
+	local pallete = {
+		"#f7768e",
+		"#9ece6a",
+		"#7dcfff",
+		"#bb9af7",
+		"#e0af68",
+		"#7aa2f7",
+	}
+	local cols = pane:get_dimensions().cols
+	local padding = term.pad_right("", (cols / 2) - string.len(date_time) - 2)
+	local elements = {}
+	local num_cells = 0
+
+	-- Translate into elements
+	local function push(text, is_last)
+		local cell_no = num_cells + 1
+		if is_last then
+			-- table.insert(elements, text_fg)
+			table.insert(elements, { Text = padding })
+		end
+		table.insert(elements, { Foreground = { Color = pallete[cell_no] } })
+		table.insert(elements, { Background = { Color = terminal.colors.transparent } })
+		table.insert(elements, { Text = "" .. text .. "" })
+		if not is_last then
+			table.insert(elements, { Foreground = { Color = terminal.colors.transparent } })
+			table.insert(elements, { Background = { Color = terminal.colors.transparent } })
+			table.insert(elements, { Text = SEPERATOR })
+		end
+		num_cells = num_cells + 1
+	end
+
+	while #cells > 0 do
+		local cell = table.remove(cells, 1)
+		push(cell, #cells == 0)
+	end
+
+	window:set_right_status(term.format(elements))
+end)
+
+term.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+
+	workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+		window = window,
+		relative = true,
+		restore_text = true,
+		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+	})
+end)
+
+-- Saves the state whenever I select a workspace
+term.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+	resurrect.save_state(workspace_state.get_workspace_state())
+end)
+
 return config
