@@ -35,6 +35,7 @@ in {
         (makeCommand "xwayland-satalite")
         (makeCommand "swww-daemon")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
+        (makeCommand "wayland-satalite")
 
       ];
       input = {

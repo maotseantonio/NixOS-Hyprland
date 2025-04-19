@@ -24,7 +24,6 @@
     pkgs-master.microfetch
     inputs.yazi.packages.${pkgs.system}.yazi
     #yazi
-    manga-tui
     gpu-screen-recorder
     libqalculate
     dbus-glib

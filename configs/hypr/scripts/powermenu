@@ -74,12 +74,12 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
-				hyprctl dispatch exit
+			if [[ "$DESKTOP_SESSION" == 'hyprland-uwsm' ]]; then
+			    uwsm stop	
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'Hyprland' ]]; then
-				hyprctl dispatch exit
+				loginctl terminate-session "$XDG_SESSION_ID"
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi

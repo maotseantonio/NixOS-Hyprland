@@ -22,7 +22,7 @@ for _prs in "${_ps[@]}"; do
     fi
 done
 
-killall -SIGUSR2 waybar 
+#killall -SIGUSR2 waybar 
 # quit agsiif [[ i ]]; then
 pkill ags &
 
@@ -34,6 +34,6 @@ hyprpanel &
 
 sleep 0.3
 #Restart waybar
-waybar 
+#waybar 
 
 exit 0
