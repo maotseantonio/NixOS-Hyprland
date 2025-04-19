@@ -12,7 +12,7 @@
     ./fhsenv.nix
     ./nvchad.nix
     ./textfox.nix
-   #./nixcord.nix
+   ./nixcord.nix
     ./hyprland-desktop.nix
    ./spicetify.nix
     ./vscodium.nix

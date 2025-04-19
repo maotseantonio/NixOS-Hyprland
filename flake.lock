@@ -2811,11 +2811,11 @@
     "nvchad-on-steroids": {
       "flake": false,
       "locked": {
-        "lastModified": 1744857248,
-        "narHash": "sha256-TPj1HRSw2apVjAWYc9wvKdibMsIHUxRP09bkO8nWU7E=",
+        "lastModified": 1744986541,
+        "narHash": "sha256-zsqt44a0jaiVoZ2FbaK9Gv7G8p8k52Y3jvK9Pm76zNQ=",
         "owner": "maotseantonio",
         "repo": "nvchad_config",
-        "rev": "4377fb7dba17cec81ee97d1166d6e5e7a3c7ddc7",
+        "rev": "8cd18997479a312619c974c284deb6dd606c9384",
         "type": "github"
       },
       "original": {
