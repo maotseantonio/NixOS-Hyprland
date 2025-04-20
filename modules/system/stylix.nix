@@ -9,31 +9,10 @@
   system,
   ...
 }: 
-let
-  # Oxocarbon color palette
-  oxocarbon = {
-    base00 = "161616"; # background
-    base01 = "262626"; # lighter background
-    base02 = "393939"; # selection background
-    base03 = "525252"; # comments, invisibles
-    base04 = "dde1e6"; # dark foreground
-    base05 = "f2f4f8"; # default foreground
-    base06 = "ffffff"; # light foreground
-    base07 = "08bdba"; # cyan
-    base08 = "3ddbd9"; # light cyan
-    base09 = "78a9ff"; # blue
-    base0A = "ee5396"; # magenta
-    base0B = "33b1ff"; # light blue
-    base0C = "ff7eb6"; # light magenta
-    base0D = "42be65"; # green
-    base0E = "be95ff"; # violet
-    base0F = "82cfff"; # orange
-  };
-in
 {
   stylix.enable = true;
   stylix.autoEnable = false;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
   stylix = {
       targets = {
           gtk.enable = true;

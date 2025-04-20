@@ -88,7 +88,7 @@
       vivid
       (pkgs.callPackage ../../pkgs/nitch.nix { })
       nurl
-      firefox_nightly
+      #firefox_nightly
       socat
     ]
     ++ (with pkgs.lua52Packages; [

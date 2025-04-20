@@ -11,7 +11,7 @@ in
   programs = {
     hyprland = {
       enable = true;
-      package = hyprFlake;
+      package = pkgs.hyprland;
       portalPackage = portalFlake; 
       xwayland.enable = true;
     };
@@ -22,7 +22,7 @@ in
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    #firefox.enable = true;
+    firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
     thunar.enable = true;
