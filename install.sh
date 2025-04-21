@@ -29,7 +29,7 @@ else
   exit 1
 fi
 
-# Checking if running on a VM and enable in default config.nix
+# new Checking if running on a VM and enable in default config.nix
 if hostnamectl | grep -q 'Chassis: vm'; then
   echo "${NOTE} Your system is running on a VM. Enabling guest services.."
   echo "${WARN} A Kind reminder to enable 3D acceleration.."
