@@ -1,0 +1,150 @@
+/**
+ * @name midnight (oxocarbon)
+ * @description a dark, rounded discord theme. modified with colors from oxocarbon theme.
+ * @author refact0r
+ * @version 2.0.1
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-catppuccin-mocha.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+/* @import './midnight.css'; */
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/unrounding.css';  
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/system24.css';
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/hidden.css'; 
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css'; 
+ 
+body {
+    /* font, change to '' for default discord font */
+    --font: 'CaskaydiaCove Nerd Font';
+
+    /* sizes */
+    --gap: 12px;
+    --divider-thickness: 3px;
+
+    /* animation/transition options */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* top bar options */
+    --move-top-bar-buttons: off;
+    --custom-app-top-bar-height: 32px;
+
+    /* window controls */
+    --custom-window-controls: on;
+    --window-control-size: 14px;
+
+    /* dms button icon options */
+    --dms-icon: off;
+    --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-secondary);
+    --dms-icon-color-after: var(--white);
+
+    /* dms button background options */
+    --dms-background: image;
+    --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+    /* background image options */
+    --background-image: off;
+    --background-image-url: url('');
+
+    /* transparency/blur options */
+    --transparency-tweaks: on;
+    --remove-bg-layer: off;
+    --panel-blur: on;
+    --blur-amount: 5px;
+    --bg-floating: var(--bg-3);
+
+    /* chatbar options */
+    --flipped-chatbar: on;
+    --chatbar-height: 47px;
+    --chatbar-padding: 8px;
+
+    /* other options */
+    --small-user-panel: on;
+}
+
+/* oxocarbon color scheme */
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: var(--bg-3);
+    --text-1: #ffffff;
+    --text-2: #f2f2f2;
+    --text-3: #dde1e6;
+    --text-4: #a2a9b0;
+    --text-5: #878d96;
+
+    /* background and dark colors */
+    --bg-1: #393939;
+    --bg-2: #262626;
+    --bg-3: #161616;
+    --bg-4: #0d0d0d;
+    --hover: #393939;
+    --active: #393939;
+    --active-2: hsla(0, 0%, 22%, 0.3);
+    --message-hover: hsla(0, 0%, 100%, 0.05);
+
+    /* accent colors */
+    --accent-1: #3ddbd9;
+    --accent-2: var(--yellow-2);
+    --accent-3: #ff7eb6;
+    --accent-4: #be95ff;
+    --accent-5: #82cfff;
+    --accent-new: #ff7eb6;
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    /* status indicator colors */
+    --online: #42be65;
+    --dnd: #fa4d56;
+    --idle: #f1c21b;
+    --streaming: #be95ff;
+    --offline: #8d8d8d;
+
+    /* border colors */
+    --border-light: hsla(0, 0%, 100%, 0.1);
+    --border: #3ddbd9;
+    --button-border: hsla(0, 0%, 100%, 0.1);
+
+    /* base colors */
+    --red-1: #ff7eb6;
+    --red-2: #ff7eb6;
+    --red-3: #ff7eb6;
+    --red-4: #ff7eb6;
+    --red-5: #ff7eb6;
+
+    --green-1: #42be65;
+    --green-2: #42be65;
+    --green-3: #42be65;
+    --green-4: #42be65;
+    --green-5: #42be65;
+
+    --blue-1: #33b1ff;
+    --blue-2: #33b1ff;
+    --blue-3: #33b1ff;
+    --blue-4: #33b1ff;
+    --blue-5: #33b1ff;
+
+    --yellow-1: #f1c21b;
+    --yellow-2: #f1c21b;
+    --yellow-3: #f1c21b;
+    --yellow-4: #f1c21b;
+    --yellow-5: #f1c21b;
+
+    --purple-1: #be95ff;
+    --purple-2: #be95ff;
+    --purple-3: #be95ff;
+    --purple-4: #be95ff;
+    --purple-5: #be95ff;
+}

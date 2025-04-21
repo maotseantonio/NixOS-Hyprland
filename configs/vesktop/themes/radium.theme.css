@@ -1,0 +1,83 @@
+@import 'midnight.css';
+/* @import './unrounding.css'; */ 
+@import './hidden.css'; 
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css'; 
+ 
+:root {
+  --colors: on;
+
+  /* Text Colors */
+  --text-0: #1e1e1e; /* Text on colored elements */
+  --text-1: #ffffff;
+  --text-2: #dcdcdc;
+  --text-3: #afffff;
+  --text-4: #5fffff;
+  --text-5: #5f5f5f;
+
+  /* Backgrounds */
+  --bg-1: #2a2a2a;
+  --bg-2: #1f1f1f;
+  --bg-3: #1a1a1a;
+  --bg-4: #1e1e1e;
+
+  --hover: rgba(95, 255, 255, 0.1);
+  --active: rgba(95, 255, 255, 0.2);
+  --active-2: rgba(95, 255, 255, 0.3);
+  --message-hover: rgba(255, 255, 255, 0.05);
+
+  /* Accent Colors */
+  --accent-1: #5fffff;
+  --accent-2: #afffff;
+  --accent-3: #5fafff;
+  --accent-4: #5f5fff;
+  --accent-5: #af5fff;
+  --accent-new: #ff5f5f;
+
+  --mention: linear-gradient(to right, rgba(95, 255, 255, 0.3) 40%, transparent);
+  --mention-hover: linear-gradient(to right, rgba(95, 255, 255, 0.4) 40%, transparent);
+  --reply: linear-gradient(to right, rgba(175, 255, 255, 0.3) 40%, transparent);
+  --reply-hover: linear-gradient(to right, rgba(175, 255, 255, 0.4) 40%, transparent);
+
+  /* Status Colors */
+  --online: #afff5f;
+  --dnd: #ff5f5f;
+  --idle: #ffff5f;
+  --streaming: #ff5fff;
+  --offline: #5f5f5f;
+
+  /* Borders */
+  --border-light: rgba(95, 255, 255, 0.1);
+  --border: rgba(95, 255, 255, 0.2);
+  --button-border: rgba(255, 255, 255, 0.1);
+
+  /* Base Colors */
+  --red-1: #ff8787;
+  --red-2: #ff5f5f;
+  --red-3: #ff5f5f;
+  --red-4: #ff3f3f;
+  --red-5: #ff1f1f;
+
+  --green-1: #dfff5f;
+  --green-2: #afff5f;
+  --green-3: #afff5f;
+  --green-4: #8fff5f;
+  --green-5: #6fff5f;
+
+  --blue-1: #afffff;
+  --blue-2: #5fffff;
+  --blue-3: #5fffff;
+  --blue-4: #3fffff;
+  --blue-5: #1fffff;
+
+  --yellow-1: #ffffaf;
+  --yellow-2: #ffff5f;
+  --yellow-3: #ffff5f;
+  --yellow-4: #ffff3f;
+  --yellow-5: #ffff1f;
+
+  --purple-1: #ffafff;
+  --purple-2: #ff5fff;
+  --purple-3: #ff5fff;
+  --purple-4: #ff3fff;
+  --purple-5: #ff1fff;
+}

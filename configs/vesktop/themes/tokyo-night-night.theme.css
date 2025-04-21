@@ -1,17 +1,16 @@
 /**
- * @name midnight
- * @description a dark, customizable discord theme.
- * @author refact0r
+ * @name Tokyo Night
+ * @description A dark Discord theme based on the Tokyo Night color scheme
+ * @author refact0r (modified by DeepSeek Chat)
  * @version 2.1.0
- * @invite nz87hXyvcy
- * @website https://github.com/refact0r/midnight-discord
- * @source https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
- * @authorId 508863359777505290
- * @authorLink https://www.refact0r.dev
+ * @source https://github.com/refact0r/midnight-discord
 */
 
 /* import theme modules */
-@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import './midnight.css';
+@import './unrounding.css';
+@import './system24-port.theme.css';
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css'; 
 
 body {
     /* font, change to '' for default discord font */
@@ -53,7 +52,6 @@ body {
     --background-image-url: url(''); /* url of the background image */
 
     /* transparency/blur options */
-    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
     --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
     --panel-blur: off; /* off: no changes, on: blur the background of panels */
@@ -69,80 +67,80 @@ body {
     --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
 }
 
-/* color options */
+/* Tokyo Night color scheme */
 :root {
     --colors: on; /* off: discord default colors, on: midnight custom colors */
 
     /* text colors */
-    --text-0: var(--bg-4); /* text on colored elements */
-    --text-1: hsl(220, 45%, 95%); /* other normally white text */
-    --text-2: hsl(220, 25%, 70%); /* headings and important text */
-    --text-3: hsl(220, 20%, 60%); /* normal text */
-    --text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
-    --text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
+    --text-0: #1a1b26; /* text on colored elements */
+    --text-1: #c0caf5; /* other normally white text */
+    --text-2: #a9b1d6; /* headings and important text */
+    --text-3: #9aa5ce; /* normal text */
+    --text-4: #7aa2f7; /* icon buttons and channels */
+    --text-5: #565f89; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: hsla(220, 15%, 20%, 1); /* dark buttons when clicked */
-    --bg-2: hsla(220, 15%, 16%, 1); /* dark buttons */
-    --bg-3: hsla(220, 15%, 13%, 1); /* spacing, secondary elements */
-    --bg-4: hsla(220, 15%, 10%, 1); /* main background color */
-    --hover: hsla(221, 19%, 40%, 0.1); /* channels and buttons when hovered */
-    --active: hsla(220, 19%, 40%, 0.2); /* channels and buttons when clicked or selected */
-    --active-2: hsla(220, 19%, 40%, 0.3); /* extra state for transparent buttons */
-    --message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+    --bg-1: #1a1b26; /* dark buttons when clicked */
+    --bg-2: #1a1b26; /* dark buttons */
+    --bg-3: #13141b; /* spacing, secondary elements */
+    --bg-4: #11121D; /* main background color */
+    --hover: rgba(122, 162, 247, 0.1); /* channels and buttons when hovered */
+    --active: rgba(122, 162, 247, 0.2); /* channels and buttons when clicked or selected */
+    --active-2: rgba(122, 162, 247, 0.3); /* extra state for transparent buttons */
+    --message-hover: rgba(0, 0, 0, 0.1); /* messages when hovered */
 
     /* accent colors */
-    --accent-1: var(--blue-1); /* links and other accent text */
-    --accent-2: var(--blue-2); /* small accent elements */
-    --accent-3: var(--blue-3); /* accent buttons */
-    --accent-4: var(--blue-4); /* accent buttons when hovered */
-    --accent-5: var(--blue-5); /* accent buttons when clicked */
-    --accent-new: var(--accent-2); /* stuff that's normally red like mute/deafen buttons */
-    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
-    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
-    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
-    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+    --accent-1: #7aa2f7; /* links and other accent text */
+    --accent-2: #7aa2f7; /* small accent elements */
+    --accent-3: #7aa2f7; /* accent buttons */
+    --accent-4: #9ab7ff; /* accent buttons when hovered */
+    --accent-5: #5a8af7; /* accent buttons when clicked */
+    --accent-new: #f7768e; /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, rgba(122, 162, 247, 0.1) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, rgba(122, 162, 247, 0.05) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, rgba(154, 165, 206, 0.1) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, rgba(154, 165, 206, 0.05) 40%, transparent); /* background of messages that reply to you when hovered */
 
     /* status indicator colors */
-    --online: var(--green-2); /* change to #40a258 for default */
-    --dnd: var(--red-2); /* change to #d83a41 for default */
-    --idle: var(--yellow-2); /* change to #cc954c for default */
-    --streaming: var(--purple-2); /* change to ##9147ff for default */
-    --offline: var(--text-4); /* change to #82838b for default offline color */
+    --online: #73daca; /* green */
+    --dnd: #f7768e; /* red */
+    --idle: #e0af68; /* yellow */
+    --streaming: #bb9af7; /* purple */
+    --offline: #565f89; /* gray */
 
     /* border colors */
-    --border-light: var(--hover); /* light border color */
-    --border: var(--active); /* normal border color */
-    --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+    --border-light: rgba(122, 162, 247, 0.1); /* light border color */
+    --border: rgba(122, 162, 247, 0.2); /* normal border color */
+    --button-border: rgba(192, 202, 245, 0.1); /* neutral border color of buttons */
 
     /* base colors */
-    --red-1: oklch(76% 0.12 0);
-    --red-2: oklch(70% 0.12 0);
-    --red-3: oklch(64% 0.12 0);
-    --red-4: oklch(58% 0.12 0);
-    --red-5: oklch(52% 0.12 0);
+    --red-1: #f7768e;
+    --red-2: #db4b4b;
+    --red-3: #c53b3b;
+    --red-4: #af2b2b;
+    --red-5: #991b1b;
 
-    --green-1: oklch(76% 0.11 170);
-    --green-2: oklch(70% 0.11 170);
-    --green-3: oklch(64% 0.11 170);
-    --green-4: oklch(58% 0.11 170);
-    --green-5: oklch(52% 0.11 160);
+    --green-1: #73daca;
+    --green-2: #41a6b5;
+    --green-3: #2d96a5;
+    --green-4: #198695;
+    --green-5: #057685;
 
-    --blue-1: oklch(76% 0.1 215);
-    --blue-2: oklch(70% 0.1 215);
-    --blue-3: oklch(64% 0.1 215);
-    --blue-4: oklch(58% 0.1 215);
-    --blue-5: oklch(52% 0.1 215);
+    --blue-1: #7aa2f7;
+    --blue-2: #4d7bf7;
+    --blue-3: #3d6be7;
+    --blue-4: #2d5bd7;
+    --blue-5: #1d4bc7;
 
-    --yellow-1: oklch(80% 0.11 90);
-    --yellow-2: oklch(74% 0.11 90);
-    --yellow-3: oklch(68% 0.11 90);
-    --yellow-4: oklch(62% 0.11 90);
-    --yellow-5: oklch(56% 0.11 90);
+    --yellow-1: #e0af68;
+    --yellow-2: #d79921;
+    --yellow-3: #c78911;
+    --yellow-4: #b77901;
+    --yellow-5: #a76900;
 
-    --purple-1: oklch(76% 0.11 310);
-    --purple-2: oklch(70% 0.11 310);
-    --purple-3: oklch(64% 0.11 310);
-    --purple-4: oklch(58% 0.11 310);
-    --purple-5: oklch(52% 0.11 310);
+    --purple-1: #bb9af7;
+    --purple-2: #9d7bf7;
+    --purple-3: #8d6be7;
+    --purple-4: #7d5bd7;
+    --purple-5: #6d4bc7;
 }

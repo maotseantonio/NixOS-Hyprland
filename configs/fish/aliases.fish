@@ -29,3 +29,5 @@ alias nf "nitch"
 alias mf "microfetch"
 alias cl "zellij"
 alias fucknix "sudo nixos-rebuild switch --flake .#shizuru"
+alias cd "z"
+alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";

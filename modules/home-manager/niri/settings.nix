@@ -25,7 +25,10 @@ in {
                 QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
                 SDL_VIDEODRIVER = "wayland";
                 QT_QPA_PLATFORMTHEME = "qt5ct";
-                #QT_QPA_PLATFORMTHEME = "qt6ct";
+                QT_STYLE_OVERRIDE = "kvantum";
+                ELECTRON_OZONE_PLATFORM_HINT = "auto";
+                OZONE_PLATFORM = "wayland";
+                JAVA_AWT_WM_NONEREPARENTING = "1";
                 #WAYLAND_DISPLAY = "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY";
       };
       spawn-at-startup = [
@@ -34,6 +37,7 @@ in {
         (makeCommand "wl-paste --type text --watch cliphist store")
         (makeCommand "xwayland-satalite")
         (makeCommand "swww-daemon")
+        (makeCommand "new-bar")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
         (makeCommand "wayland-satalite")
 
@@ -50,7 +54,7 @@ in {
           tap-button-map = "left-right-middle";
           middle-emulation = true;
           accel-profile = "adaptive";
-          scroll-factor = 0.2;
+          scroll-factor = 0.5;
         };
         focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
@@ -59,6 +63,11 @@ in {
       screenshot-path = "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png";
       outputs = {
         "eDP-1" = {
+          mode = {
+              width = 2160;
+              height = 1440;
+              refresh = null;
+          };
           scale = 1.0;
           position = {
             x = 0;
@@ -86,15 +95,16 @@ in {
         focus-ring.enable = false;
         border = {
           enable = true;
-          width = 2;
-          active.color = "#8a9e6b";
-          inactive.color = "#2a2e2a";
+          width = 3;
+          active.color = "#f7768e";
+          inactive.color = "#a9b1d600 ";
         };
         shadow = {
           enable = true;
+          color = "#f7768e00";
         };
         preset-column-widths = [
-          {proportion = 0.25;}
+          {proportion = 0.33;}
           {proportion = 0.5;}
           {proportion = 0.75;}
           {proportion = 1.0;}

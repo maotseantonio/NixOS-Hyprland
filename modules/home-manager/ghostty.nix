@@ -19,7 +19,7 @@
 
     # Theme
     theme = "catppuccin-mocha"
-    background-opacity = 0.85
+    background-opacity = 0.98
 
     cursor-style = bar
     cursor-style-blink = true
@@ -48,29 +48,28 @@
     auto-update = off
   '';
   xdg.configFile."ghostty/themes/catppuccin-mocha".text = ''
-    background = #181825
-    foreground = #585b70
 
-    palette = 0=#45475a
-    palette = 1=#f38ba8
-    palette = 2=#a6e3a1
-    palette = 3=#f9e2af
-    palette = 4=#89b4fa
-    palette = 5=#f5c2e7
-    palette = 6=#94e2d5
-    palette = 7=#bac2de
-    palette = 8=#585b70
-    palette = 9=#f38ba8
-    palette = 10=#a6e3a1
-    palette = 11=#f9e2af
-    palette = 12=#89b4fa
-    palette = 13=#f5c2e7
-    palette = 14=#94e2d5
-    palette = 15=#a6adc8 
-    background = #181825
-    foreground = #cdd6f4
-    cursor-color = #f38ba8
-    selection-background = #353749
-    selection-foreground = #cdd6f4
-  '';
+        background      = #11121d 
+        foreground      = #cdd6f4
+        cursor-color    = #e78284
+        selection-background = #11121d
+        selection-foreground = #cdd6f4
+
+        palette = 0=#51576d    # Dark gray (black)
+        palette = 1=#e78284    # Red (error)
+        palette = 2=#a6d189    # Green (success)
+        palette = 3=#e5c890    # Yellow (warning)
+        palette = 4=#8caaee    # Blue (accent)
+        palette = 5=#f4b8e4    # Magenta
+        palette = 6=#81c8be    # Cyan
+        palette = 7=#a5adce    # Light gray (foreground dim)
+        palette = 8=#626880    # Bright black (comments)
+        palette = 9=#e78284    # Bright red
+        palette = 10=#a6d189   # Bright green
+        palette = 11=#e5c890   # Bright yellow
+        palette = 12=#8caaee   # Bright blue
+        palette = 13=#f4b8e4   # Bright magenta
+        palette = 14=#81c8be   # Bright cyan
+        palette = 15=#b5bfe2   # Bright white (foreground)     
+'';
 }

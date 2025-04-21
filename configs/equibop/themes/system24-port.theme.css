@@ -1,0 +1,528 @@
+/**
+ * @name system24 (refresh Oxocarbon)
+ * @description a tui-style discord refresh theme.
+ * @author Halides
+*  @favour maotseantonio
+ 
+ */
+
+/* import theme modules */
+@import './midnight.css';
+/* gets rid of all rounded corners. remove if you want rounded corners.*/
+ 
+
+body {
+  /* HACK: Janky overrides to restore tui likeness */
+  /* Enlargens new messages bar */
+  .newMessagesBar__0f481 {
+    top: 11px !important;
+    left: 18px !important;
+    right: 18px !important;
+    border: none !important;
+  }
+
+  /* Removes border from outer chat container */
+  .chatContent_f75fb0 {
+    border: none !important;
+  }
+
+  /* Add back borders to the messages area */
+  .messagesWrapper__36d07 {
+    background-color: var(--background-base-lower) !important;
+    border: 1px solid var(--border-subtle) !important;
+    /* Separates messages from the typing area */
+    margin-bottom: var(--gap) !important;
+  }
+
+  /* Add back borders to the typing area */
+  .form_f75fb0 {
+    background-color: var(--background-base-lower) !important;
+    border: 1px solid var(--border-subtle) !important;
+    padding-top: 9px !important;
+  }
+
+  /* Applies to 'mark as read' button from 'new messages' bar at top */
+  .barButtonAlt__0f481 {
+    /* Removes button color on hover */
+    --button-secondary-background-hover: none !important;
+  }
+
+  /* Removes extraneous border from channel text area */
+  .channelTextArea__74017 {
+    border: 0px !important;
+  }
+
+  /* Font, change to '' for default discord font */
+  --font: 'JetBrainsMono NFM';
+  letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
+  font-weight: 300; /* UI font weight. */
+
+  /* Sizes */
+  --gap: 18px; /* spacing between panels */
+  --divider-thickness: 2px; /* thickness of unread messages divider and highlighted message borders */
+  --panel-roundness: 8px; /* roundness of panels */
+
+  /* Animation/Transition Options */
+  --animations: off; /* turn off to disable all midnight animations/transitions */
+  --list-item-transition: 0.2s ease; /* transition for list items */
+  --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+  /* Top Bar Options */
+  /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
+  --move-top-bar-buttons: off; 
+  --custom-app-top-bar-height: 32px; /* height of the titlebar/top bar (default is 36px)*/
+
+  /* Window Controls */
+  --custom-window-controls: on; /* turn off to use discord default window controls */
+  --window-control-size: 14px; /* size of custom window controls */
+
+  /* DMs Button Icon Options 
+   * on to use custom icon,
+   * off to disable completely 
+   * default to use discord icon,
+   */
+  --dms-icon: default; 
+  --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
+  --dms-icon-svg-size: 190%; /* size of the svg (css mask-size) */
+  --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+  --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+
+  /* DMs Button Background Options 
+   * off to disable, 
+   * image to use a background image, 
+   * color to use a custom color/gradient 
+   */
+  --dms-background: off; 
+  --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png'); /* url of background image */
+  --dms-background-image-size: cover; /* size of background image (css background-size) */
+
+  /* INFO: If using a jpg or png that is not quite circular... 
+   * uncomment below
+   */
+  /* .wrapper__6e9f8[data-list-item-id='guildsnav___home'] > .childWrapper__6e9f8 { */
+  /*   border-radius: 50% !important; */
+  /* } */
+
+  /* fixed color/gradient (css background) */
+  --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+  /* Background Image Options */
+  --background-image: off; /* turn on to use a background image */
+  --background-image-url: url(''); /* url of the background image */
+
+  /* Transparency/Blur Options
+   * NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. 
+   * FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); 
+   */
+  --transparency-tweaks: off; /* turn on to remove some elements for better transparency */
+
+  /* Turn on to remove the base --bg-3 layer for use with window transparency 
+   * WARNING: WILL OVERRIDE BACKGROUND IMAGE
+   */
+  --remove-bg-layer: off; 
+  --panel-blur: off; /* turn on to blur the background of panels */
+  --blur-amount: 12px; /* amount of blur */
+
+  /* You can set this to a more opaque color if floating panels look too transparent */
+  --bg-floating: var(--bg-3); 
+
+  /* Chatbar Options */
+  --flipped-chatbar: on; /* on/off to move typing indicator above chatbar */
+  --chatbar-height: 56px; /* height of chatbar */
+  --chatbar-padding: 0px; /* padding of chatbar */
+
+  /* Other Options */
+  --small-user-panel: on; /* on/off for old discord user panel */
+}
+
+/* Color Options */
+:root {
+  --colors: on; /* on for custom colors, off for discord default colors */
+
+  /* uppercase channel category and role category */
+  .membersGroup_c8ffbb span:nth-of-type(2),
+  .name__29444 div {
+    text-transform: uppercase;
+  }
+  .typing_b88801 {
+    border: 0px;
+    left: 0px !important;
+    right: 0px !important;
+    top: -42px !important;
+    height: 32% !important;
+    align-items: center !important;
+  }
+  .cooldownWrapper_b21699 {
+    align-items: center !important;
+    z-index: 1003 !important;
+  }
+  .cooldownText_b21699 {
+    font-size: 12px !important;
+    z-index: 1003 !important;
+  }
+
+  /* tui corner text stuff */
+  .sidebar_c48ade > [class^="container_"]::after,
+  .scroller_fb64c9::after, 
+  .channelTextArea_f75fb0::after,
+  .channelTextArea_fb64c9::after,
+  .container_f369db::after, 
+  .content_f75fb0 > .outer_c0bea0::after,
+  .searchResultsWrap_a9e706::after,
+  .sidebarList_c48ade::after,
+  .bar_c38106::after,
+  .container__133bf::after,
+  .container_a592e1::after,
+  .form_f75fb0::after,
+  .membersWrap_c8ffbb::after,
+  .messagesWrapper__36d07::after,
+  .privateChannels__35e86::after,
+  .subtitleContainer_f75fb0::after,
+  .wrapper_ef3116::after,
+  .container__2637a::after {
+    display: block;
+    color: var(--text-5);
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0px 4px;
+    z-index: 1000;
+    transition: color 0.2s ease;
+  }
+
+  /* "messages" and "members" and "nav" need a bit of space so that the word
+   * does not overlap text or graphics.
+   */
+  .scroller__36d07,
+  .members_c8ffbb {
+    margin-top: 10px !important;
+  }
+  .wrapper_ef3116 {
+    padding-top: 10px !important;
+  }
+  /* make corner text visible */
+  .chatContent_f75fb0,
+  .page_c48ade,
+  .chat_f75fb0,
+  .sidebar_c48ade,
+  .guilds_c48ade,
+  .tree_ef3116,
+  .panels_c48ade,
+  .container__133bf,
+  .nowPlayingColumn__133bf,
+  .privateChannels__35e86,
+  .container_c8ffbb {
+    overflow: visible !important;
+  }
+  .privateChannels__35e86 {
+    min-height: 0px;
+    min-width: 0px;
+  }
+  .container__2637a::after {
+    content: "server";
+  }
+  .subtitleContainer_f75fb0::after {
+    content: "channel";
+  }
+  .wrapper_ef3116::after {
+    content: "nav";
+  }
+  .messagesWrapper__36d07::after{
+    content: "messages";
+  }
+  .membersWrap_c8ffbb::after {
+    content: "members";
+  }
+  .form_f75fb0::after {
+    content: "input";
+  }
+  .container_a592e1::after {
+    content: "servers";
+    display: block;
+    color: var(--text-5);
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0 4px;
+    z-index: 1001;
+    max-width: fit-content;
+  }
+  .container__551b0::before {
+    content: "discover";
+    display: block;
+    color: var(--text-5);
+    position: relative;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0 4px;
+    z-index: 1001;
+    max-width: fit-content;
+  }
+  .peopleColumn__133bf {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .tabBody__133bf {
+    display: flex;
+    flex-direction: row;
+    overflow: visible !important;
+    height: calc(100vh - var(--custom-channel-header-height) - 3.5*var(--gap) - 7px) !important;
+  }
+  .container__133bf {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+  .peopleColumn__133bf::before {
+    content: "friends";
+    display: inline-block;
+    color: var(--text-5);
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0 4px;
+    z-index: 1001;
+    line-height: 20px;
+    white-space: nowrap;
+    pointer-events: none;
+    max-width: fit-content;
+  }
+  .nowPlayingColumn__133bf::before {
+    content: "activity";
+    display: block;
+    color: var(--text-5);
+    position: relative;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0 4px;
+    z-index: 1001;
+    max-width: fit-content;
+  }
+  .privateChannels__35e86::after {
+    content: "dms"
+  }
+  .panels_c48ade::before {
+    content: "user";
+    color: var(--text-5);
+    position: relative;
+    top: -10px;
+    left: 8px;
+    background-color: var(--bg-3);
+    padding: 0 4px;
+    z-index: 1001;
+    transition: color var(--border-transition);
+    max-width: fit-content;
+  }
+
+  /* reverse order of svg and channel category */
+  .name__29444 {
+    order: 2;
+  }
+
+  /* FIX: make channel list and user bar widths the same, accounting for
+   * subpixel widths. For some reason, it is calculating subpixel border
+   * widths and thereby rendering widths up to nearest integer, resulting in
+   * mismatched widths. Using media queries for now until I can figure out a
+   * better solution, like using rem for text and px for border widths.
+   */
+  .panels_c48ade {
+    max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 2px);
+  }
+  /* Between 1024px and 1999.98px */
+  @media (min-width: 1024px) and (max-width: 1999.98px) {
+    .panels_c48ade {
+      max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 2px);
+    }
+  }
+  /* Between 1900px and 2559.98px */
+  @media (min-width: 1900px) and (max-width: 2659.98px) {
+    .panels_c48ade {
+      max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 3px);
+    }
+  }
+  /* 2560px and up */
+  @media (min-width: 2560px) {
+    .panels_c48ade {
+      max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 3px);
+    }
+  }
+  /* HACK: idk why this is needed, but width is now synced with panels above */
+  .sidebarList_c48ade {
+    max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
+    overflow: visible;
+  }
+  #vc-spotify-player {
+    margin-bottom: 21px;
+  }
+  .container__37e49 {
+    margin-left: 0px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 9px;
+    margin-top: -9px;
+  }
+  /* changes width of server actions dropdown */
+  .fixed_c1e9c4 {
+    max-width: round(down, calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 10px), 1px);
+  }
+
+  /* HACK: Janky overrides for adding hover color to border behavior */
+  .applicationStore_f07d62,
+  .bar_c38106,
+  .channelTextArea .channelTextArea_f75fb0,
+  .callContainer_cb9592,
+  .callContainer__722ff,
+  .container_a592e1,
+  .container_f369db,
+  .container_c8ffbb,
+  .container__133bf,
+  .container__2637a,
+  .container__551b0,
+  .tabBody__133bf,
+  .content_f75fb0>.outer_c0bea0,
+  .form_f75fb0,
+  .guilds_c48ade,
+  .itemCard__7e549,
+  .membersWrap_c8ffbb,
+  .messagesWrapper__36d07,
+  .nowPlayingColumn__133bf,
+  .outer_c0bea0,
+  .peopleColumn__133bf,
+  .panels_c48ade,
+  .privateChannels__35e86,
+  .sidebarList_c48ade,
+  .searchResultsWrap_a9e706,
+  .wrapper_e131a9,
+  .shop__6db1d,
+  .peopleListItem_cc6179,
+  .subtitleContainer_f75fb0 {
+    transition: border-color 0.2s ease;
+    &:hover {
+      border-color: var(--accent-2) !important;
+      &::after {
+        color: var(--accent-2);
+      } 
+      &::before {
+        color: var(--accent-2);
+      } 
+    }
+  }
+  .itemCard__7e549 {
+    border: 1px solid var(--border-light) !important;
+  } 
+  .peopleList__5ec2f>*>.peopleListItem_cc6179 {
+    border: 1px solid var(--bg-1) !important;
+    padding-left: 8px;
+  }
+  .live_a7acae {
+    background-color: var(--red-1) !important;
+    border-radius: 10px !important;
+    color: white;
+  }
+  div.experimentWrapper__1405b:nth-last-of-type(1) {
+    &[aria-selected="true"] {
+      background-color: var(--accent-2) !important;
+      color: var(--text-5);
+    }
+  }
+  /* screenshare prompt tweaks */
+  .card__4bb93 {
+    border: 1px solid var(--border-light) !important;
+  }
+  .checkbox_f525d3 {
+    background-color: var(--bg-3) !important;
+    border-color: var(--border-light) !important;
+  }
+  .checkbox_f525d3.checked_f525d3 {
+    background-color: var(--accent-3) !important;
+    border: none;
+  }
+  .qualitySettingsContainer_c6d3dc {
+    border: 1px solid var(--border) !important;
+  }
+  /* stream quality button group borders for resolution and frame rate */
+  .group__3d4a0, .item__3d4a0 {
+    border-color: var(--border-light) !important;
+  }
+  /* Text Colors */
+  --text-0: var(--bg-4); /* text on colored elements */
+  --text-1: oklch(100% 0 0); /* other normally white text */
+  --text-2: var(--text-3); /* headings and important text, includes white names and spotify plugin? */
+  --text-3: oklch(87.55% 0.0391 99.09); /* normal text */
+  --text-4: oklch(74% 0.048 264.82); /* icon buttons and channels */
+  --text-5: oklch(0.55 0.0122 100.99); /* muted channels/chats and timestamps */
+
+  /* Background and Dark Colors */
+  --bg-1: hsla(220, 15%, 20%, 1); /* dark buttons when clicked */
+  --bg-2: var(--hover); /* dark buttons */
+  --bg-3: var(--bg-4); /* spacing, secondary elements */
+  --bg-4: oklch(24.33% 0.017 285.06); /* main background color */
+  --hover: oklch(54% 0 0 / 0.1); /* channels and buttons when hovered */
+  --active: oklch(54% 0 0 / 0.2); /* channels and buttons when clicked or selected */
+  --active-2: hsla(220, 19%, 40%, 0.3); /* extra state for transparent buttons */
+  --message-hover: var(--hover); /* messages when hovered */
+
+  /* Accent Colors */
+  --accent-1: var(--blue-1);  /* links and other accent text */
+  --accent-2: var(--blue-2);  /* small accent elements */
+  --accent-3: var(--blue-2);  /* accent buttons */
+  --accent-4: var(--blue-4);  /* accent buttons when hovered */
+  --accent-5: var(--blue-5);  /* accent buttons when clicked */
+  --accent-new: var(--red-1); /* stuff that's normally red like mute/deafen buttons */
+
+  /* Mention Colors (No Gradient) */
+  --mention: var(--yellow-3);
+  --mention-hover: var(--hover); 
+  --reply: var(--blue-3); 
+  --reply-hover: var(--hover);
+
+  /* Status Indicator Colors */
+  --online: var(--green-2);     /* change to #43a25a for default */
+  --dnd: var(--red-1);          /* change to #d83a42 for default */
+  --idle: var(--yellow-2);      /* change to #ca9654 for default */
+  --streaming: var(--purple-2); /* change to #593695 for default */
+  --offline: var(--text-4);     /* change to #83838b for default */
+
+  /* Border Colors */
+  --border-light: oklch(45.58% 0.0405 284.68); /* light border color */
+  --border: oklch(45.58% 0.0405 284.68); /* normal border color */
+  --button-border: none; /* neutral border color of buttons */
+
+  /* FIX: IDK what the rest of these colors do, so I just left them as none */
+  /* Base Colors */
+  --red-1: oklch(0.56 0.167 23.09); /* DND dot, git delete red */
+  --red-2: oklch(0.6 0.2269 27.65); /* error red */
+  --red-3: oklch(0.69 0.1971 22.11); /* peachRed */
+  --red-4: oklch(0.3 0.048 5.77); /* diff delete backgrond */
+  --red-5: oklch(0.67 0.1544 15.27); /* waveRed */
+
+  --green-1: oklch(74.77% 0.1125 128.36); /* multi-factor auth text */
+  --green-2: oklch(63.22% 0.0698 136.92); /* online dot */
+  --green-3: none;
+  --green-4: none;
+  --green-5: none;
+
+  --blue-1: oklch(0.6993 0.122 245.55);    /* accent color */
+  --blue-2: oklch(0.69 0.0951 263.66);     /* crystal blue */
+  --blue-3: oklch(0.31 0.0467 257.43);     /* reply color */
+  --blue-4: oklch(0.74 0.064 225.72);      /* spring blue */
+  --blue-5: oklch(0.6 0.0428 228.33);      /* dragon blue */
+
+  --yellow-1: none;
+  --yellow-2: oklch(75.94% 0.1073 70.87);  /* idle */
+  --yellow-3: oklch(0.39 0.0148 79.68);    /* mention message bg color */
+  --yellow-4: none;
+  --yellow-5: none;
+
+  --purple-1: none;
+  --purple-2: oklch(65.19% 0.0466 298.38); /* streaming dot */
+  --purple-3: none;
+  --purple-4: none;
+  --purple-5: none;
+}

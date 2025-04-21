@@ -13,10 +13,22 @@
 /* import theme modules */
 /* @import url('https://refact0r.github.io/midnight-discord/build/midnight.css'); */
 /*@import url('https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/midnight.css'); */
-@import 'midnight.css';
-@import './unrounding.css'; 
+
+/* @import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/unrounding.css';  
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/system24.css';
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/hidden.css'; 
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/midnight.css'; 
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css';  */
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css'; 
+@import './midnight.css';
+@import './hidden.css';
+@import './system24-port.theme.css';
+@import './unrounding.css';
+
+
 body {
-    /* font, change to '' for default discord font */
+
+  /* font, change to '' for default discord font */
     --font: 'JetBrainsMono Nerd Font';
 
     /* sizes */

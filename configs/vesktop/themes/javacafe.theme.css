@@ -1,0 +1,162 @@
+/* @import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/unrounding.css';  
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/system24.css';
+@import 'https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/build/hidden.css'; */ 
+@import 'https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css'; 
+@import './midnight.css';
+@import './hidden.css';
+@import './system24-port.theme.css';
+@import './unrounding.css';
+
+
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: #2e2e2e; /* base02 */
+    --text-1: #cbf3f3; /* base05 */
+    --text-2: #99cccc; /* base04 */
+    --text-3: #8ba2a2; /* base03 */
+    --text-4: #cbf3f3; /* base06 */
+    --text-5: #cbf3f3; /* base07 */
+
+    /* background and dark colors */
+    --bg-1: #101010;  /* base01 */
+    --bg-2: #101010;  /* base00 */
+    --bg-3: #101010;  /* base00 (same as base01 for consistency) */
+    --bg-4: #0d0d0d;  /* fallback darker value */
+    --hover: #2e2e2e; /* base02 */
+    --active: #2e2e2e; /* base02 */
+    --active-2: hsla(0, 0%, 18%, 0.3); /* adjusted for base02 */
+    --message-hover: hsla(0, 0%, 100%, 0.05);
+
+    /* accent colors */
+    --accent-1: #49acaa; /* base0C */
+    --accent-2: #a3b370; /* base0A */
+    --accent-3: #bd7bb5; /* base0E */
+    --accent-4: #5ca4cc; /* base0D */
+    --accent-5: #cbf3f3; /* base06 */
+    --accent-new: #a33c3d; /* base08 */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    /* status indicator colors */
+    --online: #46a468;  /* base0B */
+    --dnd: #a33c3d;     /* base08 */
+    --idle: #a36a3c;    /* base09 */
+    --streaming: #bd7bb5; /* base0E */
+    --offline: #8ba2a2; /* base03 */
+
+    /* border colors */
+    --border-light: hsla(0, 0%, 100%, 0.1);
+    --border: #49acaa;         /* base0C */
+    --button-border: hsla(0, 0%, 100%, 0.1);
+
+    /* base colors */
+    --red-1: #a33c3d;
+    --red-2: #a33c3d;
+    --red-3: #a33c3d;
+    --red-4: #a33c3d;
+    --red-5: #a33c3d;
+
+    --green-1: #46a468;
+    --green-2: #46a468;
+    --green-3: #46a468;
+    --green-4: #46a468;
+    --green-5: #46a468;
+
+    --blue-1: #5ca4cc;
+    --blue-2: #5ca4cc;
+    --blue-3: #5ca4cc;
+    --blue-4: #5ca4cc;
+    --blue-5: #5ca4cc;
+
+    --yellow-1: #a3b370;
+    --yellow-2: #a3b370;
+    --yellow-3: #a3b370;
+    --yellow-4: #a3b370;
+    --yellow-5: #a3b370;
+
+    --purple-1: #bd7bb5;
+    --purple-2: #bd7bb5;
+    --purple-3: #bd7bb5;
+    --purple-4: #bd7bb5;
+    --purple-5: #bd7bb5;
+}
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: #2e2e2e; /* base02 */
+    --text-1: #cbf3f3; /* base05 */
+    --text-2: #99cccc; /* base04 */
+    --text-3: #8ba2a2; /* base03 */
+    --text-4: #cbf3f3; /* base06 */
+    --text-5: #cbf3f3; /* base07 */
+
+    /* background and dark colors */
+    --bg-1: #1c1c1c;  /* base01 */
+    --bg-2: #101010;  /* base00 */
+    --bg-3: #101010;  /* base00 (same as base01 for consistency) */
+    --bg-4: #0d0d0d;  /* fallback darker value */
+    --hover: #2e2e2e; /* base02 */
+    --active: #2e2e2e; /* base02 */
+    --active-2: hsla(0, 0%, 18%, 0.3); /* adjusted for base02 */
+    --message-hover: hsla(0, 0%, 100%, 0.05);
+
+    /* accent colors */
+    --accent-1: #49acaa; /* base0C */
+    --accent-2: #a3b370; /* base0A */
+    --accent-3: #bd7bb5; /* base0E */
+    --accent-4: #5ca4cc; /* base0D */
+    --accent-5: #cbf3f3; /* base06 */
+    --accent-new: #a33c3d; /* base08 */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    /* status indicator colors */
+    --online: #46a468;  /* base0B */
+    --dnd: #a33c3d;     /* base08 */
+    --idle: #a36a3c;    /* base09 */
+    --streaming: #bd7bb5; /* base0E */
+    --offline: #8ba2a2; /* base03 */
+
+    /* border colors */
+    --border-light: hsla(0, 0%, 100%, 0.1);
+    --border: #49acaa;         /* base0C */
+    --button-border: hsla(0, 0%, 100%, 0.1);
+
+    /* base colors */
+    --red-1: #a33c3d;
+    --red-2: #a33c3d;
+    --red-3: #a33c3d;
+    --red-4: #a33c3d;
+    --red-5: #a33c3d;
+
+    --green-1: #46a468;
+    --green-2: #46a468;
+    --green-3: #46a468;
+    --green-4: #46a468;
+    --green-5: #46a468;
+
+    --blue-1: #5ca4cc;
+    --blue-2: #5ca4cc;
+    --blue-3: #5ca4cc;
+    --blue-4: #5ca4cc;
+    --blue-5: #5ca4cc;
+
+    --yellow-1: #a3b370;
+    --yellow-2: #a3b370;
+    --yellow-3: #a3b370;
+    --yellow-4: #a3b370;
+    --yellow-5: #a3b370;
+
+    --purple-1: #bd7bb5;
+    --purple-2: #bd7bb5;
+    --purple-3: #bd7bb5;
+    --purple-4: #bd7bb5;
+    --purple-5: #bd7bb5;
+}

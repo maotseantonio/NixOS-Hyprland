@@ -42,7 +42,7 @@
   windowRules = [
     {
       geometry-corner-radius = let
-        radius = 8.0;
+        radius = 2.0;
       in {
         bottom-left = radius;
         bottom-right = radius;
@@ -66,20 +66,20 @@
       ];
       focus-ring = {
         active.color = "#f38ba8";
-        inactive.color = "#7d0d2d";
+        inactive.color = "#a9b1d600 ";
       };
 
       border = {
-        inactive.color = "#7d0d2d";
+        inactive.color = "#a9b1d600 ";
       };
 
       shadow = {
-        color = "#7d0d2d70";
+        color = "#f38ba800 ";
       };
 
       tab-indicator = {
         active.color = "#f38ba8";
-        inactive.color = "#7d0d2d";
+        inactive.color = "#a9b1d600";
       };
     }
     {
@@ -95,11 +95,11 @@
         {app-id = "^(zen|firefox|chromium-browser|chrome-.*|zen-.*)$";}
         {app-id = "^(xdg-desktop-portal-gtk)$";}
       ];
-      scroll-factor = 0.1;
+      scroll-factor = 0.85;
     }
     {
       matches = [
-        {app-id = "^(zen|firefox|chromium-browser|edge|chrome-.*|zen-.*)$";}
+        {app-id = "^(zen|firefox|equibop|chromium-browser|edge|chrome-.*|zen-.*)$";}
       ];
       open-maximized = true;
     }
@@ -122,6 +122,14 @@
         y = 32;
         relative-to = "top-right";
       };
+    }
+    {
+        matches = [
+            {app-id = "^(org.wezfurlong.wezterm)$";}
+            {app-id = "^(kitty)$";}
+            {app-id = "^(com.mitchellh.ghostty)$";}
+        ];
+        opacity = 0.98;
     }
   ];
 in {
