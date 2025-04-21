@@ -54,22 +54,22 @@
         cursor-color    = #e78284
         selection-background = #11121d
         selection-foreground = #cdd6f4
-
-        palette = 0=#51576d    # Dark gray (black)
-        palette = 1=#e78284    # Red (error)
-        palette = 2=#a6d189    # Green (success)
-        palette = 3=#e5c890    # Yellow (warning)
-        palette = 4=#8caaee    # Blue (accent)
-        palette = 5=#f4b8e4    # Magenta
-        palette = 6=#81c8be    # Cyan
-        palette = 7=#a5adce    # Light gray (foreground dim)
-        palette = 8=#626880    # Bright black (comments)
-        palette = 9=#e78284    # Bright red
-        palette = 10=#a6d189   # Bright green
-        palette = 11=#e5c890   # Bright yellow
-        palette = 12=#8caaee   # Bright blue
-        palette = 13=#f4b8e4   # Bright magenta
-        palette = 14=#81c8be   # Bright cyan
-        palette = 15=#b5bfe2   # Bright white (foreground)     
+        
+        palette = 0=#414868   
+        palette = 1=#f7768e   
+        palette = 2=#9ece6a   
+        palette = 3=#e0af68   
+        palette = 4=#7aa2f7   
+        palette = 5=#bb9af7   
+        palette = 6=#7dcfff   
+        palette = 7=#c0caf5   
+        palette = 8=#414868   
+        palette = 9=#f7768e   
+        palette = 10=#9ece6a  
+        palette = 11=#e0af68  
+        palette = 12=#7aa2f7  
+        palette = 13=#bb9af7  
+        palette = 14=#7dcfff  
+        palette = 15=#c0caf5      
 '';
 }

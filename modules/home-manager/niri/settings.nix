@@ -96,12 +96,27 @@ in {
         border = {
           enable = true;
           width = 3;
-          active.color = "#f7768e";
-          inactive.color = "#a9b1d600 ";
+          active = {
+                gradient = {
+                    from = "#f7768e";  # Tokyo Night red
+                    to = "#bb9af7";    # Tokyo Night purple/magenta
+                    angle = 45;        # Diagonal gradient
+                 };
+            };
+          inactive = {
+                gradient = {
+                    from = "#414868";  # Dark gray (Tokyo Night)
+                    to = "#f7768e";     # Fade to muted red
+                    angle = 45;
+                 };
+            };
         };
         shadow = {
           enable = true;
-          color = "#f7768e00";
+          softness = 40;
+          spread = 6;           # Blur strength
+          offset = { x = 2; y = 2; };  # Shadow direction
+          color = "rgba(0, 0, 0, 0.5)";  # Semi-transparent black
         };
         preset-column-widths = [
           {proportion = 0.33;}
