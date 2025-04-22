@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    anyrun.url = "github:fufexan/anyrun/launch-prefix"; 
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";

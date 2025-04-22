@@ -24,7 +24,7 @@ in {
                 QT_QPA_PLATFORM = "wayland;xcb";
                 QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
                 SDL_VIDEODRIVER = "wayland";
-                QT_QPA_PLATFORMTHEME = "qt5ct";
+                QT_QPA_PLATFORMTHEME = "qt6ct";
                 QT_STYLE_OVERRIDE = "kvantum";
                 ELECTRON_OZONE_PLATFORM_HINT = "auto";
                 OZONE_PLATFORM = "wayland";
@@ -37,6 +37,7 @@ in {
         (makeCommand "wl-paste --type text --watch cliphist store")
         (makeCommand "xwayland-satalite")
         (makeCommand "swww-daemon")
+        (makeCommand "uwsm finalize")
         (makeCommand "new-bar")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
         (makeCommand "wayland-satalite")
