@@ -79,7 +79,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     textfox.url = "github:adriankarlen/textfox";
-    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+    #hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
     #fabric.url = "github:Fabric-Development/fabric";
     hyprscroller = {
@@ -150,11 +151,7 @@
         inherit system;
         config.allowUnfree = true;
     };
-    #overlays = [
-    #  nur.overlays.default
-    #];
-   #overlays = import ./overlays { inherit inputs; };
-  in {
+    in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
