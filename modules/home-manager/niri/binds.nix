@@ -30,9 +30,10 @@
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action = screenshot;
     "Mod+D".action = spawn "${inputs.walker.packages.${pkgs.system}.default}/bin/walker";
-    "Mod+Return".action = spawn "${
+    "Mod+Shift+Return".action = spawn "${
       inputs.ghostty.packages.${pkgs.system}.default
     }/bin/ghostty";
+    "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
     "Ctrl+Alt+L".action = spawn "hyprlock";
     "Mod+T".action = spawn "thunar";
     "Mod+U".action = control-center;

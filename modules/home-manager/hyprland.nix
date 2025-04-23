@@ -38,7 +38,7 @@ in {
     $mainMod = SUPER
   '';
   wayland.windowManager.hyprland.settings.bind = [
-    "SUPER, D, exec, ${pkgs.ags_1}/bin/ags -t 'overview' "
+    "SUPER, tab, exec, ${pkgs.ags_1}/bin/ags -t 'overview' "
   ];
   wayland.windowManager.hyprland.settings.exec-once = [
     "uwsm finalize"
