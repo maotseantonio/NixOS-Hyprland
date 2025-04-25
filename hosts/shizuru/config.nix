@@ -60,8 +60,8 @@ in
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
-  system.bootloader-systemd.enable = true;
-  system.bootloader-grub.enable = false;
+  system.bootloader-systemd.enable = false;
+  system.bootloader-grub.enable = true;
   system.plymouth.enable = true;
   system.audio.enable = true;
   system.displayManager.enable = true;
