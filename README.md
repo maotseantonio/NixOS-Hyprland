@@ -29,7 +29,7 @@
 </h1>
 
 
-### 🖼️ Gallery
+### 🖼️ Gallery for Hyprland
 
 <p align="center">
    <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
@@ -44,10 +44,25 @@
   Screenshots last updated <b>2025-3-12</b>
 </p>
 
+### 🖼️ Gallery for Niri the Goat
+
+<p align="center">
+   <img src="./.github/assets/screenshots/niri-1.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/niri-2.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/niri-3.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/niri-4.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/niri-5.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/niri-6.png" style="margin-bottom: 10px;"/> <br>  
+   <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;"/> <br>
+
+  Screenshots last updated <b>2025-3-12</b>
+</p>
+
+
 
 # 🗃️ Overview
 ### My config was different from JaKooLit NixOS-Hyprland. Dont blindly use my install script. plz check the install.sh file.
-
+### Now My Primary WM is Niri But I also update my hyprland and its config. good luck have fun. 
 ## 📚 Layout
 
 -   [flake.nix](flake.nix) base of the configuration
@@ -76,6 +91,7 @@
     - [wayland](modules/system/wayland.nix) wayland specific packages
     - [packages](modules/system/packages.nix) packages config
     - [nix](modules/system/nix.nix) nix related settings
+    - [niri](modules/system/niri.nix) niri flake for nixos
   - [home-manager](home-manager) home-manager config
     - [home](modules/home-manager/home.nix) home-manager config 
     - [vscodium](modules/home-manager/vscodium.nix) vscodium config 
@@ -90,6 +106,8 @@
     - [nixy](modules/home-manager/nixy.nix) system utilities
     - [hom-packages](modules/home-manager/home-packages.nix) packages for user specific 
     - [fhsenv](modules/home-manager/fhsenv.nix) fhs enviornment(will remove in 25.11)
+    - [anyrun](modules/home-manager/anyrun) anyrun for application launcher 
+    - [niri](modules/home-manager/niri) niri settings via home-manager
 
 
 ## 📓 Components
@@ -288,7 +306,7 @@ Other dotfiles that I learned / copy from:
   - [NotAShelf/nyx](https://github.com/NotAShelf/nyx)
   - [sioodmy/dotfiles](https://github.com/sioodmy/dotfiles)
   - [Ruixi-rebirth/flakes](https://github.com/Ruixi-rebirth/flakes)
-
+  - [LinuxMobile](https://github.com/linuxmobile/kaku.git): for niri config and astal bar i love u man
 
 
 <!-- # ✨ Stars History -->
