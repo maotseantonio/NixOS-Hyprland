@@ -9,16 +9,16 @@
        url = "github:NixOS/nix/2.28.1";
        inputs.nixpkgs.follows = "nixpkgs";
      };
-    lix = {
-      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix = {
+    #   url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #   };
+    # };
+    # lix-module = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:fufexan/anyrun/launch-prefix"; 
     nixvim = {
@@ -147,7 +147,7 @@
     zjstatus,
     nvf,
     nixvim,
-    lix-module,
+    #lix-module,
     custom-nixpkgs,
     ...
   }: let
@@ -182,7 +182,7 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.nixos-hardware.nixosModules.huawei-machc-wa
           inputs.nvf.nixosModules.default
-          lix-module.nixosModules.default
+          #lix-module.nixosModules.default
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay

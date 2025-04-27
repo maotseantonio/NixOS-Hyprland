@@ -130,7 +130,7 @@
             {app-id = "^(kitty)$";}
             {app-id = "^(com.mitchellh.ghostty)$";}
         ];
-        opacity = 0.9;
+        opacity = 0.96;
     }
   ];
 in {

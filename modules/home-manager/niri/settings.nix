@@ -8,9 +8,10 @@
   makeCommand = command: {
     command = [command];
   };
+  wallpaperScript = pkgs.writeScriptBin "niri-wallpaper" (builtins.readFile ./wallpaperAutoChange.sh);
 in {
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
-    home.packages = [ pkgs.wl-clipboard inputs.astal.packages.${pkgs.system}.default];
+    home.packages = [ pkgs.wl-clipboard inputs.astal.packages.${pkgs.system}.default wallpaperScript];
     programs.niri = {
         enable = true;
         package = pkgs.niri-unstable;
@@ -39,6 +40,7 @@ in {
         (makeCommand "swww-daemon")
         (makeCommand "uwsm finalize")
         (makeCommand "new-bar")
+        (makeCommand "${wallpaperScript}/bin/niri-wallpaper")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
         (makeCommand "wayland-satalite")
 
@@ -147,11 +149,11 @@ in {
         };
       };
       animations.window-open.easing = {
-              duration-ms = 150;
+              duration-ms = 250;
               curve = "ease-out-expo";
        };
        animations.window-close.easing = {
-              duration-ms = 150;
+              duration-ms = 250;
               curve = "ease-out-quad";
         };
 
@@ -235,5 +237,22 @@ in {
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
     };
+  };
+
+  systemd.user.services.niri-wallpaper = {
+    Unit.Description = "Daily Wallpaper Rotation";
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${wallpaperScript}/bin/niri-wallpaper";
+    };
+  };
+
+  systemd.user.timers.niri-wallpaper = {
+    Unit.Description = "Daily Wallpaper Rotation Timer";
+    Timer = {
+      OnCalendar = "*-*-* 00:01:00";
+      Persistent = true;
+    };
+    Install.WantedBy = [ "timers.target" ];
   };
 }
