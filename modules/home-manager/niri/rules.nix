@@ -30,6 +30,7 @@
     "^(notification)"
     "^(thunar)"
     "^(discord)"
+    "^(spotify)"
   ];
 
   floatingRules = builtins.map (appId:
@@ -129,7 +130,7 @@
             {app-id = "^(kitty)$";}
             {app-id = "^(com.mitchellh.ghostty)$";}
         ];
-        opacity = 0.98;
+        opacity = 0.9;
     }
   ];
 in {

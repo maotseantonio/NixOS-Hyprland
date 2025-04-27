@@ -55,7 +55,7 @@ in {
           tap-button-map = "left-right-middle";
           middle-emulation = true;
           accel-profile = "adaptive";
-          scroll-factor = 0.5;
+          scroll-factor = 0.7;
         };
         focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
@@ -146,6 +146,54 @@ in {
           length.total-proportion = 0.1;
         };
       };
+      animations.window-open.easing = {
+              duration-ms = 150;
+              curve = "ease-out-expo";
+       };
+       animations.window-close.easing = {
+              duration-ms = 150;
+              curve = "ease-out-quad";
+        };
+
+      animations.shaders.window-open = ''
+        vec4 expanding_circle(vec3 coords_curr_geo, vec3 size_curr_geo) {
+        vec3 coords_tex = niri_geo_to_tex_next * coords_curr_geo;
+        vec4 color = texture2D(niri_tex_next, coords_tex.st);
+        vec2 coords = (coords_curr_geo.xy - vec2(0.5, 0.5)) * size_curr_geo.xy * 2.0;
+        coords = coords / length(size_curr_geo.xy);
+        float p = niri_clamped_progress;
+        if (p * p <= dot(coords, coords))
+            color = vec4(0.0);
+
+        return color;
+      }
+
+    vec4 open_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+        return expanding_circle(coords_curr_geo, size_curr_geo);
+      }
+  '';
+    animations.shaders.window-close = ''
+        vec4 fall_and_rotate(vec3 coords_curr_geo, vec3 size_curr_geo) {
+         float progress = niri_clamped_progress * niri_clamped_progress;
+         vec2 coords = (coords_curr_geo.xy - vec2(0.5, 1.0)) * size_curr_geo.xy;
+         coords.y -= progress * 1440.0;
+         float random = (niri_random_seed - 0.5) / 2.0;
+         random = sign(random) - random;
+         float max_angle = 0.5 * random;
+         float angle = progress * max_angle;
+         mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+         coords = rotate * coords;
+         coords_curr_geo = vec3(coords / size_curr_geo.xy + vec2(0.5, 1.0), 1.0);
+         vec3 coords_tex = niri_geo_to_tex_curr * coords_curr_geo;
+         vec4 color = texture2D(niri_tex_curr, coords_tex.st);
+
+         return color;
+    }
+
+    vec4 close_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+        return fall_and_rotate(coords_curr_geo, size_curr_geo);
+    }
+'';
 
       animations.shaders.window-resize = ''
         vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {

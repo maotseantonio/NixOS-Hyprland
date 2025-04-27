@@ -23,6 +23,7 @@
     ./variables.nix
     ./zathura.nix
     ./hypridle.nix
+    ./anyrun
     ./fabric/default.nix
     ./niri/default.nix
     ./zellij/default.nix
