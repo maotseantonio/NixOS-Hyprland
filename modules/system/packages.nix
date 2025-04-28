@@ -74,7 +74,7 @@
       atuin
       #bun
       dart-sass
-      nodejs
+      #nodejs
       sassc
       libgtop
       starship

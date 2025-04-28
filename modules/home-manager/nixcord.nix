@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.nixcord.homeModules.nixcord
+    inputs.nixcord.homeManagerModules.nixcord
   ];
   programs.nixcord = {
     enable = true;

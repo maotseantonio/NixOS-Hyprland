@@ -20,6 +20,7 @@ in  {
    boot.initrd.supportedFilesystems = [ "zfs" ];
    boot.zfs.devNodes = "/dev/disk/by-partuuid";
    boot.zfs.package = pkgs.zfs_cachyos;
+   #boot.zfs.package = pkgs.zfs;
    services.zfs = {
       autoSnapshot= {
         enable = true;

@@ -16,7 +16,7 @@
     #wezterm
     hyprpicker  
     hyprpanel
-    inputs.nyxexprs.packages.${pkgs.system}.ani-cli-git
+    inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.astal-bar.packages.${pkgs.system}.default
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
