@@ -4,7 +4,7 @@
       Shizuru  
    <br>
     <br>
-        My config is provided too much bleeding-edge. If you blindly run my install script, you got headache
+        My config is provided too much bleeding-edge. This repo is move to [shizuru](https://github.com/maotseantonio/shizuru)
     </br>
       <img src="./.github/assets/pallet/macchiato.png" width="600px" /> <br>
 
